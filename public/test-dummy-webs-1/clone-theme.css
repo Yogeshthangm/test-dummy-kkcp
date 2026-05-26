@@ -17105,3 +17105,15 @@
 .clone-root sr7-module sr7-mask[style*="z-index:4;"]{ top: 90px !important; }    /* KKCP watermark, upper backdrop */
 .clone-root sr7-module sr7-mask[style*="z-index:10;"]{ top: 400px !important; }  /* Welcome label, just above heading */
 .clone-root sr7-module sr7-mask[style*="z-index:9;"]{ top: 440px !important; }   /* Leading the Way heading, vertical center */
+
+
+/* KKCP hero: darken just the bg photo with a brightness filter + add a subtle
+   text-shadow so the centered white headings read clearly. */
+.clone-root sr7-module sr7-img[style*="bnr-e-main-img1"]{
+  filter: brightness(0.55) !important;
+}
+.clone-root sr7-module sr7-mask[style*="z-index:9;"] sr7-txt,
+.clone-root sr7-module sr7-mask[style*="z-index:10;"] sr7-txt,
+.clone-root sr7-module sr7-mask[style*="z-index:4;"] sr7-txt{
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7), 0 0 4px rgba(0,0,0,0.6) !important;
+}
