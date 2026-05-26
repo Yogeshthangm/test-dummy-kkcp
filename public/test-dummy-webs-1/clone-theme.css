@@ -17085,3 +17085,18 @@
   width: 100% !important;
   left: 0 !important;
 }
+
+/* KKCP hero: center the big watermark + "Welcome to" label + "Leading the Way" heading.
+   Sliders' sr7-mask wrappers carry the absolute left:Xpx; targeting them by their
+   inline z-index lets us re-anchor only the main hero text, not the right-side CTA. */
+.clone-root sr7-module sr7-mask[style*="z-index:4;"],
+.clone-root sr7-module sr7-mask[style*="z-index:9;"],
+.clone-root sr7-module sr7-mask[style*="z-index:10;"]{
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+.clone-root sr7-module sr7-mask[style*="z-index:4;"] sr7-txt,
+.clone-root sr7-module sr7-mask[style*="z-index:9;"] sr7-txt,
+.clone-root sr7-module sr7-mask[style*="z-index:10;"] sr7-txt{
+  text-align: center !important;
+}
