@@ -17069,3 +17069,11 @@
 .clone-root sr7-module,
 .clone-root .wp-block-themepunch-revslider,
 .clone-root rs-module-wrap{background:#003a65 !important;}
+
+/* KKCP hero: make the slide background image cover the full slider container */
+.clone-root sr7-img[style*="bnr-e-main-img1"]{
+  left: 0 !important; top: 0 !important;
+  width: 100% !important; height: 100% !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
