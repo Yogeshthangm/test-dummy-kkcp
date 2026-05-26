@@ -25,6 +25,8 @@ const NOWRAP_CSS = `<style id="kkcp-menu-nowrap">
 .rstb-nav-menu .primary-menu{flex-wrap:nowrap !important;white-space:nowrap !important}
 .rstb-nav-menu .primary-menu>li{flex-shrink:0 !important;white-space:nowrap !important}
 .rstb-nav-menu .primary-menu>li>a{white-space:nowrap !important}
+.rstb-header .button-text,.rstb-header [class*="apply"] .button-text{white-space:nowrap !important}
+.rstb-header a[class*="button"],.rstb-header button{white-space:nowrap !important}
 </style>`;
 
 function readMirror(slug) {
@@ -41,7 +43,9 @@ if (!homeHeader) throw new Error('homepage <header class="rstb-header"> not foun
 if (!homeFooter) throw new Error('homepage <footer class="rstb-footer"> not found');
 
 function injectNowrap(html) {
-  if (html.includes('id="kkcp-menu-nowrap"')) return html;
+  // Replace any prior block so this script is idempotent and tweaks to the
+  // CSS take effect on re-run.
+  html = html.replace(/<style id="kkcp-menu-nowrap">[\s\S]*?<\/style>\n?/g, '');
   return html.replace('</head>', `${NOWRAP_CSS}\n</head>`);
 }
 
