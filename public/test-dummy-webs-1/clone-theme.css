@@ -17077,3 +17077,11 @@
   background-size: cover !important;
   background-position: center center !important;
 }
+
+/* KKCP hero: SR7 pinned an inline width:1440 on sr7-content/sr7-slide at crawl time;
+   force full viewport width so the hero photo doesn't get clipped on wide screens. */
+.clone-root sr7-content,
+.clone-root sr7-slide{
+  width: 100% !important;
+  left: 0 !important;
+}
