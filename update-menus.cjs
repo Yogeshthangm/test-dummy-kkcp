@@ -12,7 +12,7 @@ const path = require('path');
 const ROOT = process.cwd();
 
 const NAV = [
-  { slug: 'test-dummy-webs-1',  href: '/test-dummy-webs-1',  label: 'Home' },
+  { slug: 'test-dummy-webs-1',  href: '/',                   label: 'Home' },
   { slug: 'about-us',           href: '/about-us',           label: 'About' },
   { slug: 'campus-life',        href: '/campus-life',        label: 'Campus Life' },
   { slug: 'research',           href: '/research',           label: 'Research' },
@@ -111,7 +111,13 @@ function updateOne(clone) {
   // 3) Desktop site logo — swap original-theme <img> for KKCP wordmark
   html = html.replace(
     /<div class="rstb-site-logo">\s*<a [^>]*><img [^>]*alt="Blue University"><\/a>\s*<\/div>/g,
-    `<div class="rstb-site-logo"><a href="/test-dummy-webs-1" target="_top">${KKCP_WORDMARK}</a></div>`
+    `<div class="rstb-site-logo"><a href="/" target="_top">${KKCP_WORDMARK}</a></div>`
+  );
+  // 3b) Existing KKCP-wordmark logo anchors (from earlier hand edits on the
+  // homepage) — repoint to "/" so the logo navigates to the new root.
+  html = html.replace(
+    /<div class="rstb-site-logo">\s*<a href="[^"]*"[^>]*><span class="kkcp-wordmark"/g,
+    `<div class="rstb-site-logo"><a href="/" target="_top"><span class="kkcp-wordmark"`
   );
 
   // 4) Mobile panel logo
