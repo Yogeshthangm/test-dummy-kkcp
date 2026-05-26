@@ -90,10 +90,12 @@ function updateOne(clone) {
   }
   let html = fs.readFileSync(file, 'utf8');
 
-  // 1) Desktop primary menu — match menu-main-menu and menu-main-menu-1/-2…
+  // 1) Desktop primary menu — match menu-main-menu* AND the footer's
+  // menu-useful-links* widget, which duplicates the old nav with the same
+  // primary-menu class.
   const desk = replaceAll(
     html,
-    () => /<ul[^>]*id="menu-main-menu[^"]*"[^>]*>/,
+    () => /<ul[^>]*id="menu-(?:main-menu|useful-link)[^"]*"[^>]*>/,
     () => desktopMenuHtml(clone)
   );
   html = desk.html;

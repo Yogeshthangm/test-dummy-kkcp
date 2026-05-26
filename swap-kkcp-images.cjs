@@ -40,7 +40,11 @@ const dataUrl = (file) => {
 function targetsFor(clone) {
   const files = fs.readdirSync(ASSETS);
   const pick = [];
-  if (clone === 'test-dummy-webs-1') {
+  // Pages from the univet.rstheme.com/blue theme share the same asset-naming
+  // pattern (NNNN__name.jpg + a handful of content PNGs), so they all share
+  // test-dummy-webs-1's selection rules.
+  const RSTHEME_PAGES = new Set(['test-dummy-webs-1', 'about-us', 'campus-life', 'research', 'scholarships', 'all-programs', 'faculty-of-science']);
+  if (RSTHEME_PAGES.has(clone)) {
     for (const f of files) {
       const ext = path.extname(f).toLowerCase();
       const base = f.replace(/^[0-9]+__/, '');
