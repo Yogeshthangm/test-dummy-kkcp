@@ -17063,3 +17063,9 @@
 .clone-root .elementor-slideshow--share-mode .elementor-slideshow__share-links .e-eicon-pinterest{fill:#bd081c}
 .clone-root .elementor-slideshow--share-mode .elementor-slideshow__share-links .e-eicon-download-bold{fill:#9da5ae}
 .clone-root .elementor-slideshow--share-mode .eicon-share-arrow{z-index:2}
+
+/* KKCP hero fix: slider has no JS-set background; fill with theme primary so the
+   header overlay sits on a blue band instead of cream (matches the live layout). */
+.clone-root sr7-module,
+.clone-root .wp-block-themepunch-revslider,
+.clone-root rs-module-wrap{background:#003a65 !important;}
