@@ -27,10 +27,11 @@ const NOWRAP_CSS = `<style id="kkcp-menu-nowrap">
 .rstb-nav-menu .primary-menu>li>a{white-space:nowrap !important}
 .rstb-header .button-text,.rstb-header [class*="apply"] .button-text{white-space:nowrap !important}
 .rstb-header a[class*="button"],.rstb-header button{white-space:nowrap !important}
-.rstb-header .e-con-inner{align-items:center !important}
-.rstb-header .e-con-inner > .e-con:has(.rstb-nav-menu.nav-horizontal){flex:1 1 0% !important;justify-content:center !important}
-.rstb-header .rstb-nav-menu.nav-horizontal{margin-inline:auto !important}
-.rstb-header .rstb-nav-menu.nav-horizontal .primary-menu{justify-content:center !important}
+.rstb-header .e-con-inner{align-items:center !important;flex-wrap:nowrap !important}
+.rstb-header .elementor-element-c94b896{flex:1 1 0% !important;min-width:0 !important;display:flex !important;justify-content:center !important;align-items:center !important}
+.rstb-header .elementor-element-c94b896 > *{margin-inline:auto !important}
+.rstb-header .rstb-nav-menu.nav-horizontal{margin-inline:auto !important;width:auto !important}
+.rstb-header .rstb-nav-menu.nav-horizontal .primary-menu{justify-content:center !important;margin-inline:auto !important}
 </style>`;
 
 function readMirror(slug) {
