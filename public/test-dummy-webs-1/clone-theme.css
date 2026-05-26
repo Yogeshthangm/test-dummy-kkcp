@@ -17100,3 +17100,8 @@
 .clone-root sr7-module sr7-mask[style*="z-index:10;"] sr7-txt{
   text-align: center !important;
 }
+
+/* KKCP hero: also center vertically (move from bottom to middle of the slider) */
+.clone-root sr7-module sr7-mask[style*="z-index:4;"]{ top: 90px !important; }    /* KKCP watermark, upper backdrop */
+.clone-root sr7-module sr7-mask[style*="z-index:10;"]{ top: 400px !important; }  /* Welcome label, just above heading */
+.clone-root sr7-module sr7-mask[style*="z-index:9;"]{ top: 440px !important; }   /* Leading the Way heading, vertical center */
