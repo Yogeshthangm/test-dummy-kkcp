@@ -31,3 +31,11 @@
    drop its left padding so the menu sits snug after the logo (the first item's
    own margin already leaves a clean gap). The sticky nav keeps its 36px. */
 .rstb-header .elementor-element-37b598d .rstb-nav-menu.nav-horizontal .primary-menu{ padding-left:0 !important; }
+
+/* Inner-page clone-theme CSS strips @media wrappers from Elementor responsive
+   visibility rules, making elementor-hidden-mobile fire at ALL screen sizes.
+   Re-scope: only hide on mobile; show on tablet/desktop. */
+@media (min-width: 768px) {
+  .clone-root .elementor .elementor-hidden-mobile,
+  .clone-root .elementor .elementor-hidden-phone { display: revert !important; }
+}
