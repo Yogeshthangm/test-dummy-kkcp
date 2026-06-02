@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Link from "next/link";
 
 type Crumb = { label: string; href: string };

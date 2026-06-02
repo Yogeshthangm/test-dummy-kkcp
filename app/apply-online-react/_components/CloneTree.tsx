@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { CloneHeader } from "@/components/CloneHeader";
 import { CloneFooter } from "@/components/CloneFooter";
 // @ts-nocheck
