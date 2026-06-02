@@ -1,0 +1,33 @@
+
+.rstb-nav-menu .primary-menu{flex-wrap:nowrap !important;white-space:nowrap !important}
+.rstb-nav-menu .primary-menu>li{flex-shrink:0 !important;white-space:nowrap !important}
+.rstb-nav-menu .primary-menu>li>a{white-space:nowrap !important}
+.rstb-header .button-text,.rstb-header [class*="apply"] .button-text{white-space:nowrap !important}
+.rstb-header a[class*="button"],.rstb-header button{white-space:nowrap !important}
+.rstb-header .e-con-inner{align-items:center !important;flex-wrap:nowrap !important}
+.rstb-header .elementor-element-c94b896{flex:1 1 0% !important;min-width:0 !important;display:flex !important;justify-content:center !important;align-items:center !important}
+.rstb-header .elementor-element-c94b896 > *{margin-inline:auto !important}
+.rstb-header .rstb-nav-menu.nav-horizontal{margin-inline:auto !important;width:auto !important}
+.rstb-header .rstb-nav-menu.nav-horizontal .primary-menu{justify-content:center !important;margin-inline:auto !important}
+
+/* Inner pages: push the page banner below the transparent overlay header */
+.univet-inner .rstb-inner-banner{padding-top:200px !important}
+@media (max-width:1024px){ .univet-inner .rstb-inner-banner{padding-top:150px !important} }
+
+/* header: keep the centered nav clear of the left KKCP logo + tidy sizing */
+.rstb-header .rstb-site-logo{ position:relative; z-index:10; }
+.rstb-header .rstb-nav-menu.nav-horizontal .primary-menu{ padding-left:80px !important; }
+.rstb-header .primary-menu>li>a{ padding:16px 11px !important; font-size:14px !important; }
+
+/* stronger: left-align nav clear of the absolutely-positioned KKCP logo */
+.rstb-header .rstb-nav-menu.nav-horizontal{ margin-left:0 !important; }
+.rstb-header .rstb-nav-menu.nav-horizontal .primary-menu{ justify-content:flex-start !important; padding-left:36px !important; }
+
+/* tighten the gap between menu items so the search icon + Apply Now button
+   fit snugly on one row instead of overflowing the right edge */
+.rstb-header .primary-menu > .menu-item{ margin:0 5px !important; }
+.rstb-header .primary-menu .menu-item-link{ padding:16px 8px !important; }
+/* the visible (transparent) header nav shares no column gutter with the logo;
+   drop its left padding so the menu sits snug after the logo (the first item's
+   own margin already leaves a clean gap). The sticky nav keeps its 36px. */
+.rstb-header .elementor-element-37b598d .rstb-nav-menu.nav-horizontal .primary-menu{ padding-left:0 !important; }
