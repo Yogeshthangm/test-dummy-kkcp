@@ -1,18 +1,20 @@
+import { CloneTree } from "./test-dummy-webs-1-react/_components/CloneTree";
+
 export default function Home() {
   return (
-    <iframe
-      src="/test-dummy-webs-1/index.html"
-      title="KKCP — Home"
-      style={{
-        position: "fixed",
-        inset: 0,
-        width: "100vw",
-        height: "100vh",
-        border: "none",
-        margin: 0,
-        padding: 0,
-        zIndex: 2147483647,
-      }}
-    />
+    <>
+      {/* Verbatim TSX rebuild of /test-dummy-webs-1/index.html — no iframe.
+          Source theme stylesheet (scoped under .clone-root) + the Google Fonts
+          the source theme uses (Bitter / Roboto). */}
+      <link rel="stylesheet" href="/test-dummy-webs-1/clone-theme.css" />
+      <link rel="stylesheet" href="/test-dummy-webs-1/clone-fixes.css" />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600&family=Roboto:wght@400&display=swap"
+      />
+      <div className="clone-root">
+        <CloneTree />
+      </div>
+    </>
   );
 }
