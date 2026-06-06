@@ -2,10 +2,12 @@
 import { CloneHeader } from "@/components/CloneHeader";
 import { CloneFooter } from "@/components/CloneFooter";
 /* eslint-disable */
-// Hand-authored React rebuild of the Departments page in the KKCP / univet design
-// language (Bitter headings, Roboto body, #003A65 / #034EA2 / #FDC72F brand palette).
-// All department copy below is inserted VERBATIM exactly as supplied — no rewriting,
-// no grammar/typo correction, ampersands / em dashes / curly apostrophes preserved.
+// Hand-authored React rebuild of the Departments page. Uses the SAME design as the
+// Student Services page: the theme's image-background page banner (styled by the
+// /all-programs/clone-theme.css rules keyed to the elementor-7888 element IDs reused
+// below), then the verbatim department write-ups in matching theme typography.
+// All department copy is inserted VERBATIM exactly as supplied — no rewriting, no
+// grammar/typo correction, ampersands / em dashes / curly apostrophes preserved.
 
 const DEPARTMENTS = [
   {
@@ -161,32 +163,27 @@ function Block({ block }) {
 
 export function CloneTree() {
   return (
-    <div className="wp-singular page-template-default page wp-theme-KKCP elementor-default elementor-kit-14">
+    <div className="wp-singular page-template-default page page-id-7888 wp-theme-KKCP gsap-enable elementor-default elementor-template-full-width elementor-kit-14 elementor-page elementor-page-7888 e--ua-blink e--ua-mac e--ua-webkit" data-elementor-device-mode={"desktop"}>
       <div id="KKCP-page" className="KKCP-page-wrapper">
         <CloneHeader />
         <main id="KKCP-content" className="KKCP-content-wrapper">
+          <div data-elementor-type={"wp-page"} data-elementor-id={"7888"} className="elementor elementor-7888">
+            {/* Page banner — same design as Student Services (image bg + dark overlay + white title) */}
+            <div className="elementor-element elementor-element-146c4d0 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"146c4d0"} data-element_type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
+              <div className="e-con-inner">
+                <div className="elementor-element elementor-element-da6b75b elementor-widget elementor-widget-rstb-breadcrumb" data-id={"da6b75b"} data-element_type={"widget"} data-widget_type={"rstb-breadcrumb.default"}>
+                  <div className="rstb-breadcrumb"><span property="itemListElement"><a property="item" title="Go to KKCP." href="/" className="home"><span property="name">Home</span></a><meta property="position" content="1" /></span><span className="item-separator"><svg className="e-font-icon-svg e-fas-angle-double-right" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z" /></svg></span><span property="itemListElement"><span property="name" className="post post-page current-item">Departments</span><meta property="url" content="/departments/" /><meta property="position" content="2" /></span></div>
+                </div>
+                <div className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Departments</h1></div>
+                <div className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider" data-id={"4626c23"} data-element_type={"widget"} data-widget_type={"rs-divider.default"}><div className="rs-divider dot-enable"><span> </span></div></div>
+                <div className="elementor-element elementor-element-419a788 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id={"419a788"} data-element_type={"widget"} data-widget_type={"text-editor.default"}><p>Education goes beyond textbooks and classrooms. We believe in empowering students to explore their passions challenge conventions.</p></div>
+                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.png" alt="bnr-arrow-1-1" /></div></div>
+              </div>
+            </div>
+          </div>
+
           <style>{`
             .dept-page { font-family: "Roboto", sans-serif; }
-            .dept-hero {
-              background: linear-gradient(120deg, #003A65 0%, #051435 100%);
-              color: #fff; padding: 70px 20px 80px; text-align: center; position: relative; overflow: hidden;
-            }
-            .dept-hero::after {
-              content: ""; position: absolute; right: -60px; bottom: -60px;
-              width: 220px; height: 220px; border-radius: 50%;
-              background: radial-gradient(circle, rgba(253,199,47,.18) 0%, rgba(253,199,47,0) 70%);
-            }
-            .dept-hero-inner { max-width: 1140px; margin: 0 auto; position: relative; z-index: 1; }
-            .dept-crumb { font-size: 14px; letter-spacing: .02em; margin-bottom: 14px; color: #cfe0ef; }
-            .dept-crumb a { color: #cfe0ef; text-decoration: none; }
-            .dept-crumb a:hover { color: #FDC72F; }
-            .dept-crumb span { margin: 0 8px; color: #FDC72F; }
-            .dept-hero h1 {
-              font-family: "Bitter", serif; font-weight: 600; font-size: 44px; line-height: 1.15;
-              margin: 0; color: #fff;
-            }
-            .dept-hero-rule { margin: 22px auto 0; width: 90px; height: 4px; background: #FDC72F; border-radius: 3px; }
-
             .dept-wrap { max-width: 1140px; margin: 0 auto; padding: 64px 20px 80px; }
             .dept-card {
               background: #fff; border: 1px solid #E4E4E4; border-top: 4px solid #FDC72F;
@@ -216,7 +213,6 @@ export function CloneTree() {
             .dept-bullet { padding-left: 1.5em; text-indent: -1.5em; }
 
             @media (max-width: 600px) {
-              .dept-hero h1 { font-size: 32px; }
               .dept-card { padding: 28px 22px; }
               .dept-title { font-size: 22px; }
               .dept-no { width: 46px; height: 46px; font-size: 17px; }
@@ -224,18 +220,6 @@ export function CloneTree() {
           `}</style>
 
           <div className="dept-page">
-            <section className="dept-hero">
-              <div className="dept-hero-inner">
-                <nav className="dept-crumb">
-                  <a href="/">Home</a>
-                  <span>/</span>
-                  Departments
-                </nav>
-                <h1>Departments</h1>
-                <div className="dept-hero-rule" />
-              </div>
-            </section>
-
             <section className="dept-wrap">
               {DEPARTMENTS.map((dept) => (
                 <article className="dept-card" key={dept.no}>
