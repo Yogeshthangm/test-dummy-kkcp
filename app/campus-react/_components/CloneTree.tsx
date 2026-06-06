@@ -20,13 +20,6 @@ const CAMPUS_FILTERS = [
   { id: "ro-water-plant", label: "8 Campus → RO Water Plant", href: "#ro-water-plant" },
   { id: "hostel-facilities", label: "9 Campus → Hostel Facilities", href: "#hostel-facilities" },
 ];
-const PROGRAMS = [
-  { id: "d-pharm", label: "D. Pharm", href: "/diploma-in-pharmacy/" },
-  { id: "b-pharm", label: "B. Pharm", href: "/bachelor-of-pharmacy/" },
-  { id: "pharm-d", label: "Pharm. D", href: "/doctor-of-pharmacy/" },
-  { id: "m-pharm", label: "M. Pharm", href: "/master-of-pharmacy/" },
-  { id: "ph-d", label: "Ph. D", href: "/ph-d/" },
-];
 
 // 6 source thumbnails cycled across the 9 facility cards.
 const THUMBS = [
@@ -175,7 +168,6 @@ export function CloneTree() {
                     <div className="filter-sidebar">
                       <h4 className="sidebar-title">Filter By<span className="filter-reset-btn" style={{display: "none"}}>Reset</span></h4>
                       <Criteria title="Campus" items={CAMPUS_FILTERS} />
-                      <Criteria title="Programs" items={PROGRAMS} />
                     </div>
                     <div className="filter-content">
                       <div className="filter-top-bar">
@@ -212,16 +204,23 @@ export function CloneTree() {
           </div>
 
           <style>{`
-            /* Sticky sidebar */
-            .elementor-7888 .rs-academic-filter-area { align-items: flex-start; }
+            /* clone-root sets overflow-y:auto which establishes a scroll container and
+               breaks position:sticky. overflow-x:clip clips horizontally WITHOUT creating
+               a scroll container, so the sidebar can stick to the viewport again. */
+            .clone-root { overflow-x: clip; overflow-y: visible; }
+            /* Smaller, sticky sidebar that stays inside its own column */
+            .elementor-7888 .rs-academic-filter-area { align-items: flex-start; --sidebar-width: 230px; gap: 32px; }
             .elementor-7888 .filter-sidebar {
-              position: sticky; top: 100px; align-self: flex-start;
+              padding: 20px; position: sticky; top: 100px; align-self: flex-start;
               max-height: calc(100vh - 120px); overflow-y: auto;
             }
+            .elementor-7888 .filter-sidebar .sidebar-title { font-size: 17px; padding-bottom: 14px; margin-bottom: 18px; }
+            .elementor-7888 .filter-sidebar .criteria-title { font-size: 15px; margin-bottom: 12px; }
+            .elementor-7888 .filter-sidebar .criteria-checkboxes { display: flex; flex-direction: column; gap: 9px; }
             /* Sidebar items as anchor links */
             .elementor-7888 .criteria-link {
               display: block; color: #4C4C4C; text-decoration: none;
-              font-size: 15px; line-height: 1.45; transition: color .2s;
+              font-size: 13.5px; line-height: 1.4; transition: color .2s;
             }
             .elementor-7888 .criteria-link:hover { color: #034EA2; }
             /* Offset anchor targets so they clear the sticky site header */
