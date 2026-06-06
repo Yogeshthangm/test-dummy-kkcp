@@ -155,6 +155,16 @@ const DEPARTMENTS = [
   },
 ];
 
+// Same thumbnail images Student Services uses for its cards.
+const THUMBS = [
+  "/all-programs/assets/0054__acc-1-min.jpg",
+  "/all-programs/assets/0055__acc-2-min.jpg",
+  "/all-programs/assets/0056__acc-3-min.jpg",
+  "/all-programs/assets/0058__acc-4-min.jpg",
+  "/all-programs/assets/0059__acc-5-min.jpg",
+  "/all-programs/assets/0060__acc-6-min.jpg",
+];
+
 function Block({ block }) {
   if (block.type === "label") return <h3 className="dept-label">{block.text}</h3>;
   if (block.type === "bullet") return <p className="dept-text dept-bullet">{block.text}</p>;
@@ -183,56 +193,86 @@ export function CloneTree() {
           </div>
 
           <style>{`
-            .dept-page { font-family: "Roboto", sans-serif; }
-            .dept-wrap { max-width: 1140px; margin: 0 auto; padding: 64px 20px 80px; }
-            .dept-card {
-              background: #fff; border: 1px solid #E4E4E4; border-top: 4px solid #FDC72F;
-              border-radius: 16px; padding: 38px 44px; margin-bottom: 40px;
-              box-shadow: 0 14px 40px rgba(0,58,101,.07);
+            /* Student Services card design — replicated unconditionally (the theme's
+               element-scoped rules for these IDs are gated behind @media max-width:1200px,
+               so they don't fire on desktop; we restate them here). */
+            .dept-section { background-color: #F6F4EE; padding: 80px 20px; }
+            .dept-section .filter-content { max-width: 1200px; margin: 0 auto; width: 100%; }
+            .dept-section .filter-top-bar {
+              display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; align-items: center;
             }
-            .dept-card-head { display: flex; align-items: center; gap: 18px; margin-bottom: 8px; }
-            .dept-no {
-              flex: 0 0 auto; width: 56px; height: 56px; border-radius: 14px;
-              background: linear-gradient(135deg, #034EA2 0%, #003A65 100%);
-              color: #fff; font-family: "Bitter", serif; font-weight: 600; font-size: 20px;
-              display: flex; align-items: center; justify-content: center;
+            .dept-section .filter-result { font-size: 15px; color: #4C4C4C; }
+            .dept-section .filter-result .result-count { font-weight: 600; color: #051435; }
+            .dept-section .filter-items-wrapper { display: grid; grid-template-columns: 1fr; gap: 25px; }
+
+            .dept-item.filter-item {
+              display: flex; flex-direction: row-reverse; align-items: stretch;
+              padding: 10px; background-color: #fff; border-radius: 12px;
+              box-shadow: 0 4px 30px 0 rgba(0,0,0,.06);
             }
-            .dept-title {
-              font-family: "Bitter", serif; color: #003A65; font-weight: 600;
-              font-size: 28px; line-height: 1.25; margin: 0;
+            .dept-item .item-thumbnail {
+              width: 300px; flex-shrink: 0; overflow: hidden; border-radius: 12px; align-self: stretch;
             }
+            .dept-item .item-thumbnail img { width: 100%; height: 100%; object-fit: cover; object-position: center; min-height: 240px; }
+            .dept-item .item-content { flex-grow: 1; padding: 22px 30px; min-width: 0; }
+            .dept-item .item-meta { list-style: none; padding: 0; margin: 0 0 12px; display: flex; gap: 10px; }
+            .dept-item .item-meta li {
+              padding: 5px 12px; border: 1px solid #E4E4E4; border-radius: 5px;
+              font-size: 13px; font-weight: 500; color: #4C4C4C; letter-spacing: .02em;
+            }
+            .dept-item .item-title {
+              font-family: "Bitter", serif; font-size: 24px; font-weight: 600;
+              color: #051435; line-height: 1.3; margin: 0 0 4px;
+            }
+            .dept-item .item-desc { margin: 8px 0 0; }
             .dept-label {
               font-family: "Bitter", serif; color: #034EA2; font-weight: 600;
-              font-size: 19px; margin: 26px 0 12px; position: relative; padding-bottom: 9px;
+              font-size: 18px; margin: 22px 0 10px; position: relative; padding-bottom: 9px;
             }
             .dept-label::after {
               content: ""; position: absolute; left: 0; bottom: 0;
               width: 44px; height: 3px; background: #FDC72F; border-radius: 2px;
             }
-            .dept-text { color: #4C4C4C; font-size: 16px; line-height: 1.85; margin: 0 0 12px; }
+            .dept-text { color: #4C4C4C; font-size: 16px; line-height: 1.8; margin: 0 0 12px; }
             .dept-bullet { padding-left: 1.5em; text-indent: -1.5em; }
 
-            @media (max-width: 600px) {
-              .dept-card { padding: 28px 22px; }
-              .dept-title { font-size: 22px; }
-              .dept-no { width: 46px; height: 46px; font-size: 17px; }
+            @media (max-width: 767px) {
+              .dept-item.filter-item { flex-direction: column; }
+              .dept-item .item-thumbnail { width: 100%; height: 200px; }
+              .dept-item .item-thumbnail img { min-height: 0; }
             }
           `}</style>
 
-          <div className="dept-page">
-            <section className="dept-wrap">
-              {DEPARTMENTS.map((dept) => (
-                <article className="dept-card" key={dept.no}>
-                  <div className="dept-card-head">
-                    <span className="dept-no">{dept.no}</span>
-                    <h2 className="dept-title">{dept.name}</h2>
+          <div className="dept-section elementor-element elementor-element-f401be2 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"f401be2"} data-element_type={"container"}>
+            <div className="e-con-inner">
+              <div className="elementor-element elementor-element-57146e5 elementor-widget elementor-widget-rs-academic-filter" data-id={"57146e5"} data-element_type={"widget"} data-widget_type={"rs-academic-filter.default"}>
+                <div className="rs-academic-filter-area">
+                  <div className="filter-content">
+                    <div className="filter-top-bar">
+                      <span className="filter-result">Total <span className="result-count">6</span> results found</span>
+                    </div>
+                    <div className="filter-items-wrapper">
+                      {DEPARTMENTS.map((dept, idx) => (
+                        <div className="filter-item dept-item" key={dept.no}>
+                          <div className="item-thumbnail">
+                            <img loading="lazy" decoding="async" src={THUMBS[idx]} alt={dept.name} />
+                          </div>
+                          <div className="item-content">
+                            <ul className="item-meta"><li>Department {dept.no}</li></ul>
+                            <h4 className="item-title">{dept.name}</h4>
+                            <div className="item-desc">
+                              {dept.blocks.map((block, i) => (
+                                <Block block={block} key={i} />
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  {dept.blocks.map((block, i) => (
-                    <Block block={block} key={i} />
-                  ))}
-                </article>
-              ))}
-            </section>
+                </div>
+              </div>
+            </div>
           </div>
         </main>
         <CloneFooter />
