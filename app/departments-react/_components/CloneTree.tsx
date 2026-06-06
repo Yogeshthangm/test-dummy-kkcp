@@ -9,19 +9,19 @@ import { CloneFooter } from "@/components/CloneFooter";
 
 // --- Sidebar data (tailored to the pharmacy Departments page) ---
 const DEPARTMENT_FILTERS = [
-  { id: "pharmaceutics", label: "Department of Pharmaceutics" },
-  { id: "pharmacology", label: "Department of Pharmacology" },
-  { id: "pharmaceutical-chemistry", label: "Department of Pharmaceutical Chemistry" },
-  { id: "pharmacognosy", label: "Department of Pharmacognosy" },
-  { id: "pharmacy-practice", label: "Department of Pharmacy Practice" },
-  { id: "regulatory-affairs", label: "Department of Regulatory Affairs" },
+  { id: "pharmaceutics", label: "Department of Pharmaceutics", href: "#pharmaceutics" },
+  { id: "pharmacology", label: "Department of Pharmacology", href: "#pharmacology" },
+  { id: "pharmaceutical-chemistry", label: "Department of Pharmaceutical Chemistry", href: "#pharmaceutical-chemistry" },
+  { id: "pharmacognosy", label: "Department of Pharmacognosy", href: "#pharmacognosy" },
+  { id: "pharmacy-practice", label: "Department of Pharmacy Practice", href: "#pharmacy-practice" },
+  { id: "regulatory-affairs", label: "Department of Regulatory Affairs", href: "#regulatory-affairs" },
 ];
 const PROGRAMS = [
-  { id: "d-pharm", label: "D. Pharm" },
-  { id: "b-pharm", label: "B. Pharm" },
-  { id: "pharm-d", label: "Pharm. D" },
-  { id: "m-pharm", label: "M. Pharm" },
-  { id: "ph-d", label: "Ph. D" },
+  { id: "d-pharm", label: "D. Pharm", href: "/diploma-in-pharmacy/" },
+  { id: "b-pharm", label: "B. Pharm", href: "/bachelor-of-pharmacy/" },
+  { id: "pharm-d", label: "Pharm. D", href: "/doctor-of-pharmacy/" },
+  { id: "m-pharm", label: "M. Pharm", href: "/master-of-pharmacy/" },
+  { id: "ph-d", label: "Ph. D", href: "/ph-d/" },
 ];
 
 const THUMBS = [
@@ -186,22 +186,17 @@ function Block({ block }) {
   return <p className="dept-text">{block.text}</p>;
 }
 
-function Criteria({ title, items, showMore }) {
+function Criteria({ title, items }) {
   return (
     <div className="filter-criteria">
       <h5 className="criteria-title">{title}</h5>
       <ul className="criteria-checkboxes">
         {items.map((it) => (
-          <li className="criteria-item" key={it.id} style={it.hidden ? { display: "none" } : undefined}>
-            <label htmlFor={`f-${it.id}`}>
-              <input type="checkbox" value={it.id} id={`f-${it.id}`} readOnly /> {it.label}
-            </label>
+          <li className="criteria-item" key={it.id}>
+            <a className="criteria-link" href={it.href}>{it.label}</a>
           </li>
         ))}
       </ul>
-      {showMore ? (
-        <span className="criteria-show-more" data-show-text={"Show More"} data-hide-text={"Show Less"}>Show More</span>
-      ) : null}
     </div>
   );
 }
@@ -248,7 +243,7 @@ export function CloneTree() {
                       </div>
                       <div className="filter-items-wrapper">
                         {DEPARTMENTS.map((dept, idx) => (
-                          <div className="filter-item dept-filter-item" key={dept.no}>
+                          <div className="filter-item dept-filter-item" id={DEPARTMENT_FILTERS[idx].id} key={dept.no}>
                             <div className="item-thumbnail">
                               <img loading="lazy" decoding="async" width="770" height="660" src={THUMBS[idx]} className="attachment-large size-large wp-post-image" alt={dept.name} />
                             </div>
@@ -272,7 +267,24 @@ export function CloneTree() {
           </div>
 
           <style>{`
-            .dept-filter-item { align-items: flex-start; }
+            /* clone-root ships overflow:hidden/auto which breaks position:sticky.
+               Clip horizontally (no h-scrollbar) but keep vertical visible so the
+               page (window) stays the scroll root and the sidebar can stick. */
+            .clone-root { overflow-x: clip; overflow-y: visible; }
+            /* Sticky sidebar */
+            .elementor-7888 .rs-academic-filter-area { align-items: flex-start; }
+            .elementor-7888 .filter-sidebar {
+              position: sticky; top: 100px; align-self: flex-start;
+              max-height: calc(100vh - 120px); overflow-y: auto;
+            }
+            /* Sidebar items as anchor links */
+            .elementor-7888 .criteria-link {
+              display: block; color: #4C4C4C; text-decoration: none;
+              font-size: 15px; line-height: 1.45; transition: color .2s;
+            }
+            .elementor-7888 .criteria-link:hover { color: #034EA2; }
+            /* Offset anchor targets so they clear the sticky site header */
+            .dept-filter-item { align-items: flex-start; scroll-margin-top: 120px; }
             .dept-desc { margin-top: 15px; }
             .dept-desc .dept-label {
               font-family: "Bitter", serif; color: #034EA2; font-weight: 600;
