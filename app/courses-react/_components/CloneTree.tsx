@@ -2,235 +2,148 @@
 import { CloneHeader } from "@/components/CloneHeader";
 import { CloneFooter } from "@/components/CloneFooter";
 /* eslint-disable */
-// Courses page — Student Services design (image-background page banner + sidebar/content
-// two-column layout from /all-programs/clone-theme.css), with the sidebar repurposed as a
-// STICKY anchor-nav of the six course titles and the main column holding the full verbatim
-// course write-ups. All course copy is inserted VERBATIM exactly as supplied — no rewriting,
-// no grammar/typo correction; ampersands / en + em dashes / curly apostrophes preserved.
+// Campus page — cloned from the Departments page design (image hero + "Filter By"
+// sticky sidebar + academic-filter card list with thumbnails). The department cards
+// are replaced by the nine campus facility cards. All campus copy is VERBATIM as
+// supplied — no rewriting, no grammar/typo fixes; ampersands and the "Campus →"
+// headings (including the no-space "→Animal House Facility") kept byte-for-byte (ICPR).
 
-const COURSES = [
+// --- Sidebar data (one anchor link per facility) ---
+const CAMPUS_FILTERS = [
+  { id: "smart-class-rooms", label: "1 Campus → Smart-Class Rooms", href: "#smart-class-rooms" },
+  { id: "library", label: "2 Campus → Library", href: "#library" },
+  { id: "laboratory", label: "3 Campus → Laboratory", href: "#laboratory" },
+  { id: "drug-information-centre", label: "4 Campus → Drug Information Centre", href: "#drug-information-centre" },
+  { id: "animal-house-facility", label: "5 Campus →Animal House Facility", href: "#animal-house-facility" },
+  { id: "transport", label: "6 Campus → TRANSPORT", href: "#transport" },
+  { id: "security", label: "7 Campus → Security", href: "#security" },
+  { id: "ro-water-plant", label: "8 Campus → RO Water Plant", href: "#ro-water-plant" },
+  { id: "hostel-facilities", label: "9 Campus → Hostel Facilities", href: "#hostel-facilities" },
+];
+const PROGRAMS = [
+  { id: "d-pharm", label: "D. Pharm", href: "/diploma-in-pharmacy/" },
+  { id: "b-pharm", label: "B. Pharm", href: "/bachelor-of-pharmacy/" },
+  { id: "pharm-d", label: "Pharm. D", href: "/doctor-of-pharmacy/" },
+  { id: "m-pharm", label: "M. Pharm", href: "/master-of-pharmacy/" },
+  { id: "ph-d", label: "Ph. D", href: "/ph-d/" },
+];
+
+// 6 source thumbnails cycled across the 9 facility cards.
+const THUMBS = [
+  "/all-programs/assets/0054__acc-1-min.jpg",
+  "/all-programs/assets/0055__acc-2-min.jpg",
+  "/all-programs/assets/0056__acc-3-min.jpg",
+  "/all-programs/assets/0058__acc-4-min.jpg",
+  "/all-programs/assets/0059__acc-5-min.jpg",
+  "/all-programs/assets/0060__acc-6-min.jpg",
+];
+
+// --- Campus facility content (verbatim) ---
+const FACILITIES = [
   {
     no: "01",
-    name: "D.Pharm",
+    id: "smart-class-rooms",
+    name: "1 Campus → Smart-Class Rooms",
     blocks: [
-      { type: "section", text: "Overview" },
-      { type: "detail", text: "D.Pharm. Course Details" },
-      { type: "table", rows: [
-        { label: "Eligibility", lines: ["Plus 2 (MAJOR SUBJECTS: Physics, Chemistry Mandatory)"] },
-        { label: "Course Duration", lines: ["2 Years"] },
-        { label: "Course available since", lines: ["1992"] },
-      ] },
-      { type: "sub", text: "Your Quick Path to Becoming a Pharmacist: The D. Pharm!" },
-      { type: "p", text: "Hey, are you eager to enter the medical field but prefer not to commit to four years of college immediately? The Diploma in Pharmacy (D. Pharm) is the ideal choice for you!" },
-      { type: "p", text: "This is a highly focused, 2-year program aimed at preparing you for the job market swiftly. Consider it your fast track to becoming a certified Registered Pharmacist, qualified to work in hospitals and pharmacies." },
-      { type: "sub", text: "Why Opt for the D.Pharm? (Key Benefits)" },
-      { type: "bullet", text: "• Job in 2 Years! Seriously, this is a significant advantage if you want to start earning money quickly." },
-      { type: "bullet", text: "• No Dead Ends: You will receive a solid, reputable qualification that paves the way for excellent job opportunities." },
-      { type: "bullet", text: "• Future B.Pharm Shortcut: Should you choose to pursue a degree later, your D.Pharm allows you to bypass the first year of the B.Pharm! You can gain Lateral Entry directly into the second year, saving an entire year of study!" },
-      { type: "p", text: "Gutentor Advanced Text" },
-      { type: "section", text: "Career" },
-      { type: "detail", text: "Awesome Career Spots for D.Pharm holders." },
-      { type: "p", text: "Upon completion, you can step into exciting positions such as:" },
-      { type: "bullet", text: "• Your Pharmacist: Serve as the primary contact at a community pharmacy, assisting individuals with their prescriptions and providing health guidance." },
-      { type: "bullet", text: "• Hospital Crew: Join large hospitals, ensuring that patients receive the correct medications." },
-      { type: "bullet", text: "• Sales Star (MR): Take on the role of a Medical Representative, traveling to engage with doctors about the newest pharmaceuticals." },
-      { type: "bullet", text: "• Boss Mode: Launch your own Retail Pharmacy—become your own boss!" },
-      { type: "bullet", text: "• Factory Floor: Contribute in pharmaceutical manufacturing facilities, aiding in production, quality assurance and packaging." },
-      { type: "p", text: "Opt for the D.Pharm—it’s efficient, it’s intelligent & it prepares you for a successful future!" },
+      { type: "p", text: "We provide top-notch facilities aimed at delivering the finest learning environment for our students. Our air-conditioned classrooms are equipped with modern infrastructure and advanced technology, including high-definition screens, to foster an engaging and immersive educational experience. Our committed and well-trained staff guarantee that each student receives quality education along with personalized attention." },
+      { type: "p", text: "Every classroom is outfitted with modern, ergonomic furniture to promote comfort and concentration throughout the day. We encourage you to visit our campus and witness our inviting and academically stimulating environment. At our college, we genuinely prioritize our students' well-being and are dedicated to nurturing both personal development and academic success." },
     ],
   },
   {
     no: "02",
-    name: "B.Pharm",
+    id: "library",
+    name: "2 Campus → Library",
     blocks: [
-      { type: "section", text: "Overview" },
-      { type: "detail", text: "B.Pharm Course Details" },
-      { type: "table", rows: [
-        { label: "Eligibility", lines: [
-          "Plus 2 (MAJOR SUBJECTS : Physics,Chemistry Mandratory)",
-          "A pass in Diploma in Pharmacy is eligible for direct entry into II year of B.Pharmacy course (Lateral Entry)",
-        ] },
-        { label: "Course Duration", lines: ["4 Years"] },
-        { label: "Number of Semester", lines: ["8"] },
-        { label: "Course available since", lines: ["1992"] },
-      ] },
-      { type: "sub", text: "Becoming a Drug Expert: The Bachelor of Pharmacy (B.Pharm)" },
-      { type: "p", text: " Are you looking for a career that allows you to truly assist others while engaging with the field of medical science? The Bachelor of Pharmacy (B.Pharm) is the ideal starting point!" },
-      { type: "sub", text: "Unlocking Health: What is the Power of Pharmacy?" },
-      { type: "p", text: " The pharmacy sector plays a crucial role in healthcare, working in tandem with scientists to create and evaluate new treatments." },
-      { type: "p", text: "The pharmaceutical industry is committed to thorough research, development, and stringent testing of these innovations, thus guaranteeing their safety and effectiveness for public use." },
-      { type: "section", text: "Career" },
-      { type: "detail", text: "Career map after B.Pharm" },
-      { type: "p", text: "A B. Pharm degree truly opens numerous opportunities, whether you aim to work in the public sector or the private industry:" },
-      { type: "bullet", text: "• Pharmaceutical Company Positions: Join a large organization in areas such as Production (manufacturing), Quality Control (QC) (ensuring quality) or Research & Development (R&D) (formulating and developing the next blockbuster medication)." },
-      { type: "bullet", text: "• Launching Your Own Venture: Are you feeling entrepreneurial? You could establish your own manufacturing facility or a retail pharmacy." },
-      { type: "bullet", text: "• Hospital Pharmacist: You would collaborate with doctors and nurses within a hospital, overseeing patient medication plans. (Government / Private)." },
-      { type: "bullet", text: "• Drug Inspector: The quality watchdog! Your responsibility is to ensure that drugs and cosmetics are safe and comply with all regulations (Government)." },
-      { type: "bullet", text: "• Laboratory Analyst: In specialized laboratories, you would test medications to verify they are completely safe and effective." },
-      { type: "p", text: "The B. Pharm degree serves as your entry point to a rewarding career in the pharmaceutical field." },
+      { type: "label", text: "Library" },
+      { type: "p", text: "Our college library serves as a haven for knowledge seekers, featuring a vast array of books across numerous disciplines, such as Pharmaceutics, Pharmacy Practice, Pharmacognosy, Pharmaceutical Analysis, Pharmaceutical Chemistry, Community Pharmacy, Clinical & Pharmacology, Hospital Pharmacy, Pharmaceutical Regulatory Affairs and Computer Science." },
+      { type: "p", text: "We offer a diverse selection of national and international journals, along with subscriptions to E-Journals. The library is equipped with broadband internet access and Wi-Fi, ensuring students can easily connect to resources." },
+      { type: "p", text: "Our library creates a tranquil atmosphere that promotes learning and intellectual development. Our dedicated librarians and faculty members are always ready to support students with their research needs." },
+      { type: "p", text: "Additionally, the library is equipped with modern facilities, including computer terminals and printers. We invite you to explore our extensive collection, enjoy the joys of reading & uncover new knowledge at our college library." },
     ],
   },
   {
     no: "03",
-    name: "M.Pharm",
+    id: "laboratory",
+    name: "3 Campus → Laboratory",
     blocks: [
-      { type: "section", text: "Overview" },
-      { type: "detail", text: "M.Pharm Course Details" },
-      { type: "table", rows: [
-        { label: "Eligibility", lines: ["A pass in B.Pharmacy from any Recognized University"] },
-        { label: "Course Duration", lines: ["2 Years"] },
-        { label: "No. of Semester", lines: ["4"] },
-        { label: "Course available since", lines: ["2008"] },
-      ] },
-      { type: "p", text: "Hello! Are you prepared to enhance your pharmacy skills? Here is the Master of Pharmacy (M.Pharm) degree." },
-      { type: "sub", text: "Master of Pharmacy (M.Pharm): Become a Drug Specialist!" },
-      { type: "p", text: " The M.Pharm is a two-year postgraduate program—essentially Pharmacy Level 2.0! This degree is ideal for those aspiring to secure high-level positions and engage deeply in pharmaceutical research." },
-      { type: "p", text: "It bypasses the fundamentals and delves into highly advanced subjects. You will explore the intricate process of converting a novel chemical compound into the safe and effective medications we rely on. It focuses on mastering the science behind drug design and delivery!" },
-      { type: "sub", text: "Your Study Options (Branches)" },
-      { type: "p", text: " The M.Pharm program allows you to choose a specialization, enabling you to become a true expert in your field:" },
-      { type: "bullet", text: "• M.Pharm – Pharmaceutics: Concentrates on the processes of creating, formulating, and administering medications to the body (such as tablets, injections & creams)." },
-      { type: "bullet", text: "• M.Pharm – Pharmaceutical Analysis: Emphasizes the testing and verification of the quality, purity, and potency of drug excipients, Active Pharmaceutical Ingredients & final products." },
-      { type: "bullet", text: "• M.Pharm – Pharmacology: Centers on preclinical research related to metabolic disorders, reproductive studies, anticancer research & more." },
-      { type: "bullet", text: "• M. Pharm – Pharmacy Practice: Aims to enhance clinical pharmacy education, research & patient-centered pharmaceutical care." },
-      { type: "bullet", text: "• M.Pharm – Regulatory Affairs: Prepares students to connect scientific innovation with legal compliance in industries that develop pharmaceuticals, medical devices & cosmetics." },
-      { type: "p", text: "If you aspire to a highly specialized, research-driven career at the cutting edge of medicine, pursuing an M. Pharm is certainly the right choice!" },
-      { type: "section", text: "Career" },
-      { type: "detail", text: "Why go for the M. Pharm?" },
-      { type: "p", text: " This course is highly focused on career advancement and serves as your gateway to success, particularly if you are passionate about R&D (Research & Development). Upon earning your Master’s degree, you are not merely seeking employment—you are aiming for a career with vast potential, such as:" },
-      { type: "bullet", text: "• Research: Take on roles like Research Associate, Research Assistant or even Scientist, where you can contribute to groundbreaking medical discoveries." },
-      { type: "bullet", text: "• Pharma Entrepreneur: Are you ready to lead? Launch your own specialized Pharma Manufacturing Company." },
-      { type: "bullet", text: "• Marketing Executive: Be the driving force behind the strategy to bring specialized drugs to market." },
-      { type: "bullet", text: "• College Lecturer/Asst. Professor: Educate the future pharmacists of tomorrow!" },
-      { type: "bullet", text: "• Specialized Roles in Pharma Companies: Secure advanced positions in Production, Quality Control (QC) or R&D within a pharmaceutical firm." },
-      { type: "bullet", text: "• Drug Testing Analyst: Join cutting-edge Drug Testing Laboratories, ensuring that medications are completely safe and of the highest quality." },
-      { type: "bullet", text: "• Hospital Lead Pharmacist: Oversee intricate drug regimens in hospitals (both Government and Private)." },
+      { type: "p", text: "We are proud to offer our students exceptional laboratory facilities. Equipped with state-of-the-art instruments and apparatus, students can safely participate in a variety of hands-on experiments pertinent to their selected fields. Our lab equipment is consistently updated and our extensive assortment of glassware & chemicals is readily accessible for student use. Our labs in Pharmaceutics, Pharmaceutical Chemistry, Pharmacology, Pharmacy Practice, Pharmacognosy, Pharmaceutical Analysis, Pharmaceutical Biotechnology, Human Anatomy and Physiology and Computer Science adhere to the highest safety and quality standards, guaranteeing that students enjoy valuable laboratory experiences." },
     ],
   },
   {
     no: "04",
-    name: "Doctor of Pharmacy",
+    id: "drug-information-centre",
+    name: "4 Campus → Drug Information Centre",
     blocks: [
-      { type: "section", text: "Overview" },
-      { type: "detail", text: "Doctor of Pharmacy Course Details" },
-      { type: "table", rows: [
-        { label: "Eligibility", lines: ["Plus 2 (MAJOR SUBJECTS: Physics, Chemistry Mandatory)"] },
-        { label: "Course Duration", lines: ["6 Years"] },
-        { label: "Course available since", lines: ["2013"] },
-      ] },
-      { type: "p", text: "Alright, get ready! If you are committed and enthusiastic about becoming the leading expert in drug therapy, this course is for you." },
-      { type: "sub", text: "Doctor of Pharmacy (Pharm.D):" },
-      { type: "p", text: "This degree is far from ordinary; the Pharm.D (Doctor of Pharmacy) represents a transformative shift in pharmacy education. This program turns traditional learning into innovative practices, equipping students to excel in leadership and service to society. It is a thorough, clinically-focused six-year curriculum tailored for those who bypass the Master’s degree to pursue the pinnacle of professional practice!" },
-      { type: "p", text: "You will embark on five rigorous years of demanding academic coursework, culminating in a comprehensive one-year practical internship. Upon graduation, you will not merely be a pharmacist; you will be a doctor!" },
-      { type: "section", text: "Career" },
-      { type: "detail", text: "Your Future is High-End: Career Opportunities" },
-      { type: "p", text: "The Pharm. D qualification places you in prestigious positions that emphasize patient care and advanced clinical research. You will be eligible for roles such as:" },
-      { type: "bullet", text: "• Clinical Pharmacist in Hospitals: This is the primary role! You collaborate with doctors, making crucial decisions regarding patient medications, dosages and drug interactions. Your contribution is vital for saving lives!" },
-      { type: "bullet", text: "• Clinical Research Associate (CRA): Engage in clinical trials—the process of testing new medications on individuals. You play a crucial role in introducing new treatments to the world." },
-      { type: "bullet", text: "• Regulatory Associate: You are the specialist who assists pharmaceutical companies in navigating the intricate government regulations (such as those from the FDA or local regulatory agencies) to secure drug approvals." },
-      { type: "bullet", text: "• Drug Safety Associate: You act as the investigator who oversees the performance of drugs once they are available on the market, ensuring that patient safety remains the top priority." },
-      { type: "bullet", text: "• Medical Writer: Leverage your extensive clinical expertise to create scientific documents, reports & educational resources for the industry." },
-      { type: "bullet", text: "• Medical Transcription and Coding Executive: Convert clinical notes and procedures into standardized codes—an essential, specialized function in healthcare documentation." },
-      { type: "p", text: "The Pharm. D is designed for individuals seeking a direct route to advanced clinical practice and leadership in the field of medicine!" },
+      { type: "p", text: "The Drug Information Centre (DIC), located within Dr. Kamakshi Memorial Hospital in Pallikaranai, a tertiary-care facility with 300 beds, serves as a prime example of a modern resource hub. It offers comprehensive access to various drug information dissemination tools, including internet-enabled computers, books & software applications like the esteemed Lexicomp. The DIC is committed to providing timely, evidence-based answers to inquiries from both healthcare professionals and patients, with the goal of promoting the safe and responsible use of pharmaceutical products." },
     ],
   },
   {
     no: "05",
-    name: "Doctor of Pharmacy (PB)",
+    id: "animal-house-facility",
+    name: "5 Campus →Animal House Facility",
     blocks: [
-      { type: "section", text: "Overview" },
-      { type: "detail", text: "Doctor of Pharmacy (Post Baccularate) Course Details" },
-      { type: "table", rows: [
-        { label: "Eligibility", lines: ["B.pharm"] },
-        { label: "Course Duration", lines: [
-          "2 years of academic study (advanced coursework in clinical pharmacy).",
-          "1 year of compulsory internship or residency in a hospital/clinical setting.",
-        ] },
-        { label: "Course available since", lines: ["1992"] },
-      ] },
-      { type: "sub", text: "The Ultimate Pharmacy Course: Pharm. D (Post Baccalaureate)!" },
-      { type: "p", text: "Congratulations on earning your Pharmacy degree (B. Pharm)! That's fantastic! You won't need to begin the entire 6-year Pharm. D program from the beginning. The Pharm.D (Post Baccalaureate) offers you a direct path to obtaining your doctoral degree!" },
-      { type: "p", text: "This focused program is essentially a three-year course tailored specifically for B.Pharm graduates. You dive straight into advanced training, preparing you to become a Clinical Pharmacist." },
-      { type: "sub", text: "The Breakdown (Short and Sweet)" },
-      { type: "bullet", text: "• Eligibility: A B.Pharm degree is REQUIRED." },
-      { type: "bullet", text: "• Duration: Total of 3 Years (This comprises 2 rigorous years of academic study followed by a mandatory 1-year internship)." },
-      { type: "bullet", text: "• The Major Advantage: Achieve the internationally acknowledged title of \"Doctor of Pharmacy\" in only three years post your Bachelor’s!" },
-      { type: "section", text: "Career" },
-      { type: "detail", text: "High-Impact Career Zones" },
-      { type: "p", text: "This qualification positions you firmly within the realms of clinical practice, patient care, and advanced research. You will be eligible for prestigious roles such as:" },
-      { type: "bullet", text: "• Clinical Pharmacist in Hospitals: This is the peak of the profession! You collaborate closely with physicians, enhancing drug therapy and saving lives on the hospital floor." },
-      { type: "bullet", text: "• Clinical Research Associate (CRA): Engage directly in the testing of innovative medications during human trials." },
-      { type: "bullet", text: "• Regulatory Associate: Assist in navigating new drugs through the intricate government approval process." },
-      { type: "bullet", text: "• Drug Safety Associate / Pharmacovigilance Specialist: Your role is vital: overseeing medications once they are available to ensure patient safety." },
-      { type: "bullet", text: "• Medical Writer / Drug Information Specialist: Leverage your extensive knowledge to create clinical reports and deliver expert medical information." },
-      { type: "bullet", text: "• The Pharm. D (Post Baccalaureate) is designed for B.Pharm graduates who wish to bypass M. Pharm." },
+      { type: "p", text: "The Animal House at our institution is a meticulously maintained and ethically operated facility designed to facilitate pre-clinical and pharmacological research endeavors. It offers a regulated environment for the care and upkeep of laboratory animals utilized in scientific studies." },
+      { type: "p", text: "Our facility adheres rigorously to the guidelines set forth by the Committee for the Purpose of Control and Supervision of Experiments on Animals (CPCSEA), Government of India (Registration No. 1395/a/10/CPCSEA), guaranteeing the utmost standards of animal welfare and ethical adherence." },
     ],
   },
   {
     no: "06",
-    name: "Recognized Ph.D. Research Centre",
+    id: "transport",
+    name: "6 Campus → TRANSPORT",
     blocks: [
-      { type: "sub", text: "The Tamil Nadu Dr. M.G.R. Medical University" },
-      { type: "sub", text: "Our College is Recognized as a Ph.D. Research Centre" },
-      { type: "p", text: "We are pleased to share that K.K. College of Pharmacy, located in Gerugambakkam, Chennai, has received official recognition as a Research Centre by The Tamil Nadu Dr. M.G.R. Medical University, Chennai, to conduct Ph.D. research programmes." },
-      { type: "p", text: "The recognition covers the following departments:" },
-      { type: "p", text: "Pharmaceutics" },
-      { type: "p", text: "Pharmacology" },
-      { type: "p", text: "Pharmaceutical Analysis" },
-      { type: "p", text: "This milestone represents a major accomplishment in our pursuit of academic excellence and research innovation." },
-      { type: "p", text: "This recognition enables our institution to mentor and support doctoral scholars in leading-edge fields of pharmaceutical sciences, thereby contributing to progress in healthcare and drug development." },
-      { type: "sub", text: "Recognized Ph.D. Research Guides" },
-      { type: "p", text: "Our college proudly hosts a team of highly qualified and experienced research guides approved by the University:" },
-      { type: "guides", items: [
-        { name: "Dr. A. Meena, M.Pharm., Ph.D.", role: "Professor & Principal – 32 yrs exp.", mail: "kkcpchennai@gmail.com" },
-        { name: "Dr. A.SHANTHY M.Pharm., Ph.D.,", role: "Vice-Principal & HoD – 20 yrs exp.", mail: "vp@kkcp.ac.in" },
-        { name: "Dr. B. Premkumar, M.Pharm., Ph.D.", role: "Professor & Head – 16 yrs exp.", mail: "hodcologykkcp@gmail.com" },
-        { name: "Dr. S. Ramalakshmi, M.Pharm., Ph.D.", role: "Professor & Head – 19 yrs exp.", mail: "sramalakshmi@rediffmail.com" },
-        { name: "Dr. M. Vani, M.Pharm., Ph.D.", role: "Professor – 18 yrs exp.", mail: "mandrummoorthy@gmail.com" },
-      ] },
-      { type: "p", text: "These faculty members are committed to cultivating a research-oriented culture and mentoring scholars in innovative projects that address socially relevant issues in line with national pharmaceutical requirements." },
-      { type: "sub", text: "Join Our Research Community" },
-      { type: "p", text: "K.K. College of Pharmacy invites enthusiastic researchers to enroll in our Ph.D. programme and make a meaningful contribution to the dynamic field of pharmaceutical sciences." },
+      { type: "label", text: "Reliable and Safe College Transport" },
+      { type: "p", text: "Our college provides convenient transportation services that link students to different areas of the city." },
+      { type: "p", text: "With skilled and timely drivers, we guarantee that students arrive at their destinations safely and punctually." },
+      { type: "p", text: "Our fleet of well-kept buses is outfitted with contemporary safety features, such as GPS tracking and CCTV cameras, ensuring peace of mind for both students and their parents." },
+      { type: "p", text: "From morning pickups to evening drop-offs, our transportation system emphasizes comfort, safety and dependability, demonstrating our dedication to student convenience." },
+    ],
+  },
+  {
+    no: "07",
+    id: "security",
+    name: "7 Campus → Security",
+    blocks: [
+      { type: "p", text: "The institute has a foolproof security system in place. There is a strong emphasis on maintaining a stringent security protocol throughout the campus. The entire college grounds are monitored by CCTV cameras, and we have highly trained security personnel stationed at the college entrance." },
+      { type: "p", text: "In total, there are 84 state-of-the-art Hikvision cameras that provide top-notch recording quality. These measures assist in observing student behavior and ensuring their safety and security." },
+    ],
+  },
+  {
+    no: "08",
+    id: "ro-water-plant",
+    name: "8 Campus → RO Water Plant",
+    blocks: [
+      { type: "p", text: "The Institution operates a Reverse Osmosis (RO) plant to supply drinking water to college students. The entire campus is equipped with pure Reverse Osmosis (RO) drinking water, complemented by water coolers on every floor to ensure that students have access to clean and safe drinking water." },
+    ],
+  },
+  {
+    no: "09",
+    id: "hostel-facilities",
+    name: "9 Campus → Hostel Facilities",
+    blocks: [
+      { type: "p", text: "Our hostel is situated directly across from our campus, offering an optimal learning atmosphere and cost-effectiveness. We provide distinct accommodations for girls and boys." },
     ],
   },
 ];
 
 function Block({ block }) {
-  if (block.type === "section") return <div className="course-section">{block.text}</div>;
-  if (block.type === "detail") return <h3 className="course-detail">{block.text}</h3>;
-  if (block.type === "sub") return <h4 className="course-sub">{block.text}</h4>;
+  if (block.type === "label") return <h5 className="dept-label">{block.text}</h5>;
   if (block.type === "bullet") return <p className="dept-text dept-bullet">{block.text}</p>;
-  if (block.type === "table")
-    return (
-      <table className="course-table">
-        <tbody>
-          {block.rows.map((row, i) => (
-            <tr key={i}>
-              <th>{row.label}</th>
-              <td>
-                {row.lines.map((line, j) => (
-                  <span key={j}>{line}</span>
-                ))}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    );
-  if (block.type === "guides")
-    return (
-      <div className="course-guides">
-        {block.items.map((g, i) => (
-          <div className="course-guide" key={i}>
-            <div className="g-name">{g.name}</div>
-            <div className="g-role">{g.role}</div>
-            <div className="g-mail">
-              <a href={`mailto:${g.mail}`}>{g.mail}</a>
-            </div>
-          </div>
-        ))}
-      </div>
-    );
   return <p className="dept-text">{block.text}</p>;
+}
+
+function Criteria({ title, items }) {
+  return (
+    <div className="filter-criteria">
+      <h5 className="criteria-title">{title}</h5>
+      <ul className="criteria-checkboxes">
+        {items.map((it) => (
+          <li className="criteria-item" key={it.id}>
+            <a className="criteria-link" href={it.href}>{it.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export function CloneTree() {
@@ -240,155 +153,92 @@ export function CloneTree() {
         <CloneHeader />
         <main id="KKCP-content" className="KKCP-content-wrapper">
           <div data-elementor-type={"wp-page"} data-elementor-id={"7888"} className="elementor elementor-7888">
-            {/* Page banner — same design as Student Services (image bg + dark overlay + white title) */}
+            {/* Hero banner (Student Services / Departments design) */}
             <div className="elementor-element elementor-element-146c4d0 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"146c4d0"} data-element_type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
               <div className="e-con-inner">
                 <div className="elementor-element elementor-element-da6b75b elementor-widget elementor-widget-rstb-breadcrumb" data-id={"da6b75b"} data-element_type={"widget"} data-widget_type={"rstb-breadcrumb.default"}>
-                  <div className="rstb-breadcrumb"><span property="itemListElement"><a property="item" title="Go to KKCP." href="/" className="home"><span property="name">Home</span></a><meta property="position" content="1" /></span><span className="item-separator"><svg className="e-font-icon-svg e-fas-angle-double-right" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z" /></svg></span><span property="itemListElement"><span property="name" className="post post-page current-item">Courses</span><meta property="url" content="/courses/" /><meta property="position" content="2" /></span></div>
+                  <div className="rstb-breadcrumb"><span property="itemListElement"><a property="item" title="Go to KKCP." href="/" className="home"><span property="name">Home</span></a><meta property="position" content="1" /></span><span className="item-separator"><svg className="e-font-icon-svg e-fas-angle-double-right" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z" /></svg></span><span property="itemListElement"><span property="name" className="post post-page current-item">Campus</span><meta property="url" content="/campus/" /><meta property="position" content="2" /></span></div>
                 </div>
-                <div className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Courses</h1></div>
+                <div className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Campus</h1></div>
                 <div className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider" data-id={"4626c23"} data-element_type={"widget"} data-widget_type={"rs-divider.default"}><div className="rs-divider dot-enable"><span> </span></div></div>
                 <div className="elementor-element elementor-element-419a788 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id={"419a788"} data-element_type={"widget"} data-widget_type={"text-editor.default"}><p>Education goes beyond textbooks and classrooms. We believe in empowering students to explore their passions challenge conventions.</p></div>
                 <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.png" alt="bnr-arrow-1-1" /></div></div>
               </div>
             </div>
-          </div>
 
-          <style>{`
-            html { scroll-behavior: smooth; }
-            .crs-page { background-color: #F6F4EE; font-family: "Roboto", sans-serif; }
-            .crs-wrap {
-              max-width: 1200px; margin: 0 auto; padding: 60px 20px 80px;
-              display: grid; grid-template-columns: 280px 1fr; gap: 34px; align-items: start;
-            }
-
-            /* sticky sidebar nav of course titles */
-            .crs-sidebar {
-              position: sticky; top: 24px; align-self: start;
-              background: #fff; border: 1px solid #E4E4E4; border-radius: 14px;
-              padding: 24px 22px; box-shadow: 0 4px 30px rgba(0,0,0,.06);
-            }
-            .crs-sidebar .sidebar-title {
-              font-family: "Bitter", serif; font-size: 18px; font-weight: 600; color: #051435;
-              margin: 0 0 16px; padding-bottom: 12px; border-bottom: 2px solid #FDC72F;
-            }
-            .crs-nav { list-style: none; margin: 0; padding: 0; }
-            .crs-nav li { margin: 0 0 4px; }
-            .crs-nav a {
-              display: flex; gap: 11px; align-items: baseline; padding: 10px 12px;
-              border-radius: 8px; color: #3A3F46; text-decoration: none;
-              font-size: 15px; line-height: 1.4; transition: background .15s, color .15s;
-            }
-            .crs-nav a:hover { background: #EAF1FA; color: #034EA2; }
-            .crs-nav a .n { flex: 0 0 auto; color: #034EA2; font-weight: 600; font-family: "Bitter", serif; }
-
-            /* main column */
-            .crs-main { min-width: 0; }
-            .crs-card {
-              background: #fff; border: 1px solid #E4E4E4; border-top: 4px solid #FDC72F;
-              border-radius: 16px; padding: 36px 40px; margin-bottom: 32px;
-              box-shadow: 0 4px 30px rgba(0,0,0,.06); scroll-margin-top: 24px;
-            }
-            .crs-card-head { display: flex; align-items: center; gap: 16px; margin-bottom: 6px; }
-            .crs-no {
-              flex: 0 0 auto; width: 52px; height: 52px; border-radius: 13px;
-              background: linear-gradient(135deg, #034EA2 0%, #003A65 100%);
-              color: #fff; font-family: "Bitter", serif; font-weight: 600; font-size: 19px;
-              display: flex; align-items: center; justify-content: center;
-            }
-            .crs-title {
-              font-family: "Bitter", serif; color: #051435; font-weight: 600;
-              font-size: 26px; line-height: 1.25; margin: 0;
-            }
-
-            .dept-text { color: #4C4C4C; font-size: 16px; line-height: 1.8; margin: 0 0 12px; }
-            .dept-bullet { padding-left: 1.5em; text-indent: -1.5em; }
-
-            .course-section {
-              display: inline-block; background: #EAF1FA; color: #034EA2;
-              font-family: "Bitter", serif; font-weight: 600; font-size: 13px;
-              letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px;
-              border-radius: 999px; margin: 24px 0 14px;
-            }
-            .course-detail {
-              font-family: "Bitter", serif; color: #003A65; font-weight: 600;
-              font-size: 20px; margin: 0 0 14px; line-height: 1.3;
-            }
-            .course-sub {
-              font-family: "Bitter", serif; color: #034EA2; font-weight: 600;
-              font-size: 17px; margin: 20px 0 10px; line-height: 1.4;
-            }
-            .course-table { width: 100%; border-collapse: collapse; margin: 6px 0 18px; }
-            .course-table th {
-              text-align: left; vertical-align: top; width: 34%; padding: 11px 15px;
-              background: #F6F8FB; color: #003A65; font-weight: 600; font-size: 15px;
-              font-family: "Bitter", serif; border: 1px solid #E4E4E4;
-            }
-            .course-table td {
-              padding: 11px 15px; border: 1px solid #E4E4E4; color: #4C4C4C;
-              font-size: 15px; line-height: 1.7;
-            }
-            .course-table td span { display: block; }
-            .course-table td span + span { margin-top: 6px; }
-            .course-guides {
-              display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-              gap: 16px; margin: 10px 0 14px;
-            }
-            .course-guide {
-              background: #F6F8FB; border: 1px solid #E4E4E4; border-radius: 12px; padding: 18px 20px;
-            }
-            .course-guide .g-name {
-              font-family: "Bitter", serif; color: #003A65; font-weight: 600;
-              font-size: 16px; line-height: 1.35;
-            }
-            .course-guide .g-role { color: #4C4C4C; font-size: 14px; margin: 5px 0; }
-            .course-guide .g-mail a { color: #034EA2; text-decoration: none; font-size: 14px; word-break: break-word; }
-            .course-guide .g-mail a:hover { text-decoration: underline; }
-
-            @media (max-width: 900px) {
-              .crs-wrap { grid-template-columns: 1fr; gap: 24px; }
-              .crs-sidebar { position: static; }
-            }
-            @media (max-width: 600px) {
-              .crs-card { padding: 26px 22px; }
-              .crs-title { font-size: 22px; }
-              .crs-no { width: 44px; height: 44px; font-size: 17px; }
-              .course-table th { width: 42%; padding: 9px 11px; }
-              .course-table td { padding: 9px 11px; }
-            }
-          `}</style>
-
-          <div className="crs-page elementor-element e-flex e-con-boxed e-con e-parent e-lazyloaded" data-element_type={"container"}>
-            <div className="crs-wrap">
-              <aside className="crs-sidebar">
-                <h4 className="sidebar-title">Courses</h4>
-                <ul className="crs-nav">
-                  {COURSES.map((course) => (
-                    <li key={course.no}>
-                      <a href={`#course-${course.no}`}>
-                        <span className="n">{course.no}</span>
-                        <span>{course.name}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </aside>
-
-              <div className="crs-main">
-                {COURSES.map((course) => (
-                  <article className="crs-card" id={`course-${course.no}`} key={course.no}>
-                    <div className="crs-card-head">
-                      <span className="crs-no">{course.no}</span>
-                      <h2 className="crs-title">{course.name}</h2>
+            {/* Academic-filter area: sidebar + facility cards */}
+            <div className="elementor-element elementor-element-f401be2 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"f401be2"} data-element_type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
+              <div className="e-con-inner">
+                <div className="elementor-element elementor-element-57146e5 elementor-widget elementor-widget-rs-academic-filter" data-id={"57146e5"} data-element_type={"widget"} data-widget_type={"rs-academic-filter.default"}>
+                  <div className="rs-academic-filter-area" data-widget-id={"57146e5"}>
+                    <div className="filter-sidebar-overly"></div>
+                    <div className="filter-sidebar">
+                      <h4 className="sidebar-title">Filter By<span className="filter-reset-btn" style={{display: "none"}}>Reset</span></h4>
+                      <Criteria title="Campus" items={CAMPUS_FILTERS} />
+                      <Criteria title="Programs" items={PROGRAMS} />
                     </div>
-                    {course.blocks.map((block, i) => (
-                      <Block block={block} key={i} />
-                    ))}
-                  </article>
-                ))}
+                    <div className="filter-content">
+                      <div className="filter-top-bar">
+                        <button className="filter-toggle-btn"><i className="ri-menu-2-fill"></i></button>
+                        <span className="filter-result">Total <span className="result-count">9</span> results found</span>
+                        <span className="filter-search-wrap">
+                          <input className="filter-search-input" type="text" placeholder="Enter keyword" />
+                          <span className="search-icon"><svg className="e-font-icon-svg e-fas-search" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" /></svg></span>
+                        </span>
+                      </div>
+                      <div className="filter-items-wrapper">
+                        {FACILITIES.map((f, idx) => (
+                          <div className="filter-item dept-filter-item" id={f.id} key={f.no}>
+                            <div className="item-thumbnail">
+                              <img loading="lazy" decoding="async" width="770" height="660" src={THUMBS[idx % THUMBS.length]} className="attachment-large size-large wp-post-image" alt={f.name} />
+                            </div>
+                            <div className="item-content">
+                              <h4 className="item-title"><a href="#">{f.name}</a></h4>
+                              <ul className="item-meta"><li><a href="#">Campus {f.no}</a></li></ul>
+                              <div className="item-desc dept-desc">
+                                {f.blocks.map((block, i) => (
+                                  <Block block={block} key={i} />
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+          <style>{`
+            /* Sticky sidebar */
+            .elementor-7888 .rs-academic-filter-area { align-items: flex-start; }
+            .elementor-7888 .filter-sidebar {
+              position: sticky; top: 100px; align-self: flex-start;
+              max-height: calc(100vh - 120px); overflow-y: auto;
+            }
+            /* Sidebar items as anchor links */
+            .elementor-7888 .criteria-link {
+              display: block; color: #4C4C4C; text-decoration: none;
+              font-size: 15px; line-height: 1.45; transition: color .2s;
+            }
+            .elementor-7888 .criteria-link:hover { color: #034EA2; }
+            /* Offset anchor targets so they clear the sticky site header */
+            .elementor-7888 .dept-filter-item { align-items: flex-start; scroll-margin-top: 120px; }
+            .elementor-7888 .dept-desc { margin-top: 15px; }
+            .elementor-7888 .dept-desc .dept-label {
+              font-family: "Bitter", serif; color: #034EA2; font-weight: 600;
+              font-size: 17px; margin: 20px 0 8px; position: relative; padding-bottom: 8px;
+            }
+            .elementor-7888 .dept-desc .dept-label::after {
+              content: ""; position: absolute; left: 0; bottom: 0;
+              width: 38px; height: 3px; background: #FDC72F; border-radius: 2px;
+            }
+            .elementor-7888 .dept-desc .dept-text { color: #4C4C4C; font-size: 15px; line-height: 1.8; margin: 0 0 10px; }
+            .elementor-7888 .dept-desc .dept-text:first-child { margin-top: 0; }
+            .elementor-7888 .dept-desc .dept-bullet { padding-left: 1.4em; text-indent: -1.4em; }
+          `}</style>
         </main>
         <CloneFooter />
       </div>
