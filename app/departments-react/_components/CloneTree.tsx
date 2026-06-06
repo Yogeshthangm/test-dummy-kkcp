@@ -16,14 +16,6 @@ const DEPARTMENT_FILTERS = [
   { id: "pharmacy-practice", label: "Department of Pharmacy Practice", href: "#pharmacy-practice" },
   { id: "regulatory-affairs", label: "Department of Regulatory Affairs", href: "#regulatory-affairs" },
 ];
-const PROGRAMS = [
-  { id: "d-pharm", label: "D. Pharm", href: "/diploma-in-pharmacy/" },
-  { id: "b-pharm", label: "B. Pharm", href: "/bachelor-of-pharmacy/" },
-  { id: "pharm-d", label: "Pharm. D", href: "/doctor-of-pharmacy/" },
-  { id: "m-pharm", label: "M. Pharm", href: "/master-of-pharmacy/" },
-  { id: "ph-d", label: "Ph. D", href: "/ph-d/" },
-];
-
 const THUMBS = [
   "/all-programs/assets/0054__acc-1-min.jpg",
   "/all-programs/assets/0055__acc-2-min.jpg",
@@ -230,7 +222,6 @@ export function CloneTree() {
                     <div className="filter-sidebar">
                       <h4 className="sidebar-title">Filter By<span className="filter-reset-btn" style={{display: "none"}}>Reset</span></h4>
                       <Criteria title="Departments" items={DEPARTMENT_FILTERS} />
-                      <Criteria title="Programs" items={PROGRAMS} />
                     </div>
                     <div className="filter-content">
                       <div className="filter-top-bar">
@@ -271,16 +262,20 @@ export function CloneTree() {
                Clip horizontally (no h-scrollbar) but keep vertical visible so the
                page (window) stays the scroll root and the sidebar can stick. */
             .clone-root { overflow-x: clip; overflow-y: visible; }
-            /* Sticky sidebar */
+            /* Smaller, sticky sidebar that stays within its column */
             .elementor-7888 .rs-academic-filter-area { align-items: flex-start; }
             .elementor-7888 .filter-sidebar {
+              width: 220px !important; flex: 0 0 220px; padding: 22px;
               position: sticky; top: 100px; align-self: flex-start;
               max-height: calc(100vh - 120px); overflow-y: auto;
             }
+            .elementor-7888 .filter-sidebar .sidebar-title { font-size: 17px; padding-bottom: 14px; margin-bottom: 16px; }
+            .elementor-7888 .filter-sidebar .criteria-title { font-size: 14px; margin-bottom: 10px; }
+            .elementor-7888 .filter-sidebar .criteria-item { margin-bottom: 6px; }
             /* Sidebar items as anchor links */
             .elementor-7888 .criteria-link {
               display: block; color: #4C4C4C; text-decoration: none;
-              font-size: 15px; line-height: 1.45; transition: color .2s;
+              font-size: 14px; line-height: 1.4; transition: color .2s;
             }
             .elementor-7888 .criteria-link:hover { color: #034EA2; }
             /* Offset anchor targets so they clear the sticky site header */
