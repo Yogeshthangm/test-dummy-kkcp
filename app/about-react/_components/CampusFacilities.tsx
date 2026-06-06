@@ -135,6 +135,11 @@ export function CampusFacilities() {
           transform: translateY(-3px);
           box-shadow: 0 12px 30px rgba(3, 78, 162, 0.12);
         }
+        @media (min-width: 860px) {
+          .campus-facilities .cf-card--full {
+            grid-column: 1 / -1;
+          }
+        }
         .campus-facilities .cf-heading {
           font-family: 'Bitter', serif;
           font-weight: 600;
@@ -164,8 +169,13 @@ export function CampusFacilities() {
       <div className="cf-inner">
         <h2 className="cf-title">Campus</h2>
         <div className="cf-grid">
-          {FACILITIES.map((f) => (
-            <article className="cf-card" key={f.heading}>
+          {FACILITIES.map((f, idx) => (
+            <article
+              className={
+                idx === FACILITIES.length - 1 ? "cf-card cf-card--full" : "cf-card"
+              }
+              key={f.heading}
+            >
               <h3 className="cf-heading">{f.heading}</h3>
               {f.subtitle ? <p className="cf-subtitle">{f.subtitle}</p> : null}
               {f.paras.map((p, i) => (
