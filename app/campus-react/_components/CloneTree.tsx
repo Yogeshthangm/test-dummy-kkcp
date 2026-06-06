@@ -148,11 +148,11 @@ function Criteria({ title, items }) {
 
 export function CloneTree() {
   return (
-    <div className="wp-singular page-template-default page page-id-campus wp-theme-KKCP gsap-enable elementor-default elementor-template-full-width elementor-kit-14 elementor-page elementor-page-campus e--ua-blink e--ua-mac e--ua-webkit" data-elementor-device-mode={"desktop"}>
+    <div className="wp-singular page-template-default page page-id-7888 wp-theme-KKCP gsap-enable elementor-default elementor-template-full-width elementor-kit-14 elementor-page elementor-page-7888 e--ua-blink e--ua-mac e--ua-webkit" data-elementor-device-mode={"desktop"}>
       <div id="KKCP-page" className="KKCP-page-wrapper">
         <CloneHeader />
         <main id="KKCP-content" className="KKCP-content-wrapper">
-          <div data-elementor-type={"wp-page"} data-elementor-id={"campus"} className="elementor elementor-campus">
+          <div data-elementor-type={"wp-page"} data-elementor-id={"7888"} className="elementor elementor-7888">
             {/* Hero banner (Student Services / Departments design) */}
             <div className="elementor-element elementor-element-146c4d0 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"146c4d0"} data-element_type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
               <div className="e-con-inner">
@@ -213,31 +213,31 @@ export function CloneTree() {
 
           <style>{`
             /* Sticky sidebar */
-            .elementor-campus .rs-academic-filter-area { align-items: flex-start; }
-            .elementor-campus .filter-sidebar {
+            .elementor-7888 .rs-academic-filter-area { align-items: flex-start; }
+            .elementor-7888 .filter-sidebar {
               position: sticky; top: 100px; align-self: flex-start;
               max-height: calc(100vh - 120px); overflow-y: auto;
             }
             /* Sidebar items as anchor links */
-            .elementor-campus .criteria-link {
+            .elementor-7888 .criteria-link {
               display: block; color: #4C4C4C; text-decoration: none;
               font-size: 15px; line-height: 1.45; transition: color .2s;
             }
-            .elementor-campus .criteria-link:hover { color: #034EA2; }
+            .elementor-7888 .criteria-link:hover { color: #034EA2; }
             /* Offset anchor targets so they clear the sticky site header */
-            .elementor-campus .dept-filter-item { align-items: flex-start; scroll-margin-top: 120px; }
-            .elementor-campus .dept-desc { margin-top: 15px; }
-            .elementor-campus .dept-desc .dept-label {
+            .elementor-7888 .dept-filter-item { align-items: flex-start; scroll-margin-top: 120px; }
+            .elementor-7888 .dept-desc { margin-top: 15px; }
+            .elementor-7888 .dept-desc .dept-label {
               font-family: "Bitter", serif; color: #034EA2; font-weight: 600;
               font-size: 17px; margin: 20px 0 8px; position: relative; padding-bottom: 8px;
             }
-            .elementor-campus .dept-desc .dept-label::after {
+            .elementor-7888 .dept-desc .dept-label::after {
               content: ""; position: absolute; left: 0; bottom: 0;
               width: 38px; height: 3px; background: #FDC72F; border-radius: 2px;
             }
-            .elementor-campus .dept-desc .dept-text { color: #4C4C4C; font-size: 15px; line-height: 1.8; margin: 0 0 10px; }
-            .elementor-campus .dept-desc .dept-text:first-child { margin-top: 0; }
-            .elementor-campus .dept-desc .dept-bullet { padding-left: 1.4em; text-indent: -1.4em; }
+            .elementor-7888 .dept-desc .dept-text { color: #4C4C4C; font-size: 15px; line-height: 1.8; margin: 0 0 10px; }
+            .elementor-7888 .dept-desc .dept-text:first-child { margin-top: 0; }
+            .elementor-7888 .dept-desc .dept-bullet { padding-left: 1.4em; text-indent: -1.4em; }
           `}</style>
         </main>
         <CloneFooter />
