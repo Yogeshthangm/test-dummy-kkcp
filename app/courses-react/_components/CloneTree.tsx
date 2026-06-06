@@ -1,393 +1,73 @@
 // @ts-nocheck
 import { CloneHeader } from "@/components/CloneHeader";
 import { CloneFooter } from "@/components/CloneFooter";
+// @ts-nocheck
+// Auto-generated DOM→JSX emit of the mirrored page (see website-cloner emit-react.cjs).
+// Real React tree (no iframe, no dangerouslySetInnerHTML). Source class names + inline styles
+// preserved; the source CSS lives scoped in student-services-inline.css. Asset paths absolute to /all-programs/.
 /* eslint-disable */
-// Hand-authored React rebuild of the Courses page. Uses the SAME design as the
-// Student Services / Departments pages: the theme's image-background page banner
-// (styled by /all-programs/clone-theme.css rules keyed to the elementor-7888 element
-// IDs reused below), then the Student Services result-card layout (image thumbnail +
-// content) holding the verbatim course write-ups in matching theme typography.
-// All course copy is inserted VERBATIM exactly as supplied — no rewriting, no
-// grammar/typo correction; ampersands / en + em dashes / curly apostrophes preserved.
-
-const COURSES = [
-  {
-    no: "01",
-    name: "D.Pharm",
-    blocks: [
-      { type: "section", text: "Overview" },
-      { type: "detail", text: "D.Pharm. Course Details" },
-      { type: "table", rows: [
-        { label: "Eligibility", lines: ["Plus 2 (MAJOR SUBJECTS: Physics, Chemistry Mandatory)"] },
-        { label: "Course Duration", lines: ["2 Years"] },
-        { label: "Course available since", lines: ["1992"] },
-      ] },
-      { type: "sub", text: "Your Quick Path to Becoming a Pharmacist: The D. Pharm!" },
-      { type: "p", text: "Hey, are you eager to enter the medical field but prefer not to commit to four years of college immediately? The Diploma in Pharmacy (D. Pharm) is the ideal choice for you!" },
-      { type: "p", text: "This is a highly focused, 2-year program aimed at preparing you for the job market swiftly. Consider it your fast track to becoming a certified Registered Pharmacist, qualified to work in hospitals and pharmacies." },
-      { type: "sub", text: "Why Opt for the D.Pharm? (Key Benefits)" },
-      { type: "bullet", text: "• Job in 2 Years! Seriously, this is a significant advantage if you want to start earning money quickly." },
-      { type: "bullet", text: "• No Dead Ends: You will receive a solid, reputable qualification that paves the way for excellent job opportunities." },
-      { type: "bullet", text: "• Future B.Pharm Shortcut: Should you choose to pursue a degree later, your D.Pharm allows you to bypass the first year of the B.Pharm! You can gain Lateral Entry directly into the second year, saving an entire year of study!" },
-      { type: "p", text: "Gutentor Advanced Text" },
-      { type: "section", text: "Career" },
-      { type: "detail", text: "Awesome Career Spots for D.Pharm holders." },
-      { type: "p", text: "Upon completion, you can step into exciting positions such as:" },
-      { type: "bullet", text: "• Your Pharmacist: Serve as the primary contact at a community pharmacy, assisting individuals with their prescriptions and providing health guidance." },
-      { type: "bullet", text: "• Hospital Crew: Join large hospitals, ensuring that patients receive the correct medications." },
-      { type: "bullet", text: "• Sales Star (MR): Take on the role of a Medical Representative, traveling to engage with doctors about the newest pharmaceuticals." },
-      { type: "bullet", text: "• Boss Mode: Launch your own Retail Pharmacy—become your own boss!" },
-      { type: "bullet", text: "• Factory Floor: Contribute in pharmaceutical manufacturing facilities, aiding in production, quality assurance and packaging." },
-      { type: "p", text: "Opt for the D.Pharm—it’s efficient, it’s intelligent & it prepares you for a successful future!" },
-    ],
-  },
-  {
-    no: "02",
-    name: "B.Pharm",
-    blocks: [
-      { type: "section", text: "Overview" },
-      { type: "detail", text: "B.Pharm Course Details" },
-      { type: "table", rows: [
-        { label: "Eligibility", lines: [
-          "Plus 2 (MAJOR SUBJECTS : Physics,Chemistry Mandratory)",
-          "A pass in Diploma in Pharmacy is eligible for direct entry into II year of B.Pharmacy course (Lateral Entry)",
-        ] },
-        { label: "Course Duration", lines: ["4 Years"] },
-        { label: "Number of Semester", lines: ["8"] },
-        { label: "Course available since", lines: ["1992"] },
-      ] },
-      { type: "sub", text: "Becoming a Drug Expert: The Bachelor of Pharmacy (B.Pharm)" },
-      { type: "p", text: " Are you looking for a career that allows you to truly assist others while engaging with the field of medical science? The Bachelor of Pharmacy (B.Pharm) is the ideal starting point!" },
-      { type: "sub", text: "Unlocking Health: What is the Power of Pharmacy?" },
-      { type: "p", text: " The pharmacy sector plays a crucial role in healthcare, working in tandem with scientists to create and evaluate new treatments." },
-      { type: "p", text: "The pharmaceutical industry is committed to thorough research, development, and stringent testing of these innovations, thus guaranteeing their safety and effectiveness for public use." },
-      { type: "section", text: "Career" },
-      { type: "detail", text: "Career map after B.Pharm" },
-      { type: "p", text: "A B. Pharm degree truly opens numerous opportunities, whether you aim to work in the public sector or the private industry:" },
-      { type: "bullet", text: "• Pharmaceutical Company Positions: Join a large organization in areas such as Production (manufacturing), Quality Control (QC) (ensuring quality) or Research & Development (R&D) (formulating and developing the next blockbuster medication)." },
-      { type: "bullet", text: "• Launching Your Own Venture: Are you feeling entrepreneurial? You could establish your own manufacturing facility or a retail pharmacy." },
-      { type: "bullet", text: "• Hospital Pharmacist: You would collaborate with doctors and nurses within a hospital, overseeing patient medication plans. (Government / Private)." },
-      { type: "bullet", text: "• Drug Inspector: The quality watchdog! Your responsibility is to ensure that drugs and cosmetics are safe and comply with all regulations (Government)." },
-      { type: "bullet", text: "• Laboratory Analyst: In specialized laboratories, you would test medications to verify they are completely safe and effective." },
-      { type: "p", text: "The B. Pharm degree serves as your entry point to a rewarding career in the pharmaceutical field." },
-    ],
-  },
-  {
-    no: "03",
-    name: "M.Pharm",
-    blocks: [
-      { type: "section", text: "Overview" },
-      { type: "detail", text: "M.Pharm Course Details" },
-      { type: "table", rows: [
-        { label: "Eligibility", lines: ["A pass in B.Pharmacy from any Recognized University"] },
-        { label: "Course Duration", lines: ["2 Years"] },
-        { label: "No. of Semester", lines: ["4"] },
-        { label: "Course available since", lines: ["2008"] },
-      ] },
-      { type: "p", text: "Hello! Are you prepared to enhance your pharmacy skills? Here is the Master of Pharmacy (M.Pharm) degree." },
-      { type: "sub", text: "Master of Pharmacy (M.Pharm): Become a Drug Specialist!" },
-      { type: "p", text: " The M.Pharm is a two-year postgraduate program—essentially Pharmacy Level 2.0! This degree is ideal for those aspiring to secure high-level positions and engage deeply in pharmaceutical research." },
-      { type: "p", text: "It bypasses the fundamentals and delves into highly advanced subjects. You will explore the intricate process of converting a novel chemical compound into the safe and effective medications we rely on. It focuses on mastering the science behind drug design and delivery!" },
-      { type: "sub", text: "Your Study Options (Branches)" },
-      { type: "p", text: " The M.Pharm program allows you to choose a specialization, enabling you to become a true expert in your field:" },
-      { type: "bullet", text: "• M.Pharm – Pharmaceutics: Concentrates on the processes of creating, formulating, and administering medications to the body (such as tablets, injections & creams)." },
-      { type: "bullet", text: "• M.Pharm – Pharmaceutical Analysis: Emphasizes the testing and verification of the quality, purity, and potency of drug excipients, Active Pharmaceutical Ingredients & final products." },
-      { type: "bullet", text: "• M.Pharm – Pharmacology: Centers on preclinical research related to metabolic disorders, reproductive studies, anticancer research & more." },
-      { type: "bullet", text: "• M. Pharm – Pharmacy Practice: Aims to enhance clinical pharmacy education, research & patient-centered pharmaceutical care." },
-      { type: "bullet", text: "• M.Pharm – Regulatory Affairs: Prepares students to connect scientific innovation with legal compliance in industries that develop pharmaceuticals, medical devices & cosmetics." },
-      { type: "p", text: "If you aspire to a highly specialized, research-driven career at the cutting edge of medicine, pursuing an M. Pharm is certainly the right choice!" },
-      { type: "section", text: "Career" },
-      { type: "detail", text: "Why go for the M. Pharm?" },
-      { type: "p", text: " This course is highly focused on career advancement and serves as your gateway to success, particularly if you are passionate about R&D (Research & Development). Upon earning your Master’s degree, you are not merely seeking employment—you are aiming for a career with vast potential, such as:" },
-      { type: "bullet", text: "• Research: Take on roles like Research Associate, Research Assistant or even Scientist, where you can contribute to groundbreaking medical discoveries." },
-      { type: "bullet", text: "• Pharma Entrepreneur: Are you ready to lead? Launch your own specialized Pharma Manufacturing Company." },
-      { type: "bullet", text: "• Marketing Executive: Be the driving force behind the strategy to bring specialized drugs to market." },
-      { type: "bullet", text: "• College Lecturer/Asst. Professor: Educate the future pharmacists of tomorrow!" },
-      { type: "bullet", text: "• Specialized Roles in Pharma Companies: Secure advanced positions in Production, Quality Control (QC) or R&D within a pharmaceutical firm." },
-      { type: "bullet", text: "• Drug Testing Analyst: Join cutting-edge Drug Testing Laboratories, ensuring that medications are completely safe and of the highest quality." },
-      { type: "bullet", text: "• Hospital Lead Pharmacist: Oversee intricate drug regimens in hospitals (both Government and Private)." },
-    ],
-  },
-  {
-    no: "04",
-    name: "Doctor of Pharmacy",
-    blocks: [
-      { type: "section", text: "Overview" },
-      { type: "detail", text: "Doctor of Pharmacy Course Details" },
-      { type: "table", rows: [
-        { label: "Eligibility", lines: ["Plus 2 (MAJOR SUBJECTS: Physics, Chemistry Mandatory)"] },
-        { label: "Course Duration", lines: ["6 Years"] },
-        { label: "Course available since", lines: ["2013"] },
-      ] },
-      { type: "p", text: "Alright, get ready! If you are committed and enthusiastic about becoming the leading expert in drug therapy, this course is for you." },
-      { type: "sub", text: "Doctor of Pharmacy (Pharm.D):" },
-      { type: "p", text: "This degree is far from ordinary; the Pharm.D (Doctor of Pharmacy) represents a transformative shift in pharmacy education. This program turns traditional learning into innovative practices, equipping students to excel in leadership and service to society. It is a thorough, clinically-focused six-year curriculum tailored for those who bypass the Master’s degree to pursue the pinnacle of professional practice!" },
-      { type: "p", text: "You will embark on five rigorous years of demanding academic coursework, culminating in a comprehensive one-year practical internship. Upon graduation, you will not merely be a pharmacist; you will be a doctor!" },
-      { type: "section", text: "Career" },
-      { type: "detail", text: "Your Future is High-End: Career Opportunities" },
-      { type: "p", text: "The Pharm. D qualification places you in prestigious positions that emphasize patient care and advanced clinical research. You will be eligible for roles such as:" },
-      { type: "bullet", text: "• Clinical Pharmacist in Hospitals: This is the primary role! You collaborate with doctors, making crucial decisions regarding patient medications, dosages and drug interactions. Your contribution is vital for saving lives!" },
-      { type: "bullet", text: "• Clinical Research Associate (CRA): Engage in clinical trials—the process of testing new medications on individuals. You play a crucial role in introducing new treatments to the world." },
-      { type: "bullet", text: "• Regulatory Associate: You are the specialist who assists pharmaceutical companies in navigating the intricate government regulations (such as those from the FDA or local regulatory agencies) to secure drug approvals." },
-      { type: "bullet", text: "• Drug Safety Associate: You act as the investigator who oversees the performance of drugs once they are available on the market, ensuring that patient safety remains the top priority." },
-      { type: "bullet", text: "• Medical Writer: Leverage your extensive clinical expertise to create scientific documents, reports & educational resources for the industry." },
-      { type: "bullet", text: "• Medical Transcription and Coding Executive: Convert clinical notes and procedures into standardized codes—an essential, specialized function in healthcare documentation." },
-      { type: "p", text: "The Pharm. D is designed for individuals seeking a direct route to advanced clinical practice and leadership in the field of medicine!" },
-    ],
-  },
-  {
-    no: "05",
-    name: "Doctor of Pharmacy (PB)",
-    blocks: [
-      { type: "section", text: "Overview" },
-      { type: "detail", text: "Doctor of Pharmacy (Post Baccularate) Course Details" },
-      { type: "table", rows: [
-        { label: "Eligibility", lines: ["B.pharm"] },
-        { label: "Course Duration", lines: [
-          "2 years of academic study (advanced coursework in clinical pharmacy).",
-          "1 year of compulsory internship or residency in a hospital/clinical setting.",
-        ] },
-        { label: "Course available since", lines: ["1992"] },
-      ] },
-      { type: "sub", text: "The Ultimate Pharmacy Course: Pharm. D (Post Baccalaureate)!" },
-      { type: "p", text: "Congratulations on earning your Pharmacy degree (B. Pharm)! That's fantastic! You won't need to begin the entire 6-year Pharm. D program from the beginning. The Pharm.D (Post Baccalaureate) offers you a direct path to obtaining your doctoral degree!" },
-      { type: "p", text: "This focused program is essentially a three-year course tailored specifically for B.Pharm graduates. You dive straight into advanced training, preparing you to become a Clinical Pharmacist." },
-      { type: "sub", text: "The Breakdown (Short and Sweet)" },
-      { type: "bullet", text: "• Eligibility: A B.Pharm degree is REQUIRED." },
-      { type: "bullet", text: "• Duration: Total of 3 Years (This comprises 2 rigorous years of academic study followed by a mandatory 1-year internship)." },
-      { type: "bullet", text: "• The Major Advantage: Achieve the internationally acknowledged title of \"Doctor of Pharmacy\" in only three years post your Bachelor’s!" },
-      { type: "section", text: "Career" },
-      { type: "detail", text: "High-Impact Career Zones" },
-      { type: "p", text: "This qualification positions you firmly within the realms of clinical practice, patient care, and advanced research. You will be eligible for prestigious roles such as:" },
-      { type: "bullet", text: "• Clinical Pharmacist in Hospitals: This is the peak of the profession! You collaborate closely with physicians, enhancing drug therapy and saving lives on the hospital floor." },
-      { type: "bullet", text: "• Clinical Research Associate (CRA): Engage directly in the testing of innovative medications during human trials." },
-      { type: "bullet", text: "• Regulatory Associate: Assist in navigating new drugs through the intricate government approval process." },
-      { type: "bullet", text: "• Drug Safety Associate / Pharmacovigilance Specialist: Your role is vital: overseeing medications once they are available to ensure patient safety." },
-      { type: "bullet", text: "• Medical Writer / Drug Information Specialist: Leverage your extensive knowledge to create clinical reports and deliver expert medical information." },
-      { type: "bullet", text: "• The Pharm. D (Post Baccalaureate) is designed for B.Pharm graduates who wish to bypass M. Pharm." },
-    ],
-  },
-  {
-    no: "06",
-    name: "Recognized Ph.D. Research Centre",
-    blocks: [
-      { type: "sub", text: "The Tamil Nadu Dr. M.G.R. Medical University" },
-      { type: "sub", text: "Our College is Recognized as a Ph.D. Research Centre" },
-      { type: "p", text: "We are pleased to share that K.K. College of Pharmacy, located in Gerugambakkam, Chennai, has received official recognition as a Research Centre by The Tamil Nadu Dr. M.G.R. Medical University, Chennai, to conduct Ph.D. research programmes." },
-      { type: "p", text: "The recognition covers the following departments:" },
-      { type: "p", text: "Pharmaceutics" },
-      { type: "p", text: "Pharmacology" },
-      { type: "p", text: "Pharmaceutical Analysis" },
-      { type: "p", text: "This milestone represents a major accomplishment in our pursuit of academic excellence and research innovation." },
-      { type: "p", text: "This recognition enables our institution to mentor and support doctoral scholars in leading-edge fields of pharmaceutical sciences, thereby contributing to progress in healthcare and drug development." },
-      { type: "sub", text: "Recognized Ph.D. Research Guides" },
-      { type: "p", text: "Our college proudly hosts a team of highly qualified and experienced research guides approved by the University:" },
-      { type: "guides", items: [
-        { name: "Dr. A. Meena, M.Pharm., Ph.D.", role: "Professor & Principal – 32 yrs exp.", mail: "kkcpchennai@gmail.com" },
-        { name: "Dr. A.SHANTHY M.Pharm., Ph.D.,", role: "Vice-Principal & HoD – 20 yrs exp.", mail: "vp@kkcp.ac.in" },
-        { name: "Dr. B. Premkumar, M.Pharm., Ph.D.", role: "Professor & Head – 16 yrs exp.", mail: "hodcologykkcp@gmail.com" },
-        { name: "Dr. S. Ramalakshmi, M.Pharm., Ph.D.", role: "Professor & Head – 19 yrs exp.", mail: "sramalakshmi@rediffmail.com" },
-        { name: "Dr. M. Vani, M.Pharm., Ph.D.", role: "Professor – 18 yrs exp.", mail: "mandrummoorthy@gmail.com" },
-      ] },
-      { type: "p", text: "These faculty members are committed to cultivating a research-oriented culture and mentoring scholars in innovative projects that address socially relevant issues in line with national pharmaceutical requirements." },
-      { type: "sub", text: "Join Our Research Community" },
-      { type: "p", text: "K.K. College of Pharmacy invites enthusiastic researchers to enroll in our Ph.D. programme and make a meaningful contribution to the dynamic field of pharmaceutical sciences." },
-    ],
-  },
-];
-
-// Same thumbnail images Student Services / Departments use for their cards.
-const THUMBS = [
-  "/all-programs/assets/0054__acc-1-min.jpg",
-  "/all-programs/assets/0055__acc-2-min.jpg",
-  "/all-programs/assets/0056__acc-3-min.jpg",
-  "/all-programs/assets/0058__acc-4-min.jpg",
-  "/all-programs/assets/0059__acc-5-min.jpg",
-  "/all-programs/assets/0060__acc-6-min.jpg",
-];
-
-function Block({ block }) {
-  if (block.type === "section") return <div className="course-section">{block.text}</div>;
-  if (block.type === "detail") return <h3 className="course-detail">{block.text}</h3>;
-  if (block.type === "sub") return <h4 className="course-sub">{block.text}</h4>;
-  if (block.type === "bullet") return <p className="dept-text dept-bullet">{block.text}</p>;
-  if (block.type === "table")
-    return (
-      <table className="course-table">
-        <tbody>
-          {block.rows.map((row, i) => (
-            <tr key={i}>
-              <th>{row.label}</th>
-              <td>
-                {row.lines.map((line, j) => (
-                  <span key={j}>{line}</span>
-                ))}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    );
-  if (block.type === "guides")
-    return (
-      <div className="course-guides">
-        {block.items.map((g, i) => (
-          <div className="course-guide" key={i}>
-            <div className="g-name">{g.name}</div>
-            <div className="g-role">{g.role}</div>
-            <div className="g-mail">
-              <a href={`mailto:${g.mail}`}>{g.mail}</a>
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  return <p className="dept-text">{block.text}</p>;
-}
-
 export function CloneTree() {
   return (
-    <div className="wp-singular page-template-default page page-id-7888 wp-theme-KKCP gsap-enable elementor-default elementor-template-full-width elementor-kit-14 elementor-page elementor-page-7888 e--ua-blink e--ua-mac e--ua-webkit" data-elementor-device-mode={"desktop"}>
-      <div id="KKCP-page" className="KKCP-page-wrapper">
-        <CloneHeader />
-        <main id="KKCP-content" className="KKCP-content-wrapper">
-          <div data-elementor-type={"wp-page"} data-elementor-id={"7888"} className="elementor elementor-7888">
-            {/* Page banner — same design as Student Services / Departments (image bg + dark overlay + white title) */}
-            <div className="elementor-element elementor-element-146c4d0 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"146c4d0"} data-element_type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
-              <div className="e-con-inner">
-                <div className="elementor-element elementor-element-da6b75b elementor-widget elementor-widget-rstb-breadcrumb" data-id={"da6b75b"} data-element_type={"widget"} data-widget_type={"rstb-breadcrumb.default"}>
-                  <div className="rstb-breadcrumb"><span property="itemListElement"><a property="item" title="Go to KKCP." href="/" className="home"><span property="name">Home</span></a><meta property="position" content="1" /></span><span className="item-separator"><svg className="e-font-icon-svg e-fas-angle-double-right" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z" /></svg></span><span property="itemListElement"><span property="name" className="post post-page current-item">Courses</span><meta property="url" content="/courses/" /><meta property="position" content="2" /></span></div>
-                </div>
-                <div className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Courses</h1></div>
-                <div className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider" data-id={"4626c23"} data-element_type={"widget"} data-widget_type={"rs-divider.default"}><div className="rs-divider dot-enable"><span> </span></div></div>
-                <div className="elementor-element elementor-element-419a788 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id={"419a788"} data-element_type={"widget"} data-widget_type={"text-editor.default"}><p>Education goes beyond textbooks and classrooms. We believe in empowering students to explore their passions challenge conventions.</p></div>
-                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.png" alt="bnr-arrow-1-1" /></div></div>
-              </div>
-            </div>
-          </div>
-
-          <style>{`
-            /* Student Services card design — replicated unconditionally (the theme's
-               element-scoped rules for these IDs are gated behind @media max-width:1200px,
-               so they don't fire on desktop; we restate them here). */
-            .crs-section { background-color: #F6F4EE; padding: 80px 20px; }
-            .crs-section .e-con-inner { max-width: 1200px; margin: 0 auto; }
-            .crs-section .filter-top-bar {
-              display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; align-items: center;
-            }
-            .crs-section .filter-result { font-size: 15px; color: #4C4C4C; }
-            .crs-section .filter-result .result-count { font-weight: 600; color: #051435; }
-            .crs-section .filter-items-wrapper { display: grid; grid-template-columns: 1fr; gap: 25px; }
-
-            .crs-item.filter-item {
-              display: flex; flex-direction: row-reverse; align-items: stretch;
-              padding: 10px; background-color: #fff; border-radius: 12px;
-              box-shadow: 0 4px 30px 0 rgba(0,0,0,.06);
-            }
-            .crs-item .item-thumbnail {
-              width: 300px; flex-shrink: 0; overflow: hidden; border-radius: 12px; align-self: stretch;
-            }
-            .crs-item .item-thumbnail img { width: 100%; height: 100%; object-fit: cover; object-position: center; min-height: 240px; }
-            .crs-item .item-content { flex-grow: 1; padding: 26px 32px; min-width: 0; }
-            .crs-item .item-meta { list-style: none; padding: 0; margin: 0 0 12px; display: flex; gap: 10px; }
-            .crs-item .item-meta li {
-              padding: 5px 12px; border: 1px solid #E4E4E4; border-radius: 5px;
-              font-size: 13px; font-weight: 500; color: #4C4C4C; letter-spacing: .02em;
-            }
-            .crs-item .item-title {
-              font-family: "Bitter", serif; font-size: 24px; font-weight: 600;
-              color: #051435; line-height: 1.3; margin: 0 0 6px;
-            }
-            .crs-item .item-desc { margin: 8px 0 0; }
-
-            .dept-text { color: #4C4C4C; font-size: 16px; line-height: 1.8; margin: 0 0 12px; }
-            .dept-bullet { padding-left: 1.5em; text-indent: -1.5em; }
-
-            /* course-specific blocks, same palette */
-            .course-section {
-              display: inline-block; background: #EAF1FA; color: #034EA2;
-              font-family: "Bitter", serif; font-weight: 600; font-size: 13px;
-              letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px;
-              border-radius: 999px; margin: 22px 0 14px;
-            }
-            .course-detail {
-              font-family: "Bitter", serif; color: #003A65; font-weight: 600;
-              font-size: 20px; margin: 0 0 14px; line-height: 1.3;
-            }
-            .course-sub {
-              font-family: "Bitter", serif; color: #034EA2; font-weight: 600;
-              font-size: 17px; margin: 20px 0 10px; line-height: 1.4;
-            }
-            .course-table { width: 100%; border-collapse: collapse; margin: 6px 0 18px; }
-            .course-table th {
-              text-align: left; vertical-align: top; width: 34%; padding: 11px 15px;
-              background: #F6F8FB; color: #003A65; font-weight: 600; font-size: 15px;
-              font-family: "Bitter", serif; border: 1px solid #E4E4E4;
-            }
-            .course-table td {
-              padding: 11px 15px; border: 1px solid #E4E4E4; color: #4C4C4C;
-              font-size: 15px; line-height: 1.7;
-            }
-            .course-table td span { display: block; }
-            .course-table td span + span { margin-top: 6px; }
-            .course-guides {
-              display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-              gap: 16px; margin: 10px 0 14px;
-            }
-            .course-guide {
-              background: #F6F8FB; border: 1px solid #E4E4E4; border-radius: 12px; padding: 18px 20px;
-            }
-            .course-guide .g-name {
-              font-family: "Bitter", serif; color: #003A65; font-weight: 600;
-              font-size: 16px; line-height: 1.35;
-            }
-            .course-guide .g-role { color: #4C4C4C; font-size: 14px; margin: 5px 0; }
-            .course-guide .g-mail a { color: #034EA2; text-decoration: none; font-size: 14px; word-break: break-word; }
-            .course-guide .g-mail a:hover { text-decoration: underline; }
-
-            @media (max-width: 767px) {
-              .crs-item.filter-item { flex-direction: column; }
-              .crs-item .item-thumbnail { width: 100%; height: 200px; }
-              .crs-item .item-thumbnail img { min-height: 0; }
-              .course-table th { width: 42%; padding: 9px 11px; }
-              .course-table td { padding: 9px 11px; }
-            }
-          `}</style>
-
-          <div className="crs-section elementor-element elementor-element-f401be2 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"f401be2"} data-element_type={"container"}>
-            <div className="e-con-inner">
-              <div className="elementor-element elementor-element-57146e5 elementor-widget elementor-widget-rs-academic-filter" data-id={"57146e5"} data-element_type={"widget"} data-widget_type={"rs-academic-filter.default"}>
-                <div className="rs-academic-filter-area">
-                  <div className="filter-content">
-                    <div className="filter-top-bar">
-                      <span className="filter-result">Total <span className="result-count">6</span> results found</span>
-                    </div>
-                    <div className="filter-items-wrapper">
-                      {COURSES.map((course, idx) => (
-                        <div className="filter-item crs-item" key={course.no}>
-                          <div className="item-thumbnail">
-                            <img loading="lazy" decoding="async" src={THUMBS[idx]} alt={course.name} />
-                          </div>
-                          <div className="item-content">
-                            <ul className="item-meta"><li>Course {course.no}</li></ul>
-                            <h4 className="item-title">{course.name}</h4>
-                            <div className="item-desc">
-                              {course.blocks.map((block, i) => (
-                                <Block block={block} key={i} />
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-        <CloneFooter />
-      </div>
-    </div>
+<div className="wp-singular page-template-default page page-id-7888 wp-theme-KKCP gsap-enable elementor-default elementor-template-full-width elementor-kit-14 elementor-page elementor-page-7888 e--ua-blink e--ua-mac e--ua-webkit" data-elementor-device-mode={"desktop"} data-aos-easing={"ease"} data-aos-duration={"800"} data-aos-delay={"0"} style={{}}>{" "}<div id="site-preloader" className="KKCP-preloader" style={{display: "none"}}>{" "}<div className="loader-container">{" "}<div className="loader-icon">{" "}<img src="/all-programs/assets/0020__Asset-2-11.png" alt="KKCP" />{" "}</div>{" "}</div></div>{" "}<div id="KKCP-page" className="KKCP-page-wrapper">{" "}<CloneHeader />{" "}<main id="KKCP-content" className="KKCP-content-wrapper">{" "}<div data-elementor-type={"wp-page"} data-elementor-id={"7888"} className="elementor elementor-7888"><div data-aos-once={"true"} className="elementor-element elementor-element-146c4d0 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"146c4d0"} data-element_type={"container"} data-e-type={"container"} data-settings={"{\"background_background\":\"classic\"}"}><div className="e-con-inner"><div data-aos-once={"true"} className="elementor-element elementor-element-da6b75b elementor-widget elementor-widget-rstb-breadcrumb" data-id={"da6b75b"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rstb-breadcrumb.default"}>{" "}<div className="rstb-breadcrumb"><span property="itemListElement"><a property="item" title="Go to KKCP." href="/" className="home"><span property="name">Home</span></a><meta property="position" content="1" /></span><span className="item-separator"><svg className="e-font-icon-svg e-fas-angle-double-right" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z" /></svg></span><span property="itemListElement"><span property="name" className="post post-page current-item">Student Services</span><meta property="url" content="/all-programs/" /><meta property="position" content="2" /></span>{" "}</div></div><div data-aos-once={"true"} className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Student Services</h1></div><div data-aos-once={"true"} className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider" data-id={"4626c23"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rs-divider.default"}>{" "}<div className="rs-divider dot-enable">{" "}<span>{" "}</span>{" "}</div></div><div data-aos-once={"true"} className="elementor-element elementor-element-419a788 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id={"419a788"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"text-editor.default"}><p>Education goes beyond textbooks and classrooms. We believe in empowering students to explore their passions challenge conventions.</p></div><div data-aos-once={"true"} className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-e-type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}>{" "}<div className="rs-image">{" "}<img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.png" alt="bnr-arrow-1-1" />{" "}</div></div></div></div><div data-aos-once={"true"} className="elementor-element elementor-element-f401be2 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"f401be2"} data-element_type={"container"} data-e-type={"container"} data-settings={"{\"background_background\":\"classic\"}"}><div className="e-con-inner"><div data-aos-once={"true"} className="elementor-element elementor-element-57146e5 elementor-widget elementor-widget-rs-academic-filter" data-id={"57146e5"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rs-academic-filter.default"}>{" "}<div className="rs-academic-filter-area" data-widget-id={"57146e5"} data-config={"{\"nonce\":\"89c5843974\",\"ajax_url\":\"https:\\/\\/KKCP.rstheme.com\\/blue\\/wp-admin\\/admin-ajax.php\",\"settings\":{\"filter_for\":\"program\",\"per_page\":6,\"orderby\":\"date\",\"sort_order\":\"DESC\",\"no_result_text\":\"No Result Found\",\"show_thumbnail\":\"yes\",\"thumbnail_size\":\"large\",\"title_tag\":\"h4\",\"show_meta\":\"yes\",\"show_excerpt\":\"yes\",\"excerpt_word\":\"17\",\"show_read_more_btn\":\"yes\",\"trait_btn_style\":\"default\",\"trait_btn_icon_anim\":\"rotate-90\",\"trait_btn_text_anim\":\"none\",\"trait_btn_icon\":{\"value\":{\"url\":\"https:\\/\\/KKCP.rstheme.com\\/blue\\/wp-content\\/uploads\\/sites\\/2\\/2025\\/11\\/button-arrow.svg\",\"id\":\"518\"},\"library\":\"svg\"},\"trait_btn_text\":\"Read More\"}}"}>{" "}<div className="filter-sidebar-overly"></div>{" "}<div className="filter-sidebar">{" "}<h4 className="sidebar-title">
+						Filter By						                            <span className="filter-reset-btn" style={{display: "none"}}>
+                            Reset                        </span>{" "}</h4>{" "}<div className="filter-criteria"><h5 className="criteria-title">Faculties</h5>{" "}<ul className="criteria-checkboxes">{" "}<li className="criteria-item">{" "}<label htmlFor="faculty-6939">{" "}<input type="checkbox" name="faculties" value="6939" id="faculty-6939" />
+							Faculty of Education                        </label>{" "}</li>{" "}<li className="criteria-item">{" "}<label htmlFor="faculty-6938">{" "}<input type="checkbox" name="faculties" value="6938" id="faculty-6938" />
+							Faculty of Law                        </label>{" "}</li>{" "}<li className="criteria-item">{" "}<label htmlFor="faculty-6937">{" "}<input type="checkbox" name="faculties" value="6937" id="faculty-6937" />
+							IT Faculty                        </label>{" "}</li>{" "}<li className="criteria-item">{" "}<label htmlFor="faculty-6936">{" "}<input type="checkbox" name="faculties" value="6936" id="faculty-6936" />
+							Faculty of Health Sciences                        </label>{" "}</li>{" "}<li className="criteria-item">{" "}<label htmlFor="faculty-6935">{" "}<input type="checkbox" name="faculties" value="6935" id="faculty-6935" />
+							Faculty of Social Sciences                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="faculty-6934">{" "}<input type="checkbox" name="faculties" value="6934" id="faculty-6934" />
+							Faculty of Science                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="faculty-6933">{" "}<input type="checkbox" name="faculties" value="6933" id="faculty-6933" />
+							Faculty of Arts &amp; Humanities                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="faculty-6932">{" "}<input type="checkbox" name="faculties" value="6932" id="faculty-6932" />
+							Faculty of Business &amp; Management                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="faculty-6931">{" "}<input type="checkbox" name="faculties" value="6931" id="faculty-6931" />
+							Faculty of Engineering                        </label>{" "}</li>{" "}</ul>{" "}<span className="criteria-show-more" data-show-text={"Show More"} data-hide-text={"Show Less"}>
+                    Show More                </span>{" "}</div>{" "}<div className="filter-criteria"><h5 className="criteria-title">Departments</h5>{" "}<ul className="criteria-checkboxes">{" "}<li className="criteria-item">{" "}<label htmlFor="department-6930">{" "}<input type="checkbox" name="departments" value="6930" id="department-6930" />
+							Department of Curriculum &amp; Instruction                        </label>{" "}</li>{" "}<li className="criteria-item">{" "}<label htmlFor="department-6929">{" "}<input type="checkbox" name="departments" value="6929" id="department-6929" />
+							Department of Educational Leadership                        </label>{" "}</li>{" "}<li className="criteria-item">{" "}<label htmlFor="department-6928">{" "}<input type="checkbox" name="departments" value="6928" id="department-6928" />
+							Department of Criminal Justice                        </label>{" "}</li>{" "}<li className="criteria-item">{" "}<label htmlFor="department-6927">{" "}<input type="checkbox" name="departments" value="6927" id="department-6927" />
+							Department of International Law                        </label>{" "}</li>{" "}<li className="criteria-item">{" "}<label htmlFor="department-6926">{" "}<input type="checkbox" name="departments" value="6926" id="department-6926" />
+							Department of Data Science                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="department-6925">{" "}<input type="checkbox" name="departments" value="6925" id="department-6925" />
+							Department of Software Engineering                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="department-6924">{" "}<input type="checkbox" name="departments" value="6924" id="department-6924" />
+							Department of Nursing                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="department-6923">{" "}<input type="checkbox" name="departments" value="6923" id="department-6923" />
+							Department of Public Health                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="department-469">{" "}<input type="checkbox" name="departments" value="469" id="department-469" />
+							Department of Political Science                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="department-6922">{" "}<input type="checkbox" name="departments" value="6922" id="department-6922" />
+							Department of Sociology                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="department-6921">{" "}<input type="checkbox" name="departments" value="6921" id="department-6921" />
+							Department of Physics                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="department-6920">{" "}<input type="checkbox" name="departments" value="6920" id="department-6920" />
+							Department of Mathematics                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="department-6919">{" "}<input type="checkbox" name="departments" value="6919" id="department-6919" />
+							Department of History                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="department-6918">{" "}<input type="checkbox" name="departments" value="6918" id="department-6918" />
+							Department of English Studies                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="department-6917">{" "}<input type="checkbox" name="departments" value="6917" id="department-6917" />
+							Department of Finance                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="department-6916">{" "}<input type="checkbox" name="departments" value="6916" id="department-6916" />
+							Department of Business Administration                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="department-6915">{" "}<input type="checkbox" name="departments" value="6915" id="department-6915" />
+							Department of Mechanical Engineering                        </label>{" "}</li>{" "}<li className="criteria-item" style={{display: "none"}}>{" "}<label htmlFor="department-6914">{" "}<input type="checkbox" name="departments" value="6914" id="department-6914" />
+							Department of Computer Engineering                        </label>{" "}</li>{" "}</ul>{" "}<span className="criteria-show-more" data-show-text={"Show More"} data-hide-text={"Show Less"}>
+                    Show More                </span>{" "}</div>{" "}<div className="filter-criteria"><h5 className="criteria-title">Program Level</h5>{" "}<ul className="criteria-checkboxes">{" "}<li className="criteria-item">{" "}<label htmlFor="program-level-10">{" "}<input type="checkbox" name="levels" value="10" id="program-level-10" />
+							Graduate                        </label>{" "}</li>{" "}<li className="criteria-item">{" "}<label htmlFor="program-level-15">{" "}<input type="checkbox" name="levels" value="15" id="program-level-15" />
+							PhD                        </label>{" "}</li>{" "}<li className="criteria-item">{" "}<label htmlFor="program-level-11">{" "}<input type="checkbox" name="levels" value="11" id="program-level-11" />
+							Undergraduate                        </label>{" "}</li>{" "}</ul>{" "}</div>{" "}</div>{" "}<div className="filter-content">{" "}<div className="filter-top-bar"><button className="filter-toggle-btn"><i className="ri-menu-2-fill"></i></button>{" "}<span className="filter-result">
+                            Total <span className="result-count">28</span> results found                        </span>{" "}<span className="filter-search-wrap">{" "}<input className="filter-search-input" type="text" placeholder="Enter keyword" />{" "}<span className="search-icon">{" "}<svg className="e-font-icon-svg e-fas-search" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" /></svg>{" "}</span>{" "}</span>{" "}</div>{" "}<div className="filter-items-wrapper">{" "}<div className="filter-item">{" "}<div className="item-thumbnail"><img loading="lazy" decoding="async" width="770" height="660" src="/all-programs/assets/0054__acc-1-min.jpg" className="attachment-large size-large wp-post-image" alt="" srcSet="/all-programs/assets/0054__acc-1-min.jpg 770w, /all-programs/assets/0076__acc-1-min-300x257.jpg 300w, /all-programs/assets/0077__acc-1-min-768x658.jpg 768w" sizes="(max-width: 770px) 100vw, 770px" />{" "}</div>{" "}<div className="item-content"><h4 className="item-title"><a href="/programs/b-ed-in-curriculum-instruction/">B.Ed. in Curriculum &amp; Instruction</a></h4>{" "}<ul className="item-meta">{" "}<li>{" "}<a href="/faculties/faculty-of-education/">
+									Faculty of Education                                </a>{" "}</li>{" "}<li>{" "}<a href="/departments/department-of-curriculum-instruction/">
+									Department of Curriculum &amp; Instruction                                </a>{" "}</li>{" "}</ul>{" "}<p className="item-desc">
+						The B.Ed. in Curriculum &amp; Instruction program is designed to develop skilled educators capable of designing effective...                    </p>{" "}<a className="rs-button style-default icon-anim-rotate-90 text-anim-none" href="/programs/b-ed-in-curriculum-instruction/">{" "}<span className="button-icon">{" "}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15"><path d="M10.5 7.5C10.5 8.32843 9.82843 9 9 9C8.17157 9 7.5 8.32843 7.5 7.5C7.5 6.67157 8.17157 6 9 6C9.82843 6 10.5 6.67157 10.5 7.5Z" /><path d="M10.5 13.5C10.5 14.3284 9.82843 15 9 15C8.17157 15 7.5 14.3284 7.5 13.5C7.5 12.6716 8.17157 12 9 12C9.82843 12 10.5 12.6716 10.5 13.5Z" /><path d="M3 7.5C3 8.32843 2.32843 9 1.5 9C0.671573 9 0 8.32843 0 7.5C0 6.67157 0.671573 6 1.5 6C2.32843 6 3 6.67157 3 7.5Z" /><path d="M18 7.5C18 8.32843 17.3284 9 16.5 9C15.6716 9 15 8.32843 15 7.5C15 6.67157 15.6716 6 16.5 6C17.3284 6 18 6.67157 18 7.5Z" /><path d="M10.5 1.5C10.5 2.32843 9.82843 3 9 3C8.17157 3 7.5 2.32843 7.5 1.5C7.5 0.671573 8.17157 0 9 0C9.82843 0 10.5 0.671573 10.5 1.5Z" /></svg>{" "}</span>{" "}<span className="button-text">
+                    Read More                </span>{" "}</a>{" "}</div>{" "}</div>{" "}<div className="filter-item">{" "}<div className="item-thumbnail"><img loading="lazy" decoding="async" width="770" height="660" src="/all-programs/assets/0055__acc-2-min.jpg" className="attachment-large size-large wp-post-image" alt="" srcSet="/all-programs/assets/0055__acc-2-min.jpg 770w, /all-programs/assets/0078__acc-2-min-300x257.jpg 300w, /all-programs/assets/0079__acc-2-min-768x658.jpg 768w" sizes="(max-width: 770px) 100vw, 770px" />{" "}</div>{" "}<div className="item-content"><h4 className="item-title"><a href="/programs/m-ed-in-educational-leadership/">M.Ed. in Educational Leadership</a></h4>{" "}<ul className="item-meta">{" "}<li>{" "}<a href="/faculties/faculty-of-education/">
+									Faculty of Education                                </a>{" "}</li>{" "}<li>{" "}<a href="/departments/department-of-educational-leadership/">
+									Department of Educational Leadership                                </a>{" "}</li>{" "}</ul>{" "}<p className="item-desc">
+						The M.Ed. in Educational Leadership program is designed to prepare educators to become effective leaders, administrators, and...                    </p>{" "}<a className="rs-button style-default icon-anim-rotate-90 text-anim-none" href="/programs/m-ed-in-educational-leadership/">{" "}<span className="button-icon">{" "}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15"><path d="M10.5 7.5C10.5 8.32843 9.82843 9 9 9C8.17157 9 7.5 8.32843 7.5 7.5C7.5 6.67157 8.17157 6 9 6C9.82843 6 10.5 6.67157 10.5 7.5Z" /><path d="M10.5 13.5C10.5 14.3284 9.82843 15 9 15C8.17157 15 7.5 14.3284 7.5 13.5C7.5 12.6716 8.17157 12 9 12C9.82843 12 10.5 12.6716 10.5 13.5Z" /><path d="M3 7.5C3 8.32843 2.32843 9 1.5 9C0.671573 9 0 8.32843 0 7.5C0 6.67157 0.671573 6 1.5 6C2.32843 6 3 6.67157 3 7.5Z" /><path d="M18 7.5C18 8.32843 17.3284 9 16.5 9C15.6716 9 15 8.32843 15 7.5C15 6.67157 15.6716 6 16.5 6C17.3284 6 18 6.67157 18 7.5Z" /><path d="M10.5 1.5C10.5 2.32843 9.82843 3 9 3C8.17157 3 7.5 2.32843 7.5 1.5C7.5 0.671573 8.17157 0 9 0C9.82843 0 10.5 0.671573 10.5 1.5Z" /></svg>{" "}</span>{" "}<span className="button-text">
+                    Read More                </span>{" "}</a>{" "}</div>{" "}</div>{" "}<div className="filter-item">{" "}<div className="item-thumbnail"><img loading="lazy" decoding="async" width="770" height="660" src="/all-programs/assets/0056__acc-3-min.jpg" className="attachment-large size-large wp-post-image" alt="" srcSet="/all-programs/assets/0056__acc-3-min.jpg 770w, /all-programs/assets/0080__acc-3-min-300x257.jpg 300w, /all-programs/assets/0081__acc-3-min-768x658.jpg 768w" sizes="(max-width: 770px) 100vw, 770px" />{" "}</div>{" "}<div className="item-content"><h4 className="item-title"><a href="/programs/b-ed-in-educational-leadership/">B.Ed. in Educational Leadership</a></h4>{" "}<ul className="item-meta">{" "}<li>{" "}<a href="/faculties/faculty-of-education/">
+									Faculty of Education                                </a>{" "}</li>{" "}<li>{" "}<a href="/departments/department-of-educational-leadership/">
+									Department of Educational Leadership                                </a>{" "}</li>{" "}</ul>{" "}<p className="item-desc">
+						The B.Ed. in Educational Leadership program prepares aspiring teachers and future school leaders with the skills to...                    </p>{" "}<a className="rs-button style-default icon-anim-rotate-90 text-anim-none" href="/programs/b-ed-in-educational-leadership/">{" "}<span className="button-icon">{" "}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15"><path d="M10.5 7.5C10.5 8.32843 9.82843 9 9 9C8.17157 9 7.5 8.32843 7.5 7.5C7.5 6.67157 8.17157 6 9 6C9.82843 6 10.5 6.67157 10.5 7.5Z" /><path d="M10.5 13.5C10.5 14.3284 9.82843 15 9 15C8.17157 15 7.5 14.3284 7.5 13.5C7.5 12.6716 8.17157 12 9 12C9.82843 12 10.5 12.6716 10.5 13.5Z" /><path d="M3 7.5C3 8.32843 2.32843 9 1.5 9C0.671573 9 0 8.32843 0 7.5C0 6.67157 0.671573 6 1.5 6C2.32843 6 3 6.67157 3 7.5Z" /><path d="M18 7.5C18 8.32843 17.3284 9 16.5 9C15.6716 9 15 8.32843 15 7.5C15 6.67157 15.6716 6 16.5 6C17.3284 6 18 6.67157 18 7.5Z" /><path d="M10.5 1.5C10.5 2.32843 9.82843 3 9 3C8.17157 3 7.5 2.32843 7.5 1.5C7.5 0.671573 8.17157 0 9 0C9.82843 0 10.5 0.671573 10.5 1.5Z" /></svg>{" "}</span>{" "}<span className="button-text">
+                    Read More                </span>{" "}</a>{" "}</div>{" "}</div>{" "}<div className="filter-item">{" "}<div className="item-thumbnail"><img loading="lazy" decoding="async" width="770" height="660" src="/all-programs/assets/0058__acc-4-min.jpg" className="attachment-large size-large wp-post-image" alt="" srcSet="/all-programs/assets/0058__acc-4-min.jpg 770w, /all-programs/assets/0082__acc-4-min-300x257.jpg 300w, /all-programs/assets/0083__acc-4-min-768x658.jpg 768w" sizes="(max-width: 770px) 100vw, 770px" />{" "}</div>{" "}<div className="item-content"><h4 className="item-title"><a href="/programs/llb-in-criminal-justice/">LLB in Criminal Justice</a></h4>{" "}<ul className="item-meta">{" "}<li>{" "}<a href="/faculties/faculty-of-law/">
+									Faculty of Law                                </a>{" "}</li>{" "}<li>{" "}<a href="/departments/department-of-criminal-justice/">
+									Department of Criminal Justice                                </a>{" "}</li>{" "}</ul>{" "}<p className="item-desc">
+						The LLB in Criminal Justice program provides a strong foundation in criminal law, legal procedures, and criminology....                    </p>{" "}<a className="rs-button style-default icon-anim-rotate-90 text-anim-none" href="/programs/llb-in-criminal-justice/">{" "}<span className="button-icon">{" "}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15"><path d="M10.5 7.5C10.5 8.32843 9.82843 9 9 9C8.17157 9 7.5 8.32843 7.5 7.5C7.5 6.67157 8.17157 6 9 6C9.82843 6 10.5 6.67157 10.5 7.5Z" /><path d="M10.5 13.5C10.5 14.3284 9.82843 15 9 15C8.17157 15 7.5 14.3284 7.5 13.5C7.5 12.6716 8.17157 12 9 12C9.82843 12 10.5 12.6716 10.5 13.5Z" /><path d="M3 7.5C3 8.32843 2.32843 9 1.5 9C0.671573 9 0 8.32843 0 7.5C0 6.67157 0.671573 6 1.5 6C2.32843 6 3 6.67157 3 7.5Z" /><path d="M18 7.5C18 8.32843 17.3284 9 16.5 9C15.6716 9 15 8.32843 15 7.5C15 6.67157 15.6716 6 16.5 6C17.3284 6 18 6.67157 18 7.5Z" /><path d="M10.5 1.5C10.5 2.32843 9.82843 3 9 3C8.17157 3 7.5 2.32843 7.5 1.5C7.5 0.671573 8.17157 0 9 0C9.82843 0 10.5 0.671573 10.5 1.5Z" /></svg>{" "}</span>{" "}<span className="button-text">
+                    Read More                </span>{" "}</a>{" "}</div>{" "}</div>{" "}<div className="filter-item">{" "}<div className="item-thumbnail"><img loading="lazy" decoding="async" width="770" height="660" src="/all-programs/assets/0059__acc-5-min.jpg" className="attachment-large size-large wp-post-image" alt="" srcSet="/all-programs/assets/0059__acc-5-min.jpg 770w, /all-programs/assets/0084__acc-5-min-300x257.jpg 300w, /all-programs/assets/0085__acc-5-min-768x658.jpg 768w" sizes="(max-width: 770px) 100vw, 770px" />{" "}</div>{" "}<div className="item-content"><h4 className="item-title"><a href="/programs/llm-in-international-law/">LLM in International Law</a></h4>{" "}<ul className="item-meta">{" "}<li>{" "}<a href="/faculties/faculty-of-law/">
+									Faculty of Law                                </a>{" "}</li>{" "}<li>{" "}<a href="/departments/department-of-international-law/">
+									Department of International Law                                </a>{" "}</li>{" "}</ul>{" "}<p className="item-desc">
+						The LL.M. in International Law program equips students with advanced knowledge of international legal systems, human rights,...                    </p>{" "}<a className="rs-button style-default icon-anim-rotate-90 text-anim-none" href="/programs/llm-in-international-law/">{" "}<span className="button-icon">{" "}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15"><path d="M10.5 7.5C10.5 8.32843 9.82843 9 9 9C8.17157 9 7.5 8.32843 7.5 7.5C7.5 6.67157 8.17157 6 9 6C9.82843 6 10.5 6.67157 10.5 7.5Z" /><path d="M10.5 13.5C10.5 14.3284 9.82843 15 9 15C8.17157 15 7.5 14.3284 7.5 13.5C7.5 12.6716 8.17157 12 9 12C9.82843 12 10.5 12.6716 10.5 13.5Z" /><path d="M3 7.5C3 8.32843 2.32843 9 1.5 9C0.671573 9 0 8.32843 0 7.5C0 6.67157 0.671573 6 1.5 6C2.32843 6 3 6.67157 3 7.5Z" /><path d="M18 7.5C18 8.32843 17.3284 9 16.5 9C15.6716 9 15 8.32843 15 7.5C15 6.67157 15.6716 6 16.5 6C17.3284 6 18 6.67157 18 7.5Z" /><path d="M10.5 1.5C10.5 2.32843 9.82843 3 9 3C8.17157 3 7.5 2.32843 7.5 1.5C7.5 0.671573 8.17157 0 9 0C9.82843 0 10.5 0.671573 10.5 1.5Z" /></svg>{" "}</span>{" "}<span className="button-text">
+                    Read More                </span>{" "}</a>{" "}</div>{" "}</div>{" "}<div className="filter-item">{" "}<div className="item-thumbnail"><img loading="lazy" decoding="async" width="770" height="660" src="/all-programs/assets/0060__acc-6-min.jpg" className="attachment-large size-large wp-post-image" alt="" srcSet="/all-programs/assets/0060__acc-6-min.jpg 770w, /all-programs/assets/0086__acc-6-min-300x257.jpg 300w, /all-programs/assets/0087__acc-6-min-768x658.jpg 768w" sizes="(max-width: 770px) 100vw, 770px" />{" "}</div>{" "}<div className="item-content"><h4 className="item-title"><a href="/programs/llb-in-international-law/">LLB in International Law</a></h4>{" "}<ul className="item-meta">{" "}<li>{" "}<a href="/faculties/faculty-of-law/">
+									Faculty of Law                                </a>{" "}</li>{" "}<li>{" "}<a href="/departments/department-of-international-law/">
+									Department of International Law                                </a>{" "}</li>{" "}</ul>{" "}<p className="item-desc">
+						Explore international laws, treaties, human rights, and global justice. Prepare for careers in diplomacy, international courts, and...                    </p>{" "}<a className="rs-button style-default icon-anim-rotate-90 text-anim-none" href="/programs/llb-in-international-law/">{" "}<span className="button-icon">{" "}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15"><path d="M10.5 7.5C10.5 8.32843 9.82843 9 9 9C8.17157 9 7.5 8.32843 7.5 7.5C7.5 6.67157 8.17157 6 9 6C9.82843 6 10.5 6.67157 10.5 7.5Z" /><path d="M10.5 13.5C10.5 14.3284 9.82843 15 9 15C8.17157 15 7.5 14.3284 7.5 13.5C7.5 12.6716 8.17157 12 9 12C9.82843 12 10.5 12.6716 10.5 13.5Z" /><path d="M3 7.5C3 8.32843 2.32843 9 1.5 9C0.671573 9 0 8.32843 0 7.5C0 6.67157 0.671573 6 1.5 6C2.32843 6 3 6.67157 3 7.5Z" /><path d="M18 7.5C18 8.32843 17.3284 9 16.5 9C15.6716 9 15 8.32843 15 7.5C15 6.67157 15.6716 6 16.5 6C17.3284 6 18 6.67157 18 7.5Z" /><path d="M10.5 1.5C10.5 2.32843 9.82843 3 9 3C8.17157 3 7.5 2.32843 7.5 1.5C7.5 0.671573 8.17157 0 9 0C9.82843 0 10.5 0.671573 10.5 1.5Z" /></svg>{" "}</span>{" "}<span className="button-text">
+                    Read More                </span>{" "}</a>{" "}</div>{" "}</div>{" "}</div>{" "}<div className="filter-load-more-wrap">{" "}<button className="filter-load-more" data-page={"1"} data-total-pages={"5"}>{" "}<span className="button-text">
+                                Load More                            </span>{" "}</button>{" "}</div>{" "}</div>{" "}</div></div></div></div></div>{" "}</main>{" "}<CloneFooter />{" "}</div>{" "}<div id="rs-scroll-to-top" className="rs-page-scroll-progress" data-max={"113.1"} data-unit={"px"} data-reverse={"true"} style={{"--rs-page-scroll-progress": "113.1px", display: "none"}}>{" "}<svg className="arrowup" viewBox="0 0 24 24" width="18" height="18">{" "}<path d="M13 7.828V20h-2V7.828l-5.364 5.364-1.414-1.414L12 4l7.778 7.778-1.414 1.414L13 7.828z" />{" "}</svg>{" "}<svg className="scrollprogress" width="40" height="40">{" "}<circle className="progress-circle" cx="20" cy="20" r="18" strokeWidth="2" fill="none" strokeDasharray="113.1" strokeDashoffset="113.1" />{" "}</svg>{" "}</div>{" "}<span id="elementor-device-mode" className="elementor-screen-only"></span><svg style={{display: "none"}} className="e-font-icon-svg-symbols"></svg></div>
   );
 }
