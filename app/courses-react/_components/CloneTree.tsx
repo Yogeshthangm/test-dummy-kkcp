@@ -211,13 +211,22 @@ export function CloneTree() {
           </div>
 
           <style>{`
+            /* clone-theme.css sets overflow-x:hidden on .clone-root, which the CSS spec
+               forces to promote overflow-y to auto — making .clone-root the sticky
+               scroll container (which never scrolls). Replace with overflow-x:clip which
+               clips overflow visually but does NOT create a scroll container, so
+               position:sticky correctly sticks relative to the viewport. */
+            .clone-root { overflow-x: clip !important; }
             /* Sticky sidebar — stays in its column on scroll */
-            .elementor-7888 .rs-academic-filter-area { align-items: flex-start; }
+            .elementor-7888 .rs-academic-filter-area { align-items: flex-start !important; }
             .elementor-7888 .filter-sidebar {
-              position: sticky; top: 24px; align-self: flex-start;
-              max-height: calc(100vh - 48px); overflow-y: auto;
-              width: 200px; min-width: 200px; flex-shrink: 0;
-              padding: 16px 14px;
+              position: sticky !important;
+              top: 24px !important;
+              align-self: flex-start !important;
+              max-height: calc(100vh - 48px) !important;
+              overflow-y: auto;
+              width: 200px !important; min-width: 200px !important; flex-shrink: 0;
+              padding: 16px 14px !important;
             }
             .elementor-7888 .filter-sidebar .sidebar-title {
               font-size: 15px; margin-bottom: 10px; padding-bottom: 8px;
