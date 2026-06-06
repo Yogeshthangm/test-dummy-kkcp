@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CloneTree } from "../departments-react/_components/CloneTree";
 
-export const metadata: Metadata = { title: "Student Services" };
+export const metadata: Metadata = { title: "Departments" };
 
 export default function Page() {
   return (
