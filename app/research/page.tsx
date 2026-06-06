@@ -1,18 +1,15 @@
-export default function ResearchPage() {
+import type { Metadata } from "next";
+import { CloneTree } from "../research-react/_components/CloneTree";
+
+export const metadata: Metadata = { title: "Research" };
+
+export default function Page() {
   return (
-    <iframe
-      src="/research/index.html"
-      title="KKCP — Research"
-      style={{
-        position: "fixed",
-        inset: 0,
-        width: "100vw",
-        height: "100vh",
-        border: "none",
-        margin: 0,
-        padding: 0,
-        zIndex: 2147483647,
-      }}
-    />
+    <>
+      <link rel="stylesheet" href="/research/clone-theme.css" />
+      <link rel="stylesheet" href="/test-dummy-webs-1/clone-fixes.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600&family=Roboto:wght@400&display=swap" />
+      <div className="clone-root"><CloneTree /></div>
+    </>
   );
 }
