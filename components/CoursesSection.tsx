@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./CoursesSection.module.css";
 
 /* Courses content for the About Us page.
@@ -257,9 +258,23 @@ function renderBlock(b: Block, key: number) {
   );
 }
 
-export function CoursesSection() {
+export function CoursesSection({ showBanner = false }: { showBanner?: boolean }) {
   return (
-    <section className={styles.section} aria-label="Courses">
+    <>
+      {showBanner && (
+        <section className={styles.banner}>
+          <div className={styles.bannerInner}>
+            <h1 className={styles.bannerTitle}>Courses</h1>
+            <div className={styles.crumb}>
+              <Link href="/">Home</Link>
+              <span className={styles.crumbSep}>/</span>
+              <span>Courses</span>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className={styles.section} aria-label="Courses">
       <div className={styles.wrap}>
         <div className={styles.head}>
           <span className={styles.label}>Academics</span>
@@ -329,5 +344,6 @@ export function CoursesSection() {
         ))}
       </div>
     </section>
+    </>
   );
 }

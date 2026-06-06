@@ -1,7 +1,48 @@
-/* Courses content section for the About Us page.
+/* Courses content section for the Courses page.
    On-brand with the KKCP clone theme: cream page bg (#f6f4ee), Bitter headings,
    Roboto/Inter body, brand blue #034EA2 + navy #003A65 + yellow #FDC72F accents.
    Scoped via CSS Module so it never collides with the cloned elementor CSS. */
+
+/* ---- page-title banner (matches the site's breadcrumb band) ---- */
+.banner {
+  background: linear-gradient(120deg, #003a65 0%, #034ea2 100%);
+  padding: 64px 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.bannerInner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.bannerTitle {
+  font-family: "Bitter", Georgia, serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.crumb {
+  margin-top: 14px;
+  font-size: 15px;
+  color: #dbe7f4;
+}
+
+.crumb a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.crumb a:hover {
+  text-decoration: underline;
+}
+
+.crumbSep {
+  margin: 0 9px;
+  color: #fdc72f;
+}
 
 .section {
   font-family: "Roboto", "Inter", system-ui, sans-serif;
