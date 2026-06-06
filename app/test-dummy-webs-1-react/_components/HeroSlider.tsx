@@ -24,8 +24,9 @@ export function HeroSlider() {
 
   return (
     <span style={{ display: "block", position: "relative" }}>
-      {/* Stage: fixed min-height so the nav dots don't jump between slides */}
-      <span style={{ display: "block", position: "relative", minHeight: "230px" }}>
+      {/* Stage: fixed min-height so the nav dots don't jump between slides.
+          Phrases flow and wrap naturally (2-3 lines) within the widened layer. */}
+      <span style={{ display: "block", position: "relative", minHeight: "170px" }}>
         {SLIDES.map((lines, idx) => (
           <span
             key={idx}
@@ -36,19 +37,16 @@ export function HeroSlider() {
               top: 0,
               left: 0,
               right: 0,
-              fontSize: "46px",
-              lineHeight: "1.14",
+              fontSize: "48px",
+              lineHeight: "1.16",
+              whiteSpace: "normal",
               opacity: idx === active ? 1 : 0,
               transform: idx === active ? "translateY(0)" : "translateY(14px)",
               transition: "opacity .7s ease, transform .7s ease",
               pointerEvents: idx === active ? "auto" : "none",
             }}
           >
-            {lines.map((line, k) => (
-              <span key={k} style={{ display: "block" }}>
-                {line}
-              </span>
-            ))}
+            {lines.join(" ")}
           </span>
         ))}
       </span>
