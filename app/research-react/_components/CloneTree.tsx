@@ -102,6 +102,20 @@ const GROUPS = [
   },
 ];
 
+// Short navigation labels for the sidebar index (chrome, not content). Order matches GROUPS.
+const NAMES = [
+  `Dr. A. Shanthy`,
+  `Dr. M. Vani`,
+  `Mrs. S.L. Laura`,
+  `Dr. B. Premkumar`,
+  `Dr. C. Senthil Kumari`,
+  `Mrs. M. Sankari`,
+  `Ms. V. PREMA`,
+  `Ms. A. MARINA JULIET`,
+  `Ms. K. Mekala`,
+  `Mrs. G.C. Leela Priyanka`,
+];
+
 export function CloneTree() {
   return (
 <div className="wp-singular page-template-default page page-id-research wp-theme-KKCP gsap-enable elementor-default elementor-template-full-width elementor-kit-14 elementor-page elementor-page-research e--ua-blink e--ua-mac e--ua-webkit" data-elementor-device-mode={"desktop"} data-aos-easing={"ease"} data-aos-duration={"800"} data-aos-delay={"0"} style={{}}>{" "}<div id="site-preloader" className="KKCP-preloader" style={{display: "none"}}>{" "}<div className="loader-container">{" "}<div className="loader-icon">{" "}<img src="/all-programs/assets/0020__Asset-2-11.png" alt="KKCP" />{" "}</div>{" "}</div></div>{" "}<div id="KKCP-page" className="KKCP-page-wrapper">{" "}<CloneHeader />{" "}<main id="KKCP-content" className="KKCP-content-wrapper">
@@ -124,24 +138,39 @@ export function CloneTree() {
       </div>
     </div>
 
-    {/* Publications content — rounded-card layout (same as Student Services program cards) */}
+    {/* Publications — two columns: compact sticky author index + cards (Student Services design, programs removed) */}
     <div data-aos-once={"true"} className="elementor-element e-flex e-con-boxed e-con e-parent e-lazyloaded" data-element_type={"container"} data-e-type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
       <div className="e-con-inner">
-        <div className="filter-content">
-          <div className="filter-top-bar">
-            <span className="filter-result">{TOP_TITLE}</span>
-          </div>
-          <div className="filter-items-wrapper">
-            {GROUPS.map((g, gi) => (
-              <div className="filter-item" key={gi}>
-                <div className="item-content">
-                  <h4 className="item-title">{g.heading}</h4>
-                  {g.items.map((it, ii) => (
-                    <p className="item-desc" key={ii} style={{ lineHeight: 1.75 }}>{it}</p>
-                  ))}
+        <div className="rs-academic-filter-area" style={{ "--sidebar-width": "230px" }}>
+          {/* Compact sidebar — smaller, sticky on scroll, stays within the column */}
+          <aside className="filter-sidebar" style={{ padding: "22px 20px", position: "sticky", top: "100px", alignSelf: "flex-start" }}>
+            <h4 className="sidebar-title" style={{ fontSize: "17px", margin: "0 0 22px", paddingBottom: "16px" }}>Authors</h4>
+            <div className="filter-criteria">
+              <ul className="criteria-checkboxes" style={{ listStyle: "none", margin: 0, padding: 0 }}>
+                {NAMES.map((n, i) => (
+                  <li className="criteria-item" key={i} style={{ margin: "0 0 12px" }}>
+                    <a href={`#pub-${i + 1}`} style={{ fontSize: "14px", lineHeight: 1.4, display: "block" }}>{n}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+          <div className="filter-content">
+            <div className="filter-top-bar">
+              <span className="filter-result">{TOP_TITLE}</span>
+            </div>
+            <div className="filter-items-wrapper">
+              {GROUPS.map((g, gi) => (
+                <div className="filter-item" id={`pub-${gi + 1}`} key={gi} style={{ scrollMarginTop: "110px" }}>
+                  <div className="item-content">
+                    <h4 className="item-title">{g.heading}</h4>
+                    {g.items.map((it, ii) => (
+                      <p className="item-desc" key={ii} style={{ lineHeight: 1.75 }}>{it}</p>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
