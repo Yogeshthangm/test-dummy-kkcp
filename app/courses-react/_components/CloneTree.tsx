@@ -175,7 +175,6 @@ export function CloneTree() {
                     <div className="filter-sidebar">
                       <h4 className="sidebar-title">Filter By<span className="filter-reset-btn" style={{display: "none"}}>Reset</span></h4>
                       <Criteria title="Campus" items={CAMPUS_FILTERS} />
-                      <Criteria title="Programs" items={PROGRAMS} />
                     </div>
                     <div className="filter-content">
                       <div className="filter-top-bar">
@@ -212,16 +211,26 @@ export function CloneTree() {
           </div>
 
           <style>{`
-            /* Sticky sidebar */
+            /* Sticky sidebar — stays in its column on scroll */
             .elementor-7888 .rs-academic-filter-area { align-items: flex-start; }
             .elementor-7888 .filter-sidebar {
-              position: sticky; top: 100px; align-self: flex-start;
-              max-height: calc(100vh - 120px); overflow-y: auto;
+              position: sticky; top: 24px; align-self: flex-start;
+              max-height: calc(100vh - 48px); overflow-y: auto;
+              width: 200px; min-width: 200px; flex-shrink: 0;
+              padding: 16px 14px;
             }
+            .elementor-7888 .filter-sidebar .sidebar-title {
+              font-size: 15px; margin-bottom: 10px; padding-bottom: 8px;
+            }
+            .elementor-7888 .filter-sidebar .criteria-title {
+              font-size: 12px; margin-bottom: 6px;
+            }
+            .elementor-7888 .filter-sidebar .criteria-checkboxes { gap: 2px; }
+            .elementor-7888 .filter-sidebar .criteria-item { margin-bottom: 0; }
             /* Sidebar items as anchor links */
             .elementor-7888 .criteria-link {
               display: block; color: #4C4C4C; text-decoration: none;
-              font-size: 15px; line-height: 1.45; transition: color .2s;
+              font-size: 13px; line-height: 1.4; transition: color .2s; padding: 3px 0;
             }
             .elementor-7888 .criteria-link:hover { color: #034EA2; }
             /* Offset anchor targets so they clear the sticky site header */
