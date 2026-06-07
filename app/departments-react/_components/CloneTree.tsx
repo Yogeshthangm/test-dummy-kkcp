@@ -262,20 +262,16 @@ export function CloneTree() {
                Clip horizontally (no h-scrollbar) but keep vertical visible so the
                page (window) stays the scroll root and the sidebar can stick. */
             .clone-root { overflow-x: clip; overflow-y: visible; }
-            /* Smaller, sticky sidebar that stays within its column */
+            /* Sticky sidebar that stays within its column (theme width kept) */
             .elementor-7888 .rs-academic-filter-area { align-items: flex-start; }
             .elementor-7888 .filter-sidebar {
-              width: 220px !important; flex: 0 0 220px; padding: 22px;
               position: sticky; top: 100px; align-self: flex-start;
               max-height: calc(100vh - 120px); overflow-y: auto;
             }
-            .elementor-7888 .filter-sidebar .sidebar-title { font-size: 17px; padding-bottom: 14px; margin-bottom: 16px; }
-            .elementor-7888 .filter-sidebar .criteria-title { font-size: 14px; margin-bottom: 10px; }
-            .elementor-7888 .filter-sidebar .criteria-item { margin-bottom: 6px; }
             /* Sidebar items as anchor links */
             .elementor-7888 .criteria-link {
               display: block; color: #4C4C4C; text-decoration: none;
-              font-size: 14px; line-height: 1.4; transition: color .2s;
+              font-size: 15px; line-height: 1.45; transition: color .2s;
             }
             .elementor-7888 .criteria-link:hover { color: #034EA2; }
             /* Offset anchor targets so they clear the sticky site header */
