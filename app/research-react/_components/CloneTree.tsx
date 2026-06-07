@@ -141,15 +141,15 @@ export function CloneTree() {
     {/* Publications — two columns: compact sticky author index + cards (Student Services design, programs removed) */}
     <div data-aos-once={"true"} className="elementor-element e-flex e-con-boxed e-con e-parent e-lazyloaded" data-element_type={"container"} data-e-type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
       <div className="e-con-inner">
-        <div className="rs-academic-filter-area" style={{ "--sidebar-width": "230px" }}>
-          {/* Compact sidebar — smaller, sticky on scroll, stays within the column */}
-          <aside className="filter-sidebar" style={{ padding: "22px 20px", position: "sticky", top: "100px", alignSelf: "flex-start" }}>
-            <h4 className="sidebar-title" style={{ fontSize: "17px", margin: "0 0 22px", paddingBottom: "16px" }}>Authors</h4>
+        <div className="rs-academic-filter-area">
+          {/* Sidebar — sticky on scroll, stays within the column */}
+          <aside className="filter-sidebar" style={{ position: "sticky", top: "100px", alignSelf: "flex-start" }}>
+            <h4 className="sidebar-title">Authors</h4>
             <div className="filter-criteria">
               <ul className="criteria-checkboxes" style={{ listStyle: "none", margin: 0, padding: 0 }}>
                 {NAMES.map((n, i) => (
-                  <li className="criteria-item" key={i} style={{ margin: "0 0 12px" }}>
-                    <a href={`#pub-${i + 1}`} style={{ fontSize: "14px", lineHeight: 1.4, display: "block" }}>{n}</a>
+                  <li className="criteria-item" key={i} style={{ margin: "0 0 14px" }}>
+                    <a href={`#pub-${i + 1}`} style={{ display: "block", lineHeight: 1.4 }}>{n}</a>
                   </li>
                 ))}
               </ul>
