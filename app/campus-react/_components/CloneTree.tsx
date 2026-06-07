@@ -208,19 +208,16 @@ export function CloneTree() {
                breaks position:sticky. overflow-x:clip clips horizontally WITHOUT creating
                a scroll container, so the sidebar can stick to the viewport again. */
             .clone-root { overflow-x: clip; overflow-y: visible; }
-            /* Smaller, sticky sidebar that stays inside its own column */
-            .elementor-7888 .rs-academic-filter-area { align-items: flex-start; --sidebar-width: 230px; gap: 32px; }
+            /* Sticky sidebar that stays inside its own column (default theme size) */
+            .elementor-7888 .rs-academic-filter-area { align-items: flex-start; }
             .elementor-7888 .filter-sidebar {
-              padding: 20px; position: sticky; top: 100px; align-self: flex-start;
+              position: sticky; top: 100px; align-self: flex-start;
               max-height: calc(100vh - 120px); overflow-y: auto;
             }
-            .elementor-7888 .filter-sidebar .sidebar-title { font-size: 17px; padding-bottom: 14px; margin-bottom: 18px; }
-            .elementor-7888 .filter-sidebar .criteria-title { font-size: 15px; margin-bottom: 12px; }
-            .elementor-7888 .filter-sidebar .criteria-checkboxes { display: flex; flex-direction: column; gap: 9px; }
             /* Sidebar items as anchor links */
             .elementor-7888 .criteria-link {
               display: block; color: #4C4C4C; text-decoration: none;
-              font-size: 13.5px; line-height: 1.4; transition: color .2s;
+              font-size: 15px; line-height: 1.45; transition: color .2s;
             }
             .elementor-7888 .criteria-link:hover { color: #034EA2; }
             /* Offset anchor targets so they clear the sticky site header */
