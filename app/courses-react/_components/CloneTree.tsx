@@ -225,21 +225,11 @@ export function CloneTree() {
               align-self: flex-start !important;
               max-height: calc(100vh - 48px) !important;
               overflow-y: auto;
-              width: 200px !important; min-width: 200px !important; flex-shrink: 0;
-              padding: 16px 14px !important;
             }
-            .elementor-7888 .filter-sidebar .sidebar-title {
-              font-size: 15px; margin-bottom: 10px; padding-bottom: 8px;
-            }
-            .elementor-7888 .filter-sidebar .criteria-title {
-              font-size: 12px; margin-bottom: 6px;
-            }
-            .elementor-7888 .filter-sidebar .criteria-checkboxes { gap: 2px; }
-            .elementor-7888 .filter-sidebar .criteria-item { margin-bottom: 0; }
             /* Sidebar items as anchor links */
             .elementor-7888 .criteria-link {
               display: block; color: #4C4C4C; text-decoration: none;
-              font-size: 13px; line-height: 1.4; transition: color .2s; padding: 3px 0;
+              font-size: 15px; line-height: 1.45; transition: color .2s;
             }
             .elementor-7888 .criteria-link:hover { color: #034EA2; }
             /* Offset anchor targets so they clear the sticky site header */
