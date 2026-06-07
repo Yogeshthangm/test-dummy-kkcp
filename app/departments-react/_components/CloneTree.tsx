@@ -274,8 +274,19 @@ export function CloneTree() {
               font-size: 15px; line-height: 1.45; transition: color .2s;
             }
             .elementor-7888 .criteria-link:hover { color: #034EA2; }
-            /* Offset anchor targets so they clear the sticky site header */
-            .dept-filter-item { align-items: flex-start; scroll-margin-top: 120px; }
+            /* Stacked card: image on top, content below. scroll-margin clears sticky header */
+            .elementor-7888 .dept-filter-item {
+              flex-direction: column !important; align-items: stretch;
+              scroll-margin-top: 120px;
+            }
+            .elementor-7888 .dept-filter-item .item-thumbnail {
+              width: 100% !important; aspect-ratio: 4 / 3; height: auto !important;
+              flex: 0 0 auto; align-self: stretch;
+            }
+            .elementor-7888 .dept-filter-item .item-thumbnail img {
+              width: 100%; height: 100%; object-fit: cover; object-position: center;
+            }
+            .elementor-7888 .dept-filter-item .item-content { width: 100%; padding: 24px 30px; }
             .dept-desc { margin-top: 15px; }
             .dept-desc .dept-label {
               font-family: "Bitter", serif; color: #034EA2; font-weight: 600;
