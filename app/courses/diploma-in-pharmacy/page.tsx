@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { CloneTree } from "../regulatory-affairs-react/_components/CloneTree";
+import { CloneTree } from "../../diploma-in-pharmacy-react/_components/CloneTree";
+import { TabsActivator } from "../../diploma-in-pharmacy-react/_components/TabsActivator";
 
-export const metadata: Metadata = { title: "Regulatory Affairs" };
+export const metadata: Metadata = { title: "D.Pharm" };
 
 export default function Page() {
   return (
@@ -9,7 +10,7 @@ export default function Page() {
       <link rel="stylesheet" href="/program-med/clone-theme.css" />
       <link rel="stylesheet" href="/test-dummy-webs-1/clone-fixes.css" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600&family=Roboto:wght@400&display=swap" />
-      <div className="clone-root"><CloneTree /></div>
+      <div className="clone-root"><CloneTree /><TabsActivator /></div>
     </>
   );
 }
