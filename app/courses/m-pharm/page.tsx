@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { CloneTree } from "../m-pharm-react/_components/CloneTree";
-import { TabsActivator } from "../m-pharm-react/_components/TabsActivator";
+import { CloneTree } from "../../m-pharm-react/_components/CloneTree";
+import { TabsActivator } from "../../m-pharm-react/_components/TabsActivator";
 
 export const metadata: Metadata = { title: "M.Pharm" };
 
