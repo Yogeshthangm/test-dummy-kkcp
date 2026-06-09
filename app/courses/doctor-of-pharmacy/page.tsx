@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { CloneTree } from "../doctor-of-pharmacy-react/_components/CloneTree";
-import { TabsActivator } from "../doctor-of-pharmacy-react/_components/TabsActivator";
+import { CloneTree } from "../../doctor-of-pharmacy-react/_components/CloneTree";
+import { TabsActivator } from "../../doctor-of-pharmacy-react/_components/TabsActivator";
 
 export const metadata: Metadata = { title: "Doctor of Pharmacy" };
 
