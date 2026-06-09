@@ -39,3 +39,22 @@
   .clone-root .elementor .elementor-hidden-mobile,
   .clone-root .elementor .elementor-hidden-phone { display: revert !important; }
 }
+
+/* Courses Offered section: match the same container width/display as other
+   boxed sections (e.g. d7ba3d5 Academics). Without this CSS the section
+   has no --display or --content-width, so its inner box can overflow the
+   1300px content rail used by every other section on the page. */
+.clone-root .elementor-51 .elementor-element.elementor-element-kkcpcourses {
+  --display: flex;
+  --flex-direction: column;
+  --container-widget-width: 100%;
+  --container-widget-height: initial;
+  --container-widget-flex-grow: 0;
+  --container-widget-align-self: initial;
+  --flex-wrap-mobile: wrap;
+  --padding-top: 80px;
+  --padding-bottom: 80px;
+  --padding-left: 10px;
+  --padding-right: 10px;
+  --content-width: min(100%, var(--container-max-width, 1140px));
+}
