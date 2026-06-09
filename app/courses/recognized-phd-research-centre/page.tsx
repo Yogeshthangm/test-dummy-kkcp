@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CloneTree } from "../recognized-phd-research-centre-react/_components/CloneTree";
+import { CloneTree } from "../../recognized-phd-research-centre-react/_components/CloneTree";
 
 export const metadata: Metadata = { title: "Recognized Ph.D. Research Centre" };
 
