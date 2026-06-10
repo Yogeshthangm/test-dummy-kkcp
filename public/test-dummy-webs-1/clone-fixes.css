@@ -58,3 +58,38 @@
   --padding-right: 10px;
   --content-width: min(100%, var(--container-max-width, 1140px));
 }
+
+/* "Courses Offered" cards: whole card clickable + centered, white title */
+.clone-root .rs-academic-cards.style-two .single-item {
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 30px !important;
+  position: relative;
+}
+.clone-root .rs-academic-cards.style-two .single-item .content-wrapper {
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100%;
+}
+.clone-root .rs-academic-cards.style-two .single-item .content-inner {
+  width: 100%;
+  text-align: center;
+}
+.clone-root .rs-academic-cards.style-two .single-item .title {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+.clone-root .rs-academic-cards.style-two .single-item .title a {
+  color: #ffffff !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+/* Stretched link: the existing title anchor covers the entire card */
+.clone-root .rs-academic-cards.style-two .single-item .title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
