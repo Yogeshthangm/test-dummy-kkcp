@@ -2,10 +2,13 @@
 import { CloneHeader } from "@/components/CloneHeader";
 import { CloneFooter } from "@/components/CloneFooter";
 /* eslint-disable */
-// Real React research page (no iframe, no dangerouslySetInnerHTML). Mirrors the Student Services
-// design language: KKCP chrome (CloneHeader/CloneFooter), the cloned elementor banner, and the
-// rounded-card content layout (.filter-content / .filter-item / .item-content) scoped in
-// /all-programs/clone-theme.css. All publication content below is verbatim user-provided copy.
+// Research page — same design as the Courses page (hero banner + "Filter By" sticky
+// sidebar + filter-card list with thumbnails, scoped by .elementor-7888 CSS in
+// /all-programs/clone-theme.css). One card per faculty publication group.
+// All publication copy is VERBATIM user-provided text (ICPR) — including the leading
+// line-number prefixes (1.–11.) on the first eleven entries; nothing rewritten. Text
+// lives in JS strings so React escapes &/</> automatically. Short author names and
+// department tags (NAMES/DEPTS) are navigation chrome, not content.
 
 const TOP_TITLE = `1.Research Works & Paper Publications`;
 
@@ -65,7 +68,7 @@ const GROUPS = [
   {
     heading: `Mrs. M. Sankari M.Pharm (Dept. of Pharmacology) has authored a research article titled`,
     items: [
-      `1.  "Evaluation of anti-arthritic activity of Spathodea Campanulata root bark extract on Freund's adjuvant induced arthritis in rat models" published in the World Journal of Pharmaceutical Sciences, 10 (07) 2022, pages 1-9.`,
+      `1.  "Evaluation of anti-arthritic activity of Spathodea Campanulata root bark extract on Freund’s adjuvant induced arthritis in rat models" published in the World Journal of Pharmaceutical Sciences, 10 (07) 2022, pages 1-9.`,
     ],
   },
   {
@@ -102,7 +105,7 @@ const GROUPS = [
   },
 ];
 
-// Short navigation labels for the sidebar index (chrome, not content). Order matches GROUPS.
+// Short navigation labels for the sidebar/card titles (chrome, not content). Order matches GROUPS.
 const NAMES = [
   `Dr. A. Shanthy`,
   `Dr. M. Vani`,
@@ -116,67 +119,148 @@ const NAMES = [
   `Mrs. G.C. Leela Priyanka`,
 ];
 
+// Department tags for the card meta (chrome, derived from each heading). Order matches GROUPS.
+const DEPTS = [
+  `Dept. of Pharmaceutics`,
+  `Dept. of Pharmaceutics`,
+  `Dept. of Pharmaceutics`,
+  `Dept of Pharmacology`,
+  `Dept of Pharmacology`,
+  `Dept. of Pharmacology`,
+  `Pharmaceutical Chemistry`,
+  `Pharmaceutical Analysis`,
+  `Dept. of Pharmacognosy`,
+  `Dept. of Pharmacology`,
+];
+
+// 6 source thumbnails cycled across the cards (same set the Courses page uses).
+const THUMBS = [
+  "/all-programs/assets/0054__acc-1-min.jpg",
+  "/all-programs/assets/0055__acc-2-min.jpg",
+  "/all-programs/assets/0056__acc-3-min.jpg",
+  "/all-programs/assets/0058__acc-4-min.jpg",
+  "/all-programs/assets/0059__acc-5-min.jpg",
+  "/all-programs/assets/0060__acc-6-min.jpg",
+];
+
+function Criteria({ title, items }) {
+  return (
+    <div className="filter-criteria">
+      <h5 className="criteria-title">{title}</h5>
+      <ul className="criteria-checkboxes">
+        {items.map((it) => (
+          <li className="criteria-item" key={it.id}>
+            <a className="criteria-link" href={it.href}>{it.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+const FILTERS = NAMES.map((n, i) => ({ id: `pub-${i + 1}`, label: `${i + 1} Research → ${n}`, href: `#pub-${i + 1}` }));
+
 export function CloneTree() {
   return (
-<div className="wp-singular page-template-default page page-id-research wp-theme-KKCP gsap-enable elementor-default elementor-template-full-width elementor-kit-14 elementor-page elementor-page-research e--ua-blink e--ua-mac e--ua-webkit" data-elementor-device-mode={"desktop"} data-aos-easing={"ease"} data-aos-duration={"800"} data-aos-delay={"0"} style={{}}>{" "}<div id="site-preloader" className="KKCP-preloader" style={{display: "none"}}>{" "}<div className="loader-container">{" "}<div className="loader-icon">{" "}<img src="/all-programs/assets/0020__Asset-2-11.png" alt="KKCP" />{" "}</div>{" "}</div></div>{" "}<div id="KKCP-page" className="KKCP-page-wrapper">{" "}<CloneHeader />{" "}<main id="KKCP-content" className="KKCP-content-wrapper">
-  <div data-elementor-type={"wp-page"} className="elementor elementor-research">
-
-    {/* Banner (same design as Student Services): breadcrumb + title + divider + intro + arrow */}
-    <div data-aos-once={"true"} className="elementor-element e-flex e-con-boxed e-con e-parent e-lazyloaded" data-element_type={"container"} data-e-type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
-      <div className="e-con-inner">
-        <div data-aos-once={"true"} className="elementor-element elementor-widget elementor-widget-rstb-breadcrumb" data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rstb-breadcrumb.default"}>
-          <div className="rstb-breadcrumb">
-            <span property="itemListElement"><a property="item" title="Go to KKCP." href="/" className="home"><span property="name">Home</span></a><meta property="position" content="1" /></span>
-            <span className="item-separator"><svg className="e-font-icon-svg e-fas-angle-double-right" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z" /></svg></span>
-            <span property="itemListElement"><span property="name" className="post post-page current-item">Research</span><meta property="position" content="2" /></span>
-          </div>
-        </div>
-        <div data-aos-once={"true"} className="elementor-element elementor-widget elementor-widget-rstb-page-title" data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Research</h1></div>
-        <div data-aos-once={"true"} className="elementor-element elementor-widget elementor-widget-rs-divider" data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rs-divider.default"}><div className="rs-divider dot-enable"><span> </span></div></div>
-        <div data-aos-once={"true"} className="elementor-element elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"text-editor.default"}><p>Education goes beyond textbooks and classrooms. We believe in empowering students to explore their passions challenge conventions.</p></div>
-        <div data-aos-once={"true"} className="elementor-element elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.png" alt="bnr-arrow-1-1" /></div></div>
-      </div>
-    </div>
-
-    {/* Publications — two columns: compact sticky author index + cards (Student Services design, programs removed) */}
-    <div data-aos-once={"true"} className="elementor-element e-flex e-con-boxed e-con e-parent e-lazyloaded" data-element_type={"container"} data-e-type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
-      <div className="e-con-inner">
-        <div className="rs-academic-filter-area">
-          {/* Sidebar — sticky on scroll, stays within the column */}
-          <aside className="filter-sidebar" style={{ position: "sticky", top: "100px", alignSelf: "flex-start" }}>
-            <h4 className="sidebar-title">Authors</h4>
-            <div className="filter-criteria">
-              <ul className="criteria-checkboxes" style={{ listStyle: "none", margin: 0, padding: 0 }}>
-                {NAMES.map((n, i) => (
-                  <li className="criteria-item" key={i} style={{ margin: "0 0 14px" }}>
-                    <a href={`#pub-${i + 1}`} style={{ display: "block", lineHeight: 1.4 }}>{n}</a>
-                  </li>
-                ))}
-              </ul>
+    <div className="wp-singular page-template-default page page-id-7888 wp-theme-KKCP gsap-enable elementor-default elementor-template-full-width elementor-kit-14 elementor-page elementor-page-7888 e--ua-blink e--ua-mac e--ua-webkit" data-elementor-device-mode={"desktop"}>
+      <div id="KKCP-page" className="KKCP-page-wrapper">
+        <CloneHeader />
+        <main id="KKCP-content" className="KKCP-content-wrapper">
+          <div data-elementor-type={"wp-page"} data-elementor-id={"7888"} className="elementor elementor-7888">
+            {/* Hero banner (same design as Courses) */}
+            <div className="elementor-element elementor-element-146c4d0 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"146c4d0"} data-element_type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
+              <div className="e-con-inner">
+                <div className="elementor-element elementor-element-da6b75b elementor-widget elementor-widget-rstb-breadcrumb" data-id={"da6b75b"} data-element_type={"widget"} data-widget_type={"rstb-breadcrumb.default"}>
+                  <div className="rstb-breadcrumb"><span property="itemListElement"><a property="item" title="Go to KKCP." href="/" className="home"><span property="name">Home</span></a><meta property="position" content="1" /></span><span className="item-separator"><svg className="e-font-icon-svg e-fas-angle-double-right" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z" /></svg></span><span property="itemListElement"><span property="name" className="post post-page current-item">Research</span><meta property="url" content="/research/" /><meta property="position" content="2" /></span></div>
+                </div>
+                <div className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Research</h1></div>
+                <div className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider" data-id={"4626c23"} data-element_type={"widget"} data-widget_type={"rs-divider.default"}><div className="rs-divider dot-enable"><span> </span></div></div>
+                <div className="elementor-element elementor-element-419a788 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id={"419a788"} data-element_type={"widget"} data-widget_type={"text-editor.default"}><p>Education goes beyond textbooks and classrooms. We believe in empowering students to explore their passions challenge conventions.</p></div>
+                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.png" alt="bnr-arrow-1-1" /></div></div>
+              </div>
             </div>
-          </aside>
-          <div className="filter-content">
-            <div className="filter-top-bar">
-              <span className="filter-result">{TOP_TITLE}</span>
-            </div>
-            <div className="filter-items-wrapper">
-              {GROUPS.map((g, gi) => (
-                <div className="filter-item" id={`pub-${gi + 1}`} key={gi} style={{ scrollMarginTop: "110px" }}>
-                  <div className="item-content">
-                    <h4 className="item-title">{g.heading}</h4>
-                    {g.items.map((it, ii) => (
-                      <p className="item-desc" key={ii} style={{ lineHeight: 1.75 }}>{it}</p>
-                    ))}
+
+            {/* Filter area: sidebar + publication cards */}
+            <div className="elementor-element elementor-element-f401be2 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"f401be2"} data-element_type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
+              <div className="e-con-inner">
+                <div className="elementor-element elementor-element-57146e5 elementor-widget elementor-widget-rs-academic-filter" data-id={"57146e5"} data-element_type={"widget"} data-widget_type={"rs-academic-filter.default"}>
+                  <div className="rs-academic-filter-area" data-widget-id={"57146e5"}>
+                    <div className="filter-sidebar-overly"></div>
+                    <div className="filter-sidebar">
+                      <h4 className="sidebar-title">Filter By<span className="filter-reset-btn" style={{display: "none"}}>Reset</span></h4>
+                      <Criteria title="Publications" items={FILTERS} />
+                    </div>
+                    <div className="filter-content">
+                      <div className="filter-top-bar">
+                        <button className="filter-toggle-btn"><i className="ri-menu-2-fill"></i></button>
+                        <span className="filter-result">Total <span className="result-count">10</span> results found</span>
+                        <span className="filter-search-wrap">
+                          <input className="filter-search-input" type="text" placeholder="Enter keyword" />
+                          <span className="search-icon"><svg className="e-font-icon-svg e-fas-search" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" /></svg></span>
+                        </span>
+                      </div>
+                      <h3 className="research-section-title">{TOP_TITLE}</h3>
+                      <div className="filter-items-wrapper">
+                        {GROUPS.map((g, idx) => (
+                          <div className="filter-item dept-filter-item" id={`pub-${idx + 1}`} key={idx}>
+                            <div className="item-thumbnail">
+                              <img loading="lazy" decoding="async" width="770" height="660" src={THUMBS[idx % THUMBS.length]} className="attachment-large size-large wp-post-image" alt={NAMES[idx]} />
+                            </div>
+                            <div className="item-content">
+                              <h4 className="item-title"><a href="#">{NAMES[idx]}</a></h4>
+                              <ul className="item-meta"><li><a href="#">{DEPTS[idx]}</a></li></ul>
+                              <div className="item-desc dept-desc">
+                                <p className="dept-text dept-lead">{g.heading}</p>
+                                {g.items.map((it, ii) => (
+                                  <p className="dept-text dept-pub" key={ii}>{it}</p>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
-        </div>
+
+          <style>{`
+            .clone-root { overflow-x: clip !important; }
+            .elementor-7888 .rs-academic-filter-area { align-items: flex-start !important; }
+            .elementor-7888 .filter-sidebar {
+              position: sticky !important;
+              top: 24px !important;
+              align-self: flex-start !important;
+              max-height: calc(100vh - 48px) !important;
+              overflow-y: auto;
+            }
+            .elementor-7888 .criteria-link {
+              display: block; color: #4C4C4C; text-decoration: none;
+              font-size: 15px; line-height: 1.45; transition: color .2s; margin-bottom: 8px;
+            }
+            .elementor-7888 .criteria-link:hover { color: #034EA2; }
+            .elementor-7888 .research-section-title {
+              font-family: "Bitter", serif; color: #034EA2; font-weight: 600;
+              font-size: 26px; margin: 8px 0 24px;
+            }
+            .elementor-7888 .dept-filter-item { align-items: flex-start; scroll-margin-top: 120px; }
+            .elementor-7888 .dept-desc { margin-top: 15px; }
+            .elementor-7888 .dept-desc .dept-lead {
+              font-family: "Bitter", serif; color: #034EA2; font-weight: 600;
+              font-size: 16px; line-height: 1.6; margin: 0 0 14px;
+            }
+            .elementor-7888 .dept-desc .dept-text { color: #4C4C4C; font-size: 15px; line-height: 1.8; margin: 0 0 12px; text-align: justify; }
+            .elementor-7888 .dept-desc .dept-pub { padding-left: 1.7em; text-indent: -1.7em; }
+            /* Hero: full dark overlay (the source gradient only darkened the bottom) */
+            .elementor-7888 .elementor-element-146c4d0::before {
+              background-image: linear-gradient(180deg, rgba(0,25,44,0.55) 0%, rgba(0,25,44,0.82) 100%) !important;
+            }
+          `}</style>
+        </main>
+        <CloneFooter />
       </div>
     </div>
-
-  </div>
-{" "}</main>{" "}<CloneFooter />{" "}</div>{" "}<span id="elementor-device-mode" className="elementor-screen-only"></span></div>
   );
 }
