@@ -13,146 +13,146 @@ export function CloneTree() {
 				 Undergraduate Tuition			</span></button><button id="e-n-tab-title-9774025082" data-tab-title-id={"e-n-tab-title-9774025082"} className="e-n-tab-title" aria-selected={"false"} data-tab-index={"2"} role="tab" tabIndex="-1" aria-controls={"e-n-tab-content-9774025082"} style={{"--n-tabs-title-order": "2"}}><span className="e-n-tab-icon"></span><span className="e-n-tab-title-text">
 				Graduate Tuition			</span></button><button id="e-n-tab-title-9774025083" data-tab-title-id={"e-n-tab-title-9774025083"} className="e-n-tab-title" aria-selected={"false"} data-tab-index={"3"} role="tab" tabIndex="-1" aria-controls={"e-n-tab-content-9774025083"} style={{"--n-tabs-title-order": "3"}}><span className="e-n-tab-icon"></span><span className="e-n-tab-title-text">
 				Doctoral (PhD) Tuition			</span></button><button id="e-n-tab-title-9774025084" data-tab-title-id={"e-n-tab-title-9774025084"} className="e-n-tab-title" aria-selected={"false"} data-tab-index={"4"} role="tab" tabIndex="-1" aria-controls={"e-n-tab-content-9774025084"} style={{"--n-tabs-title-order": "4"}}><span className="e-n-tab-icon"></span><span className="e-n-tab-title-text">
-				 International Students Tuition			</span></button></div><div className="e-n-tabs-content"><div data-aos-once={"true"} id="e-n-tab-content-9774025081" role="tabpanel" aria-labelledby={"e-n-tab-title-9774025081"} data-tab-index={"1"} style={{"--n-tabs-title-order": "1"}} className="e-active elementor-element elementor-element-7ef1b504 e-con-full e-flex e-con e-child" data-id={"7ef1b504"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-287ba67 elementor-widget elementor-widget-ultimate_data_table_el_widget" data-id={"287ba67"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"ultimate_data_table_el_widget.default"}><div className="elementor-widget-container">{" "}<div className="ultimate-data-table">{" "}<div id="ultimate-datatable-uni-287ba67_wrapper" className="dt-container dt-empty-footer"><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-layout-row dt-layout-table"><div className="dt-layout-cell  dt-layout-full"><table id="ultimate-datatable-uni-287ba67" className="dataTable" style={{width: "100%"}}><colgroup><col data-dt-column={"0"} style={{width: "255.797px"}} /><col data-dt-column={"1"} style={{width: "255.797px"}} /><col data-dt-column={"2"} style={{width: "255.797px"}} /><col data-dt-column={"3"} style={{width: "255.797px"}} /><col data-dt-column={"4"} style={{width: "255.812px"}} /></colgroup>{" "}<thead className="ultimate-data-table-header">{" "}<tr><th className="elementor-inline-editing elementor-repeater-item-d034285 dt-orderable-none" data-dt-column={"0"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
+				 International Students Tuition			</span></button></div><div className="e-n-tabs-content"><div data-aos-once={"true"} id="e-n-tab-content-9774025081" role="tabpanel" aria-labelledby={"e-n-tab-title-9774025081"} data-tab-index={"1"} style={{"--n-tabs-title-order": "1"}} className="e-active elementor-element elementor-element-7ef1b504 e-con-full e-flex e-con e-child" data-id={"7ef1b504"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-287ba67 elementor-widget elementor-widget-ultimate_data_table_el_widget" data-id={"287ba67"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"ultimate_data_table_el_widget.default"}><div className="elementor-widget-container">{" "}<div className="ultimate-data-table">{" "}<div id="ultimate-datatable-uni-287ba67_wrapper" className="dt-container dt-empty-footer"><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-layout-row dt-layout-table"><div className="dt-layout-cell  dt-layout-full"><table id="ultimate-datatable-uni-287ba67" className="dataTable" style={{width: "100%"}}><colgroup><col data-dt-column={"0"} style={{width: "255.797px"}} /><col data-dt-column={"1"} style={{width: "255.797px"}} /><col data-dt-column={"2"} style={{width: "255.797px"}} /><col data-dt-column={"3"} style={{width: "255.797px"}} /><col data-dt-column={"4"} style={{width: "255.812px"}} /></colgroup><thead className="ultimate-data-table-header"><tr><th className="elementor-inline-editing elementor-repeater-item-d034285 dt-orderable-none" data-dt-column={"0"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Faculty / School	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-681cf94 dt-orderable-none" data-dt-column={"1"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Program	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-2539929 dt-orderable-none" data-dt-column={"2"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Duration	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-f3d5e97 dt-orderable-none dt-type-numeric" data-dt-column={"3"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Annual Tuition Fee (USD)	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-5c16a11 dt-orderable-none" data-dt-column={"4"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
-	                             Remarks	                        </span></div></th></tr>{" "}</thead>{" "}<tbody className="ultimate-data-table-body"><tr>{" "}<td className="elementor-repeater-item-26b3d60">
-	                        School of Business	                    </td>{" "}<td className="elementor-repeater-item-4d5b0d8">
-	                        BBA – Business Administration	                    </td>{" "}<td className="elementor-repeater-item-dc66c4d">
-	                        4 Years	                    </td>{" "}<td className="elementor-repeater-item-b895e28 dt-type-numeric">
-	                        $12,000	                    </td>{" "}<td className="elementor-repeater-item-7343c22">
-	                        Workshops, seminars included	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-259dd2f">
-	                        Faculty of Computer Science	                    </td>{" "}<td className="elementor-repeater-item-08c1e91">
-	                        BSc – Accounting &amp; Finance	                    </td>{" "}<td className="elementor-repeater-item-19f3b5a">
-	                        4 Years	                    </td>{" "}<td className="elementor-repeater-item-98f567e dt-type-numeric">
-	                        $12,500	                    </td>{" "}<td className="elementor-repeater-item-684c1d3">
-	                        Includes software access	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-07eb4f3">
-	                        School of Computing	                    </td>{" "}<td className="elementor-repeater-item-186828e">
-	                        BSc – Computer Science	                    </td>{" "}<td className="elementor-repeater-item-d6ab599">
-	                        4 Years	                    </td>{" "}<td className="elementor-repeater-item-25490bd dt-type-numeric">
-	                        $14,500	                    </td>{" "}<td className="elementor-repeater-item-085bc9f">
-	                        Lab &amp; technology fees included	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-5ec6f8e">
-	                        Institute of Computing	                    </td>{" "}<td className="elementor-repeater-item-c395592">
-	                        BSc – Information Technology	                    </td>{" "}<td className="elementor-repeater-item-a741fe7">
-	                        4 Years	                    </td>{" "}<td className="elementor-repeater-item-9937bff dt-type-numeric">
-	                        $13,800	                    </td>{" "}<td className="elementor-repeater-item-3be3760">
-	                        --------	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-3cb9513">
-	                        Engineering Faculty	                    </td>{" "}<td className="elementor-repeater-item-7f5e0af">
-	                        BSc – Electrical Engineering (EEE)	                    </td>{" "}<td className="elementor-repeater-item-0d33949">
-	                        4 Years	                    </td>{" "}<td className="elementor-repeater-item-fc1bc31 dt-type-numeric">
-	                        $16,000	                    </td>{" "}<td className="elementor-repeater-item-63a3972">
-	                        Additional workshop fees	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-957aca1">
-	                        Arts &amp; Humanities	                    </td>{" "}<td className="elementor-repeater-item-b329488">
-	                        BA – English	                    </td>{" "}<td className="elementor-repeater-item-82b0214">
-	                        4 Years	                    </td>{" "}<td className="elementor-repeater-item-647760a dt-type-numeric">
-	                        $10,500	                    </td>{" "}<td className="elementor-repeater-item-186819f">
-	                        --------	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-db3ba94">
-	                        Health Sciences	                    </td>{" "}<td className="elementor-repeater-item-fdc8aa7">
-	                        BSc – Nursing	                    </td>{" "}<td className="elementor-repeater-item-ab7f0d1">
-	                        4 Years	                    </td>{" "}<td className="elementor-repeater-item-75b00e4 dt-type-numeric">
-	                        $15,000	                    </td>{" "}<td className="elementor-repeater-item-4f3e7b2">
-	                        Clinical training included	                    </td>{" "}</tr></tbody>{" "}<tfoot></tfoot></table></div></div><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-autosize" style={{width: "100%", height: "0px"}}></div></div>{" "}</div></div></div></div><div data-aos-once={"true"} id="e-n-tab-content-9774025082" role="tabpanel" aria-labelledby={"e-n-tab-title-9774025082"} data-tab-index={"2"} style={{"--n-tabs-title-order": "2"}} className=" elementor-element elementor-element-61eb824e e-con-full e-flex e-con e-child" data-id={"61eb824e"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-1184140 elementor-widget elementor-widget-ultimate_data_table_el_widget" data-id={"1184140"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"ultimate_data_table_el_widget.default"}><div className="elementor-widget-container">{" "}<div className="ultimate-data-table">{" "}<div id="ultimate-datatable-uni-1184140_wrapper" className="dt-container dt-empty-footer"><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-layout-row dt-layout-table"><div className="dt-layout-cell  dt-layout-full"><table id="ultimate-datatable-uni-1184140" className="dataTable" style={{width: "100%"}}><colgroup><col data-dt-column={"0"} style={{width: "0px"}} /><col data-dt-column={"1"} style={{width: "0px"}} /><col data-dt-column={"2"} style={{width: "0px"}} /><col data-dt-column={"3"} style={{width: "0px"}} /><col data-dt-column={"4"} style={{width: "0px"}} /></colgroup>{" "}<thead className="ultimate-data-table-header">{" "}<tr><th className="elementor-inline-editing elementor-repeater-item-d034285 dt-orderable-none" data-dt-column={"0"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
+	                             Remarks	                        </span></div></th></tr></thead><tbody className="ultimate-data-table-body"><tr><td className="elementor-repeater-item-26b3d60">
+	                        School of Business	                    </td><td className="elementor-repeater-item-4d5b0d8">
+	                        BBA – Business Administration	                    </td><td className="elementor-repeater-item-dc66c4d">
+	                        4 Years	                    </td><td className="elementor-repeater-item-b895e28 dt-type-numeric">
+	                        $12,000	                    </td><td className="elementor-repeater-item-7343c22">
+	                        Workshops, seminars included	                    </td></tr><tr><td className="elementor-repeater-item-259dd2f">
+	                        Faculty of Computer Science	                    </td><td className="elementor-repeater-item-08c1e91">
+	                        BSc – Accounting &amp; Finance	                    </td><td className="elementor-repeater-item-19f3b5a">
+	                        4 Years	                    </td><td className="elementor-repeater-item-98f567e dt-type-numeric">
+	                        $12,500	                    </td><td className="elementor-repeater-item-684c1d3">
+	                        Includes software access	                    </td></tr><tr><td className="elementor-repeater-item-07eb4f3">
+	                        School of Computing	                    </td><td className="elementor-repeater-item-186828e">
+	                        BSc – Computer Science	                    </td><td className="elementor-repeater-item-d6ab599">
+	                        4 Years	                    </td><td className="elementor-repeater-item-25490bd dt-type-numeric">
+	                        $14,500	                    </td><td className="elementor-repeater-item-085bc9f">
+	                        Lab &amp; technology fees included	                    </td></tr><tr><td className="elementor-repeater-item-5ec6f8e">
+	                        Institute of Computing	                    </td><td className="elementor-repeater-item-c395592">
+	                        BSc – Information Technology	                    </td><td className="elementor-repeater-item-a741fe7">
+	                        4 Years	                    </td><td className="elementor-repeater-item-9937bff dt-type-numeric">
+	                        $13,800	                    </td><td className="elementor-repeater-item-3be3760">
+	                        --------	                    </td></tr><tr><td className="elementor-repeater-item-3cb9513">
+	                        Engineering Faculty	                    </td><td className="elementor-repeater-item-7f5e0af">
+	                        BSc – Electrical Engineering (EEE)	                    </td><td className="elementor-repeater-item-0d33949">
+	                        4 Years	                    </td><td className="elementor-repeater-item-fc1bc31 dt-type-numeric">
+	                        $16,000	                    </td><td className="elementor-repeater-item-63a3972">
+	                        Additional workshop fees	                    </td></tr><tr><td className="elementor-repeater-item-957aca1">
+	                        Arts &amp; Humanities	                    </td><td className="elementor-repeater-item-b329488">
+	                        BA – English	                    </td><td className="elementor-repeater-item-82b0214">
+	                        4 Years	                    </td><td className="elementor-repeater-item-647760a dt-type-numeric">
+	                        $10,500	                    </td><td className="elementor-repeater-item-186819f">
+	                        --------	                    </td></tr><tr><td className="elementor-repeater-item-db3ba94">
+	                        Health Sciences	                    </td><td className="elementor-repeater-item-fdc8aa7">
+	                        BSc – Nursing	                    </td><td className="elementor-repeater-item-ab7f0d1">
+	                        4 Years	                    </td><td className="elementor-repeater-item-75b00e4 dt-type-numeric">
+	                        $15,000	                    </td><td className="elementor-repeater-item-4f3e7b2">
+	                        Clinical training included	                    </td></tr></tbody><tfoot></tfoot></table></div></div><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-autosize" style={{width: "100%", height: "0px"}}></div></div>{" "}</div></div></div></div><div data-aos-once={"true"} id="e-n-tab-content-9774025082" role="tabpanel" aria-labelledby={"e-n-tab-title-9774025082"} data-tab-index={"2"} style={{"--n-tabs-title-order": "2"}} className=" elementor-element elementor-element-61eb824e e-con-full e-flex e-con e-child" data-id={"61eb824e"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-1184140 elementor-widget elementor-widget-ultimate_data_table_el_widget" data-id={"1184140"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"ultimate_data_table_el_widget.default"}><div className="elementor-widget-container">{" "}<div className="ultimate-data-table">{" "}<div id="ultimate-datatable-uni-1184140_wrapper" className="dt-container dt-empty-footer"><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-layout-row dt-layout-table"><div className="dt-layout-cell  dt-layout-full"><table id="ultimate-datatable-uni-1184140" className="dataTable" style={{width: "100%"}}><colgroup><col data-dt-column={"0"} style={{width: "0px"}} /><col data-dt-column={"1"} style={{width: "0px"}} /><col data-dt-column={"2"} style={{width: "0px"}} /><col data-dt-column={"3"} style={{width: "0px"}} /><col data-dt-column={"4"} style={{width: "0px"}} /></colgroup><thead className="ultimate-data-table-header"><tr><th className="elementor-inline-editing elementor-repeater-item-d034285 dt-orderable-none" data-dt-column={"0"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Faculty / School	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-681cf94 dt-orderable-none" data-dt-column={"1"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Program	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-2539929 dt-orderable-none" data-dt-column={"2"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Duration	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-f3d5e97 dt-orderable-none dt-type-numeric" data-dt-column={"3"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Annual Tuition Fee (USD)	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-5c16a11 dt-orderable-none" data-dt-column={"4"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
-	                             Remarks	                        </span></div></th></tr>{" "}</thead>{" "}<tbody className="ultimate-data-table-body"><tr>{" "}<td className="elementor-repeater-item-26b3d60">
-	                        Business School	                    </td>{" "}<td className="elementor-repeater-item-4d5b0d8">
-	                        MBA – Master of Business Administration	                    </td>{" "}<td className="elementor-repeater-item-dc66c4d">
-	                        1.5–2 Years	                    </td>{" "}<td className="elementor-repeater-item-b895e28 dt-type-numeric">
-	                        $18,000	                    </td>{" "}<td className="elementor-repeater-item-7343c22">
-	                        Weekend &amp; evening classes available	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-259dd2f">
-	                        Faculty of Business	                    </td>{" "}<td className="elementor-repeater-item-08c1e91">
-	                        MPA – Public Administration	                    </td>{" "}<td className="elementor-repeater-item-19f3b5a">
-	                        2 Years	                    </td>{" "}<td className="elementor-repeater-item-98f567e dt-type-numeric">
-	                        $16,800	                    </td>{" "}<td className="elementor-repeater-item-684c1d3">
-	                        --------	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-07eb4f3">
-	                        Computing &amp; IT	                    </td>{" "}<td className="elementor-repeater-item-186828e">
-	                        MSc – Computer Science	                    </td>{" "}<td className="elementor-repeater-item-d6ab599">
-	                        2 Years	                    </td>{" "}<td className="elementor-repeater-item-25490bd dt-type-numeric">
-	                        $17,500	                    </td>{" "}<td className="elementor-repeater-item-085bc9f">
-	                        Research lab access included	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-5ec6f8e">
-	                        Computer Science &amp; IT	                    </td>{" "}<td className="elementor-repeater-item-c395592">
-	                        MSc – Data Science &amp; AI	                    </td>{" "}<td className="elementor-repeater-item-a741fe7">
-	                        2 Years	                    </td>{" "}<td className="elementor-repeater-item-9937bff dt-type-numeric">
-	                        $18,200	                    </td>{" "}<td className="elementor-repeater-item-3be3760">
-	                        High-performance computing access	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-3cb9513">
-	                        Health Sciences	                    </td>{" "}<td className="elementor-repeater-item-7f5e0af">
-	                        MPH – Master of Public Health	                    </td>{" "}<td className="elementor-repeater-item-0d33949">
-	                        2 Years	                    </td>{" "}<td className="elementor-repeater-item-fc1bc31 dt-type-numeric">
-	                        $16,200	                    </td>{" "}<td className="elementor-repeater-item-63a3972">
-	                        Fieldwork required	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-957aca1">
-	                        Engineering	                    </td>{" "}<td className="elementor-repeater-item-b329488">
-	                        MEng – Engineering Management	                    </td>{" "}<td className="elementor-repeater-item-82b0214">
-	                        2 Years	                    </td>{" "}<td className="elementor-repeater-item-647760a dt-type-numeric">
-	                        $17,200	                    </td>{" "}<td className="elementor-repeater-item-3a22b52">
-	                        Project-based modules	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-db3ba94">
-	                        Social Sciences	                    </td>{" "}<td className="elementor-repeater-item-ab7f0d1">
-	                        MA – International Relations	                    </td>{" "}<td className="elementor-repeater-item-75b00e4">
-	                        2 Years	                    </td>{" "}<td className="elementor-repeater-item-739f501 dt-type-numeric">
-	                        $14,800	                    </td>{" "}<td className="elementor-repeater-item-806f199">
-	                        --------	                    </td>{" "}</tr></tbody>{" "}<tfoot></tfoot></table></div></div><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-autosize" style={{width: "100%", height: "0px"}}></div></div>{" "}</div></div></div></div><div data-aos-once={"true"} id="e-n-tab-content-9774025083" role="tabpanel" aria-labelledby={"e-n-tab-title-9774025083"} data-tab-index={"3"} style={{"--n-tabs-title-order": "3"}} className=" elementor-element elementor-element-7c365fde e-con-full e-flex e-con e-child" data-id={"7c365fde"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-c1432ea elementor-widget elementor-widget-ultimate_data_table_el_widget" data-id={"c1432ea"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"ultimate_data_table_el_widget.default"}><div className="elementor-widget-container">{" "}<div className="ultimate-data-table">{" "}<div id="ultimate-datatable-uni-c1432ea_wrapper" className="dt-container dt-empty-footer"><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-layout-row dt-layout-table"><div className="dt-layout-cell  dt-layout-full"><table id="ultimate-datatable-uni-c1432ea" className="dataTable" style={{width: "100%"}}><colgroup><col data-dt-column={"0"} style={{width: "0px"}} /><col data-dt-column={"1"} style={{width: "0px"}} /><col data-dt-column={"2"} style={{width: "0px"}} /><col data-dt-column={"3"} style={{width: "0px"}} /></colgroup>{" "}<thead className="ultimate-data-table-header">{" "}<tr><th className="elementor-inline-editing elementor-repeater-item-d034285 dt-orderable-none" data-dt-column={"0"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
+	                             Remarks	                        </span></div></th></tr></thead><tbody className="ultimate-data-table-body"><tr><td className="elementor-repeater-item-26b3d60">
+	                        Business School	                    </td><td className="elementor-repeater-item-4d5b0d8">
+	                        MBA – Master of Business Administration	                    </td><td className="elementor-repeater-item-dc66c4d">
+	                        1.5–2 Years	                    </td><td className="elementor-repeater-item-b895e28 dt-type-numeric">
+	                        $18,000	                    </td><td className="elementor-repeater-item-7343c22">
+	                        Weekend &amp; evening classes available	                    </td></tr><tr><td className="elementor-repeater-item-259dd2f">
+	                        Faculty of Business	                    </td><td className="elementor-repeater-item-08c1e91">
+	                        MPA – Public Administration	                    </td><td className="elementor-repeater-item-19f3b5a">
+	                        2 Years	                    </td><td className="elementor-repeater-item-98f567e dt-type-numeric">
+	                        $16,800	                    </td><td className="elementor-repeater-item-684c1d3">
+	                        --------	                    </td></tr><tr><td className="elementor-repeater-item-07eb4f3">
+	                        Computing &amp; IT	                    </td><td className="elementor-repeater-item-186828e">
+	                        MSc – Computer Science	                    </td><td className="elementor-repeater-item-d6ab599">
+	                        2 Years	                    </td><td className="elementor-repeater-item-25490bd dt-type-numeric">
+	                        $17,500	                    </td><td className="elementor-repeater-item-085bc9f">
+	                        Research lab access included	                    </td></tr><tr><td className="elementor-repeater-item-5ec6f8e">
+	                        Computer Science &amp; IT	                    </td><td className="elementor-repeater-item-c395592">
+	                        MSc – Data Science &amp; AI	                    </td><td className="elementor-repeater-item-a741fe7">
+	                        2 Years	                    </td><td className="elementor-repeater-item-9937bff dt-type-numeric">
+	                        $18,200	                    </td><td className="elementor-repeater-item-3be3760">
+	                        High-performance computing access	                    </td></tr><tr><td className="elementor-repeater-item-3cb9513">
+	                        Health Sciences	                    </td><td className="elementor-repeater-item-7f5e0af">
+	                        MPH – Master of Public Health	                    </td><td className="elementor-repeater-item-0d33949">
+	                        2 Years	                    </td><td className="elementor-repeater-item-fc1bc31 dt-type-numeric">
+	                        $16,200	                    </td><td className="elementor-repeater-item-63a3972">
+	                        Fieldwork required	                    </td></tr><tr><td className="elementor-repeater-item-957aca1">
+	                        Engineering	                    </td><td className="elementor-repeater-item-b329488">
+	                        MEng – Engineering Management	                    </td><td className="elementor-repeater-item-82b0214">
+	                        2 Years	                    </td><td className="elementor-repeater-item-647760a dt-type-numeric">
+	                        $17,200	                    </td><td className="elementor-repeater-item-3a22b52">
+	                        Project-based modules	                    </td></tr><tr><td className="elementor-repeater-item-db3ba94">
+	                        Social Sciences	                    </td><td className="elementor-repeater-item-ab7f0d1">
+	                        MA – International Relations	                    </td><td className="elementor-repeater-item-75b00e4">
+	                        2 Years	                    </td><td className="elementor-repeater-item-739f501 dt-type-numeric">
+	                        $14,800	                    </td><td className="elementor-repeater-item-806f199">
+	                        --------	                    </td></tr></tbody><tfoot></tfoot></table></div></div><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-autosize" style={{width: "100%", height: "0px"}}></div></div>{" "}</div></div></div></div><div data-aos-once={"true"} id="e-n-tab-content-9774025083" role="tabpanel" aria-labelledby={"e-n-tab-title-9774025083"} data-tab-index={"3"} style={{"--n-tabs-title-order": "3"}} className=" elementor-element elementor-element-7c365fde e-con-full e-flex e-con e-child" data-id={"7c365fde"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-c1432ea elementor-widget elementor-widget-ultimate_data_table_el_widget" data-id={"c1432ea"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"ultimate_data_table_el_widget.default"}><div className="elementor-widget-container">{" "}<div className="ultimate-data-table">{" "}<div id="ultimate-datatable-uni-c1432ea_wrapper" className="dt-container dt-empty-footer"><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-layout-row dt-layout-table"><div className="dt-layout-cell  dt-layout-full"><table id="ultimate-datatable-uni-c1432ea" className="dataTable" style={{width: "100%"}}><colgroup><col data-dt-column={"0"} style={{width: "0px"}} /><col data-dt-column={"1"} style={{width: "0px"}} /><col data-dt-column={"2"} style={{width: "0px"}} /><col data-dt-column={"3"} style={{width: "0px"}} /></colgroup><thead className="ultimate-data-table-header"><tr><th className="elementor-inline-editing elementor-repeater-item-d034285 dt-orderable-none" data-dt-column={"0"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Program	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-2539929 dt-orderable-none" data-dt-column={"1"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Duration	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-681cf94 dt-orderable-none dt-type-numeric" data-dt-column={"2"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Annual Tuition Fee (USD)	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-f3d5e97 dt-orderable-none" data-dt-column={"3"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
-	                             Remarks	                        </span></div></th></tr>{" "}</thead>{" "}<tbody className="ultimate-data-table-body"><tr>{" "}<td className="elementor-repeater-item-26b3d60">
-	                        PhD – Science &amp; Engineering	                    </td>{" "}<td className="elementor-repeater-item-4d5b0d8">
-	                        3–5 Years	                    </td>{" "}<td className="elementor-repeater-item-dc66c4d dt-type-numeric">
-	                        $20,000	                    </td>{" "}<td className="elementor-repeater-item-b895e28">
-	                        Research supervision included	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-7270f52">
-	                        PhD – Computer Science	                    </td>{" "}<td className="elementor-repeater-item-0c1bd46">
-	                        3–5 Years	                    </td>{" "}<td className="elementor-repeater-item-0889f30 dt-type-numeric">
-	                        $21,500	                    </td>{" "}<td className="elementor-repeater-item-5422858">
-	                        Lab access + research grants available	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-da0e82c">
-	                        PhD – Health Sciences	                    </td>{" "}<td className="elementor-repeater-item-48795cb">
-	                        3–5 Years	                    </td>{" "}<td className="elementor-repeater-item-cef78c2 dt-type-numeric">
-	                        $19,800	                    </td>{" "}<td className="elementor-repeater-item-9206686">
-	                        Includes clinical research support	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-4a88886">
-	                        PhD – Social Sciences	                    </td>{" "}<td className="elementor-repeater-item-fbcecd4">
-	                        3–5 Years	                    </td>{" "}<td className="elementor-repeater-item-4c93868 dt-type-numeric">
-	                        $18,500	                    </td>{" "}<td className="elementor-repeater-item-f648e18">
-	                        --------	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-7b5ec07">
-	                        PhD – Busines	                    </td>{" "}<td className="elementor-repeater-item-2eab983">
-	                        3–5 Years	                    </td>{" "}<td className="elementor-repeater-item-f8fc9b5 dt-type-numeric">
-	                        $19,000	                    </td>{" "}<td className="elementor-repeater-item-ecb0067">
-	                        Dissertation mentoring included	                    </td>{" "}</tr></tbody>{" "}<tfoot></tfoot></table></div></div><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-autosize" style={{width: "100%", height: "0px"}}></div></div>{" "}</div></div></div></div><div data-aos-once={"true"} id="e-n-tab-content-9774025084" role="tabpanel" aria-labelledby={"e-n-tab-title-9774025084"} data-tab-index={"4"} style={{"--n-tabs-title-order": "4"}} className=" elementor-element elementor-element-45ba8ec8 e-con-full e-flex e-con e-child" data-id={"45ba8ec8"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-095f399 elementor-widget elementor-widget-ultimate_data_table_el_widget" data-id={"095f399"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"ultimate_data_table_el_widget.default"}><div className="elementor-widget-container">{" "}<div className="ultimate-data-table">{" "}<div id="ultimate-datatable-uni-095f399_wrapper" className="dt-container dt-empty-footer"><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-layout-row dt-layout-table"><div className="dt-layout-cell  dt-layout-full"><table id="ultimate-datatable-uni-095f399" className="dataTable" style={{width: "100%"}}><colgroup><col data-dt-column={"0"} style={{width: "0px"}} /><col data-dt-column={"1"} style={{width: "0px"}} /><col data-dt-column={"2"} style={{width: "0px"}} /><col data-dt-column={"3"} style={{width: "0px"}} /></colgroup>{" "}<thead className="ultimate-data-table-header">{" "}<tr><th className="elementor-inline-editing elementor-repeater-item-d034285 dt-orderable-none" data-dt-column={"0"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
+	                             Remarks	                        </span></div></th></tr></thead><tbody className="ultimate-data-table-body"><tr><td className="elementor-repeater-item-26b3d60">
+	                        PhD – Science &amp; Engineering	                    </td><td className="elementor-repeater-item-4d5b0d8">
+	                        3–5 Years	                    </td><td className="elementor-repeater-item-dc66c4d dt-type-numeric">
+	                        $20,000	                    </td><td className="elementor-repeater-item-b895e28">
+	                        Research supervision included	                    </td></tr><tr><td className="elementor-repeater-item-7270f52">
+	                        PhD – Computer Science	                    </td><td className="elementor-repeater-item-0c1bd46">
+	                        3–5 Years	                    </td><td className="elementor-repeater-item-0889f30 dt-type-numeric">
+	                        $21,500	                    </td><td className="elementor-repeater-item-5422858">
+	                        Lab access + research grants available	                    </td></tr><tr><td className="elementor-repeater-item-da0e82c">
+	                        PhD – Health Sciences	                    </td><td className="elementor-repeater-item-48795cb">
+	                        3–5 Years	                    </td><td className="elementor-repeater-item-cef78c2 dt-type-numeric">
+	                        $19,800	                    </td><td className="elementor-repeater-item-9206686">
+	                        Includes clinical research support	                    </td></tr><tr><td className="elementor-repeater-item-4a88886">
+	                        PhD – Social Sciences	                    </td><td className="elementor-repeater-item-fbcecd4">
+	                        3–5 Years	                    </td><td className="elementor-repeater-item-4c93868 dt-type-numeric">
+	                        $18,500	                    </td><td className="elementor-repeater-item-f648e18">
+	                        --------	                    </td></tr><tr><td className="elementor-repeater-item-7b5ec07">
+	                        PhD – Busines	                    </td><td className="elementor-repeater-item-2eab983">
+	                        3–5 Years	                    </td><td className="elementor-repeater-item-f8fc9b5 dt-type-numeric">
+	                        $19,000	                    </td><td className="elementor-repeater-item-ecb0067">
+	                        Dissertation mentoring included	                    </td></tr></tbody><tfoot></tfoot></table></div></div><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-autosize" style={{width: "100%", height: "0px"}}></div></div>{" "}</div></div></div></div><div data-aos-once={"true"} id="e-n-tab-content-9774025084" role="tabpanel" aria-labelledby={"e-n-tab-title-9774025084"} data-tab-index={"4"} style={{"--n-tabs-title-order": "4"}} className=" elementor-element elementor-element-45ba8ec8 e-con-full e-flex e-con e-child" data-id={"45ba8ec8"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-095f399 elementor-widget elementor-widget-ultimate_data_table_el_widget" data-id={"095f399"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"ultimate_data_table_el_widget.default"}><div className="elementor-widget-container">{" "}<div className="ultimate-data-table">{" "}<div id="ultimate-datatable-uni-095f399_wrapper" className="dt-container dt-empty-footer"><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-layout-row dt-layout-table"><div className="dt-layout-cell  dt-layout-full"><table id="ultimate-datatable-uni-095f399" className="dataTable" style={{width: "100%"}}><colgroup><col data-dt-column={"0"} style={{width: "0px"}} /><col data-dt-column={"1"} style={{width: "0px"}} /><col data-dt-column={"2"} style={{width: "0px"}} /><col data-dt-column={"3"} style={{width: "0px"}} /></colgroup><thead className="ultimate-data-table-header"><tr><th className="elementor-inline-editing elementor-repeater-item-d034285 dt-orderable-none" data-dt-column={"0"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Fee Category	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-2539929 dt-orderable-none" data-dt-column={"1"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Amount (USD)	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-681cf94 dt-orderable-none" data-dt-column={"2"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
 	                            Frequency	                        </span></div></th><th className="elementor-inline-editing elementor-repeater-item-f3d5e97 dt-orderable-none" data-dt-column={"3"} rowSpan="1" colSpan="1"><div className="dt-column-header"><span className="dt-column-title">
-	                             Remarks	                        </span></div></th></tr>{" "}</thead>{" "}<tbody className="ultimate-data-table-body"><tr>{" "}<td className="elementor-repeater-item-26b3d60">
-	                        International Student Fee	                    </td>{" "}<td className="elementor-repeater-item-4d5b0d8">
-	                        $2,000	                    </td>{" "}<td className="elementor-repeater-item-dc66c4d">
-	                        Annual	                    </td>{" "}<td className="elementor-repeater-item-b895e28">
-	                        Mandatory for all 	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-7270f52">
-	                        Application Fee	                    </td>{" "}<td className="elementor-repeater-item-0c1bd46">
-	                        $75–$100	                    </td>{" "}<td className="elementor-repeater-item-0889f30">
-	                        One-time	                    </td>{" "}<td className="elementor-repeater-item-5422858">
-	                        Non-refundable	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-da0e82c">
-	                        Admission / Enrollment Fee	                    </td>{" "}<td className="elementor-repeater-item-48795cb">
-	                        $300	                    </td>{" "}<td className="elementor-repeater-item-cef78c2">
-	                        One-time	                    </td>{" "}<td className="elementor-repeater-item-9206686">
-	                        Charged during admission	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-4a88886">
-	                        Tuition Deposit	                    </td>{" "}<td className="elementor-repeater-item-fbcecd4">
-	                        $500–$1,000	                    </td>{" "}<td className="elementor-repeater-item-4c93868">
-	                        One-time	                    </td>{" "}<td className="elementor-repeater-item-f648e18">
-	                        Adjusted with first semester	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-7b5ec07">
-	                        Visa Processing Support Fee	                    </td>{" "}<td className="elementor-repeater-item-2eab983">
-	                        $150	                    </td>{" "}<td className="elementor-repeater-item-f8fc9b5">
-	                        One-time	                    </td>{" "}<td className="elementor-repeater-item-ecb0067">
-	                        Document processing assistance	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-0ad0640">
-	                        Health Insurance Fee	                    </td>{" "}<td className="elementor-repeater-item-d6bf9a9">
-	                        $500–$750	                    </td>{" "}<td className="elementor-repeater-item-f5db224">
-	                        Annual	                    </td>{" "}<td className="elementor-repeater-item-05f3a88">
-	                        Required for all students	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-b4f62b7">
-	                        Student Services Fee	                    </td>{" "}<td className="elementor-repeater-item-118bc14">
-	                        $200	                    </td>{" "}<td className="elementor-repeater-item-3f7a81c">
-	                        Annual	                    </td>{" "}<td className="elementor-repeater-item-ce6ff33">
-	                        Campus services &amp; activities	                    </td>{" "}</tr><tr>{" "}<td className="elementor-repeater-item-46b500e">
-	                        Library &amp; IT Access Fee	                    </td>{" "}<td className="elementor-repeater-item-4011274">
-	                        $120	                    </td>{" "}<td className="elementor-repeater-item-a68c087">
-	                        Annual	                    </td>{" "}<td className="elementor-repeater-item-76b1c0c">
-	                        Library, Wi-Fi, digital access	                    </td>{" "}</tr></tbody>{" "}<tfoot></tfoot></table></div></div><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-autosize" style={{width: "100%", height: "0px"}}></div></div>{" "}</div></div></div></div></div></div></div></div></div></div></div>{" "}</main>{" "}<CloneFooter />{" "}</div>{" "}<div id="rs-scroll-to-top" className="rs-page-scroll-progress" data-max={"113.1"} data-unit={"px"} data-reverse={"true"} style={{"--rs-page-scroll-progress": "104.7572025052192px", display: "block", opacity: "0.981228"}}>{" "}{" "}{" "}</div>{" "}<span id="elementor-device-mode" className="elementor-screen-only"></span></div>
+	                             Remarks	                        </span></div></th></tr></thead><tbody className="ultimate-data-table-body"><tr><td className="elementor-repeater-item-26b3d60">
+	                        International Student Fee	                    </td><td className="elementor-repeater-item-4d5b0d8">
+	                        $2,000	                    </td><td className="elementor-repeater-item-dc66c4d">
+	                        Annual	                    </td><td className="elementor-repeater-item-b895e28">
+	                        Mandatory for all 	                    </td></tr><tr><td className="elementor-repeater-item-7270f52">
+	                        Application Fee	                    </td><td className="elementor-repeater-item-0c1bd46">
+	                        $75–$100	                    </td><td className="elementor-repeater-item-0889f30">
+	                        One-time	                    </td><td className="elementor-repeater-item-5422858">
+	                        Non-refundable	                    </td></tr><tr><td className="elementor-repeater-item-da0e82c">
+	                        Admission / Enrollment Fee	                    </td><td className="elementor-repeater-item-48795cb">
+	                        $300	                    </td><td className="elementor-repeater-item-cef78c2">
+	                        One-time	                    </td><td className="elementor-repeater-item-9206686">
+	                        Charged during admission	                    </td></tr><tr><td className="elementor-repeater-item-4a88886">
+	                        Tuition Deposit	                    </td><td className="elementor-repeater-item-fbcecd4">
+	                        $500–$1,000	                    </td><td className="elementor-repeater-item-4c93868">
+	                        One-time	                    </td><td className="elementor-repeater-item-f648e18">
+	                        Adjusted with first semester	                    </td></tr><tr><td className="elementor-repeater-item-7b5ec07">
+	                        Visa Processing Support Fee	                    </td><td className="elementor-repeater-item-2eab983">
+	                        $150	                    </td><td className="elementor-repeater-item-f8fc9b5">
+	                        One-time	                    </td><td className="elementor-repeater-item-ecb0067">
+	                        Document processing assistance	                    </td></tr><tr><td className="elementor-repeater-item-0ad0640">
+	                        Health Insurance Fee	                    </td><td className="elementor-repeater-item-d6bf9a9">
+	                        $500–$750	                    </td><td className="elementor-repeater-item-f5db224">
+	                        Annual	                    </td><td className="elementor-repeater-item-05f3a88">
+	                        Required for all students	                    </td></tr><tr><td className="elementor-repeater-item-b4f62b7">
+	                        Student Services Fee	                    </td><td className="elementor-repeater-item-118bc14">
+	                        $200	                    </td><td className="elementor-repeater-item-3f7a81c">
+	                        Annual	                    </td><td className="elementor-repeater-item-ce6ff33">
+	                        Campus services &amp; activities	                    </td></tr><tr><td className="elementor-repeater-item-46b500e">
+	                        Library &amp; IT Access Fee	                    </td><td className="elementor-repeater-item-4011274">
+	                        $120	                    </td><td className="elementor-repeater-item-a68c087">
+	                        Annual	                    </td><td className="elementor-repeater-item-76b1c0c">
+	                        Library, Wi-Fi, digital access	                    </td></tr></tbody><tfoot></tfoot></table></div></div><div className="dt-layout-row"><div className="dt-layout-cell dt-layout-start"></div><div className="dt-layout-cell dt-layout-end"></div></div><div className="dt-autosize" style={{width: "100%", height: "0px"}}></div></div>{" "}</div></div></div></div></div></div></div></div></div></div></div>{" "}</main>{" "}<CloneFooter />{" "}</div>{" "}<div id="rs-scroll-to-top" className="rs-page-scroll-progress" data-max={"113.1"} data-unit={"px"} data-reverse={"true"} style={{"--rs-page-scroll-progress": "104.7572025052192px", display: "block", opacity: "0.981228"}}>{" "}{" "}{" "}</div>{" "}<span id="elementor-device-mode" className="elementor-screen-only"></span></div>
   );
 }
