@@ -16,12 +16,15 @@ const DEPARTMENT_FILTERS = [
   { id: "pharmacy-practice", label: "Department of Pharmacy Practice", href: "#pharmacy-practice" },
   { id: "regulatory-affairs", label: "Department of Regulatory Affairs", href: "#regulatory-affairs" },
 ];
+// Index-coupled to DEPARTMENTS below (Pharmaceutics, Pharmacology, Pharmaceutical
+// Chemistry, Pharmacognosy, Pharmacy Practice, Regulatory Affairs). The client
+// supplied no photo for Regulatory Affairs, so slot 5 keeps its existing thumbnail.
 const THUMBS = [
-  "/all-programs/assets/0054__acc-1-min.jpg",
-  "/all-programs/assets/0055__acc-2-min.jpg",
-  "/all-programs/assets/0056__acc-3-min.jpg",
-  "/all-programs/assets/0058__acc-4-min.jpg",
-  "/all-programs/assets/0059__acc-5-min.jpg",
+  "/kkcp/web/home/4-our-departments-photos-1-pharmaceutics.jpg",
+  "/kkcp/web/home/4-our-departments-photos-3-pharmacology.jpg",
+  "/kkcp/web/home/4-our-departments-photos-2-pharmaceutical-chemistry.jpg",
+  "/kkcp/web/home/4-our-departments-photos-4-pharmacognosy.jpg",
+  "/kkcp/web/home/4-our-departments-photos-5-pharmacy-practice.jpg",
   "/all-programs/assets/0060__acc-6-min.jpg",
 ];
 

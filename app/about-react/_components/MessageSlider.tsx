@@ -6,6 +6,7 @@ interface Card {
   role: string;  // may contain <br /> tags
   title: string;
   body: string;  // may contain <br /> tags
+  photo?: string;  // portrait src from lib/faculty MANAGEMENT_PORTRAITS
 }
 
 export function MessageSlider({ cards }: { cards: Card[] }) {
@@ -22,6 +23,8 @@ export function MessageSlider({ cards }: { cards: Card[] }) {
         .kkcp-msg-slider-wrap .rating{font-size:22px;font-weight:700;color:#1a1a2e;margin-bottom:22px;}
         .kkcp-msg-slider-wrap .stars{color:#e8a020;font-size:18px;margin-bottom:22px;}
         .kkcp-msg-slider-wrap .body{font-size:16px;line-height:1.9;color:#3d435a;font-style:italic;margin-bottom:28px;}
+        .kkcp-msg-slider-wrap .meta{display:flex;align-items:center;gap:16px;}
+        .kkcp-msg-slider-wrap .meta-photo{width:68px;height:68px;border-radius:50%;object-fit:cover;object-position:top center;flex:0 0 auto;border:2px solid #c8a23a;box-shadow:0 2px 10px rgba(0,0,0,.12);}
         .kkcp-msg-slider-wrap .meta-name{font-family:'Bitter',Georgia,serif;font-size:18px;font-weight:700;color:#13265e;}
         .kkcp-msg-slider-wrap .meta-role{font-size:14px;color:#7a8095;margin-top:4px;}
         .kkcp-nav-btn{position:absolute;top:50%;transform:translateY(-50%);background:#13265e;color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.18);transition:background .2s;}
@@ -47,11 +50,18 @@ export function MessageSlider({ cards }: { cards: Card[] }) {
           className="body"
           dangerouslySetInnerHTML={{ __html: card.body }}
         />
-        <div className="meta-name">{card.name}</div>
-        <div
-          className="meta-role"
-          dangerouslySetInnerHTML={{ __html: card.role }}
-        />
+        <div className="meta">
+          {card.photo && (
+            <img className="meta-photo" src={card.photo} alt={card.name} />
+          )}
+          <div>
+            <div className="meta-name">{card.name}</div>
+            <div
+              className="meta-role"
+              dangerouslySetInnerHTML={{ __html: card.role }}
+            />
+          </div>
+        </div>
       </div>
 
       <div className="kkcp-slider-dots">

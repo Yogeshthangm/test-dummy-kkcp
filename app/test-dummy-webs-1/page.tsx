@@ -2,7 +2,7 @@ export default function ClonePage() {
   return (
     <iframe
       src="/test-dummy-webs-1/index.html"
-      title="univet.rstheme.com/blue mirror"
+      title="Static reference mirror"
       style={{
         position: "fixed",
         inset: 0,
