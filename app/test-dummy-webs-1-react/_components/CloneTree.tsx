@@ -14,22 +14,22 @@ export function CloneTree() {
       /* 1.1 header: contact / mail / address bar + larger college name */
       .clone-root .rstb-header .kkcp-topbar{position:relative;z-index:10001;background:#ffffff;border-bottom:1px solid #e3e7ef;padding:16px 20px 20px}
       .clone-root .rstb-header .kkcp-topbar-inner{max-width:1620px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
-      .clone-root .rstb-header .kkcp-topbar-contact{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 34px;font-family:Roboto,sans-serif;font-size:15px;line-height:1.6;color:#20365f}
-      .clone-root .rstb-header .kkcp-topbar-contact a{color:#20365f;text-decoration:none}
+      .clone-root .rstb-header .kkcp-topbar-contact{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 34px;font-family:Roboto,sans-serif;font-size:15px;line-height:1.6;color:#003A65}
+      .clone-root .rstb-header .kkcp-topbar-contact a{color:#003A65;text-decoration:none}
       .clone-root .rstb-header .kkcp-topbar-contact a:hover{color:#0d4c92}
-      .clone-root .rstb-header .kkcp-college-name{font-family:Bitter,serif;font-weight:600;font-size:38px;line-height:1.15;letter-spacing:.5px;color:#0b2c5e;margin:6px 0 0}
+      .clone-root .rstb-header .kkcp-college-name{font-family:Bitter,serif;font-weight:600;font-size:38px;line-height:1.15;letter-spacing:.5px;color:#003A65;margin:6px 0 0}
       .clone-root .rstb-header .kkcp-college-approval{font-family:Roboto,sans-serif;font-size:16px;line-height:1.5;color:#3d4f74;margin:2px 0 0}
-      .clone-root .rstb-header .kkcp-college-since{font-family:Bitter,serif;font-weight:600;font-size:18px;line-height:1.4;color:#0b2c5e;margin:8px 0 0}
+      .clone-root .rstb-header .kkcp-college-since{font-family:Bitter,serif;font-weight:600;font-size:18px;line-height:1.4;color:#003A65;margin:8px 0 0}
       @media (max-width:1024px){
         .clone-root .rstb-header .kkcp-college-name{font-size:26px}
         .clone-root .rstb-header .kkcp-college-approval{font-size:14px}
         .clone-root .rstb-header .kkcp-topbar-contact{font-size:13px;gap:4px 18px}
       }
-      /* the nav row is absolutely positioned over the hero — start it below the new bar */
-      .clone-root .rstb-header .rstb-transparent{top:auto !important}
-
-      /* 1.2 hero: bring the image slide one step down */
-      .clone-root .elementor-51 .elementor-element-3bf6c45{--padding-top:120px;padding-top:120px}
+      /* 1.2 the nav row used to sit absolutely on top of the hero; put it back in the
+         document flow (on the theme's primary colour, the colour its own sticky copy uses)
+         so the image slide starts one step down — below the whole header. */
+      .clone-root .rstb-header .rstb-transparent{position:static !important;background-color:var(--e-global-color-primary)}
+      .clone-root .elementor-51 .elementor-element-3bf6c45{--padding-top:0px;padding-top:0px}
 
       /* 1.8 Latest News & Updates: scroll animation (theme animate.css keyframes) */
       .clone-root .elementor-element-bf4d421 .event-post-item{animation-fill-mode:both}
@@ -50,11 +50,15 @@ export function CloneTree() {
       }
 
       /* 1.11 KKCP Faculty: 11 portraits, 3 per view → 4 swipes */
+      .clone-root .elementor-51 .elementor-element-kkcpfaculty{--display:flex;--flex-direction:column;--padding-top:80px;--padding-bottom:80px;--padding-left:10px;--padding-right:10px;--content-width:min(100%, var(--container-max-width, 1140px))}
+      .clone-root .elementor-element-kkcpfacultyh{margin-bottom:40px}
+      .clone-root .elementor-element-kkcpfacultyh .title{font-family:Bitter,serif;font-size:44px;line-height:1.2;font-weight:600;color:#003A65;margin:6px 0 0}
+      .clone-root .elementor-element-kkcpfacultyh .sub-text{color:#003A65}
       .clone-root .kkcp-faculty-carousel{display:flex;gap:30px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:14px}
       .clone-root .kkcp-faculty-slide{flex:0 0 calc((100% - 60px) / 3);scroll-snap-align:start;margin:0}
       .clone-root .kkcp-faculty-slide img{display:block;width:100%;height:340px;object-fit:cover;object-position:center top;border-radius:10px;background-color:#eef2f6}
       .clone-root .kkcp-faculty-caption{padding:14px 4px 0;text-align:center}
-      .clone-root .kkcp-faculty-name{font-family:Bitter,serif;font-weight:600;font-size:19px;line-height:1.35;color:#0b2c5e;margin:0}
+      .clone-root .kkcp-faculty-name{font-family:Bitter,serif;font-weight:600;font-size:19px;line-height:1.35;color:#003A65;margin:0}
       .clone-root .kkcp-faculty-designation{font-family:Roboto,sans-serif;font-size:14px;line-height:1.5;color:#5b6b8c;margin:5px 0 0}
       @media (max-width:1024px){.clone-root .kkcp-faculty-slide{flex:0 0 calc((100% - 30px) / 2)}}
       @media (max-width:767px){.clone-root .kkcp-faculty-slide{flex:0 0 100%}}

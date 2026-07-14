@@ -28,6 +28,21 @@ const MD = path.join(ROOT, "KKCP_Website_Content_MD");
 // always see exactly what the newer document overrode.
 const REVISED = path.join(ROOT, "docs", "client-reference", "revised");
 
+// Targeted supersessions: individual strings the change list overrode, where re-issuing the whole
+// source document would be overkill. The gate expects the NEW string and will FAIL if a page reverts
+// to the old one — so the rename cannot silently rot. Applied to the MD text before chunking.
+// (change list §4.1: "Change Doctor of Pharmacy to Pharm.D in all places". The client scoped this to
+//  labels/titles/headings; the body prose that says "Doctor of Pharmacy (Pharm.D)" mid-sentence is
+//  deliberately NOT touched, so it is not listed here.)
+const STRING_OVERRIDES = {
+  "4. Courses.md": [
+    // longest first, so a shorter pattern cannot eat a longer one's prefix
+    ["Doctor of Pharmacy (Post Baccularate) Course Details", "Pharm.D (Post Baccularate) Course Details"],
+    ["Doctor of Pharmacy Course Details", "Pharm.D Course Details"],
+    ["Doctor of Pharmacy (Pharm.D):", "Pharm.D:"],
+  ],
+};
+
 // MD file -> routes that must carry its content. A string is "covered" if it appears
 // in ANY of the listed routes (content is split across pages, e.g. Campus.md -> 6 pages).
 const MAP = {
@@ -189,8 +204,11 @@ function routeText(route) {
 
 // ---------- MD -> the content strings that must appear ----------
 
-function mdContentStrings(md) {
+function mdContentStrings(md, mdFile) {
   let t = md;
+
+  // Apply the client's later renames BEFORE chunking, so the gate demands the new wording.
+  for (const [from, to] of STRING_OVERRIDES[mdFile] || []) t = t.split(from).join(to);
 
   // Strip pandoc grid-table borders and pipe-table rules, keep cell text.
   t = t.replace(/^[+|][-=+:| ]*[+|]\s*$/gm, "\n");
@@ -287,7 +305,7 @@ for (const [mdFile, routes] of Object.entries(MAP)) {
   const mdPath = /\(revised\)/.test(mdFile) ? path.join(REVISED, mdFile) : path.join(MD, mdFile);
   if (!fs.existsSync(mdPath)) { console.log(`?? MISSING SOURCE ${mdFile}`); failures++; continue; }
 
-  const strings = mdContentStrings(fs.readFileSync(mdPath, "utf8"));
+  const strings = mdContentStrings(fs.readFileSync(mdPath, "utf8"), mdFile);
   const haystacks = [];
   const missingRoutes = [];
   for (const r of routes) {
@@ -338,6 +356,10 @@ for (const [f, why] of Object.entries(SUPERSEDED)) {
   console.log(`   ${still ? "•" : "?"} ${f}\n       ${why}`);
 }
 console.log("   The revised text is enforced from docs/client-reference/revised/ instead.");
+for (const [f, subs] of Object.entries(STRING_OVERRIDES)) {
+  console.log(`   • ${f} — ${subs.length} heading(s) renamed by change list §4.1 (Doctor of Pharmacy -> Pharm.D):`);
+  for (const [a, b] of subs) console.log(`       "${a}"\n         -> "${b}"`);
+}
 
 console.log(
   `\n${failures === 0 ? "ALL VERBATIM ✔" : failures + " FILE(S) FAILED"}  (${checked} content blocks checked` +
