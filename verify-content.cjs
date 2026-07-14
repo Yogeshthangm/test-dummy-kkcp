@@ -21,10 +21,18 @@ const MIN_BLOCK = 5;
 const ROOT = __dirname;
 const MD = path.join(ROOT, "KKCP_Website_Content_MD");
 
+// The client later sent docs/client-reference/KKCP_Website_Changes.md, which SUPERSEDES parts of
+// the original MD ("the change list wins" — client decision). Where that happens, the revised text
+// lives in docs/client-reference/revised/ and is what the gate now enforces. The superseded MD
+// blocks are listed in SUPERSEDED below and reported by name — never silently dropped, so we can
+// always see exactly what the newer document overrode.
+const REVISED = path.join(ROOT, "docs", "client-reference", "revised");
+
 // MD file -> routes that must carry its content. A string is "covered" if it appears
 // in ANY of the listed routes (content is split across pages, e.g. Campus.md -> 6 pages).
 const MAP = {
-  "1. Home Page.md": ["/"],
+  "1. Home Page (revised).md": ["/"],
+  "11. Scholarship Page (revised).md": ["/scholarships"],
   "2. About Us Page.md": ["/about"],
   "3. Campus.md": [
     "/smart-class-rooms", "/laboratory-2", "/animal-house-facility",
@@ -44,7 +52,6 @@ const MAP = {
   "7. Contact Us Page.md": ["/contact"],
   "8. Our Tie Up Hospital.md": ["/tie-up-hospital"],
   "9. Drug Information Centre.md": ["/drug-information-centre"],
-  "11. Scholarship Page.md": ["/scholarships"],
   "12. Syllabus Links.md": ["/syllabus-links"],
   "13. Research.md": ["/research"],
   "14. Testimonials.md": ["/testimonials"],
@@ -277,8 +284,8 @@ let totalSkipped = 0;
 
 for (const [mdFile, routes] of Object.entries(MAP)) {
   if (only && !routes.includes(only)) continue;
-  const mdPath = path.join(MD, mdFile);
-  if (!fs.existsSync(mdPath)) { console.log(`?? MISSING MD ${mdFile}`); continue; }
+  const mdPath = /\(revised\)/.test(mdFile) ? path.join(REVISED, mdFile) : path.join(MD, mdFile);
+  if (!fs.existsSync(mdPath)) { console.log(`?? MISSING SOURCE ${mdFile}`); failures++; continue; }
 
   const strings = mdContentStrings(fs.readFileSync(mdPath, "utf8"));
   const haystacks = [];
@@ -314,6 +321,23 @@ for (const [mdFile, routes] of Object.entries(MAP)) {
     for (const s of strings.skipped) console.log(`      skipped (${s.why}): ${s.chunk.slice(0, 90)}`);
   }
 }
+
+// Supersession must be LOUD. These original documents are no longer what the gate enforces,
+// because the client's later change list overrode them. Anyone reading this output has to see
+// that, or a future edit could quietly "restore" the stale wording and think it was fixing a bug.
+const SUPERSEDED = {
+  "1. Home Page.md":
+    "Courses Offered labels replaced by change list §1.3 (short forms + durations, and a 6th card). " +
+    "Everything else in this file is still enforced via the revised copy.",
+  "11. Scholarship Page.md":
+    "Entire content replaced by change list §2.2 (client's newer wording: 'Rs. 1000 every month' etc).",
+};
+console.log("\n── superseded by docs/client-reference/KKCP_Website_Changes.md (client: 'the change list wins') ──");
+for (const [f, why] of Object.entries(SUPERSEDED)) {
+  const still = fs.existsSync(path.join(MD, f));
+  console.log(`   ${still ? "•" : "?"} ${f}\n       ${why}`);
+}
+console.log("   The revised text is enforced from docs/client-reference/revised/ instead.");
 
 console.log(
   `\n${failures === 0 ? "ALL VERBATIM ✔" : failures + " FILE(S) FAILED"}  (${checked} content blocks checked` +

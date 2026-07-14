@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CloneTree } from "../../doctor-of-pharmacy-react/_components/CloneTree";
 import { TabsActivator } from "../../doctor-of-pharmacy-react/_components/TabsActivator";
 
-export const metadata: Metadata = { title: "Doctor of Pharmacy" };
+export const metadata: Metadata = { title: "Pharm.D" };
 
 export default function Page() {
   return (
