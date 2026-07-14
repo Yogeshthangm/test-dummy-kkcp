@@ -149,3 +149,25 @@
 .clone-root .elementor-element-0c1a2b3 {
   padding-top: 0 !important;
 }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   /research — card layout: image ON TOP of the content, not beside it
+   The theme laid these cards out as `flex-direction: row-reverse` with the
+   thumbnail pinned to the right at `height: 100%`. Because each card holds a very
+   long list (36 / 29 / 50 entries), "100%" resolved to the full column height --
+   over 4000px -- so a 770x660 photo was cropped to a 300x4058 strip and rendered
+   as a flat blue smear.
+   The theme's own MOBILE rules already stack it (column + full-width thumbnail);
+   this simply applies that at every width.
+   ──────────────────────────────────────────────────────────────────────────── */
+.clone-root .elementor-7888 .elementor-element.elementor-element-57146e5 .filter-item {
+  flex-direction: column !important;
+  align-items: stretch !important;
+}
+.clone-root .elementor-7888 .elementor-element.elementor-element-57146e5 .filter-item .item-thumbnail {
+  width: 100% !important;
+  height: 260px !important;
+}
+.clone-root .elementor-7888 .elementor-element.elementor-element-57146e5 .filter-item .item-content {
+  width: 100% !important;
+}
