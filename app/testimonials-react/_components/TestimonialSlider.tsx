@@ -27,7 +27,7 @@ export interface Testimonial {
   meta: Meta;
 }
 
-const AUTOPLAY_MS = 11000;
+const AUTOPLAY_MS = 6500;
 
 export function TestimonialSlider({ items }: { items: Testimonial[] }) {
   const [idx, setIdx] = useState(0);
@@ -49,12 +49,14 @@ export function TestimonialSlider({ items }: { items: Testimonial[] }) {
     return () => mq.removeEventListener("change", sync);
   }, []);
 
-  // Autoplay. Never runs for reduced-motion users, and the pause button (WCAG 2.2.2) wins.
+  // Autoplay. It still advances for reduced-motion users — their preference is about ANIMATION,
+  // not about content changing — but the slide swap is instant rather than a slide across.
+  // The pause button and pause-on-hover (WCAG 2.2.2) both win over it.
   useEffect(() => {
-    if (!playing || reduced || count < 2) return;
+    if (!playing || count < 2) return;
     const t = setTimeout(next, AUTOPLAY_MS);
     return () => clearTimeout(t);
-  }, [playing, reduced, count, next, idx]);
+  }, [playing, count, next, idx]);
 
   // Swipe / drag.
   const drag = useRef<{ x: number; active: boolean }>({ x: 0, active: false });
@@ -79,8 +81,6 @@ export function TestimonialSlider({ items }: { items: Testimonial[] }) {
       role="region"
       aria-roledescription="carousel"
       aria-label="Alumni testimonials"
-      onMouseEnter={() => setPlaying(false)}
-      onMouseLeave={() => setPlaying(true)}
       onFocusCapture={() => setPlaying(false)}
       onBlurCapture={() => setPlaying(true)}
     >
@@ -91,6 +91,10 @@ export function TestimonialSlider({ items }: { items: Testimonial[] }) {
         onKeyDown={onKeyDown}
         onPointerDown={onPointerDown}
         onPointerUp={onPointerUp}
+        // Pause only while the pointer is over the quote itself — someone reading it should not
+        // have the slide yanked away. Hovering the controls below must NOT freeze the rotation.
+        onMouseEnter={() => setPlaying(false)}
+        onMouseLeave={() => setPlaying(true)}
         aria-live="polite"
       >
         <div
@@ -128,6 +132,19 @@ export function TestimonialSlider({ items }: { items: Testimonial[] }) {
         </div>
       </div>
 
+      {/* Autoplay progress. Re-keyed on idx so the fill restarts with each slide; it freezes in
+          place (rather than resetting) whenever the rotation is paused. */}
+      <div className="ts-progress" aria-hidden="true">
+        <span
+          key={idx}
+          className="ts-progress-fill"
+          style={{
+            animationDuration: `${AUTOPLAY_MS}ms`,
+            animationPlayState: playing ? "running" : "paused",
+          }}
+        />
+      </div>
+
       <div className="ts-controls">
         <button type="button" className="ts-arrow" onClick={prev} aria-label="Previous testimonial">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6" /></svg>
@@ -146,9 +163,6 @@ export function TestimonialSlider({ items }: { items: Testimonial[] }) {
               onClick={() => go(i)}
             >
               <span className="ts-dot-ink">{t.monogram}</span>
-              {i === idx && playing && !reduced ? (
-                <span className="ts-dot-ring" key={`ring-${idx}`} aria-hidden="true" />
-              ) : null}
             </button>
           ))}
         </div>

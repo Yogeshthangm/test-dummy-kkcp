@@ -262,16 +262,26 @@ export function CloneTree() {
             }
             .kkcp-enh .ts-dot-ink { position: relative; z-index: 1; }
 
-            /* autoplay progress ring on the active dot */
-            .kkcp-enh .ts-dot-ring {
-              position: absolute; inset: -5px;
-              border-radius: 50%;
-              border: 2px solid var(--kk-gold);
-              animation: ts-ring 11s linear forwards;
+            /* autoplay progress bar — makes the rotation legible as "this is advancing itself" */
+            .kkcp-enh .ts-progress {
+              width: 100%; max-width: 300px;
+              height: 3px; margin: 22px auto 0;
+              background: rgba(3,78,162,.14);
+              border-radius: 999px;
+              overflow: hidden;
             }
-            @keyframes ts-ring {
-              from { clip-path: inset(0 100% 0 0); }
-              to   { clip-path: inset(0 0 0 0); }
+            .kkcp-enh .ts-progress-fill {
+              display: block; height: 100%; width: 100%;
+              transform-origin: left center;
+              border-radius: 999px;
+              background: linear-gradient(90deg, var(--kk-heading), var(--kk-gold));
+              animation-name: ts-fill;
+              animation-timing-function: linear;
+              animation-fill-mode: forwards;
+            }
+            @keyframes ts-fill {
+              from { transform: scaleX(0); }
+              to   { transform: scaleX(1); }
             }
 
             /* ---- responsive ---- */
@@ -297,9 +307,12 @@ export function CloneTree() {
               .kkcp-enh .ts-dot { width: 40px; height: 40px; font-size: 12px; }
             }
 
+            /* Reduced motion: the slider still auto-advances (that's content, not animation), but
+               it swaps instantly instead of sliding, and the progress bar stops animating. */
             @media (prefers-reduced-motion: reduce) {
               .kkcp-enh .ts-track { transition: none !important; }
-              .kkcp-enh .ts-dot-ring { animation: none !important; }
+              .kkcp-enh .ts-slide { transition: none !important; }
+              .kkcp-enh .ts-progress-fill { animation: none !important; transform: scaleX(1); opacity: .5; }
             }
           `}</style>
         </main>
