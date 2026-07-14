@@ -24,9 +24,16 @@ export function HeroSlider() {
 
   return (
     <span style={{ display: "block", position: "relative" }}>
-      {/* Stage: fixed min-height so the nav dots don't jump between slides.
-          Phrases flow and wrap naturally (2-3 lines) within the widened layer. */}
-      <span style={{ display: "block", position: "relative", minHeight: "170px" }}>
+      {/* Stage: reserves height so the nav dots don't jump between slides.
+          Fluid, because the slide that wraps to the most lines on a phone needs the most
+          room — a fixed 170px clipped the longest slide on mobile. */}
+      <span
+        style={{
+          display: "block",
+          position: "relative",
+          minHeight: "clamp(150px, 42vw, 170px)",
+        }}
+      >
         {SLIDES.map((lines, idx) => (
           <span
             key={idx}
@@ -37,8 +44,10 @@ export function HeroSlider() {
               top: 0,
               left: 0,
               right: 0,
-              fontSize: "48px",
-              lineHeight: "1.16",
+              // Fluid: 48px is unreadable-wide on a 375px phone. The slider's own JS would
+              // have rescaled this, but it is stripped from the page clone.
+              fontSize: "clamp(26px, 6.4vw, 48px)",
+              lineHeight: "1.18",
               whiteSpace: "normal",
               opacity: idx === active ? 1 : 0,
               transform: idx === active ? "translateY(0)" : "translateY(14px)",
