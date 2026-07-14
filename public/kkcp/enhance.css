@@ -1,0 +1,262 @@
+/* ---------------------------------------------------------------------------
+   KKCP page enhancements — motion system + shared card/quote primitives.
+   Linked ONLY by /news and /testimonials. Every rule is namespaced under
+   .kkcp-enh (a wrapper class those two pages add), so nothing here can reach
+   any other page even though the clone theme reuses ids like .elementor-7888.
+
+   Tokens are the theme's real values:
+     primary   #003A65   (--e-global-color-primary)
+     heading   #034EA2   (blue used by the existing page CSS)
+     gold      #FDC72F   (--e-global-color-secondary)
+     text      #4C4C4C   (--e-global-color-text)
+     cream     #F6F4EE   (--e-global-color-1d62194)
+     navy      #051435   (--e-global-color-4d7b7af)
+   Fonts: Bitter (headings, already loaded per-page), Roboto (body).
+--------------------------------------------------------------------------- */
+
+.kkcp-enh {
+  --kk-primary: #003a65;
+  --kk-heading: #034ea2;
+  --kk-gold: #fdc72f;
+  --kk-text: #4c4c4c;
+  --kk-cream: #f6f4ee;
+  --kk-navy: #051435;
+  --kk-line: rgba(3, 78, 162, 0.12);
+  --kk-shadow: 0 4px 24px rgba(5, 20, 53, 0.08);
+  --kk-shadow-lg: 0 18px 48px rgba(5, 20, 53, 0.16);
+  --kk-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ---------- 1. Scroll reveal -------------------------------------------------
+   Hidden state is gated on .js-reveal (set by RevealActivator on mount), so a
+   JS failure or a crawler never sees hidden content. */
+
+.js-reveal .kkcp-enh .kkcp-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.75s var(--kk-ease),
+    transform 0.75s var(--kk-ease);
+  transition-delay: var(--d, 0ms);
+  will-change: opacity, transform;
+}
+.js-reveal .kkcp-enh .kkcp-reveal[data-reveal="left"] { transform: translateX(-34px); }
+.js-reveal .kkcp-enh .kkcp-reveal[data-reveal="right"] { transform: translateX(34px); }
+.js-reveal .kkcp-enh .kkcp-reveal[data-reveal="zoom"] { transform: scale(0.94); }
+
+.js-reveal .kkcp-enh .kkcp-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .kkcp-enh .kkcp-reveal,
+  .js-reveal .kkcp-enh .kkcp-reveal.is-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- 2. Section shell ------------------------------------------------ */
+
+.kkcp-enh .kkcp-section {
+  position: relative;
+  padding: 84px 0;
+}
+.kkcp-enh .kkcp-section.on-cream { background: var(--kk-cream); }
+.kkcp-enh .kkcp-shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* Decorative watermark numeral / glyph used behind sections. Never conveys meaning. */
+.kkcp-enh .kkcp-watermark {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  font-family: "Bitter", Georgia, serif;
+  font-weight: 600;
+  line-height: 1;
+  color: rgba(3, 78, 162, 0.05);
+}
+
+/* ---------- 3. Eyebrow + rule ----------------------------------------------- */
+
+.kkcp-enh .kkcp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--kk-heading);
+  margin: 0 0 14px;
+}
+.kkcp-enh .kkcp-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: var(--kk-gold);
+  flex: 0 0 auto;
+}
+
+/* ---------- 4. Monogram avatar (no invented faces) --------------------------
+   Used where we have a real person's name but no photograph of them. */
+
+.kkcp-enh .kkcp-monogram {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  font-family: "Bitter", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--kk-heading) 0%, var(--kk-primary) 100%);
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 5px rgba(253, 199, 47, 0.55),
+    0 8px 20px rgba(5, 20, 53, 0.22);
+}
+.kkcp-enh .kkcp-monogram.lg { width: 92px; height: 92px; font-size: 30px; }
+
+/* ---------- 5. Portrait plate ------------------------------------------------
+   A captioned head-and-shoulders portrait of the person a story is ABOUT.
+   Deliberately NOT a full-bleed photo: it must never read as documentation of
+   the event itself, only as "here is who this is about". */
+
+.kkcp-enh .kkcp-portrait {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: linear-gradient(140deg, #0b2f57 0%, #051435 100%);
+  isolation: isolate;
+  /* <figure> carries a default 20px block margin; the graphic plate is a <div> and carries none.
+     Left alone, portraits sit 20px lower than the copy beside them and plates don't. */
+  margin: 0;
+}
+.kkcp-enh .kkcp-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.9s var(--kk-ease);
+}
+.kkcp-enh .kkcp-card:hover .kkcp-portrait img,
+.kkcp-enh .kkcp-lead:hover .kkcp-portrait img {
+  transform: scale(1.055);
+}
+.kkcp-enh .kkcp-portrait figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px 14px 12px;
+  background: linear-gradient(180deg, rgba(5, 20, 53, 0) 0%, rgba(5, 20, 53, 0.9) 58%);
+  color: #fff;
+}
+.kkcp-enh .kkcp-portrait .p-name {
+  display: block;
+  font-family: "Bitter", Georgia, serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.kkcp-enh .kkcp-portrait .p-role {
+  display: block;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.35;
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- 6. Graphic plate (used where NO photograph exists) --------------
+   An openly graphic panel — big numeral on the brand gradient. It reads as
+   design, not as a photo of the event, which is the point: we do not have the
+   event photography and will not fake it. */
+
+.kkcp-enh .kkcp-plate {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background:
+    radial-gradient(120% 120% at 12% 8%, #0d3b6b 0%, #003a65 46%, #05203f 100%);
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+.kkcp-enh .kkcp-plate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(80% 80% at 50% 40%, #000 0%, transparent 100%);
+}
+.kkcp-enh .kkcp-plate::after {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  right: -58px;
+  bottom: -70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(253, 199, 47, 0.34) 0%, transparent 68%);
+}
+.kkcp-enh .kkcp-plate .plate-no {
+  position: relative;
+  font-family: "Bitter", Georgia, serif;
+  font-size: 74px;
+  font-weight: 600;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 6px 26px rgba(0, 0, 0, 0.32);
+}
+.kkcp-enh .kkcp-plate .plate-rule {
+  position: relative;
+  width: 46px;
+  height: 3px;
+  margin: 14px auto 0;
+  background: var(--kk-gold);
+  border-radius: 2px;
+}
+
+/* ---------- 7. Number badge -------------------------------------------------- */
+
+.kkcp-enh .kkcp-no {
+  display: inline-grid;
+  place-items: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font-family: "Bitter", Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--kk-primary);
+  background: rgba(253, 199, 47, 0.9);
+  box-shadow: 0 3px 10px rgba(5, 20, 53, 0.14);
+}
+
+/* ---------- 8. Focus ring (keyboard users) ---------------------------------- */
+
+.kkcp-enh :is(button, a, [tabindex]):focus-visible {
+  outline: 3px solid var(--kk-gold);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
