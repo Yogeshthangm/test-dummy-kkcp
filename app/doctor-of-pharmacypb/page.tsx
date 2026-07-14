@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CloneTree } from "../doctor-of-pharmacypb-react/_components/CloneTree";
 
-export const metadata: Metadata = { title: "Doctor of Pharmacy (PB)" };
+export const metadata: Metadata = { title: "Pharm.D (PB)" };
 
 export default function Page() {
   return (
