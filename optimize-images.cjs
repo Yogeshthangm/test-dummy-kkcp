@@ -31,6 +31,12 @@ const GROUPS = {
 const MAXPX = { faculty: 800, default: 1600 };
 const QUALITY = 72;
 
+// Groups whose images MUST be landscape. The course pages render the photo full-width in the
+// Overview tab, so a portrait source (the client's D.Pharm shot was 3127x3648) renders as a
+// giant vertical slab. Five of the six course photos were already 3:2; this forces the sixth to
+// match by centre-cropping. Without it, re-running this script would silently undo the fix.
+const FORCE_LANDSCAPE = { courses: 3 / 2 };
+
 const slug = (s) =>
   s
     .normalize("NFKD")
@@ -86,12 +92,27 @@ for (const abs of files) {
     skipped++;
   } else {
     const maxpx = String(MAXPX[group] || MAXPX.default);
+    const ratio = FORCE_LANDSCAPE[group];
     try {
+      let src = abs;
+      if (ratio) {
+        // Centre-crop to the target aspect ratio first, at full resolution, so the resize
+        // afterwards does not soften the result.
+        const dims = execFileSync("sips", ["-g", "pixelWidth", "-g", "pixelHeight", abs]).toString();
+        const w = Number((dims.match(/pixelWidth:\s*(\d+)/) || [])[1]);
+        const h = Number((dims.match(/pixelHeight:\s*(\d+)/) || [])[1]);
+        if (w && h && w / h < ratio) {          // taller than we want -> crop height
+          const tmp = path.join(require("os").tmpdir(), "kkcp-crop-" + nameSlug + ".jpg");
+          execFileSync("sips", ["-c", String(Math.round(w / ratio)), String(w), abs, "--out", tmp],
+            { stdio: "ignore" });
+          src = tmp;
+        }
+      }
       execFileSync("sips", [
         "-Z", maxpx,
         "-s", "format", "jpeg",
         "-s", "formatOptions", String(QUALITY),
-        abs, "--out", outAbs,
+        src, "--out", outAbs,
       ], { stdio: "ignore" });
       converted++;
     } catch (err) {
