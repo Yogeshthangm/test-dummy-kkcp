@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const SLIDES: string[][] = [
   ["The Tamil Nadu", "Dr. M.G.R. Medical University", "Recognized Ph.D.", "Research Centre"],
   ["PCI has approved New Courses", "M.Pharm Pharmacy Practice & M.Pharm Regulatory Affairs"],
-  ["Admission", "Open for", "2025-2026"],
+  ["Admissions", "Open for", "2026-2027"],
 ];
 
 const INTERVAL_MS = 5000;

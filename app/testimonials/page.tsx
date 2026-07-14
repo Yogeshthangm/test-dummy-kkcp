@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { CloneTree } from "../news-react/_components/CloneTree";
+import { CloneTree } from "../testimonials-react/_components/CloneTree";
 
-export const metadata: Metadata = { title: "News" };
+export const metadata: Metadata = { title: "Testimonials" };
 
 export default function Page() {
   return (

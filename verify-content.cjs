@@ -12,6 +12,12 @@
 const fs = require("fs");
 const path = require("path");
 
+// Minimum chunk length treated as a content block. This was 12, which silently excused the
+// home hero slide strings ("Admissions", "Open for", "2026-2027") — and the page was shipping
+// "Admission" / "2025-2026". Short strings ARE content. Keep both the MD-side and page-side
+// floors identical, or the gate goes blind in one direction.
+const MIN_BLOCK = 5;
+
 const ROOT = __dirname;
 const MD = path.join(ROOT, "KKCP_Website_Content_MD");
 
@@ -98,8 +104,12 @@ function decodeEntities(s) {
 //       JS string/template literals inside const arrays, which the JSX pass would strip as
 //       "{...} expressions". Missing these made the gate blind to exactly the pages carrying
 //       the most content.
-// This is a CONTAINMENT check ("does the MD text appear?"), so being over-inclusive is safe:
-// it can never produce a false FAILURE, only a false pass, and the build + spot-checks cover that.
+// This is a CONTAINMENT check ("does the MD text appear?"), so being over-inclusive on the PAGE
+// side is safe: it yields false passes, never false failures. The MD side is the opposite — a
+// decoding bug there invents an expected string the page can never contain, which is a false
+// FAILURE. That is the dangerous direction: it pressures an agent to edit correct copy to satisfy
+// a broken gate (an ICPR violation). If this gate reports a miss, diff the page against the MD by
+// hand before touching one character of content.
 function jsxToText(src) {
   let t = src;
   t = t.replace(/^\s*\/\/.*$/gm, "");            // line comments
@@ -112,8 +122,15 @@ function jsxToText(src) {
   for (const m of t.matchAll(/"((?:[^"\\\n]|\\.)*)"/g)) literals.push(m[1]);
   for (const m of t.matchAll(/'((?:[^'\\\n]|\\.)*)'/g)) literals.push(m[1]);
   const dataText = literals
-    .map((s) => s.replace(/\\n/g, " ").replace(/\\(.)/g, "$1"))
-    .filter((s) => s.length > 15)   // skip classNames/hrefs/short props noise
+    // Data-array strings carry inline markup of their own: MessageSlider's `role` is
+    // `Chairman<br />Ultra Group of Institutions` — the MD's two lines joined by its trailing-"\"
+    // line break, which is correct and verbatim. Without stripping the tag the gate compared
+    // "Chairman<br />Ultra..." against "Chairman Ultra..." and reported a false miss.
+    .map((s) => s.replace(/<[^>]+>/g, " ").replace(/\\n/g, " ").replace(/\\(.)/g, "$1"))
+    // Floor must match the MD side's own minimum chunk length (12) below, or the gate goes
+    // blind to short-but-real content: the 12-char section heading `Publications` on /research
+    // is a genuine content block, and >15 dropped it.
+    .filter((s) => s.length >= MIN_BLOCK)
     .join("\n");
 
   // (a) render the JSX text nodes
@@ -142,7 +159,7 @@ function canon(s) {
     .replace(/\u00e2\u20ac\u201d/g, "\u2014")
     .replace(/\u00e2\u20ac\u201c/g, "\u2013")
     // pandoc backslash escapes
-    .replace(/\\(['"<>_*\[\]])/g, "$1")
+    .replace(/\\(['"<>_*\[\]|])/g, "$1")
     // pandoc smart punctuation (--- before --)
     .replace(/---/g, "—")
     .replace(/--/g, "–")
@@ -171,8 +188,14 @@ function mdContentStrings(md) {
   // Strip pandoc grid-table borders and pipe-table rules, keep cell text.
   t = t.replace(/^[+|][-=+:| ]*[+|]\s*$/gm, "\n");
   t = t.replace(/^\s*-{3,}[- :|]*$/gm, "\n");
+  // Split pipe/grid table ROWS into their cells.
+  // The leader test must NOT be a bare /^\s*[|+]/ : the contact page's phone line is
+  // "+91-9841259415", which starts with "+" and was being mistaken for a grid-table row, so
+  // the "+" got stripped and the gate then demanded "91-9841259415" — a string the page can
+  // never contain. That is a false FAILURE, the direction that pressures an agent into
+  // "fixing" correct copy. A real table leader is "|" or "+" followed by a border rune.
   t = t.split("\n").map((line) => {
-    if (/^\s*[|+]/.test(line)) {
+    if (/^\s*\|/.test(line) || /^\s*\+[-=+]/.test(line)) {
       return line.replace(/^\s*[|+]/, "").replace(/[|+]\s*$/, "").split(/\s*\|\s*/).join("\n");
     }
     return line;
@@ -180,25 +203,68 @@ function mdContentStrings(md) {
 
   // Inline markdown/pandoc syntax -> plain text (transport only; characters preserved).
   t = t.replace(/!\[[^\]]*\]\([^)]*\)(\{[^}]*\})?/g, "\n");   // images (media/ not shipped)
+  // Spans must run BEFORE links: pandoc emits DOIs as nested [[url]{.underline}](url), which
+  // the link regex can never match while the span is still wrapped around the label. Running
+  // links first left literal "[url](url)" markdown in the expected string (11 false misses on
+  // /research). And the span body is [^\]\n]* (not [^\]]*) so that a stray literal "[" in the
+  // prose cannot make one span swallow every line up to the next "]{.mark}" 90 lines later.
+  t = t.replace(/\[([^\]\n]*)\]\{\.[a-z]+\}/g, "$1");         // {.underline} / {.mark} spans
   t = t.replace(/\[([^\]]*)\]\([^)]*\)/g, "$1");              // links -> label
-  t = t.replace(/\[([^\]]*)\]\{\.[a-z]+\}/g, "$1");           // {.underline} / {.mark} spans
+  // Pandoc AUTOLINKS: <someone@example.com> / <https://…>. The angle brackets are markup — the
+  // content is the address itself. Courses.md auto-linked exactly one guide's email
+  // (<hodcologykkcp@gmail.com>) while the other four are bare, so without this the gate demanded
+  // literal angle brackets the page rightly renders as a mailto link.
+  t = t.replace(/<((?:mailto:)?[^>\s@]+@[^>\s]+|https?:\/\/[^>\s]+)>/g, "$1");
   t = t.replace(/\*\*/g, "").replace(/(^|\s)\*(\S)/g, "$1$2").replace(/(\S)\*(\s|$)/g, "$1$2");
   t = t.replace(/\\$/gm, "");                                 // trailing backslash line breaks
-  t = t.replace(/\\(['"<>_*])/g, "$1");                       // escaped punctuation
+  // Escaped punctuation. "\-" matters: Testimonials.md attributes a quote with
+  // "\- Dr. G. Mani Vendhra, ..." — pandoc escaping a leading hyphen so it isn't read as a
+  // bullet. Without "-" here the gate demanded a literal backslash the page rightly omits.
+  t = t.replace(/\\(['"<>_*|\-])/g, "$1");
   // NOTE: [ \t]* not \s* — \s* would eat the preceding newline and merge paragraphs.
   t = t.replace(/^[ \t]*[-•][ \t]+/gm, "");                   // bullet markers
   t = t.replace(/^[ \t]*>[ \t]?/gm, "");                      // blockquote markers
   t = t.replace(/^[ \t]*\d+\\?\.[ \t]+/gm, "");               // list numbering "1." / "1\."
 
   const out = [];
+  const skipped = [];
   for (let chunk of t.split(/\n\s*\n/)) {
     chunk = normalize(chunk);
     if (!chunk) continue;
-    if (chunk.length < 12) continue;              // skip fragments like "NO", "PHOTO", "="
-    if (/^(Top of Form|Bottom of Form)$/i.test(chunk)) continue;
+    if (chunk.length < MIN_BLOCK) continue;
+    const why = artifactReason(chunk);
+    if (why) { skipped.push({ chunk, why }); continue; }
     out.push(chunk);
   }
+  out.skipped = skipped;
   return out;
+}
+
+// Structural scaffolding of the WORD DOCUMENT that is not page content. These are the only
+// strings allowed to be absent from a page, and each must say why. Everything else is content
+// and must appear verbatim. Kept deliberately narrow and reported out loud (never silently
+// dropped) so this can't become a place to bury real misses.
+function artifactReason(c) {
+  // Word / plugin leftovers.
+  if (/^(Top of Form|Bottom of Form)$/i.test(c)) return "Word form artifact";
+  if (/^Gutentor Advanced Text$/i.test(c)) return "WordPress plugin artifact";
+
+  // The pandoc table header row of Latest News & Updates.md.
+  if (/^NO PHOTO DESCRIPTION$/i.test(c)) return "source table header row";
+
+  // The document's own title line, e.g. "ABOUT US Page", "Scholarship Page", "Home Page".
+  // The page carries the real title in its <h1>; the doc title is filing metadata.
+  // NOT excused: "Contact us page" — that one IS rendered as the page's heading, so it stays
+  // a checked content block.
+  if (/^(ABOUT US Page|Scholarship Page|Home Page|Campus)$/i.test(c)) return "document title line";
+
+  // Section navigation headers inside the source docs, e.g. "1. Campus → Smart-Class Rooms",
+  // "3 Courses → M.Pharm". The arrow is the giveaway: these describe where content belongs in
+  // the site tree, they are not text the site displays. The section's real heading/title is
+  // asserted separately.
+  if (/→/.test(c) && /^\d*\s*(Campus|Courses|Department)\b/i.test(c)) return "source section header (site-tree pointer)";
+
+  return null;
 }
 
 // ---------- run ----------
@@ -207,6 +273,7 @@ const only = process.argv[2];
 const cache = {};
 let failures = 0;
 let checked = 0;
+let totalSkipped = 0;
 
 for (const [mdFile, routes] of Object.entries(MAP)) {
   if (only && !routes.includes(only)) continue;
@@ -239,7 +306,17 @@ for (const [mdFile, routes] of Object.entries(MAP)) {
     console.log(`      MISSING: ${m.slice(0, 150)}${m.length > 150 ? " …" : ""}`);
   }
   if (missing.length > 8) console.log(`      … and ${missing.length - 8} more missing`);
+
+  // Report the artifact skips out loud. They are the only strings excused from the check,
+  // so they must stay visible and auditable — never a silent drop.
+  totalSkipped += strings.skipped.length;
+  if (process.env.SHOW_SKIPS) {
+    for (const s of strings.skipped) console.log(`      skipped (${s.why}): ${s.chunk.slice(0, 90)}`);
+  }
 }
 
-console.log(`\n${failures === 0 ? "ALL VERBATIM ✔" : failures + " FILE(S) FAILED"}  (${checked} content blocks checked)`);
+console.log(
+  `\n${failures === 0 ? "ALL VERBATIM ✔" : failures + " FILE(S) FAILED"}  (${checked} content blocks checked` +
+  (totalSkipped ? `, ${totalSkipped} document-structure artifacts skipped — SHOW_SKIPS=1 to list them` : "") + `)`
+);
 process.exit(failures === 0 ? 0 : 1);

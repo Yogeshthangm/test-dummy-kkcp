@@ -4,134 +4,156 @@ import { CloneFooter } from "@/components/CloneFooter";
 /* eslint-disable */
 // Research page — same design as the Courses page (hero banner + "Filter By" sticky
 // sidebar + filter-card list with thumbnails, scoped by .elementor-7888 CSS in
-// /all-programs/clone-theme.css). One card per faculty publication group.
-// All publication copy is VERBATIM user-provided text (ICPR) — including the leading
-// line-number prefixes (1.–11.) on the first eleven entries; nothing rewritten. Text
-// lives in JS strings so React escapes &/</> automatically. Short author names and
-// department tags (NAMES/DEPTS) are navigation chrome, not content.
+// /all-programs/clone-theme.css). One card per section of "13. Research.md".
+// All copy below is VERBATIM user-provided text (ICPR): the MD's own numbering, spacing,
+// punctuation and citation style are carried unchanged; only pandoc transport escapes
+// (--, \', mojibake, **bold**, [label](url)) were decoded. Nothing rewritten, nothing invented.
+// Text lives in JS strings so React escapes &/</> automatically.
 
-const TOP_TITLE = `1.Research Works & Paper Publications`;
+// NOTE: this page carries NO page-level heading of its own. The earlier pass had a
+// TOP_TITLE h3 whose text appears in NO user MD and in no
+// other KKCP source — it was invented copy, so it is deleted rather than replaced (ICPR:
+// deleting is always correct, inventing never is). The hero <h1>Research</h1> and the MD's
+// own three section headings are the only titles on the page.
 
-// Faculty groups. heading + verbatim publication entries. Text is byte-for-byte user copy.
+// The three sections of "13. Research.md". heading + verbatim entries.
+// Line breaks inside an entry are the MD's OWN hard line breaks (pandoc trailing "\") and
+// are carried as real newlines, rendered via `white-space: pre-line` on .dept-pub.
 const GROUPS = [
   {
-    heading: `2.Dr. A. Shanthy M.Pharm, Ph.D., (Dept. of Pharmaceutics) has recently delivered a presentation and supervised the following projects:`,
+    heading: `Publications`,
     items: [
-      `3.1.  "Designing and Evaluation of Microneedles for the treatment of Melasma (hyper pigmentation) using factorial designs". This paper was presented at the 72nd Indian Pharmaceutical Congress, Nagpur; 2023.`,
-      `4.2.  "Cocrystallized Mucoadhesive sustain release buccal tablet for oral candidiasis".`,
-      `5.3.  "Rebamipide nanoparticles loaded mucoadhesive buccal patches for Behcet’s disease".`,
-      `6.4.  "Formulation and Evaluation of Microballoon containing a combination of Esomeprazole and Levosulpiride to treat Gastroesophageal Reflux disease (GERD)".`,
-      `7.5.  "Formulation and Characterization of Transethosomal contraceptive Patch".`,
+      `1. 3D bioprinting: Classification of bio inks and bio printing techniques. Karthick. K. Vani.M Arun.T. International journal of Pharmaceutical sciences , 2025, vol 3, issue 7.`,
+      `2. Stealth liposomal gel of Desonide: Formulation and evaluation. Karthick. K Vani. M Arun. T Sudalaimani. M. International journal of Pharmaceutical sciences, 2025. Vol 3, issue 9.`,
+      `3.CRISPR/ CAS platforms and their delivery systems : A comprehensive overview. Vani. M Karthick. K Rubashree. T Jebina Steffy. T Arun. T, International journal of Pharmaceutical sciences, 2025, 85(10).`,
+      `4. Formulation and in -vitro evaluation of Acarbose loaded solid- lipid nanoparticles. Vani. D Karthick. K Ramkumar. M Arun. T. European journal of Pharmaceutical and Medical Research.2025, 12(12).`,
+      `5.Eye on innovation: A comparative review on ocular inserts and eye gel for enhanced therapeutic efficacy and better ocular drug delivery. Karthick. K Ganesh. S Pravin . S International journal of Pharmaceutical sciences 2025 vol 3, issue 9 .`,
+      `6.Electrospun nanofibres : Revolutinizing the future of materials. Karthick. K D. Shobanraj D. Paranthaman S. Kaviya journal of Pharmaceutical sciences,2026, vol 2, issue 4.`,
+      `7. Nova some: A novel hybrid vesicular drug delivery system combining ufasome and niosome. Karthick. K Kaviya. S. D. Shobanraj D. Paranthaman 2026, vol 2, issue 4.`,
+      `8.Pharmacognostical and phytochemical screening of Leaves of Raphanus sativus Linn\nAuthors. Thamizharasi Suresh. Shankari Vellaisamy. Parvatharajakumaran.V.S. Chetan.\nAsian Journal of pharmaceutical Research 14(1)10.52711/2231-5691.2024. 00004\nJan -March. 2024`,
+      `9.Development and Validation of QBD-Assisted Using Central Composite Design RP-HPLC Method for Lobeglitazone Sulfate and Glimipiride in Bulk and Its Combined Dosage Form, A.Marina Juliet , Chromatographia 88(5) 381-393 April 2025`,
+      `10.Pavithra, K.; Shajan, R. S.; Parvis, A. Mohamed; Raj, S. Anto Melvin; Priya, B.; Ramalakshmi, Sankaralingam. Prospective Evaluation of Cephalosporin Prescribing and Guideline Adherence in Adult Inpatients at a Tertiary Care Hospital in South IndiaJournal of Research in Pharmacy Practice 15(1):12, February 2026. | DOI: 10.4103/jrpp.jrpp_92_25.`,
+      `11.In-silico Design, ADMET Screening, Prime MM-GBSA Binding Free Energy Calculation and MD Simulation of Some Novel Phenothiazines as 5HT6R Antagonists Targeting Alzheimer’s Disease. Prema. V, Meena. A, Ramalakshmi. N. 2025. Current computer aided drug design 21 (4), 487-502.`,
+      `12. A Computational Study of Phenothiazine Derivatives as Acetylcholinesterase Inhibitors Targeting Alzheimer’s Disease. Prema. V, Meena. A, Ramalakshmi. N. Central Nervous System Agents in Medicinal Chemistry. 2025. 25 (1), 68-82.`,
+      `13. An overview of Acute Lymphoblastic Leukemia. Yashmi Agwina Xavier V. Prema, S. Karunika. Asian Journal of Pharmaceutical Research. 2025. 15 (02), 202-208.`,
+      `14. Antisense Molecules: Design, Chemistry, and Therapeutic Innovations. Prema Vediappan*, Suryalakshmi Aravamudhan, Jocelyn Olivia Prabakar David, Abitha Sri Ganapathy, Mini Reviews in Medicinal Chemistry, 2026. DOI: 10.2174/011389557542883225120605543.`,
+      `15. Exploring Pyranophenothiazines for Anti-Alzheimer’s Activity: Insights from Molecular Modeling Analysis. V Prema, A Meena, N Ramalakshmi. Central nervous system agents in medicinal chemistry. 2025 Sep 15. doi: 10.2174/0118715249353128250901051741.`,
+      `16. Limit tests-A brief study on its role and significance in pharmaceuticals. V Prema, K Ishwaryalakshmi, S Subhashini, M Kavisri, P Kishore. Asian Journal of Pharmacy and Technology. 2024, 14 (1), 23-30.`,
+      `17. A Review on Nanoparticles Toxicity, International Journal of Research Publication and Reviews, Vol 2, Issue:9, 2025`,
+      `18. Promoting green chemistry in analysis: An assessment of analytical methodologies and their environmental implications. International journal of pharmaceutical sciences\nIssue 03,24/03/2026`,
+      `19.Vani.D, Gayathri H, Gayathri K. Artificial intelligence in oncology: revolutionizing cancer detections. Front Health Inform. 2025;14(1).`,
+      `20.Vani.D, Ethiraj T, Ponnusamy S. Exosomes as next generation carriers for brain drug delivery: engineering, formulation, characterization, and neurotherapeutic applications. Bentham Science. Accepted Apr 11, 2025.`,
+      `21.Vani.D, Philip AE, Monica K, Manisha M. Budd Chiari syndrome. J Pharm Med Res. 2024;11(15):128-131.`,
+      `22.D.Vani,K.Karthick,M.Ramkumar,Arun T,Formulation And In Vitro Evaluation Of Acarbose-Loaded Solid Lipid Nanoparticles,Ejpmr, 2025, 12(12), 158-168Vol 12, Issue 1.`,
+      `23.Vani D,Karthick K,Rubashree TJebina Steffy M,Arun T,CRISPR/CAS Platforms and their Delivery Systems: A Comprehensive Overview Int. J. Pharm. Sci. Rev. Res., ISSN: 0976 044X, 85(10) October 2025; Article No. 04, Pages: 18-28 .`,
+      `24. Karthick K*, Vani M, Arun T, Sudalaimani M Stealth Liposomal Gel of Desonide: Formulation and Evaluation, Int. J. of Pharm. Sci., 2025, Vol 3, Issue 9, 2165-2181 |Research.`,
+      `25.Karthick K*, Vani M, Arun T, 3DBio Printing: Classification of Bio-Inks and Bioprinting Technique Int. J. of Pharm. Sci., 2025, Vol 3, Issue 7, 1303-1312 |Review.`,
+      `26.Elumalai K, Srinivasan S, Shanmugam A. Review of the efficacy of nanoparticle-based drug delivery systems for cancer treatment. Biomedical Technology 2024;5:109–22. https://doi.org/10.1016/j.bmt.2023.09.001.`,
+      `27.Sivaneswari S, Senthilkumaran K, Sambathkumar R. Chronomodulated drug delivery systems for the treatment of hypertension: An overview. Intelligent Pharmacy 2023;2:155–60. https://doi.org/10.1016/j.ipha.2023.10.001.`,
+      `28.Elumalai K, Shanmugam A, Devaraji M, Srinivasan S. Synthesis and molecular docking of pyrimidine derivatives as antibacterial agents. Carbon Resources Conversion 2024;7:100222. https://doi.org/10.1016/j.crcon.2024.100222.`,
+      `29.Elumalai K, Srinivasan S. Harnessing nanoparticle technology for precision medicine in head and neck cancer: targeted delivery, immunomodulation, and clinical translation. Nano TransMed 2025;4:100075. https://doi.org/10.1016/j.ntm.2025.100075.`,
+      `30.Elumalai K, Srinivasan S, Shanmugam A. Impact of COVID-19 vaccines on liver function: A state of the art and challenges for healthcare providers. Gastroenterology & Endoscopy 2024;2:42–51. https://doi.org/10.1016/j.gande.2024.01.003.`,
+      `31.Salkapuram SK, Elumalai K, Williams H, Sivannan S, Srinivasan S, Anandakumar S. Prevalence, risk factors, and statistical analysis of urinary incontinence in a tertiary care hospital in India. Istanbul Medical Journal 2024;25:286–92. https://doi.org/10.4274/imj.galenos.2024.09514.`,
+      `32.Karthikeyan E, Sivaneswari S. Advancements in Transdermal Drug Delivery Systems: Enhancing Medicine with Pain-Free and Controlled Drug Release. Intelligent Pharmacy 2024. https://doi.org/10.1016/j.ipha.2024.09.008.`,
+      `33.Srinivasan S, Elumalai K, Cherian BV, Ramanujam SK. Formulation and characterization of metformin hydrochloride orodispersible tablets with super disintegrants. Intelligent Pharmacy 2023;1:162–6. https://doi.org/10.1016/j.ipha.2023.06.006.`,
+      `34.Sivannan S, Vishnuvardhan A, Elumalai K, Srinivasan S, Cherian BV, Ramanujam SK, et al. Azithromycin and co-trimoxazole-induced oral thrush: A case report from the perspective of pharmacy. Intelligent Pharmacy 2023;1:280–2. https://doi.org/10.1016/j.ipha.2023.06.007.`,
+      `35.Srinivasan S, Elumalai K. The new frontier of drug delivery through nanotechnology. Intelligent Pharmacy 2023;1:169–74. https://doi.org/10.1016/j.ipha.2023.08.002.`,
+      `36.Sandeep A, Elumalai K, Williams H, Salkapuram S, Anandakumar S, Srinivasan S. Prevalence, prescription patterns, and quality of life of anaemia in adults with chronic renal disease. European Journal of Clinical and Experimental Medicine 2023;21:785–92. https://doi.org/10.15584/ejcem.2023.4.20.`,
     ],
   },
   {
-    heading: `8.Dr. M. Vani M. Pharm, Ph.D., (Dept. of Pharmaceutics) has authored the following research article:`,
+    heading: `Ongoing Projects`,
     items: [
-      `9.1.  "Aspects of Nano Technology in Cosmeceuticals;" World Journal of Pharmacy & Pharmaceutical Sciences: Vol. II; Issue:12 : 2022.`,
-      `10.2.  "Formulation and Evaluation of W/o/W Multiple Emulsion of Enalapril Maleate"; International Journal of Research in Pharmaceutical and Nano Science.`,
-      `11.3.  "Novel Ocular Drug Delivery System"; International Journal of Research in Pharmaceutical and Nano Sciences; Vol. II(4); Pg: 268-279; July-Aug 2022.`,
+      `1.A Synergistic Dual Drug Nanofibrous Scaffold of Repurposing Metformin Ani Curcumin for enhanced diabetic wound healing. Under the Guidance of Dr. A.Shanthy`,
+      `2.Development and Evaluation of Resveratrol Microsphere loaded collagen nanofiber scaffold for diabetic wound healing. Under the Guidance of Dr. A.Shanthy`,
+      `3.Development and Evaluation of a Bioactive Lactoferrin – functionalized Pirfenidone-loaded Nanofibrous Thermo Sensitive Hydrogel for Targeted Pulmonary Delivery and sustained Antifibrotic Therapy. Under the Guidance of Dr. A.Shanthy`,
+      `4.Stealth Liposomal Thermoreversible Pramipexol Nasal Gel to enhance Brain Targeting for the Treatment of Parkinson's Disease. Under the Guidance of Dr. A.Shanthy`,
+      `5.Formulation and Evaluation of a Nanoemulsion-Based Gel Containing Azelaic Acid and Astaxanthin for Hyperpigmentation and Wound Healing Activity Under the Guidance of Dr.K.Karthick`,
+      `6.Formulation and Evaluation of Self-Nano Emulsifying Drug Delivery System(Snedds) Ofnaproxen for Enhanced Oral Bioavailability. Under the Guidance of Dr.K.Karthick`,
+      `7.Development of Formulation and Evaluation of Ligand Targeted Nanoparticle With Stimuli Responsive Nano Carrier for Improved Anti-Convulsant Activity In Experimental Rats Under the Guidance of Dr.K.Karthick.`,
+      `8. Exploring the Therapeutic Potential of Spinacia Oleracea Extract Loaded Hydrogel for Diabetic Foot Ulcer In Rats Mrs.A.Kamatchi, J Gowtham. Under the Guidance of Mrs. A. Kamatchi`,
+      `9. Assessment of Social Media Influence on Self Medication Among The General Public: A Cross-Sectional Survey -Athulya S.K ,Muthazhagi.K, Thenmozhi.S Under the Guidance of Dr. S. Ramalakshmi.`,
+      `10. Prospective Observational Study on Drug Utilization Evaluation of Parenteral Corticosteroids in a Tertiary Care Hospitaljohna Nancy .K , Lavanya .V , Pavithra .M ,Sudharsan .S Under the Guidance of Dr. S. Ramalakshmi.`,
+      `11. An Observational Study on Potassium Chloride In Hypokalemic Patients .Abinash K , Lydia X.C ,Mani Bharathi V Under the Guidance of Dr. S. Ramalakshmi.`,
+      `12. Evaluation of Anti-Atrophic Effect of Hydroalcoholic Extract of Rosmarinus Officinalis.\nLeaves In Dexamethasone Induced Skeletal Muscle Atrophy In Rat Model"(Ashwini) Under the Guidance of Dr. C. Senthilkumari`,
+      `13. Evaluation of Hair Growth Promoting Activity of Plumbago Zeylanica Serum Using Testosterone-Induced Alopecia In Rat Model(Mohan) Under the Guidance of Dr. C. Senthilkumari`,
+      `14. Development and Evaluation of Silver Nanoparticle-Loaded Hydrogel Containing Andrographis Paniculata For Infected Diabetic Wound Healing. Under the Guidance of Mrs. S. L. Laura`,
+      `15.Formulation and Evaluation of Biodegradable Nanoparticle- Loaded Periodontal Chip For The Treatment of Periodontitis Under the Guidance of Mrs. S. L. Laura`,
+      `16.Formulation And Evaluation of Sansieviera Leaves Nanogel Under the Guidance of Mrs. S. L. Laura`,
+      `17. In-Silico Design, ADMET Screening and MD Simulation of Some Novel Benzothiazole Derivatives Under the Guidance of Dr. V. Prema`,
+      `18.Formulation and Evaluation of Anti-Psoriatic Activity of Zinc Pyrithione Hydrogel Containing Leflunomide Nanosponge. Under the Guidance of Dr. M. Vani`,
+      `19.Formulation and Evaluation of Celecoxib Co Crystal Loaded Transferosome Gel For Treatment of Rheumatoid Arthritis. Under the Guidance of Dr. M. Vani`,
+      `20.Development and Evaluation of Nanoemulsion Containing Ethanolic Extract of Canthium Coromandelicum (Burm.F.) Alston for Anti-Alzheimers Activity Using In-Silico and In-Vitro Approaches. Under the Guidance of Dr.M.Vani`,
+      `21.Green Synthesis and Rational Development of Spiro-Oxindole-Thiazolidinone Hybrids As Novel GSK -3B Modulators for Cancer and Fibrosis Therapy.(Phd) Under the Guidance of Dr.M. Vani`,
+      `22.Assessment of Prescribing Practice and Safety Concern Related To Narrow Therapeutic Index Drugs in Hopitalized Patient Under the Guidance of Dr.Aswathi Elisabeth Philip`,
+      `23. Assessment of Drug Related Problem and Clinical Outcome Associaed With Inotropes and Vassopressors In Critically Ill Patients Parental Awareness About Vaccination Schedule In Children- A Descriptive Cross – Sectional Study. Under the Guidance of Dr.Aswathi Elisabeth Philip`,
+      `24.Development, Optimization, and Stability-Indicating UHPLC Validation of A Antidiabetic Drug Combinations Under the Guidance of Mrs. Marina Juliet`,
+      `25.Knowledge, Attitude, and Practice To Wards Insuline Administration In Tertiary Care Hospital Under the Guidance of Dr.T.Deeksha`,
+      `26. Prospective Observational Study on Levothyroxine Administration Techniques In Tertiary Care Hospital Under the Guidance of Dr.T.Deeksha`,
+      `27.A Prospective Study Evaluating Analgesic Prescription Pattern Among Post Operative Patient In Tertiary Care Hospital Under the Guidance of Dr.T.Deeksha`,
+      `28. Optimization and evaluation of Standardized Feverfew Extract loaded Gel for Effective Migrane Management. Under the Guidance of Dr. S. Sivaneswari`,
+      `29. Development and Evaluation of Resveratrol loaded Pharmacosomes incorporated insitu gel for Alzheimer's disease Under the Guidance of Dr. S. Sivaneswari`,
     ],
   },
   {
-    heading: `Mrs. S.L. Laura (Dept. of Pharmaceutics) has published and presented the following articles on the title`,
+    heading: `Completed Projects`,
     items: [
-      `1. "MTT Assay in Cytotoxicity" published in the World Journal of Pharmacy & Pharmaceutical Sciences; Volume 11, Issue 8; Pages 601-608; 2022.`,
-      `2. "Challenges posed by anti-inflammatory drugs in Covid-19 Treatment" featured in the International Journal of Health Sciences; 2022.`,
-      `3. "Multiparticulate Drug Delivery System (MPDDS)" found in the World Journal of Pharmaceutical Research, Volume 11; Issue 16; Pages 1959-1980; 2023.`,
-      `4. "Marine Biotechnology" published in the World Journal of Pharmaceutical Research; Volume 12, Issue 6; Pages 230-241; 2023.`,
-      `5. "In-Vitro Cytotoxicity Assay of aqueous extract of rags of Artocarpus heterophyllus" presented at the International Conference on "Advanced Innovation and Research Challenges in Sciences and Technology (ICAIRST 2023)"; held from March 1st to 3rd, 2023, organized by the School of Pharmaceutical Sciences, VISTAS, Pallavaram, Chennai.`,
-    ],
-  },
-  {
-    heading: `Dr. B. Premkumar M.Pharm, Ph.D (Dept of Pharmacology) has published the review article on the title`,
-    items: [
-      `1. Ponnurengam Malliappan Sivakumarr, Atefeh Zarepour, Sohail Akther, Govindaraj Perumal, Arezoo Khosravi, Premkumar Balasekar, Ali Zarrabi discuss the role of anionic polysaccharides as delivery carriers in cancer therapy and theranostics: A comprehensive overview of their significance, published in the International Journal of Biological Macromolecules (2024), https://doi.org/10.1016/j.ijbiomac.2024.139211. (Impact factor 7.7) (Q1) (ELSEVIER)`,
-      `2. Dr. C. Meenakshi, Dr. G. Bharath Kumar, Dr. M. Ramani, Dr. S. Chithra, and Dr. B. Premkumar (2024) investigate Siddha phytocomponents for their potential to inhibit Gsk-3β in managing insulin resistance and type 2 diabetes. This study appears in Frontiers in Health Informatics, 13 (3), 4326-4333. (Scopus Indexed)`,
-      `3. The article titled “Silk Fibroin and Collagen Composite Nanofiber Incorporated with Palladium and Platinum Nanoparticles for Wound Dressing Applications” is published in the Journal of Polymers and the Environment on April 25, 2024, pages 1-21. (Impact Factor 5.3) (Q1) (Springer)`,
-      `4. The research titled “Multifunctional silk fibroin and cellulose acetate composite nanofibers incorporated with palladium and platinum nanoparticles for enhanced wound healing: Comprehensive characterization and in vivo assessment” is featured in Colloids and Surfaces A: Physicochemical and Engineering Aspects; 684; 2024: 133153. (Impact Factor 4.513) (Q1) (ELSEVIER)`,
-      `5. The study “Silk fibroin and gelatin composite nanofiber combined with silver and gold nanoparticles for wound healing accelerated by reducing the inflammatory response” is published in Process Biochemistry; 134, Part 2; 2023: 1-16. (Impact factor 4.88) (Q2) (ELSEVIER)`,
-      `6. The paper “Screening of natural ligands as potential anti-alopecia agents: A computational study” appears in the International Journal of Pharma Research 2022: 13 (2), 79-85.`,
-      `7. The review “Role Of Glp-1 analogs in the management of Diabetes and Its secondary Complication” is published in Mini Reviews in Medicinal Chemistry. 2021; 21(20): 3166-3182. (Bentham Science Impact Factor 3.862) (PubMed Indexed)`,
-      `8. The study “Hepatoprotective and antioxidant activity of Leucas aspera against D-galactosamine induced liver damage in rats” is published in Pharmaceutical Biology 2012; 50 (12), 1473-1478. (Pubmed)`,
-    ],
-  },
-  {
-    heading: `Dr. C. Senthil Kumari M.Pharm, Ph.D (Dept of Pharmacology) has published the review article on the title`,
-    items: [
-      `1. "A Thorough Examination of Antimicrobial Strategies and Innovative Approaches from Traditional Medicine to Combat Antibiotic Resistance." International Journal of Pharmaceutical Sciences and Research, Indexed in Embase, an Elsevier Product. IJPSR; Vol 14, Issue 6: 2717-2723; 2023.`,
-      `2. "Exploring Wine Varieties and Their Health Benefits - A Review." World Journal of Pharmacy & Pharmaceutical Sciences. Vol. 12; Issue: 2, 591-599; 2023.`,
-      `3. Assessment of In Vitro Anthelmintic Activity and Phytochemical Analysis of the Ethanolic Extract of Cardiospermum Halicacabum Leaves, International Journal of Current Research & Review. Vol 14, Issue 19; 2022.`,
-      `4. "Modifying Lifestyle to Manage Autism Spectrum Disorder: A Review." International Journal of Scientific Research, Vol. 11; Issue: 1, ISSN No: 2277-8179; January 2022.`,
-      `5. "An Overview of Polycystic Ovary Syndrome and Its Lifestyle Modifications." World Journal of Pharmacy and Pharmaceutical Sciences; Vol. 11; Issue: 1; 545-552; 2022.`,
-    ],
-  },
-  {
-    heading: `Mrs. M. Sankari M.Pharm (Dept. of Pharmacology) has authored a research article titled`,
-    items: [
-      `1.  "Evaluation of anti-arthritic activity of Spathodea Campanulata root bark extract on Freund’s adjuvant induced arthritis in rat models" published in the World Journal of Pharmaceutical Sciences, 10 (07) 2022, pages 1-9.`,
-    ],
-  },
-  {
-    heading: `Ms. V. PREMA, M.Pharm (Pharmaceutical Chemistry) has released a research article titled`,
-    items: [
-      `1.  "Application of GC-MS in Phytochemical Screening of Traditional Medicinal Plants – A Review" in the International Journal of Pharmacy & Pharmaceutical Research, Vol. 25; ISSUE: 3; OCT 2022.`,
-    ],
-  },
-  {
-    heading: `Ms. A. MARINA JULIET, M.Pharm (Pharmaceutical Analysis) has published several research articles including`,
-    items: [
-      `1.  "Analytical method development and validation of Sacubitril and Valsartan by RP HPLC in combined dosage form 97/103 mg" in the European Chemical Bulletin, Vol. 12 Issue: 1, pages 2386-2395; 2023.`,
-      `2.  "Analytical Method Development and Validation of Amlodipine and Celecoxib 10/200mg tablets according to ICH guidelines" in the European Chemical Bulletin, Vol. 12; Issue: 1; pages 2465-2475; 2023.`,
-      `3.  "Development and validation of RP-HPLC method for simultaneous estimation of Metformin HCl and Sitagliptin phosphate in tablet dosage form" in the European Chemical Bulletin, Vol. 12 Issue: 1, pages 2713-2729; 2023.`,
-    ],
-  },
-  {
-    heading: `Ms. K. Mekala M.Pharm (Dept. of Pharmacognosy) has recently presented the following posters:`,
-    items: [
-      `1. Title: Nano Medicine and advanced technologies for Burns: Preventing infection and facilitating wound healing; International conference on “Advanced Innovation and Research Challenges in Sciences and Technology (ICAIRST 2023); 1st – 3rd March 2023 organized by School of Pharmaceutical Sciences, VISTAS, Pallavaram, Chennai.`,
-      `2. Title: “Peristrophe paniculata (forssk) – A common highly therapeutic tropical medicinal plant” first Indo-Italian International conference on Current Aspects of Pharmaceutical and Cancer Research worldwide in Commemoration with World Cancer Day held at SNS College of Health Science in Collaboration with Association of Pharmacy Professional (APP) 02.06.23; Coimbatore.`,
-      `3. Title: “A Review on sappan wood – A therapeutic dye yielding tree”. Research Journal of Pharmacognosy and Phytochemistry (RJPP) .2015; 7 (4): 227-231.`,
-      `4. Title: “Herbal Formulation Development on Heartwood Of Caesalpinia sappan for Hypolipidemic and Anti-Obesity Activity”. International Journal of Multidisciplinary and Current Research(IJMCR).2016; 4:409-420.`,
-      `5. Title: “Exploring the efficacy of polyherbal nano-ethosomes in the treatment of burn wounds”. European Chemical Bulletin, 2023;12 (8):6052-6077.`,
-      `6. Title: Brummit, Peristrophe paniculata (Forssk.)–A Common Tropical Medicinal Herb. Research Journal of Pharmacognosy and Phytochemistry, 2023;15 (3): 249-254.`,
-    ],
-  },
-  {
-    heading: `Mrs. G.C. Leela Priyanka M.Pharm, (Ph.D.,) (Dept. of Pharmacology) has published and presented the research articles on the following titles:`,
-    items: [
-      `1. "Investigating the therapeutic possibilities of phytoconstituents for the treatment of polycystic ovarian syndrome: An In-Silico analysis", Indian Journal of Pharmacy and Pharmacology 2023;10(2):94–101.`,
-      `2. "Tanshinone IIA derived from Salvia miltiorrhiza mitigates symptoms of follicular maturation arrest in zebrafish by interacting with human androgen receptors and regulating Tox3 and Dennd1a", Tissue and Cell; 88; 2024: 102404.(Impact factor 2.6) (ELSEVIER).`,
+      `1. Optimization, formulation and characterization of topical film forming spray for the treatment of wounds in Albino Wistar Rats. Under the Guidance of Dr. K. Karthick`,
+      `2. Design, optimization, formulation and evaluation of ocular inserts for the treatment of eye infection. Under the Guidance of Dr. K. Karthick`,
+      `3. Developmet of formulation and evaluation of Ethosuximide niosomal drug delivery system. Under the Guidance of Dr. K. Karthick`,
+      `4. Development of formulation and evaluation of stealth liposomal gel containing Desonide. Under the Guidance of Dr. K. Karthick`,
+      `5. Development of formulation and evaluation of polyherbal sunscreen cream. Under the Guidance of Dr. K. Karthick`,
+      `6. Formulation, characterization and in-vitro evaluation of Lamotrigine stealth liposomes for improved anti convulsant activity. Under the Guidance of Dr. K. Karthick`,
+      `7. Development of formulation and characterization of Primidone niosomes for improved anti convulsant activity. Under the Guidance of Dr. K. Karthick`,
+      `8. Formulation And In-Vitro Evaluation Of Solid Lipid Nanoparticles Of Acarbose. Under the Guidance of Dr.M.Vani`,
+      `9.Optimization, Formulation And Evaluation Of Ciprofloxacin Aquasomes Loaded In Situ Gel. Under The Guidance of Dr.M.Vani`,
+      `10.Optimization, Development And Characterization Of Salicylic Acid Niosome Loaded With Epsom Salt Gel. Under the Guidance of Dr.M.Vani`,
+      `11.Formulation and Evaluation of Naproxen sodium Nanoemulgel Under the Guidance of Dr.M.Vani`,
+      `12.Study On Surgical Antibiotics Prophylaxis And Incidence Of Surgical Site Infections.Adlin Reniba . R ,Swetha V.P ,Yuvadharani. P Under the Guidance of Dr. S Ramalakshmi`,
+      `13. Study On Surgical Antibiotics Prophylaxis And Incidence Of Surgical Site Infections.Adlin Reniba . R ,Swetha V.P ,Yuvadharani. P Under the Guidance of Dr. S Ramalakshmi`,
+      `14.Real-World Pharmacovigilance Analysis Of Fda Adverse Event Reporting System Database Of Indian Reports For Anti Diabetic Agents Under the Guidance of Dr. S Ramalakshmi`,
+      `15.Anas. A ,Dhanushiya. P ,Kishore. S , Reenadevi. M Exploring The Clinical Practice Of Cephalosporin Utilization In Infectious Disease: A Prospective Observational Study -Anto Melvin Raj. S , Mohamed Parvis. A, Pavithra. K ,Shajan.R. S Under the Guidance of Dr. S Ramalakshmi`,
+      `16.[An Observational Study On Inpatient Medication Reconciliation Form Among Geriatric Patients At A Tertiary Care Hospital-AMAL RAJ.A, KOUSHIK.S, SURIYA.K.M. S, THENMOZHI.R Under The Guidance of Dr. S Ramalakshmi`,
+      `17.Osteoprotective Effect Of Hydroalcoholic Extract Of Terminalia Arjuna Bark On Dexamethasone Induced Osteoporosis In Rat Model(B.Sagunthala) Under the Guidance of Dr.C.Senthilkumari`,
+      `18."In Vitro Antioxidant, Antimicrobial And Phytochemical Screening Of Potential Of Silver Nanoparticles Obtained By Biosynthesis Using Luecobryum Glaucum And Its Network Pharmacology" Under the Guidance of Dr.C.Senthilkumari`,
+      `19.Prospective study on Switching of IV to Oral Antibiotics in tertiary care hospital\nDUE in the treatment of Respiratory Tract Infection in tertiary care hospital Under the Guidance of Dr.S.Vedhapal Jeyamani`,
+      `20.Retrospective study on the effect of thyroid dysfunction on cardiovascular in among type II diabetes mellitus patient in tertiary care hospital Evaluation of potential drug-drug interaction among hospitalized patient in tertiary care hospital Under the Guidance of Dr.S.Vedhapal Jeyamani`,
+      `21. Evaluation Of Drug Utilization Pattern In Cardivascular Patient And Appropraiteness Of Fixed Combination Of Cardivascular Drugs In A Tertiary Care Hospital Under the Guidance of Dr.S.Vedhapal Jeyamani`,
+      `22. In-silico design, synthesis, Characterization and in-vitro evaluation of Phenothiazine derivatives. Prema. V, Aruna. M, Madhumithra. G, Praveen Kumar. V, Rukmani. K, Site of Study, K.K. College of Pharmacy. 2025-2026 (UG Project) Under the Guidance of Dr. V. Prema.`,
+      `23.optimization, formulation and evaluation of bilayered nail lacquer containing terbinafine aspasomes for treatment of fungal melanonychia- M.Pharm Under the Guidance of Mrs.S.L.Laura`,
+      `24.Green synthesis, characterization and antibacterial activity of Cu-ZnO nanocomposite using leaf extract of Tamarindus indica- B.Pharm Under the Guidance of Mrs.S.L.Laura`,
+      `25. Formulation and evaluation of Ciprofloxacin floating tablet by using combination of natural and synthetic polymers-B.Pharm Under the Guidance of Mrs.S.L.Laura`,
+      `26. Cytotoxicity study of poly herbal formulation Under the Guidance of Mrs.S.L.Laura`,
+      `27.Formulation and evaluation of doxycycline niosomal gel for the treatment of Vincent’s disease(M.Pharm) Under the Guidance of Mrs.S.L.Laura`,
+      `28.Optimization , formulation and characterization of hydrocortisone loaded bilosomes incorporated into hyaluronic acid hydrogel for treating the fungal infections Under the Guidance of Mrs.S.L.Laura`,
+      `29.A Review On Non Alcoholic Fatty Liver Disease, Shalini A S, C.Hemapriyadharshini ,K.Kalpana ,S.Kokul, Kkcp. Under the Guidance of Mrs. A. S. Shalini`,
+      `30.2024-2025 Insilico Drug Design, Synthesis and Biological Evaluation of Novel Heterocyclic compounds containing Anti inflammatory Activity Under the Guidance of Mrs.B.Karunya`,
+      `31. 2025-2026 Synthesis and Computational Biological Evaluation of Novel Benzimidazole-Coumarin Hybrids via Molecular Docking, ADMET prediction and In vitro studies Under the Guidance of Mrs.B.Karunya`,
+      `32. 2024-2025 Advanced UHPLC-Based Analytical Framework for Concurrent Quantification of Amlodipine and Lisinopril: A Design of Experiments Optimization Strategy Under the Guidance of Mrs.B.Karunya`,
+      `33.ADMET Molecular docking, synthesis, characterization and anti bacterial activity of Quinoline derivatives. Under the Guidance of Mrs.Nalini Kunta`,
+      `34. Analytical method development and validation for the simultaneous estimation of Bisoprolol fumarate and telmisartan by RP - UHPLC in solid dosage form. Under the Guidance of Mrs.Nalini Kunta`,
+      `35.ADMET, Molecular docking, synthesis, characterization and antioxidant activity of Quinoline Derivatives. Under the Guidance of Mrs.Nalini Kunta`,
+      `36.Admet, molecular docking, characterization, synthesis of novel schiff base derivatives, Analytical method development and validation for the simultaneous estimation of Perindopril erbumine and Amlodipine besylate by RP-UHPLC method, Method development and validation of Lobeglitazone sulphate in tablet dosage form by UV Spectroscopy Under the Guidance of Mrs.S.Parvathi`,
+      `37.Analytical method development and validation for the simultaneous determination of Metoprolol succinate and Dapagliflozin by RP- UHPLC in tablet dosage form.\nUmaparvathy S. Athiswar. B Under the Guidance of Mrs.S.Uma Parvathy`,
+      `38.Method development validation and stress studies of Linagliptin using UV - Visible spectroscopy in tablet dosage form.\nUmaparvathy S., Anbarasan S. Kowshik Prabu S., Thenmozhi K. Under the Guidance of Mrs.S.Uma Parvathy`,
+      `39.Analytical method development and validation for simultaneous estimation of Evogliptin tartrate and Metformin hydrochloride using UV spectroscopy in combined dosage form.\nUmaparvathy S., Anusha baby S., Poojadharshini G., Reni S., Swathi P. Under the Guidance of Mrs.S.Uma Parvathy`,
+      `40.Evaluation of Anti-diabetic activity of Spinacia oleracea linn. leaf extract by invitro methods. Mrs.A.kamatchi ,M.Guna,N.Nirmal,M.Tamilvanan Under the Guidance of Mrs.A.Kamatchi`,
+      `41.Design, synthesis, docking and biological evaluation of Benzimidazole Morpholine derivatives. Under the Guidance of Mrs. B. Sandhiya Rani`,
+      `42.Intravenous drug compatibility in Intensive care unit Under the Guidance of Dr.Aswathi Elisabeth Philip`,
+      `43.Renal and hepatic dose adjustment in critically ill patients Under the Guidance of Dr.Aswathi Elisabeth Philip`,
+      `44.Prospective observational study on electrolyte abnormalities in ICU Under the Guidance of Dr.Aswathi Elisabeth Philip`,
+      `45.Assessment of Knowledge, attitude and perception towards good pharmacy practice among community pharmacists. Under the Guidance of Dr.Aswathi Elisabeth Philip`,
+      `46.Knowledge, attitude and practice towards diabetes among healthcare patient in tertiary care hospital Under the Guidance of Dr.T.Deeksha`,
+      `47.Assessment of Knowledge & Practice on PCOS among general population Under the Guidance of Dr.T.Deeksha`,
+      `48.Development and evaluation of Drug loaded proniosomal gel for hair growth in albino wister rats. Under the Guidance of Dr.S.Sivaneswari`,
+      `49.Development and evaluation of Skin lightening nano-face serum containing alpha arbutin, kojic acid and hyaluronic acid for hyperpigmentation Under the Guidance of Dr.S.Sivaneswari.`,
+      `50. Development and evaluation of Metformin Hcl loaded Transethosomal Hydrogel for treatment of mild Psoriasis. Under the Guidance of Dr. S. Sivaneswari.`,
     ],
   },
 ];
 
-// Short navigation labels for the sidebar/card titles (chrome, not content). Order matches GROUPS.
-const NAMES = [
-  `Dr. A. Shanthy`,
-  `Dr. M. Vani`,
-  `Mrs. S.L. Laura`,
-  `Dr. B. Premkumar`,
-  `Dr. C. Senthil Kumari`,
-  `Mrs. M. Sankari`,
-  `Ms. V. PREMA`,
-  `Ms. A. MARINA JULIET`,
-  `Ms. K. Mekala`,
-  `Mrs. G.C. Leela Priyanka`,
-];
-
-// Department tags for the card meta (chrome, derived from each heading). Order matches GROUPS.
-const DEPTS = [
-  `Dept. of Pharmaceutics`,
-  `Dept. of Pharmaceutics`,
-  `Dept. of Pharmaceutics`,
-  `Dept of Pharmacology`,
-  `Dept of Pharmacology`,
-  `Dept. of Pharmacology`,
-  `Pharmaceutical Chemistry`,
-  `Pharmaceutical Analysis`,
-  `Dept. of Pharmacognosy`,
-  `Dept. of Pharmacology`,
-];
+// Card titles / sidebar filter labels = the MD's own section headings (no invented labels).
+const NAMES = GROUPS.map((g) => g.heading);
 
 // 6 source thumbnails cycled across the cards (same set the Courses page uses).
 const THUMBS = [
@@ -146,7 +168,7 @@ const THUMBS = [
 function Criteria({ title, items }) {
   return (
     <div className="filter-criteria">
-      <h5 className="criteria-title">{title}</h5>
+      {title ? <h5 className="criteria-title">{title}</h5> : null}
       <ul className="criteria-checkboxes">
         {items.map((it) => (
           <li className="criteria-item" key={it.id}>
@@ -158,7 +180,7 @@ function Criteria({ title, items }) {
   );
 }
 
-const FILTERS = NAMES.map((n, i) => ({ id: `pub-${i + 1}`, label: `${i + 1} Research → ${n}`, href: `#pub-${i + 1}` }));
+const FILTERS = NAMES.map((n, i) => ({ id: `pub-${i + 1}`, label: n, href: `#pub-${i + 1}` }));
 
 export function CloneTree() {
   return (
@@ -175,7 +197,6 @@ export function CloneTree() {
                 </div>
                 <div className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Research</h1></div>
                 <div className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider" data-id={"4626c23"} data-element_type={"widget"} data-widget_type={"rs-divider.default"}><div className="rs-divider dot-enable"><span> </span></div></div>
-                <div className="elementor-element elementor-element-419a788 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id={"419a788"} data-element_type={"widget"} data-widget_type={"text-editor.default"}><p>Education goes beyond textbooks and classrooms. We believe in empowering students to explore their passions challenge conventions.</p></div>
                 <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.png" alt="bnr-arrow-1-1" /></div></div>
               </div>
             </div>
@@ -188,18 +209,17 @@ export function CloneTree() {
                     <div className="filter-sidebar-overly"></div>
                     <div className="filter-sidebar">
                       <h4 className="sidebar-title">Filter By<span className="filter-reset-btn" style={{display: "none"}}>Reset</span></h4>
-                      <Criteria title="Publications" items={FILTERS} />
+                      <Criteria items={FILTERS} />
                     </div>
                     <div className="filter-content">
                       <div className="filter-top-bar">
                         <button className="filter-toggle-btn"><i className="ri-menu-2-fill"></i></button>
-                        <span className="filter-result">Total <span className="result-count">10</span> results found</span>
+                        <span className="filter-result">Total <span className="result-count">{GROUPS.length}</span> results found</span>
                         <span className="filter-search-wrap">
                           <input className="filter-search-input" type="text" placeholder="Enter keyword" />
                           <span className="search-icon"><svg className="e-font-icon-svg e-fas-search" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" /></svg></span>
                         </span>
                       </div>
-                      <h3 className="research-section-title">{TOP_TITLE}</h3>
                       <div className="filter-items-wrapper">
                         {GROUPS.map((g, idx) => (
                           <div className="filter-item dept-filter-item" id={`pub-${idx + 1}`} key={idx}>
@@ -208,9 +228,7 @@ export function CloneTree() {
                             </div>
                             <div className="item-content">
                               <h4 className="item-title"><a href="#">{NAMES[idx]}</a></h4>
-                              <ul className="item-meta"><li><a href="#">{DEPTS[idx]}</a></li></ul>
                               <div className="item-desc dept-desc">
-                                <p className="dept-text dept-lead">{g.heading}</p>
                                 {g.items.map((it, ii) => (
                                   <p className="dept-text dept-pub" key={ii}>{it}</p>
                                 ))}
@@ -241,10 +259,6 @@ export function CloneTree() {
               font-size: 15px; line-height: 1.45; transition: color .2s; margin-bottom: 8px;
             }
             .elementor-7888 .criteria-link:hover { color: #034EA2; }
-            .elementor-7888 .research-section-title {
-              font-family: "Bitter", serif; color: #034EA2; font-weight: 600;
-              font-size: 26px; margin: 8px 0 24px;
-            }
             .elementor-7888 .dept-filter-item { align-items: flex-start; scroll-margin-top: 120px; }
             .elementor-7888 .dept-desc { margin-top: 15px; }
             .elementor-7888 .dept-desc .dept-lead {
@@ -252,7 +266,9 @@ export function CloneTree() {
               font-size: 16px; line-height: 1.6; margin: 0 0 14px;
             }
             .elementor-7888 .dept-desc .dept-text { color: #4C4C4C; font-size: 15px; line-height: 1.8; margin: 0 0 12px; text-align: justify; }
-            .elementor-7888 .dept-desc .dept-pub { padding-left: 1.7em; text-indent: -1.7em; }
+            /* pre-line: renders the MD's own hard line breaks inside an entry, while still
+               collapsing ordinary whitespace and wrapping normally. */
+            .elementor-7888 .dept-desc .dept-pub { padding-left: 1.7em; text-indent: -1.7em; white-space: pre-line; }
             /* Hero: full dark overlay (the source gradient only darkened the bottom) */
             .elementor-7888 .elementor-element-146c4d0::before {
               background-image: linear-gradient(180deg, rgba(0,25,44,0.55) 0%, rgba(0,25,44,0.82) 100%) !important;

@@ -3,8 +3,9 @@ import { useState } from "react";
 
 interface Card {
   name: string;
-  role: string;
-  body: string; // may contain <br /> tags
+  role: string;  // may contain <br /> tags
+  title: string;
+  body: string;  // may contain <br /> tags
 }
 
 export function MessageSlider({ cards }: { cards: Card[] }) {
@@ -18,7 +19,7 @@ export function MessageSlider({ cards }: { cards: Card[] }) {
       <style>{`
         .kkcp-msg-slider-wrap{position:relative;background:#fff;border-radius:12px;padding:40px 80px;box-shadow:0 4px 24px rgba(0,0,0,.08);width:100%;box-sizing:border-box;}
         .kkcp-msg-slider-wrap .quote-icon{font-size:42px;color:#c8a23a;line-height:1;margin-bottom:18px;}
-        .kkcp-msg-slider-wrap .rating{font-size:22px;font-weight:700;color:#1a1a2e;margin-bottom:4px;}
+        .kkcp-msg-slider-wrap .rating{font-size:22px;font-weight:700;color:#1a1a2e;margin-bottom:22px;}
         .kkcp-msg-slider-wrap .stars{color:#e8a020;font-size:18px;margin-bottom:22px;}
         .kkcp-msg-slider-wrap .body{font-size:16px;line-height:1.9;color:#3d435a;font-style:italic;margin-bottom:28px;}
         .kkcp-msg-slider-wrap .meta-name{font-family:'Bitter',Georgia,serif;font-size:18px;font-weight:700;color:#13265e;}
@@ -41,12 +42,16 @@ export function MessageSlider({ cards }: { cards: Card[] }) {
         </button>
 
         <div className="quote-icon">&#8221;</div>
+        <div className="rating">{card.title}</div>
         <div
           className="body"
           dangerouslySetInnerHTML={{ __html: card.body }}
         />
         <div className="meta-name">{card.name}</div>
-        <div className="meta-role">{card.role}</div>
+        <div
+          className="meta-role"
+          dangerouslySetInnerHTML={{ __html: card.role }}
+        />
       </div>
 
       <div className="kkcp-slider-dots">
