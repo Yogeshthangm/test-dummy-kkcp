@@ -157,17 +157,59 @@
    long list (36 / 29 / 50 entries), "100%" resolved to the full column height --
    over 4000px -- so a 770x660 photo was cropped to a 300x4058 strip and rendered
    as a flat blue smear.
-   The theme's own MOBILE rules already stack it (column + full-width thumbnail);
-   this simply applies that at every width.
+   The theme's own MOBILE rules already stack it; this applies that at every width.
+
+   NOTE: do NOT use width:100% here. `.filter-content` up the tree is a
+   shrink-to-fit flex item, so its width is derived from its content -- a child
+   asking for 100% of it is circular and collapses the whole column (it went to
+   51px on mobile). In a column flex container, `align-items: stretch` already
+   makes the children fill the width, with no circular dependency.
    ──────────────────────────────────────────────────────────────────────────── */
 .clone-root .elementor-7888 .elementor-element.elementor-element-57146e5 .filter-item {
   flex-direction: column !important;
   align-items: stretch !important;
 }
 .clone-root .elementor-7888 .elementor-element.elementor-element-57146e5 .filter-item .item-thumbnail {
-  width: 100% !important;
+  width: auto !important;
   height: 260px !important;
 }
 .clone-root .elementor-7888 .elementor-element.elementor-element-57146e5 .filter-item .item-content {
-  width: 100% !important;
+  width: auto !important;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   /research + /departments — filter layout collapses on mobile (PRE-EXISTING bug,
+   reproduced with all of our own rules disabled).
+   .rs-academic-filter-area stays `flex-direction: row` at every width, so the
+   "Filter By" sidebar and the results column sit side by side on a phone and the
+   results column shrink-to-fits down to ~51px -- the cards were unreadable.
+   Stack them below 1024px and let the results column take the full width.
+   ──────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .clone-root .rs-academic-filter-area {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .clone-root .rs-academic-filter-area .filter-content {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+  /* On mobile the theme turns the sidebar into a slide-in drawer: visibility:hidden,
+     opened by JS. That JS is stripped from these clones, so the drawer can never
+     open -- and because it is only `visibility: hidden` (not display:none) it was
+     still eating 764px of layout as an invisible blank block above the results.
+     Show it inline instead; its entries are plain anchor links, so it works. */
+  .clone-root .rs-academic-filter-area .filter-sidebar {
+    position: static !important;
+    visibility: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 0 20px !important;
+    transform: none !important;
+  }
+  .clone-root .rs-academic-filter-area .filter-sidebar-overly {
+    display: none !important;
+  }
 }

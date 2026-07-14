@@ -3,15 +3,23 @@
 export function CloneHeader() {
   return (
     <header className="rstb-header"><style>{`
-      /* Center the nav menu in the header (logo stays left; search/divider/toggle stay right) */
-      .rstb-header .elementor-element-c94b896,
-      .rstb-header .elementor-element-f36542d { flex-grow: 1 !important; }
-      .rstb-header .elementor-widget-rstb-nav-menu { flex-grow: 1 !important; }
-      .rstb-header .elementor-widget-rstb-nav-menu > .rstb-nav-menu { width: 100% !important; }
-      .rstb-header .elementor-widget-rstb-nav-menu ul#menu-main-menu {
-        display: flex !important;
-        justify-content: center !important;
-        width: 100% !important;
+      /* Center the nav menu in the header.
+         MUST stay inside a desktop-only media query. The theme hides the desktop menu
+         below 1024px with
+           .clone-root .rstb-nav-menu.nav-breakpoint-lg .primary-menu { display: none }
+         and this rule's "display: flex !important" was overriding it — so on phones the
+         desktop menu rendered cut off AND the hamburger showed, both at once.
+         (No backticks in this comment: it lives inside a JS template literal.) */
+      @media (min-width: 1025px) {
+        .rstb-header .elementor-element-c94b896,
+        .rstb-header .elementor-element-f36542d { flex-grow: 1 !important; }
+        .rstb-header .elementor-widget-rstb-nav-menu { flex-grow: 1 !important; }
+        .rstb-header .elementor-widget-rstb-nav-menu > .rstb-nav-menu { width: 100% !important; }
+        .rstb-header .elementor-widget-rstb-nav-menu ul#menu-main-menu {
+          display: flex !important;
+          justify-content: center !important;
+          width: 100% !important;
+        }
       }
     
         /* ── LOGO BAND ───────────────────────────────────────────────────────
