@@ -132,3 +132,20 @@
   object-fit: cover;
   object-position: center;
 }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   CAMPUS PAGES — dead space above "OUR CAMPUS"
+   The section above it keeps the theme's original 110px bottom padding, which was
+   sized for demo content that has since been deleted. OUR CAMPUS then added its
+   own 60px top padding on top of that, leaving ~220px of empty space between the
+   last paragraph and the heading.
+   :has() targets whichever section precedes OUR CAMPUS, so this holds on the
+   libraries-design page too, where the preceding element has a different id.
+   Result: 220px -> 90px, i.e. normal section spacing.
+   ──────────────────────────────────────────────────────────────────────────── */
+.clone-root .e-con:has(+ .elementor-element-0c1a2b3) > .e-con-inner {
+  padding-bottom: 40px !important;
+}
+.clone-root .elementor-element-0c1a2b3 {
+  padding-top: 0 !important;
+}
