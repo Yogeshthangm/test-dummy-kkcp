@@ -93,3 +93,42 @@
   inset: 0;
   z-index: 5;
 }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   CAMPUS PAGES — "OUR CAMPUS" section alignment
+   The section was added with hand-made element ids (0c1a2b3 / 1d2b3c4 / 2e3c4d5).
+   Elementor containers set their layout with `display: var(--display)`, and it is
+   the PER-ELEMENT generated CSS that defines `--display: flex`. Because these ids
+   are invented, no such rule exists, so --display was undefined and the container
+   fell back to `display: inline`. max-width does nothing on an inline box, so the
+   1300px content cap was ignored and the block ran full-bleed to the viewport
+   edge while every other section sat inside the container.
+   Defining the variable is enough; the theme's own rules then do the rest.
+   ──────────────────────────────────────────────────────────────────────────── */
+.clone-root .elementor-element-0c1a2b3,
+.clone-root .elementor-element-1d2b3c4 {
+  --display: flex;
+  --flex-direction: column;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   CAMPUS PAGES — gallery thumbnails
+   The photos have mixed aspect ratios (graduation-day group shots are wide, lab
+   shots are not), so the grid rendered ragged rows of different heights.
+   Force a uniform square tile and let the browser crop to fill.
+   ──────────────────────────────────────────────────────────────────────────── */
+.clone-root .rs-gallery-slider .grid-wrapper .g-item .image-part {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.clone-root .rs-gallery-slider .grid-wrapper .g-item .image-part a,
+.clone-root .rs-gallery-slider .grid-wrapper .g-item .image-part img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.clone-root .rs-gallery-slider .grid-wrapper .g-item .image-part img {
+  object-fit: cover;
+  object-position: center;
+}
