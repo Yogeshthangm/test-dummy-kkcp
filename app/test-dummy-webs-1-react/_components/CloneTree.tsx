@@ -119,13 +119,21 @@ export function CloneTree() {
         .clone-root .elementor-element-09ded08 .kkcp-tieup .kkcp-tieup-media{max-width:340px}
       }
 
-      /* 1.16 "Admissions Open Now" heading + description sat behind the adjacent apply-form
-         photo (.rs-multi-image, z-index:4) and washed out against it. Lift the text block
-         above the image and lay a soft cream scrim behind it so the dark copy stays legible.
-         Scoped to this heading widget id so no other section is affected. */
-      .clone-root .elementor-element-9013095{position:relative;z-index:20;align-self:start;background:#F6F4EE;border-radius:14px;padding:22px 26px;box-shadow:0 12px 34px rgba(5,20,53,.18)}
+      /* 1.16 The "Admissions Open Now" heading + description shared the same band as the
+         decorative lab photo (.rs-multi-image, z-index:4) and the section background image,
+         which left the dark #051435 copy unreadable. Drop that photo below the content column
+         and wrap the heading in a solid navy info-card (mirrors the application-form panel)
+         with light text, so it reads cleanly as an intentional card. Scoped to this section. */
+      .clone-root .elementor-element-72f9ac1 .rs-multi-image{z-index:0}
+      .clone-root .elementor-element-9013095{position:relative;z-index:5;align-self:start;background:#003A65;border-top:5px solid #FDC72F;border-radius:0 0 12px 12px;padding:26px 30px;box-shadow:0 16px 40px rgba(5,20,53,.28)}
+      .clone-root .elementor-element-9013095 .title-inner .title,
+      .clone-root .elementor-element-9013095 .title-inner .title div,
+      .clone-root .elementor-element-9013095 .title-inner .sub-text,
+      .clone-root .elementor-element-9013095 .descripti,
+      .clone-root .elementor-element-9013095 .descripti p{color:#fff!important}
+      .clone-root .elementor-element-9013095 .sub-text svg path{fill:#FDC72F!important}
       @media (max-width:900px){
-        .clone-root .elementor-element-9013095{padding:16px 18px}
+        .clone-root .elementor-element-9013095{padding:18px 20px}
       }
 
     /* ── MOBILE RESPONSIVE FIXES ──────────────────────────────────────────────
