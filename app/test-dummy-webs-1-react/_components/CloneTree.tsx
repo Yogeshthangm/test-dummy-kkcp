@@ -119,6 +119,15 @@ export function CloneTree() {
         .clone-root .elementor-element-09ded08 .kkcp-tieup .kkcp-tieup-media{max-width:340px}
       }
 
+      /* 1.16 "Admissions Open Now" heading + description sat behind the adjacent apply-form
+         photo (.rs-multi-image, z-index:4) and washed out against it. Lift the text block
+         above the image and lay a soft cream scrim behind it so the dark copy stays legible.
+         Scoped to this heading widget id so no other section is affected. */
+      .clone-root .elementor-element-9013095{position:relative;z-index:5;background:rgba(246,244,238,.9);border-radius:14px;padding:20px 24px;box-shadow:0 10px 30px rgba(5,20,53,.12)}
+      @media (max-width:900px){
+        .clone-root .elementor-element-9013095{background:rgba(246,244,238,.96);padding:16px 18px}
+      }
+
     /* ── MOBILE RESPONSIVE FIXES ──────────────────────────────────────────────
        Slider Revolution draws the hero on a fixed 1440px canvas and rescales it
        in JavaScript. That JS is stripped from these page clones, so every layer
