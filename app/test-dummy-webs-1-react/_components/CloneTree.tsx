@@ -61,6 +61,9 @@ export function CloneTree() {
       /* 1.6 Drug Information Centre link inside the blue box */
       .clone-root .elementor-element-db9b4c6 .descripti p{color:#FFFFFF}
       .clone-root .elementor-element-db9b4c6 .descripti a{color:#FDC72F;text-decoration:underline}
+      /* 1.6b "Drug Information Centre" heading text — bigger + bolder per client request */
+      .clone-root .elementor-element-db9b4c6 .descripti p:first-child,
+      .clone-root .elementor-element-db9b4c6 .descripti p:first-child strong{font-size:28px;line-height:1.25;font-weight:800}
 
       /* 1.11 heading sits centred like the other section headings */
       .clone-root .elementor-element-kkcpfacultyh .prelements-heading,
@@ -73,7 +76,22 @@ export function CloneTree() {
       .clone-root .elementor-element-2639bbd .form-btn-area p{margin:0}
       .clone-root .elementor-element-2639bbd .form-btn-area .rs-button{background-color:transparent;border:2px solid #FDC72F;color:#FDC72F;padding:14px 26px}
       .clone-root .elementor-element-2639bbd .form-btn-area .rs-button:hover{background-color:#FDC72F;color:#003A65}
-    
+
+      /* 1.13 "Inside KKCP" departments section — bolder + larger type per client request.
+         Scoped to the section container (elementor-element-09ded08) so it cannot affect the
+         identical widget classes used elsewhere on the page. Weights go 600 -> 700; sizes up. */
+      .clone-root .elementor-element-09ded08 .elementor-element-26e8be8 .sub-text{font-size:18px;font-weight:700}
+      .clone-root .elementor-element-09ded08 .elementor-element-26e8be8 h2.title{font-size:clamp(34px,5vw,56px);font-weight:700}
+      .clone-root .elementor-element-09ded08 .e-n-tab-title-text{font-size:24px;font-weight:700}
+      .clone-root .elementor-element-09ded08 .single-item .content-inner .title,
+      .clone-root .elementor-element-09ded08 .single-item .content-inner .title a{font-size:clamp(22px,2.3vw,30px);font-weight:700}
+
+      /* 1.14 an orphaned last card (odd card count -> alone in the final row of the 2-col grid)
+         spans the full row width instead of sitting half-empty. :last-child:nth-child(odd) only
+         matches when the final card would otherwise be alone, so even-count tabs are untouched and
+         the single-column mobile layout is unaffected. */
+      .clone-root .elementor-element-09ded08 .grid-wrapper .single-item:last-child:nth-child(odd){grid-column:1 / -1}
+
     /* ── MOBILE RESPONSIVE FIXES ──────────────────────────────────────────────
        Slider Revolution draws the hero on a fixed 1440px canvas and rescales it
        in JavaScript. That JS is stripped from these page clones, so every layer
