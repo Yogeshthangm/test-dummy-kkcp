@@ -1,4 +1,4 @@
-export default function CloneReactLayout({
+export default function KkcpReactLayout({
   children,
 }: {
   children: React.ReactNode;

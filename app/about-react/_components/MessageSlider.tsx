@@ -60,7 +60,7 @@ export function MessageSlider({ cards }: { cards: Card[] }) {
         /* controls */
         .kkcp-msg-controls{display:flex; align-items:center; gap:12px; margin-top:30px;}
         /* minimal: thin chevron on a subtle circular background.
-           !important overrides the theme's global .clone-root button fill/padding/radius. */
+           !important overrides the theme's global .kkcp-root button fill/padding/radius. */
         .kkcp-msg-fullbleed .kkcp-nav-btn{
           background:#fff !important; color:#13265e; border:1px solid rgba(19,38,94,.22) !important;
           border-radius:50% !important; width:44px !important; height:44px !important;

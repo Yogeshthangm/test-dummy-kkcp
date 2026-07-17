@@ -1,0 +1,215 @@
+
+.rstb-nav-menu .primary-menu{flex-wrap:nowrap !important;white-space:nowrap !important}
+.rstb-nav-menu .primary-menu>li{flex-shrink:0 !important;white-space:nowrap !important}
+.rstb-nav-menu .primary-menu>li>a{white-space:nowrap !important}
+.rstb-header .button-text,.rstb-header [class*="apply"] .button-text{white-space:nowrap !important}
+.rstb-header a[class*="button"],.rstb-header button{white-space:nowrap !important}
+.rstb-header .e-con-inner{align-items:center !important;flex-wrap:nowrap !important}
+.rstb-header .elementor-element-c94b896{flex:1 1 0% !important;min-width:0 !important;display:flex !important;justify-content:center !important;align-items:center !important}
+.rstb-header .elementor-element-c94b896 > *{margin-inline:auto !important}
+.rstb-header .rstb-nav-menu.nav-horizontal{margin-inline:auto !important;width:auto !important}
+.rstb-header .rstb-nav-menu.nav-horizontal .primary-menu{justify-content:center !important;margin-inline:auto !important}
+
+/* Inner pages: push the page banner below the transparent overlay header */
+.kkcp-inner .rstb-inner-banner{padding-top:200px !important}
+@media (max-width:1024px){ .kkcp-inner .rstb-inner-banner{padding-top:150px !important} }
+
+/* header: keep the centered nav clear of the left KKCP logo + tidy sizing */
+.rstb-header .rstb-site-logo{ position:relative; z-index:10; }
+.rstb-header .rstb-nav-menu.nav-horizontal .primary-menu{ padding-left:80px !important; }
+.rstb-header .primary-menu>li>a{ padding:16px 11px !important; font-size:14px !important; }
+
+/* stronger: left-align nav clear of the absolutely-positioned KKCP logo */
+.rstb-header .rstb-nav-menu.nav-horizontal{ margin-left:0 !important; }
+.rstb-header .rstb-nav-menu.nav-horizontal .primary-menu{ justify-content:flex-start !important; padding-left:36px !important; }
+
+/* tighten the gap between menu items so the search icon + Apply Now button
+   fit snugly on one row instead of overflowing the right edge */
+.rstb-header .primary-menu > .menu-item{ margin:0 5px !important; }
+.rstb-header .primary-menu .menu-item-link{ padding:16px 8px !important; }
+/* the visible (transparent) header nav shares no column gutter with the logo;
+   drop its left padding so the menu sits snug after the logo (the first item's
+   own margin already leaves a clean gap). The sticky nav keeps its 36px. */
+.rstb-header .elementor-element-37b598d .rstb-nav-menu.nav-horizontal .primary-menu{ padding-left:0 !important; }
+
+/* Inner-page kkcp-theme CSS strips @media wrappers from Elementor responsive
+   visibility rules, making elementor-hidden-mobile fire at ALL screen sizes.
+   Re-scope: only hide on mobile; show on tablet/desktop. */
+@media (min-width: 768px) {
+  .kkcp-root .elementor .elementor-hidden-mobile,
+  .kkcp-root .elementor .elementor-hidden-phone { display: revert !important; }
+}
+
+/* Courses Offered section: match the same container width/display as other
+   boxed sections (e.g. d7ba3d5 Academics). Without this CSS the section
+   has no --display or --content-width, so its inner box can overflow the
+   1300px content rail used by every other section on the page. */
+.kkcp-root .elementor-51 .elementor-element.elementor-element-kkcpcourses {
+  --display: flex;
+  --flex-direction: column;
+  --container-widget-width: 100%;
+  --container-widget-height: initial;
+  --container-widget-flex-grow: 0;
+  --container-widget-align-self: initial;
+  --flex-wrap-mobile: wrap;
+  --padding-top: 80px;
+  --padding-bottom: 80px;
+  --padding-left: 10px;
+  --padding-right: 10px;
+  --content-width: min(100%, var(--container-max-width, 1140px));
+}
+
+/* "Courses Offered" cards: whole card clickable + centered, white title */
+.kkcp-root .rs-academic-cards.style-two .single-item {
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 30px !important;
+  position: relative;
+}
+.kkcp-root .rs-academic-cards.style-two .single-item .content-wrapper {
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100%;
+}
+.kkcp-root .rs-academic-cards.style-two .single-item .content-inner {
+  width: 100%;
+  text-align: center;
+}
+.kkcp-root .rs-academic-cards.style-two .single-item .title {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+.kkcp-root .rs-academic-cards.style-two .single-item .title a {
+  color: #ffffff !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+/* Stretched link: the existing title anchor covers the entire card */
+.kkcp-root .rs-academic-cards.style-two .single-item .title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   CAMPUS PAGES — "OUR CAMPUS" section alignment
+   The section was added with hand-made element ids (0c1a2b3 / 1d2b3c4 / 2e3c4d5).
+   Elementor containers set their layout with `display: var(--display)`, and it is
+   the PER-ELEMENT generated CSS that defines `--display: flex`. Because these ids
+   are invented, no such rule exists, so --display was undefined and the container
+   fell back to `display: inline`. max-width does nothing on an inline box, so the
+   1300px content cap was ignored and the block ran full-bleed to the viewport
+   edge while every other section sat inside the container.
+   Defining the variable is enough; the theme's own rules then do the rest.
+   ──────────────────────────────────────────────────────────────────────────── */
+.kkcp-root .elementor-element-0c1a2b3,
+.kkcp-root .elementor-element-1d2b3c4 {
+  --display: flex;
+  --flex-direction: column;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   CAMPUS PAGES — gallery thumbnails
+   The photos have mixed aspect ratios (graduation-day group shots are wide, lab
+   shots are not), so the grid rendered ragged rows of different heights.
+   Force a uniform square tile and let the browser crop to fill.
+   ──────────────────────────────────────────────────────────────────────────── */
+.kkcp-root .rs-gallery-slider .grid-wrapper .g-item .image-part {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.kkcp-root .rs-gallery-slider .grid-wrapper .g-item .image-part a,
+.kkcp-root .rs-gallery-slider .grid-wrapper .g-item .image-part img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.kkcp-root .rs-gallery-slider .grid-wrapper .g-item .image-part img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   CAMPUS PAGES — dead space above "OUR CAMPUS"
+   The section above it keeps the theme's original 110px bottom padding, which was
+   sized for demo content that has since been deleted. OUR CAMPUS then added its
+   own 60px top padding on top of that, leaving ~220px of empty space between the
+   last paragraph and the heading.
+   :has() targets whichever section precedes OUR CAMPUS, so this holds on the
+   libraries-design page too, where the preceding element has a different id.
+   Result: 220px -> 90px, i.e. normal section spacing.
+   ──────────────────────────────────────────────────────────────────────────── */
+.kkcp-root .e-con:has(+ .elementor-element-0c1a2b3) > .e-con-inner {
+  padding-bottom: 40px !important;
+}
+.kkcp-root .elementor-element-0c1a2b3 {
+  padding-top: 0 !important;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   /research — card layout: image ON TOP of the content, not beside it
+   The theme laid these cards out as `flex-direction: row-reverse` with the
+   thumbnail pinned to the right at `height: 100%`. Because each card holds a very
+   long list (36 / 29 / 50 entries), "100%" resolved to the full column height --
+   over 4000px -- so a 770x660 photo was cropped to a 300x4058 strip and rendered
+   as a flat blue smear.
+   The theme's own MOBILE rules already stack it; this applies that at every width.
+
+   NOTE: do NOT use width:100% here. `.filter-content` up the tree is a
+   shrink-to-fit flex item, so its width is derived from its content -- a child
+   asking for 100% of it is circular and collapses the whole column (it went to
+   51px on mobile). In a column flex container, `align-items: stretch` already
+   makes the children fill the width, with no circular dependency.
+   ──────────────────────────────────────────────────────────────────────────── */
+.kkcp-root .elementor-7888 .elementor-element.elementor-element-57146e5 .filter-item {
+  flex-direction: column !important;
+  align-items: stretch !important;
+}
+.kkcp-root .elementor-7888 .elementor-element.elementor-element-57146e5 .filter-item .item-thumbnail {
+  width: auto !important;
+  height: 260px !important;
+}
+.kkcp-root .elementor-7888 .elementor-element.elementor-element-57146e5 .filter-item .item-content {
+  width: auto !important;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   /research + /departments — filter layout collapses on mobile (PRE-EXISTING bug,
+   reproduced with all of our own rules disabled).
+   .rs-academic-filter-area stays `flex-direction: row` at every width, so the
+   "Filter By" sidebar and the results column sit side by side on a phone and the
+   results column shrink-to-fits down to ~51px -- the cards were unreadable.
+   Stack them below 1024px and let the results column take the full width.
+   ──────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .kkcp-root .rs-academic-filter-area {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .kkcp-root .rs-academic-filter-area .filter-content {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+  /* On mobile the theme turns the sidebar into a slide-in drawer: visibility:hidden,
+     opened by JS. That JS is stripped from these clones, so the drawer can never
+     open -- and because it is only `visibility: hidden` (not display:none) it was
+     still eating 764px of layout as an invisible blank block above the results.
+     Show it inline instead; its entries are plain anchor links, so it works. */
+  .kkcp-root .rs-academic-filter-area .filter-sidebar {
+    position: static !important;
+    visibility: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 0 20px !important;
+    transform: none !important;
+  }
+  .kkcp-root .rs-academic-filter-area .filter-sidebar-overly {
+    display: none !important;
+  }
+}

@@ -1,0 +1,282 @@
+// @ts-nocheck
+import { KkcpHeader } from "@/components/KkcpHeader";
+import { KkcpFooter } from "@/components/KkcpFooter";
+/* eslint-disable */
+// Research page — same design as the Courses page (hero banner + "Filter By" sticky
+// sidebar + filter-card list with thumbnails, scoped by .elementor-7888 CSS in
+// /all-programs/kkcp-theme.css). One card per section of "13. Research.md".
+// All copy below is VERBATIM user-provided text (ICPR): the MD's own numbering, spacing,
+// punctuation and citation style are carried unchanged; only pandoc transport escapes
+// (--, \', mojibake, **bold**, [label](url)) were decoded. Nothing rewritten, nothing invented.
+// Text lives in JS strings so React escapes &/</> automatically.
+
+// NOTE: this page carries NO page-level heading of its own. The earlier pass had a
+// TOP_TITLE h3 whose text appears in NO user MD and in no
+// other KKCP source — it was invented copy, so it is deleted rather than replaced (ICPR:
+// deleting is always correct, inventing never is). The hero <h1>Research</h1> and the MD's
+// own three section headings are the only titles on the page.
+
+// The three sections of "13. Research.md". heading + verbatim entries.
+// Line breaks inside an entry are the MD's OWN hard line breaks (pandoc trailing "\") and
+// are carried as real newlines, rendered via `white-space: pre-line` on .dept-pub.
+const GROUPS = [
+  {
+    heading: `Publications`,
+    items: [
+      `1. 3D bioprinting: Classification of bio inks and bio printing techniques. Karthick. K. Vani.M Arun.T. International journal of Pharmaceutical sciences , 2025, vol 3, issue 7.`,
+      `2. Stealth liposomal gel of Desonide: Formulation and evaluation. Karthick. K Vani. M Arun. T Sudalaimani. M. International journal of Pharmaceutical sciences, 2025. Vol 3, issue 9.`,
+      `3.CRISPR/ CAS platforms and their delivery systems : A comprehensive overview. Vani. M Karthick. K Rubashree. T Jebina Steffy. T Arun. T, International journal of Pharmaceutical sciences, 2025, 85(10).`,
+      `4. Formulation and in -vitro evaluation of Acarbose loaded solid- lipid nanoparticles. Vani. D Karthick. K Ramkumar. M Arun. T. European journal of Pharmaceutical and Medical Research.2025, 12(12).`,
+      `5.Eye on innovation: A comparative review on ocular inserts and eye gel for enhanced therapeutic efficacy and better ocular drug delivery. Karthick. K Ganesh. S Pravin . S International journal of Pharmaceutical sciences 2025 vol 3, issue 9 .`,
+      `6.Electrospun nanofibres : Revolutinizing the future of materials. Karthick. K D. Shobanraj D. Paranthaman S. Kaviya journal of Pharmaceutical sciences,2026, vol 2, issue 4.`,
+      `7. Nova some: A novel hybrid vesicular drug delivery system combining ufasome and niosome. Karthick. K Kaviya. S. D. Shobanraj D. Paranthaman 2026, vol 2, issue 4.`,
+      `8.Pharmacognostical and phytochemical screening of Leaves of Raphanus sativus Linn\nAuthors. Thamizharasi Suresh. Shankari Vellaisamy. Parvatharajakumaran.V.S. Chetan.\nAsian Journal of pharmaceutical Research 14(1)10.52711/2231-5691.2024. 00004\nJan -March. 2024`,
+      `9.Development and Validation of QBD-Assisted Using Central Composite Design RP-HPLC Method for Lobeglitazone Sulfate and Glimipiride in Bulk and Its Combined Dosage Form, A.Marina Juliet , Chromatographia 88(5) 381-393 April 2025`,
+      `10.Pavithra, K.; Shajan, R. S.; Parvis, A. Mohamed; Raj, S. Anto Melvin; Priya, B.; Ramalakshmi, Sankaralingam. Prospective Evaluation of Cephalosporin Prescribing and Guideline Adherence in Adult Inpatients at a Tertiary Care Hospital in South IndiaJournal of Research in Pharmacy Practice 15(1):12, February 2026. | DOI: 10.4103/jrpp.jrpp_92_25.`,
+      `11.In-silico Design, ADMET Screening, Prime MM-GBSA Binding Free Energy Calculation and MD Simulation of Some Novel Phenothiazines as 5HT6R Antagonists Targeting Alzheimer’s Disease. Prema. V, Meena. A, Ramalakshmi. N. 2025. Current computer aided drug design 21 (4), 487-502.`,
+      `12. A Computational Study of Phenothiazine Derivatives as Acetylcholinesterase Inhibitors Targeting Alzheimer’s Disease. Prema. V, Meena. A, Ramalakshmi. N. Central Nervous System Agents in Medicinal Chemistry. 2025. 25 (1), 68-82.`,
+      `13. An overview of Acute Lymphoblastic Leukemia. Yashmi Agwina Xavier V. Prema, S. Karunika. Asian Journal of Pharmaceutical Research. 2025. 15 (02), 202-208.`,
+      `14. Antisense Molecules: Design, Chemistry, and Therapeutic Innovations. Prema Vediappan*, Suryalakshmi Aravamudhan, Jocelyn Olivia Prabakar David, Abitha Sri Ganapathy, Mini Reviews in Medicinal Chemistry, 2026. DOI: 10.2174/011389557542883225120605543.`,
+      `15. Exploring Pyranophenothiazines for Anti-Alzheimer’s Activity: Insights from Molecular Modeling Analysis. V Prema, A Meena, N Ramalakshmi. Central nervous system agents in medicinal chemistry. 2025 Sep 15. doi: 10.2174/0118715249353128250901051741.`,
+      `16. Limit tests-A brief study on its role and significance in pharmaceuticals. V Prema, K Ishwaryalakshmi, S Subhashini, M Kavisri, P Kishore. Asian Journal of Pharmacy and Technology. 2024, 14 (1), 23-30.`,
+      `17. A Review on Nanoparticles Toxicity, International Journal of Research Publication and Reviews, Vol 2, Issue:9, 2025`,
+      `18. Promoting green chemistry in analysis: An assessment of analytical methodologies and their environmental implications. International journal of pharmaceutical sciences\nIssue 03,24/03/2026`,
+      `19.Vani.D, Gayathri H, Gayathri K. Artificial intelligence in oncology: revolutionizing cancer detections. Front Health Inform. 2025;14(1).`,
+      `20.Vani.D, Ethiraj T, Ponnusamy S. Exosomes as next generation carriers for brain drug delivery: engineering, formulation, characterization, and neurotherapeutic applications. Bentham Science. Accepted Apr 11, 2025.`,
+      `21.Vani.D, Philip AE, Monica K, Manisha M. Budd Chiari syndrome. J Pharm Med Res. 2024;11(15):128-131.`,
+      `22.D.Vani,K.Karthick,M.Ramkumar,Arun T,Formulation And In Vitro Evaluation Of Acarbose-Loaded Solid Lipid Nanoparticles,Ejpmr, 2025, 12(12), 158-168Vol 12, Issue 1.`,
+      `23.Vani D,Karthick K,Rubashree TJebina Steffy M,Arun T,CRISPR/CAS Platforms and their Delivery Systems: A Comprehensive Overview Int. J. Pharm. Sci. Rev. Res., ISSN: 0976 044X, 85(10) October 2025; Article No. 04, Pages: 18-28 .`,
+      `24. Karthick K*, Vani M, Arun T, Sudalaimani M Stealth Liposomal Gel of Desonide: Formulation and Evaluation, Int. J. of Pharm. Sci., 2025, Vol 3, Issue 9, 2165-2181 |Research.`,
+      `25.Karthick K*, Vani M, Arun T, 3DBio Printing: Classification of Bio-Inks and Bioprinting Technique Int. J. of Pharm. Sci., 2025, Vol 3, Issue 7, 1303-1312 |Review.`,
+      `26.Elumalai K, Srinivasan S, Shanmugam A. Review of the efficacy of nanoparticle-based drug delivery systems for cancer treatment. Biomedical Technology 2024;5:109–22. https://doi.org/10.1016/j.bmt.2023.09.001.`,
+      `27.Sivaneswari S, Senthilkumaran K, Sambathkumar R. Chronomodulated drug delivery systems for the treatment of hypertension: An overview. Intelligent Pharmacy 2023;2:155–60. https://doi.org/10.1016/j.ipha.2023.10.001.`,
+      `28.Elumalai K, Shanmugam A, Devaraji M, Srinivasan S. Synthesis and molecular docking of pyrimidine derivatives as antibacterial agents. Carbon Resources Conversion 2024;7:100222. https://doi.org/10.1016/j.crcon.2024.100222.`,
+      `29.Elumalai K, Srinivasan S. Harnessing nanoparticle technology for precision medicine in head and neck cancer: targeted delivery, immunomodulation, and clinical translation. Nano TransMed 2025;4:100075. https://doi.org/10.1016/j.ntm.2025.100075.`,
+      `30.Elumalai K, Srinivasan S, Shanmugam A. Impact of COVID-19 vaccines on liver function: A state of the art and challenges for healthcare providers. Gastroenterology & Endoscopy 2024;2:42–51. https://doi.org/10.1016/j.gande.2024.01.003.`,
+      `31.Salkapuram SK, Elumalai K, Williams H, Sivannan S, Srinivasan S, Anandakumar S. Prevalence, risk factors, and statistical analysis of urinary incontinence in a tertiary care hospital in India. Istanbul Medical Journal 2024;25:286–92. https://doi.org/10.4274/imj.galenos.2024.09514.`,
+      `32.Karthikeyan E, Sivaneswari S. Advancements in Transdermal Drug Delivery Systems: Enhancing Medicine with Pain-Free and Controlled Drug Release. Intelligent Pharmacy 2024. https://doi.org/10.1016/j.ipha.2024.09.008.`,
+      `33.Srinivasan S, Elumalai K, Cherian BV, Ramanujam SK. Formulation and characterization of metformin hydrochloride orodispersible tablets with super disintegrants. Intelligent Pharmacy 2023;1:162–6. https://doi.org/10.1016/j.ipha.2023.06.006.`,
+      `34.Sivannan S, Vishnuvardhan A, Elumalai K, Srinivasan S, Cherian BV, Ramanujam SK, et al. Azithromycin and co-trimoxazole-induced oral thrush: A case report from the perspective of pharmacy. Intelligent Pharmacy 2023;1:280–2. https://doi.org/10.1016/j.ipha.2023.06.007.`,
+      `35.Srinivasan S, Elumalai K. The new frontier of drug delivery through nanotechnology. Intelligent Pharmacy 2023;1:169–74. https://doi.org/10.1016/j.ipha.2023.08.002.`,
+      `36.Sandeep A, Elumalai K, Williams H, Salkapuram S, Anandakumar S, Srinivasan S. Prevalence, prescription patterns, and quality of life of anaemia in adults with chronic renal disease. European Journal of Clinical and Experimental Medicine 2023;21:785–92. https://doi.org/10.15584/ejcem.2023.4.20.`,
+    ],
+  },
+  {
+    heading: `Ongoing Projects`,
+    items: [
+      `1.A Synergistic Dual Drug Nanofibrous Scaffold of Repurposing Metformin Ani Curcumin for enhanced diabetic wound healing. Under the Guidance of Dr. A.Shanthy`,
+      `2.Development and Evaluation of Resveratrol Microsphere loaded collagen nanofiber scaffold for diabetic wound healing. Under the Guidance of Dr. A.Shanthy`,
+      `3.Development and Evaluation of a Bioactive Lactoferrin – functionalized Pirfenidone-loaded Nanofibrous Thermo Sensitive Hydrogel for Targeted Pulmonary Delivery and sustained Antifibrotic Therapy. Under the Guidance of Dr. A.Shanthy`,
+      `4.Stealth Liposomal Thermoreversible Pramipexol Nasal Gel to enhance Brain Targeting for the Treatment of Parkinson's Disease. Under the Guidance of Dr. A.Shanthy`,
+      `5.Formulation and Evaluation of a Nanoemulsion-Based Gel Containing Azelaic Acid and Astaxanthin for Hyperpigmentation and Wound Healing Activity Under the Guidance of Dr.K.Karthick`,
+      `6.Formulation and Evaluation of Self-Nano Emulsifying Drug Delivery System(Snedds) Ofnaproxen for Enhanced Oral Bioavailability. Under the Guidance of Dr.K.Karthick`,
+      `7.Development of Formulation and Evaluation of Ligand Targeted Nanoparticle With Stimuli Responsive Nano Carrier for Improved Anti-Convulsant Activity In Experimental Rats Under the Guidance of Dr.K.Karthick.`,
+      `8. Exploring the Therapeutic Potential of Spinacia Oleracea Extract Loaded Hydrogel for Diabetic Foot Ulcer In Rats Mrs.A.Kamatchi, J Gowtham. Under the Guidance of Mrs. A. Kamatchi`,
+      `9. Assessment of Social Media Influence on Self Medication Among The General Public: A Cross-Sectional Survey -Athulya S.K ,Muthazhagi.K, Thenmozhi.S Under the Guidance of Dr. S. Ramalakshmi.`,
+      `10. Prospective Observational Study on Drug Utilization Evaluation of Parenteral Corticosteroids in a Tertiary Care Hospitaljohna Nancy .K , Lavanya .V , Pavithra .M ,Sudharsan .S Under the Guidance of Dr. S. Ramalakshmi.`,
+      `11. An Observational Study on Potassium Chloride In Hypokalemic Patients .Abinash K , Lydia X.C ,Mani Bharathi V Under the Guidance of Dr. S. Ramalakshmi.`,
+      `12. Evaluation of Anti-Atrophic Effect of Hydroalcoholic Extract of Rosmarinus Officinalis.\nLeaves In Dexamethasone Induced Skeletal Muscle Atrophy In Rat Model"(Ashwini) Under the Guidance of Dr. C. Senthilkumari`,
+      `13. Evaluation of Hair Growth Promoting Activity of Plumbago Zeylanica Serum Using Testosterone-Induced Alopecia In Rat Model(Mohan) Under the Guidance of Dr. C. Senthilkumari`,
+      `14. Development and Evaluation of Silver Nanoparticle-Loaded Hydrogel Containing Andrographis Paniculata For Infected Diabetic Wound Healing. Under the Guidance of Mrs. S. L. Laura`,
+      `15.Formulation and Evaluation of Biodegradable Nanoparticle- Loaded Periodontal Chip For The Treatment of Periodontitis Under the Guidance of Mrs. S. L. Laura`,
+      `16.Formulation And Evaluation of Sansieviera Leaves Nanogel Under the Guidance of Mrs. S. L. Laura`,
+      `17. In-Silico Design, ADMET Screening and MD Simulation of Some Novel Benzothiazole Derivatives Under the Guidance of Dr. V. Prema`,
+      `18.Formulation and Evaluation of Anti-Psoriatic Activity of Zinc Pyrithione Hydrogel Containing Leflunomide Nanosponge. Under the Guidance of Dr. M. Vani`,
+      `19.Formulation and Evaluation of Celecoxib Co Crystal Loaded Transferosome Gel For Treatment of Rheumatoid Arthritis. Under the Guidance of Dr. M. Vani`,
+      `20.Development and Evaluation of Nanoemulsion Containing Ethanolic Extract of Canthium Coromandelicum (Burm.F.) Alston for Anti-Alzheimers Activity Using In-Silico and In-Vitro Approaches. Under the Guidance of Dr.M.Vani`,
+      `21.Green Synthesis and Rational Development of Spiro-Oxindole-Thiazolidinone Hybrids As Novel GSK -3B Modulators for Cancer and Fibrosis Therapy.(Phd) Under the Guidance of Dr.M. Vani`,
+      `22.Assessment of Prescribing Practice and Safety Concern Related To Narrow Therapeutic Index Drugs in Hopitalized Patient Under the Guidance of Dr.Aswathi Elisabeth Philip`,
+      `23. Assessment of Drug Related Problem and Clinical Outcome Associaed With Inotropes and Vassopressors In Critically Ill Patients Parental Awareness About Vaccination Schedule In Children- A Descriptive Cross – Sectional Study. Under the Guidance of Dr.Aswathi Elisabeth Philip`,
+      `24.Development, Optimization, and Stability-Indicating UHPLC Validation of A Antidiabetic Drug Combinations Under the Guidance of Mrs. Marina Juliet`,
+      `25.Knowledge, Attitude, and Practice To Wards Insuline Administration In Tertiary Care Hospital Under the Guidance of Dr.T.Deeksha`,
+      `26. Prospective Observational Study on Levothyroxine Administration Techniques In Tertiary Care Hospital Under the Guidance of Dr.T.Deeksha`,
+      `27.A Prospective Study Evaluating Analgesic Prescription Pattern Among Post Operative Patient In Tertiary Care Hospital Under the Guidance of Dr.T.Deeksha`,
+      `28. Optimization and evaluation of Standardized Feverfew Extract loaded Gel for Effective Migrane Management. Under the Guidance of Dr. S. Sivaneswari`,
+      `29. Development and Evaluation of Resveratrol loaded Pharmacosomes incorporated insitu gel for Alzheimer's disease Under the Guidance of Dr. S. Sivaneswari`,
+    ],
+  },
+  {
+    heading: `Completed Projects`,
+    items: [
+      `1. Optimization, formulation and characterization of topical film forming spray for the treatment of wounds in Albino Wistar Rats. Under the Guidance of Dr. K. Karthick`,
+      `2. Design, optimization, formulation and evaluation of ocular inserts for the treatment of eye infection. Under the Guidance of Dr. K. Karthick`,
+      `3. Developmet of formulation and evaluation of Ethosuximide niosomal drug delivery system. Under the Guidance of Dr. K. Karthick`,
+      `4. Development of formulation and evaluation of stealth liposomal gel containing Desonide. Under the Guidance of Dr. K. Karthick`,
+      `5. Development of formulation and evaluation of polyherbal sunscreen cream. Under the Guidance of Dr. K. Karthick`,
+      `6. Formulation, characterization and in-vitro evaluation of Lamotrigine stealth liposomes for improved anti convulsant activity. Under the Guidance of Dr. K. Karthick`,
+      `7. Development of formulation and characterization of Primidone niosomes for improved anti convulsant activity. Under the Guidance of Dr. K. Karthick`,
+      `8. Formulation And In-Vitro Evaluation Of Solid Lipid Nanoparticles Of Acarbose. Under the Guidance of Dr.M.Vani`,
+      `9.Optimization, Formulation And Evaluation Of Ciprofloxacin Aquasomes Loaded In Situ Gel. Under The Guidance of Dr.M.Vani`,
+      `10.Optimization, Development And Characterization Of Salicylic Acid Niosome Loaded With Epsom Salt Gel. Under the Guidance of Dr.M.Vani`,
+      `11.Formulation and Evaluation of Naproxen sodium Nanoemulgel Under the Guidance of Dr.M.Vani`,
+      `12.Study On Surgical Antibiotics Prophylaxis And Incidence Of Surgical Site Infections.Adlin Reniba . R ,Swetha V.P ,Yuvadharani. P Under the Guidance of Dr. S Ramalakshmi`,
+      `13. Study On Surgical Antibiotics Prophylaxis And Incidence Of Surgical Site Infections.Adlin Reniba . R ,Swetha V.P ,Yuvadharani. P Under the Guidance of Dr. S Ramalakshmi`,
+      `14.Real-World Pharmacovigilance Analysis Of Fda Adverse Event Reporting System Database Of Indian Reports For Anti Diabetic Agents Under the Guidance of Dr. S Ramalakshmi`,
+      `15.Anas. A ,Dhanushiya. P ,Kishore. S , Reenadevi. M Exploring The Clinical Practice Of Cephalosporin Utilization In Infectious Disease: A Prospective Observational Study -Anto Melvin Raj. S , Mohamed Parvis. A, Pavithra. K ,Shajan.R. S Under the Guidance of Dr. S Ramalakshmi`,
+      `16.[An Observational Study On Inpatient Medication Reconciliation Form Among Geriatric Patients At A Tertiary Care Hospital-AMAL RAJ.A, KOUSHIK.S, SURIYA.K.M. S, THENMOZHI.R Under The Guidance of Dr. S Ramalakshmi`,
+      `17.Osteoprotective Effect Of Hydroalcoholic Extract Of Terminalia Arjuna Bark On Dexamethasone Induced Osteoporosis In Rat Model(B.Sagunthala) Under the Guidance of Dr.C.Senthilkumari`,
+      `18."In Vitro Antioxidant, Antimicrobial And Phytochemical Screening Of Potential Of Silver Nanoparticles Obtained By Biosynthesis Using Luecobryum Glaucum And Its Network Pharmacology" Under the Guidance of Dr.C.Senthilkumari`,
+      `19.Prospective study on Switching of IV to Oral Antibiotics in tertiary care hospital\nDUE in the treatment of Respiratory Tract Infection in tertiary care hospital Under the Guidance of Dr.S.Vedhapal Jeyamani`,
+      `20.Retrospective study on the effect of thyroid dysfunction on cardiovascular in among type II diabetes mellitus patient in tertiary care hospital Evaluation of potential drug-drug interaction among hospitalized patient in tertiary care hospital Under the Guidance of Dr.S.Vedhapal Jeyamani`,
+      `21. Evaluation Of Drug Utilization Pattern In Cardivascular Patient And Appropraiteness Of Fixed Combination Of Cardivascular Drugs In A Tertiary Care Hospital Under the Guidance of Dr.S.Vedhapal Jeyamani`,
+      `22. In-silico design, synthesis, Characterization and in-vitro evaluation of Phenothiazine derivatives. Prema. V, Aruna. M, Madhumithra. G, Praveen Kumar. V, Rukmani. K, Site of Study, K.K. College of Pharmacy. 2025-2026 (UG Project) Under the Guidance of Dr. V. Prema.`,
+      `23.optimization, formulation and evaluation of bilayered nail lacquer containing terbinafine aspasomes for treatment of fungal melanonychia- M.Pharm Under the Guidance of Mrs.S.L.Laura`,
+      `24.Green synthesis, characterization and antibacterial activity of Cu-ZnO nanocomposite using leaf extract of Tamarindus indica- B.Pharm Under the Guidance of Mrs.S.L.Laura`,
+      `25. Formulation and evaluation of Ciprofloxacin floating tablet by using combination of natural and synthetic polymers-B.Pharm Under the Guidance of Mrs.S.L.Laura`,
+      `26. Cytotoxicity study of poly herbal formulation Under the Guidance of Mrs.S.L.Laura`,
+      `27.Formulation and evaluation of doxycycline niosomal gel for the treatment of Vincent’s disease(M.Pharm) Under the Guidance of Mrs.S.L.Laura`,
+      `28.Optimization , formulation and characterization of hydrocortisone loaded bilosomes incorporated into hyaluronic acid hydrogel for treating the fungal infections Under the Guidance of Mrs.S.L.Laura`,
+      `29.A Review On Non Alcoholic Fatty Liver Disease, Shalini A S, C.Hemapriyadharshini ,K.Kalpana ,S.Kokul, Kkcp. Under the Guidance of Mrs. A. S. Shalini`,
+      `30.2024-2025 Insilico Drug Design, Synthesis and Biological Evaluation of Novel Heterocyclic compounds containing Anti inflammatory Activity Under the Guidance of Mrs.B.Karunya`,
+      `31. 2025-2026 Synthesis and Computational Biological Evaluation of Novel Benzimidazole-Coumarin Hybrids via Molecular Docking, ADMET prediction and In vitro studies Under the Guidance of Mrs.B.Karunya`,
+      `32. 2024-2025 Advanced UHPLC-Based Analytical Framework for Concurrent Quantification of Amlodipine and Lisinopril: A Design of Experiments Optimization Strategy Under the Guidance of Mrs.B.Karunya`,
+      `33.ADMET Molecular docking, synthesis, characterization and anti bacterial activity of Quinoline derivatives. Under the Guidance of Mrs.Nalini Kunta`,
+      `34. Analytical method development and validation for the simultaneous estimation of Bisoprolol fumarate and telmisartan by RP - UHPLC in solid dosage form. Under the Guidance of Mrs.Nalini Kunta`,
+      `35.ADMET, Molecular docking, synthesis, characterization and antioxidant activity of Quinoline Derivatives. Under the Guidance of Mrs.Nalini Kunta`,
+      `36.Admet, molecular docking, characterization, synthesis of novel schiff base derivatives, Analytical method development and validation for the simultaneous estimation of Perindopril erbumine and Amlodipine besylate by RP-UHPLC method, Method development and validation of Lobeglitazone sulphate in tablet dosage form by UV Spectroscopy Under the Guidance of Mrs.S.Parvathi`,
+      `37.Analytical method development and validation for the simultaneous determination of Metoprolol succinate and Dapagliflozin by RP- UHPLC in tablet dosage form.\nUmaparvathy S. Athiswar. B Under the Guidance of Mrs.S.Uma Parvathy`,
+      `38.Method development validation and stress studies of Linagliptin using UV - Visible spectroscopy in tablet dosage form.\nUmaparvathy S., Anbarasan S. Kowshik Prabu S., Thenmozhi K. Under the Guidance of Mrs.S.Uma Parvathy`,
+      `39.Analytical method development and validation for simultaneous estimation of Evogliptin tartrate and Metformin hydrochloride using UV spectroscopy in combined dosage form.\nUmaparvathy S., Anusha baby S., Poojadharshini G., Reni S., Swathi P. Under the Guidance of Mrs.S.Uma Parvathy`,
+      `40.Evaluation of Anti-diabetic activity of Spinacia oleracea linn. leaf extract by invitro methods. Mrs.A.kamatchi ,M.Guna,N.Nirmal,M.Tamilvanan Under the Guidance of Mrs.A.Kamatchi`,
+      `41.Design, synthesis, docking and biological evaluation of Benzimidazole Morpholine derivatives. Under the Guidance of Mrs. B. Sandhiya Rani`,
+      `42.Intravenous drug compatibility in Intensive care unit Under the Guidance of Dr.Aswathi Elisabeth Philip`,
+      `43.Renal and hepatic dose adjustment in critically ill patients Under the Guidance of Dr.Aswathi Elisabeth Philip`,
+      `44.Prospective observational study on electrolyte abnormalities in ICU Under the Guidance of Dr.Aswathi Elisabeth Philip`,
+      `45.Assessment of Knowledge, attitude and perception towards good pharmacy practice among community pharmacists. Under the Guidance of Dr.Aswathi Elisabeth Philip`,
+      `46.Knowledge, attitude and practice towards diabetes among healthcare patient in tertiary care hospital Under the Guidance of Dr.T.Deeksha`,
+      `47.Assessment of Knowledge & Practice on PCOS among general population Under the Guidance of Dr.T.Deeksha`,
+      `48.Development and evaluation of Drug loaded proniosomal gel for hair growth in albino wister rats. Under the Guidance of Dr.S.Sivaneswari`,
+      `49.Development and evaluation of Skin lightening nano-face serum containing alpha arbutin, kojic acid and hyaluronic acid for hyperpigmentation Under the Guidance of Dr.S.Sivaneswari.`,
+      `50. Development and evaluation of Metformin Hcl loaded Transethosomal Hydrogel for treatment of mild Psoriasis. Under the Guidance of Dr. S. Sivaneswari.`,
+    ],
+  },
+];
+
+// Card titles / sidebar filter labels = the MD's own section headings (no invented labels).
+const NAMES = GROUPS.map((g) => g.heading);
+
+// 6 source thumbnails cycled across the cards (same set the Courses page uses).
+const THUMBS = [
+  "/all-programs/assets/0054__acc-1-min.jpg",
+  "/all-programs/assets/0055__acc-2-min.jpg",
+  "/all-programs/assets/0056__acc-3-min.jpg",
+  "/all-programs/assets/0058__acc-4-min.jpg",
+  "/all-programs/assets/0059__acc-5-min.jpg",
+  "/all-programs/assets/0060__acc-6-min.jpg",
+];
+
+function Criteria({ title, items }) {
+  return (
+    <div className="filter-criteria">
+      {title ? <h5 className="criteria-title">{title}</h5> : null}
+      <ul className="criteria-checkboxes">
+        {items.map((it) => (
+          <li className="criteria-item" key={it.id}>
+            <a className="criteria-link" href={it.href}>{it.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+const FILTERS = NAMES.map((n, i) => ({ id: `pub-${i + 1}`, label: n, href: `#pub-${i + 1}` }));
+
+export function KkcpTree() {
+  return (
+    <div className="wp-singular page-template-default page page-id-7888 wp-theme-KKCP gsap-enable elementor-default elementor-template-full-width elementor-kit-14 elementor-page elementor-page-7888 e--ua-blink e--ua-mac e--ua-webkit" data-elementor-device-mode={"desktop"}>
+      <div id="kkcp-page" className="kkcp-page-wrapper">
+        <KkcpHeader />
+        <main id="kkcp-content" className="kkcp-content-wrapper">
+          <div data-elementor-type={"wp-page"} data-elementor-id={"7888"} className="elementor elementor-7888">
+            {/* Hero banner (same design as Courses) */}
+            <div className="elementor-element elementor-element-146c4d0 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"146c4d0"} data-element_type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
+              <div className="e-con-inner">
+                <div className="elementor-element elementor-element-da6b75b elementor-widget elementor-widget-rstb-breadcrumb" data-id={"da6b75b"} data-element_type={"widget"} data-widget_type={"rstb-breadcrumb.default"}>
+                  <div className="rstb-breadcrumb"><span property="itemListElement"><a property="item" title="Go to KKCP." href="/" className="home"><span property="name">Home</span></a><meta property="position" content="1" /></span><span className="item-separator"><svg className="e-font-icon-svg e-fas-angle-double-right" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z" /></svg></span><span property="itemListElement"><span property="name" className="post post-page current-item">Research</span><meta property="url" content="/research/" /><meta property="position" content="2" /></span></div>
+                </div>
+                <div className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Research</h1></div>
+                <div className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider" data-id={"4626c23"} data-element_type={"widget"} data-widget_type={"rs-divider.default"}><div className="rs-divider dot-enable"><span> </span></div></div>
+                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.png" alt="bnr-arrow-1-1" /></div></div>
+              </div>
+            </div>
+
+            {/* Filter area: sidebar + publication cards */}
+            <div className="elementor-element elementor-element-f401be2 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"f401be2"} data-element_type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
+              <div className="e-con-inner">
+                <div className="elementor-element elementor-element-57146e5 elementor-widget elementor-widget-rs-academic-filter" data-id={"57146e5"} data-element_type={"widget"} data-widget_type={"rs-academic-filter.default"}>
+                  <div className="rs-academic-filter-area" data-widget-id={"57146e5"}>
+                    <div className="filter-sidebar-overly"></div>
+                    <div className="filter-sidebar">
+                      <h4 className="sidebar-title">Filter By<span className="filter-reset-btn" style={{display: "none"}}>Reset</span></h4>
+                      <Criteria items={FILTERS} />
+                    </div>
+                    <div className="filter-content">
+                      <div className="filter-top-bar">
+                        <button className="filter-toggle-btn"><i className="ri-menu-2-fill"></i></button>
+                        <span className="filter-result">Total <span className="result-count">{GROUPS.length}</span> results found</span>
+                        <span className="filter-search-wrap">
+                          <input className="filter-search-input" type="text" placeholder="Enter keyword" />
+                          <span className="search-icon"><svg className="e-font-icon-svg e-fas-search" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" /></svg></span>
+                        </span>
+                      </div>
+                      <div className="filter-items-wrapper">
+                        {GROUPS.map((g, idx) => (
+                          <div className="filter-item dept-filter-item" id={`pub-${idx + 1}`} key={idx}>
+                            <div className="item-thumbnail">
+                              <img loading="lazy" decoding="async" width="770" height="660" src={THUMBS[idx % THUMBS.length]} className="attachment-large size-large wp-post-image" alt={NAMES[idx]} />
+                            </div>
+                            <div className="item-content">
+                              <h4 className="item-title"><a href="#">{NAMES[idx]}</a></h4>
+                              <div className="item-desc dept-desc">
+                                {g.items.map((it, ii) => (
+                                  <p className="dept-text dept-pub" key={ii}>{it}</p>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <style>{`
+            .kkcp-root { overflow-x: clip !important; }
+            .elementor-7888 .rs-academic-filter-area { align-items: flex-start !important; }
+            .elementor-7888 .filter-sidebar {
+              position: sticky !important;
+              top: 24px !important;
+              align-self: flex-start !important;
+              max-height: calc(100vh - 48px) !important;
+              overflow-y: auto;
+            }
+            .elementor-7888 .criteria-link {
+              display: block; color: #4C4C4C; text-decoration: none;
+              font-size: 15px; line-height: 1.45; transition: color .2s; margin-bottom: 8px;
+            }
+            .elementor-7888 .criteria-link:hover { color: #034EA2; }
+            .elementor-7888 .dept-filter-item { align-items: flex-start; scroll-margin-top: 120px; }
+            .elementor-7888 .dept-desc { margin-top: 15px; }
+            .elementor-7888 .dept-desc .dept-lead {
+              font-family: "Bitter", serif; color: #034EA2; font-weight: 600;
+              font-size: 16px; line-height: 1.6; margin: 0 0 14px;
+            }
+            .elementor-7888 .dept-desc .dept-text { color: #4C4C4C; font-size: 15px; line-height: 1.8; margin: 0 0 12px; text-align: justify; }
+            /* pre-line: renders the MD's own hard line breaks inside an entry, while still
+               collapsing ordinary whitespace and wrapping normally. */
+            .elementor-7888 .dept-desc .dept-pub { padding-left: 1.7em; text-indent: -1.7em; white-space: pre-line; }
+            /* Hero: full dark overlay (the source gradient only darkened the bottom) */
+            .elementor-7888 .elementor-element-146c4d0::before {
+              background-image: linear-gradient(180deg, rgba(0,25,44,0.55) 0%, rgba(0,25,44,0.82) 100%) !important;
+            }
+          `}</style>
+        </main>
+        <KkcpFooter />
+      </div>
+    </div>
+  );
+}

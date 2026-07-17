@@ -1,4 +1,4 @@
-export default function ClonePage() {
+export default function KkcpPage() {
   return (
     <iframe
       src="/test-dummy-webs-1/index.html"
