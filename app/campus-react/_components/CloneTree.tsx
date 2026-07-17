@@ -11,24 +11,30 @@ import { CloneFooter } from "@/components/CloneFooter";
 // --- Sidebar data (one anchor link per facility) ---
 const CAMPUS_FILTERS = [
   { id: "smart-class-rooms", label: "1 Campus → Smart-Class Rooms", href: "#smart-class-rooms" },
-  { id: "library", label: "2 Campus → Library", href: "#library" },
-  { id: "laboratory", label: "3 Campus → Laboratory", href: "#laboratory" },
-  { id: "drug-information-centre", label: "4 Campus → Drug Information Centre", href: "#drug-information-centre" },
-  { id: "animal-house-facility", label: "5 Campus →Animal House Facility", href: "#animal-house-facility" },
+  { id: "laboratory", label: "2 Campus → Laboratory", href: "#laboratory" },
+  { id: "animal-house-facility", label: "3 Campus →Animal House Facility", href: "#animal-house-facility" },
+  { id: "library", label: "4 Campus → Library", href: "#library" },
+  { id: "security", label: "5 Campus → Security", href: "#security" },
   { id: "transport", label: "6 Campus → TRANSPORT", href: "#transport" },
-  { id: "security", label: "7 Campus → Security", href: "#security" },
-  { id: "ro-water-plant", label: "8 Campus → RO Water Plant", href: "#ro-water-plant" },
-  { id: "hostel-facilities", label: "9 Campus → Hostel Facilities", href: "#hostel-facilities" },
 ];
 
-// 6 source thumbnails cycled across the 9 facility cards.
+// One thumbnail per facility card, in FACILITIES order
+// (source: 3. CAMPUS LIFE PHOTOS).
 const THUMBS = [
-  "/all-programs/assets/0054__acc-1-min.jpg",
-  "/all-programs/assets/0055__acc-2-min.jpg",
-  "/all-programs/assets/0056__acc-3-min.jpg",
-  "/all-programs/assets/0058__acc-4-min.jpg",
-  "/all-programs/assets/0059__acc-5-min.jpg",
-  "/all-programs/assets/0060__acc-6-min.jpg",
+  "/kkcp/web/campus/1-smart-classrooms.jpg",
+  "/kkcp/web/campus/2-laboratory.jpg",
+  "/kkcp/web/campus/3-animal-house-facility.jpg",
+  "/kkcp/web/campus/4-library.jpg",
+  "/kkcp/web/campus/5-security.jpg",
+  "/kkcp/web/campus/6-transport.jpg",
+];
+
+// --- Accomplished Graduates photo row (source: 3. CAMPUS LIFE PHOTOS/ACCOMPLISHED GRADUATES) ---
+const ACCOMPLISHED = [
+  "/kkcp/web/campus/accomplished-graduates-img-1253.jpg",
+  "/kkcp/web/campus/accomplished-graduates-img-1262.jpg",
+  "/kkcp/web/campus/accomplished-graduates-img-1274.jpg",
+  "/kkcp/web/campus/accomplished-graduates-img-1278.jpg",
 ];
 
 // --- Campus facility content (verbatim) ---
@@ -44,8 +50,25 @@ const FACILITIES = [
   },
   {
     no: "02",
+    id: "laboratory",
+    name: "2 Campus → Laboratory",
+    blocks: [
+      { type: "p", text: "We are proud to offer our students exceptional laboratory facilities. Equipped with state-of-the-art instruments and apparatus, students can safely participate in a variety of hands-on experiments pertinent to their selected fields. Our lab equipment is consistently updated and our extensive assortment of glassware & chemicals is readily accessible for student use. Our labs in Pharmaceutics, Pharmaceutical Chemistry, Pharmacology, Pharmacy Practice, Pharmacognosy, Pharmaceutical Analysis, Pharmaceutical Biotechnology, Human Anatomy and Physiology and Computer Science adhere to the highest safety and quality standards, guaranteeing that students enjoy valuable laboratory experiences." },
+    ],
+  },
+  {
+    no: "03",
+    id: "animal-house-facility",
+    name: "3 Campus →Animal House Facility",
+    blocks: [
+      { type: "p", text: "The Animal House at our institution is a meticulously maintained and ethically operated facility designed to facilitate pre-clinical and pharmacological research endeavors. It offers a regulated environment for the care and upkeep of laboratory animals utilized in scientific studies." },
+      { type: "p", text: "Our facility adheres rigorously to the guidelines set forth by the Committee for the Purpose of Control and Supervision of Experiments on Animals (CPCSEA), Government of India (Registration No. 1395/a/10/CPCSEA), guaranteeing the utmost standards of animal welfare and ethical adherence." },
+    ],
+  },
+  {
+    no: "04",
     id: "library",
-    name: "2 Campus → Library",
+    name: "4 Campus → Library",
     blocks: [
       { type: "label", text: "Library" },
       { type: "p", text: "Our college library serves as a haven for knowledge seekers, featuring a vast array of books across numerous disciplines, such as Pharmaceutics, Pharmacy Practice, Pharmacognosy, Pharmaceutical Analysis, Pharmaceutical Chemistry, Community Pharmacy, Clinical & Pharmacology, Hospital Pharmacy, Pharmaceutical Regulatory Affairs and Computer Science." },
@@ -55,28 +78,12 @@ const FACILITIES = [
     ],
   },
   {
-    no: "03",
-    id: "laboratory",
-    name: "3 Campus → Laboratory",
-    blocks: [
-      { type: "p", text: "We are proud to offer our students exceptional laboratory facilities. Equipped with state-of-the-art instruments and apparatus, students can safely participate in a variety of hands-on experiments pertinent to their selected fields. Our lab equipment is consistently updated and our extensive assortment of glassware & chemicals is readily accessible for student use. Our labs in Pharmaceutics, Pharmaceutical Chemistry, Pharmacology, Pharmacy Practice, Pharmacognosy, Pharmaceutical Analysis, Pharmaceutical Biotechnology, Human Anatomy and Physiology and Computer Science adhere to the highest safety and quality standards, guaranteeing that students enjoy valuable laboratory experiences." },
-    ],
-  },
-  {
-    no: "04",
-    id: "drug-information-centre",
-    name: "4 Campus → Drug Information Centre",
-    blocks: [
-      { type: "p", text: "The Drug Information Centre (DIC), located within Dr. Kamakshi Memorial Hospital in Pallikaranai, a tertiary-care facility with 300 beds, serves as a prime example of a modern resource hub. It offers comprehensive access to various drug information dissemination tools, including internet-enabled computers, books & software applications like the esteemed Lexicomp. The DIC is committed to providing timely, evidence-based answers to inquiries from both healthcare professionals and patients, with the goal of promoting the safe and responsible use of pharmaceutical products." },
-    ],
-  },
-  {
     no: "05",
-    id: "animal-house-facility",
-    name: "5 Campus →Animal House Facility",
+    id: "security",
+    name: "5 Campus → Security",
     blocks: [
-      { type: "p", text: "The Animal House at our institution is a meticulously maintained and ethically operated facility designed to facilitate pre-clinical and pharmacological research endeavors. It offers a regulated environment for the care and upkeep of laboratory animals utilized in scientific studies." },
-      { type: "p", text: "Our facility adheres rigorously to the guidelines set forth by the Committee for the Purpose of Control and Supervision of Experiments on Animals (CPCSEA), Government of India (Registration No. 1395/a/10/CPCSEA), guaranteeing the utmost standards of animal welfare and ethical adherence." },
+      { type: "p", text: "The institute has a foolproof security system in place. There is a strong emphasis on maintaining a stringent security protocol throughout the campus. The entire college grounds are monitored by CCTV cameras, and we have highly trained security personnel stationed at the college entrance." },
+      { type: "p", text: "In total, there are 84 state-of-the-art Hikvision cameras that provide top-notch recording quality. These measures assist in observing student behavior and ensuring their safety and security." },
     ],
   },
   {
@@ -89,31 +96,6 @@ const FACILITIES = [
       { type: "p", text: "With skilled and timely drivers, we guarantee that students arrive at their destinations safely and punctually." },
       { type: "p", text: "Our fleet of well-kept buses is outfitted with contemporary safety features, such as GPS tracking and CCTV cameras, ensuring peace of mind for both students and their parents." },
       { type: "p", text: "From morning pickups to evening drop-offs, our transportation system emphasizes comfort, safety and dependability, demonstrating our dedication to student convenience." },
-    ],
-  },
-  {
-    no: "07",
-    id: "security",
-    name: "7 Campus → Security",
-    blocks: [
-      { type: "p", text: "The institute has a foolproof security system in place. There is a strong emphasis on maintaining a stringent security protocol throughout the campus. The entire college grounds are monitored by CCTV cameras, and we have highly trained security personnel stationed at the college entrance." },
-      { type: "p", text: "In total, there are 84 state-of-the-art Hikvision cameras that provide top-notch recording quality. These measures assist in observing student behavior and ensuring their safety and security." },
-    ],
-  },
-  {
-    no: "08",
-    id: "ro-water-plant",
-    name: "8 Campus → RO Water Plant",
-    blocks: [
-      { type: "p", text: "The Institution operates a Reverse Osmosis (RO) plant to supply drinking water to college students. The entire campus is equipped with pure Reverse Osmosis (RO) drinking water, complemented by water coolers on every floor to ensure that students have access to clean and safe drinking water." },
-    ],
-  },
-  {
-    no: "09",
-    id: "hostel-facilities",
-    name: "9 Campus → Hostel Facilities",
-    blocks: [
-      { type: "p", text: "Our hostel is situated directly across from our campus, offering an optimal learning atmosphere and cost-effectiveness. We provide distinct accommodations for girls and boys." },
     ],
   },
 ];
@@ -172,7 +154,7 @@ export function CloneTree() {
                     <div className="filter-content">
                       <div className="filter-top-bar">
                         <button className="filter-toggle-btn"><i className="ri-menu-2-fill"></i></button>
-                        <span className="filter-result">Total <span className="result-count">9</span> results found</span>
+                        <span className="filter-result">Total <span className="result-count">6</span> results found</span>
                         <span className="filter-search-wrap">
                           <input className="filter-search-input" type="text" placeholder="Enter keyword" />
                           <span className="search-icon"><svg className="e-font-icon-svg e-fas-search" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" /></svg></span>
@@ -198,6 +180,20 @@ export function CloneTree() {
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Accomplished Graduates — photo row after the Transport section */}
+            <div className="elementor-element e-flex e-con-boxed e-con e-parent accomplished-section" data-element_type={"container"}>
+              <div className="e-con-inner">
+                <h2 className="accomplished-title">Accomplished Graduates</h2>
+                <div className="accomplished-row">
+                  {ACCOMPLISHED.map((src, i) => (
+                    <div className="accomplished-item" key={i}>
+                      <img loading="lazy" decoding="async" src={src} alt="Accomplished Graduates" />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -234,6 +230,36 @@ export function CloneTree() {
             .elementor-7888 .dept-desc .dept-text { color: #4C4C4C; font-size: 15px; line-height: 1.8; margin: 0 0 10px; }
             .elementor-7888 .dept-desc .dept-text:first-child { margin-top: 0; }
             .elementor-7888 .dept-desc .dept-bullet { padding-left: 1.4em; text-indent: -1.4em; }
+            /* Accomplished Graduates photo row — match the boxed width of the other sections.
+               Set --display:flex like the theme's boxed containers so the inner picks up
+               display:flex (not the default inline) and honors max-width:var(--content-width). */
+            .elementor-7888 .accomplished-section {
+              --display: flex;
+              --content-width: min(100%, var(--container-max-width, 1300px));
+            }
+            .elementor-7888 .accomplished-section > .e-con-inner {
+              flex-direction: column;
+              margin-inline: auto;
+              padding: 20px 10px 60px;
+            }
+            .elementor-7888 .accomplished-title {
+              font-family: "Bitter", serif; color: #034EA2; font-weight: 600;
+              font-size: 26px; margin: 0 0 28px; text-align: center;
+              position: relative; padding-bottom: 12px;
+            }
+            .elementor-7888 .accomplished-title::after {
+              content: ""; position: absolute; left: 50%; transform: translateX(-50%);
+              bottom: 0; width: 48px; height: 3px; background: #FDC72F; border-radius: 2px;
+            }
+            .elementor-7888 .accomplished-row {
+              display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+            }
+            .elementor-7888 .accomplished-item img {
+              width: 100%; height: 280px; object-fit: cover;
+              border-radius: 12px; display: block;
+            }
+            @media (max-width: 1024px) { .elementor-7888 .accomplished-row { grid-template-columns: repeat(2, 1fr); } }
+            @media (max-width: 480px) { .elementor-7888 .accomplished-row { grid-template-columns: 1fr; } }
           `}</style>
         </main>
         <CloneFooter />
