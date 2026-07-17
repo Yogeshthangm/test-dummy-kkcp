@@ -30,12 +30,12 @@ const PROGRAMS = [
 
 // 6 source thumbnails cycled across the 9 facility cards.
 const THUMBS = [
-  "/all-programs/assets/0054__acc-1-min.jpg",
-  "/all-programs/assets/0055__acc-2-min.jpg",
-  "/all-programs/assets/0056__acc-3-min.jpg",
-  "/all-programs/assets/0058__acc-4-min.jpg",
-  "/all-programs/assets/0059__acc-5-min.jpg",
-  "/all-programs/assets/0060__acc-6-min.jpg",
+  "/all-programs/assets/0054__acc-1-min.webp",
+  "/all-programs/assets/0055__acc-2-min.webp",
+  "/all-programs/assets/0056__acc-3-min.webp",
+  "/all-programs/assets/0058__acc-4-min.webp",
+  "/all-programs/assets/0059__acc-5-min.webp",
+  "/all-programs/assets/0060__acc-6-min.webp",
 ];
 
 // --- Campus facility content (verbatim) ---
@@ -162,7 +162,7 @@ export function KkcpTree() {
                 <div className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Campus</h1></div>
                 <div className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider" data-id={"4626c23"} data-element_type={"widget"} data-widget_type={"rs-divider.default"}><div className="rs-divider dot-enable"><span> </span></div></div>
                 <div className="elementor-element elementor-element-419a788 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id={"419a788"} data-element_type={"widget"} data-widget_type={"text-editor.default"}><p>Education goes beyond textbooks and classrooms. We believe in empowering students to explore their passions challenge conventions.</p></div>
-                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.png" alt="bnr-arrow-1-1" /></div></div>
+                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.webp" alt="bnr-arrow-1-1" /></div></div>
               </div>
             </div>
 

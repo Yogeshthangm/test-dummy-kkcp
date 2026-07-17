@@ -87,7 +87,7 @@ export function KkcpTree() {
                 </div>
                 <div className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">{PAGE_TITLE}</h1></div>
                 <div className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider" data-id={"4626c23"} data-element_type={"widget"} data-widget_type={"rs-divider.default"}><div className="rs-divider dot-enable"><span> </span></div></div>
-                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.png" alt="bnr-arrow-1-1" /></div></div>
+                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.webp" alt="bnr-arrow-1-1" /></div></div>
               </div>
             </div>
 
@@ -121,7 +121,7 @@ export function KkcpTree() {
               position: absolute; inset: 0;
               background-image:
                 linear-gradient(180deg, rgba(246,244,238,0.90) 0%, rgba(246,244,238,0.82) 45%, rgba(246,244,238,0.95) 100%),
-                url("/kkcp/web/home/6-campus-life-home-page-0c7a8408.jpg");
+                url("/kkcp/web/home/6-campus-life-home-page-0c7a8408.webp");
               background-size: cover;
               background-position: center 30%;
             }

@@ -20,12 +20,12 @@ const DEPARTMENT_FILTERS = [
 // Chemistry, Pharmacognosy, Pharmacy Practice, Regulatory Affairs). The client
 // supplied no photo for Regulatory Affairs, so slot 5 keeps its existing thumbnail.
 const THUMBS = [
-  "/kkcp/web/home/4-our-departments-photos-1-pharmaceutics.jpg",
-  "/kkcp/web/home/4-our-departments-photos-3-pharmacology.jpg",
-  "/kkcp/web/home/4-our-departments-photos-2-pharmaceutical-chemistry.jpg",
-  "/kkcp/web/home/4-our-departments-photos-4-pharmacognosy.jpg",
-  "/kkcp/web/home/4-our-departments-photos-5-pharmacy-practice.jpg",
-  "/all-programs/assets/0060__acc-6-min.jpg",
+  "/kkcp/web/home/4-our-departments-photos-1-pharmaceutics.webp",
+  "/kkcp/web/home/4-our-departments-photos-3-pharmacology.webp",
+  "/kkcp/web/home/4-our-departments-photos-2-pharmaceutical-chemistry.webp",
+  "/kkcp/web/home/4-our-departments-photos-4-pharmacognosy.webp",
+  "/kkcp/web/home/4-our-departments-photos-5-pharmacy-practice.webp",
+  "/all-programs/assets/0060__acc-6-min.webp",
 ];
 
 // --- Department content (verbatim) ---
@@ -237,7 +237,7 @@ export function KkcpTree() {
                 </div>
                 <div className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Departments</h1></div>
                 <div className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider" data-id={"4626c23"} data-element_type={"widget"} data-widget_type={"rs-divider.default"}><div className="rs-divider dot-enable"><span> </span></div></div>
-                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.png" alt="bnr-arrow-1-1" /></div></div>
+                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.webp" alt="bnr-arrow-1-1" /></div></div>
               </div>
             </div>
 

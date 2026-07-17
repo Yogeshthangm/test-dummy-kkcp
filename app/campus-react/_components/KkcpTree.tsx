@@ -21,20 +21,20 @@ const CAMPUS_FILTERS = [
 // One thumbnail per facility card, in FACILITIES order
 // (source: 3. CAMPUS LIFE PHOTOS).
 const THUMBS = [
-  "/kkcp/web/campus/1-smart-classrooms.jpg",
-  "/kkcp/web/campus/2-laboratory.jpg",
-  "/kkcp/web/campus/3-animal-house-facility.jpg",
-  "/kkcp/web/campus/4-library.jpg",
-  "/kkcp/web/campus/5-security.jpg",
-  "/kkcp/web/campus/6-transport.jpg",
+  "/kkcp/web/campus/1-smart-classrooms.webp",
+  "/kkcp/web/campus/2-laboratory.webp",
+  "/kkcp/web/campus/3-animal-house-facility.webp",
+  "/kkcp/web/campus/4-library.webp",
+  "/kkcp/web/campus/5-security.webp",
+  "/kkcp/web/campus/6-transport.webp",
 ];
 
 // --- Accomplished Graduates photo row (source: 3. CAMPUS LIFE PHOTOS/ACCOMPLISHED GRADUATES) ---
 const ACCOMPLISHED = [
-  "/kkcp/web/campus/accomplished-graduates-img-1253.jpg",
-  "/kkcp/web/campus/accomplished-graduates-img-1262.jpg",
-  "/kkcp/web/campus/accomplished-graduates-img-1274.jpg",
-  "/kkcp/web/campus/accomplished-graduates-img-1278.jpg",
+  "/kkcp/web/campus/accomplished-graduates-img-1253.webp",
+  "/kkcp/web/campus/accomplished-graduates-img-1262.webp",
+  "/kkcp/web/campus/accomplished-graduates-img-1274.webp",
+  "/kkcp/web/campus/accomplished-graduates-img-1278.webp",
 ];
 
 // --- Campus facility content (verbatim) ---
@@ -137,7 +137,7 @@ export function KkcpTree() {
                 <div className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Campus</h1></div>
                 <div className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider" data-id={"4626c23"} data-element_type={"widget"} data-widget_type={"rs-divider.default"}><div className="rs-divider dot-enable"><span> </span></div></div>
                 <div className="elementor-element elementor-element-419a788 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id={"419a788"} data-element_type={"widget"} data-widget_type={"text-editor.default"}><p>Education goes beyond textbooks and classrooms. We believe in empowering students to explore their passions challenge conventions.</p></div>
-                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.png" alt="bnr-arrow-1-1" /></div></div>
+                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.webp" alt="bnr-arrow-1-1" /></div></div>
               </div>
             </div>
 
