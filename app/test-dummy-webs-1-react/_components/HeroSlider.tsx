@@ -45,7 +45,7 @@ export function HeroSlider() {
               left: 0,
               right: 0,
               // Fluid: 48px is unreadable-wide on a 375px phone. The slider's own JS would
-              // have rescaled this, but it is stripped from the page clone.
+              // have rescaled this, but it is stripped from the generated page.
               fontSize: "clamp(26px, 6.4vw, 48px)",
               lineHeight: "1.18",
               whiteSpace: "normal",

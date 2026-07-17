@@ -4,7 +4,7 @@ import { KkcpFooter } from "@/components/KkcpFooter";
 import { MessageSlider } from "./MessageSlider";
 import { MANAGEMENT_PORTRAITS } from "@/lib/faculty";
 // @ts-nocheck
-// Auto-generated DOM→JSX emit of the mirrored page (see website-cloner emit-react.cjs).
+// Auto-generated DOM→JSX emit of the mirrored page.
 // Real React tree (no iframe, no dangerouslySetInnerHTML). Source class names + inline styles
 // preserved; the source CSS lives scoped in about-inline.css. Asset paths absolute to /about-us/.
 /* eslint-disable */

@@ -2,7 +2,7 @@
 import { KkcpHeader } from "@/components/KkcpHeader";
 import { KkcpFooter } from "@/components/KkcpFooter";
 // @ts-nocheck
-// Cloned from app/drug-information-centre-react/_components/KkcpTree.tsx (banner + shell).
+// Adapted from app/drug-information-centre-react/_components/KkcpTree.tsx (banner + shell).
 // Content: KKCP_Website_Content_MD/"12. Syllabus Links.md" — 4 PDF links, verbatim.
 // Real React tree (no iframe, no dangerouslySetInnerHTML). Source class names + inline styles
 // preserved; the source CSS lives scoped in smart-class-rooms-inline.css. Asset paths absolute to /campus-life/.

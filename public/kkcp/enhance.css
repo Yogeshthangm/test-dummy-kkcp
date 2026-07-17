@@ -2,7 +2,7 @@
    KKCP page enhancements — motion system + shared card/quote primitives.
    Linked ONLY by /news and /testimonials. Every rule is namespaced under
    .kkcp-enh (a wrapper class those two pages add), so nothing here can reach
-   any other page even though the clone theme reuses ids like .elementor-7888.
+   any other page even though the source theme reuses ids like .elementor-7888.
 
    Tokens are the theme's real values:
      primary   #003A65   (--e-global-color-primary)

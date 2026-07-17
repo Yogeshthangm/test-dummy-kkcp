@@ -170,8 +170,8 @@ export function KkcpTree() {
 
             .kkcp-enh .ts-body { min-width: 0; }
             .kkcp-enh .ts-body blockquote { margin: 0; padding: 0; border: 0; }
-            /* The clone theme decorates every blockquote with a ::before mask pointing at
-               /all-programs/img/quote.svg — an asset the cloner never shipped, so it 404s and
+            /* The source theme decorates every blockquote with a ::before mask pointing at
+               /all-programs/img/quote.svg — an asset the source theme never shipped, so it 404s and
                paints a stray solid box. We render our own quote glyph in .ts-glyph; kill theirs. */
             .kkcp-enh .ts-body blockquote::before {
               content: none !important;
@@ -221,7 +221,7 @@ export function KkcpTree() {
               display: flex; align-items: center; justify-content: center;
               gap: 14px; margin-top: 30px;
             }
-            /* flex:0 0 auto + padding:0 are load-bearing: the clone theme puts padding on every
+            /* flex:0 0 auto + padding:0 are load-bearing: the source theme puts padding on every
                <button>, and a flex child would stretch — either one turns these circles into ovals. */
             .kkcp-enh .ts-arrow, .kkcp-enh .ts-play, .kkcp-enh .ts-dot {
               flex: 0 0 auto;

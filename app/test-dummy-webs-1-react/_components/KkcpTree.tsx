@@ -1,7 +1,7 @@
 // @ts-nocheck
-// Auto-generated DOM→JSX emit of the mirrored page (see website-cloner emit-react.cjs).
+// Auto-generated DOM→JSX emit of the mirrored page.
 // Real React tree (no iframe, no dangerouslySetInnerHTML). Source class names + inline styles
-// preserved; the source CSS lives scoped in clone.css. Asset paths absolute to /test-dummy-webs-1/.
+// preserved; the source CSS lives scoped in kkcp-theme.css. Asset paths absolute to /test-dummy-webs-1/.
 /* eslint-disable */
 
 import { HOME_FACULTY } from "@/lib/faculty";
@@ -138,7 +138,7 @@ export function KkcpTree() {
 
     /* ── MOBILE RESPONSIVE FIXES ──────────────────────────────────────────────
        Slider Revolution draws the hero on a fixed 1440px canvas and rescales it
-       in JavaScript. That JS is stripped from these page clones, so every layer
+       in JavaScript. That JS is stripped from these generated pages, so every layer
        stayed pinned at desktop size: the headline layer is 1160px wide and the
        "KKCP" watermark is 350px tall — both spill far outside a 375px phone.
        These rules do by CSS what the missing JS would have done. */
@@ -245,7 +245,7 @@ export function KkcpTree() {
            Client: remove the search icon; the hamburger belongs on mobile only.
 
            The search is a DEAD form — its action is "#" and the theme's JS that
-           powered it was stripped when these pages were cloned, so it could never
+           powered it was stripped when these pages were generated, so it could never
            return a result. Removed outright rather than hidden on desktop.
 
            Two different hamburgers exist, which is easy to get wrong:

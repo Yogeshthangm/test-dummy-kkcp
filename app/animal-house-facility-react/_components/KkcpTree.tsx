@@ -2,7 +2,7 @@
 import { KkcpHeader } from "@/components/KkcpHeader";
 import { KkcpFooter } from "@/components/KkcpFooter";
 // @ts-nocheck
-// Auto-generated DOM→JSX emit of the mirrored page (see website-cloner emit-react.cjs).
+// Auto-generated DOM→JSX emit of the mirrored page.
 // Real React tree (no iframe, no dangerouslySetInnerHTML). Source class names + inline styles
 // preserved; the source CSS lives scoped in smart-class-rooms-inline.css. Asset paths absolute to /campus-life/.
 /* eslint-disable */

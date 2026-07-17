@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 // Re-enables the mobile hamburger menu.
 //
-// These pages are DOM clones of the original theme with all of its JavaScript stripped, so the
+// These pages are DOM copies of the original theme with all of its JavaScript stripped, so the
 // hamburger button had no handler at all — clicking it did nothing. The theme's CSS is still
 // present and already knows how to render the open state; it just needs the classes the missing
 // JS would have set:

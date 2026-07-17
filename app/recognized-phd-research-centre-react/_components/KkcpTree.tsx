@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { KkcpHeader } from "@/components/KkcpHeader";
 import { KkcpFooter } from "@/components/KkcpFooter";
-// Hand-authored page using the shared "program-med" clone design (same theme CSS as
+// Hand-authored page using the shared "program-med" design (same theme CSS as
 // /diploma-in-pharmacy). Real React tree (no iframe). Asset paths absolute to /program-med/.
 /* eslint-disable */
 export function KkcpTree() {

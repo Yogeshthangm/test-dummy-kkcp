@@ -196,7 +196,7 @@
     flex: 1 1 auto !important;
   }
   /* On mobile the theme turns the sidebar into a slide-in drawer: visibility:hidden,
-     opened by JS. That JS is stripped from these clones, so the drawer can never
+     opened by JS. That JS is stripped from these copies, so the drawer can never
      open -- and because it is only `visibility: hidden` (not display:none) it was
      still eating 764px of layout as an invisible blank block above the results.
      Show it inline instead; its entries are plain anchor links, so it works. */

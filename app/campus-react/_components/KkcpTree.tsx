@@ -2,7 +2,7 @@
 import { KkcpHeader } from "@/components/KkcpHeader";
 import { KkcpFooter } from "@/components/KkcpFooter";
 /* eslint-disable */
-// Campus page — cloned from the Departments page design (image hero + "Filter By"
+// Campus page — adapted from the Departments page design (image hero + "Filter By"
 // sticky sidebar + academic-filter card list with thumbnails). The department cards
 // are replaced by the nine campus facility cards. All campus copy is VERBATIM as
 // supplied — no rewriting, no grammar/typo fixes; ampersands and the "Campus →"

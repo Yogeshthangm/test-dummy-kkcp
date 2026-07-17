@@ -85,7 +85,7 @@ export function KkcpHeader() {
            Client: remove the search icon; the hamburger belongs on mobile only.
 
            The search is a DEAD form — its action is "#" and the theme's JS that
-           powered it was stripped when these pages were cloned, so it could never
+           powered it was stripped when these pages were generated, so it could never
            return a result. Removed outright rather than hidden on desktop.
 
            Two different hamburgers exist, which is easy to get wrong:

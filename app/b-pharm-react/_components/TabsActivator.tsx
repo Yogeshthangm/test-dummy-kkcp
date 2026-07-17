@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-// The cloned page ships with scripts stripped, so Elementor's n-tabs widget
+// The generated page ships with scripts stripped, so Elementor's n-tabs widget
 // never wires up click-to-switch. This restores that intended behaviour:
 // clicking a tab title toggles the matching panel's `e-active` class (the CSS
 // already hides `.e-con:not(.e-active)`), and marks the widget `e-activated`

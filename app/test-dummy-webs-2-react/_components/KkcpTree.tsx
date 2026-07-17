@@ -1,7 +1,7 @@
 // @ts-nocheck
-// Auto-generated DOM→JSX emit of the mirrored page (see website-cloner emit-react.cjs).
+// Auto-generated DOM→JSX emit of the mirrored page.
 // Real React tree (no iframe, no dangerouslySetInnerHTML). Source class names + inline styles
-// preserved; the source CSS lives scoped in clone.css. Asset paths absolute to /test-dummy-webs-2/.
+// preserved; the source CSS lives scoped in kkcp-theme.css. Asset paths absolute to /test-dummy-webs-2/.
 /* eslint-disable */
 export function KkcpTree() {
   return (
