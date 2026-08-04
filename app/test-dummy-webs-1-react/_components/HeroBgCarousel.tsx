@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-// Hero background images (WebP). IMG_0286 is the first slide.
+// Hero background images (WebP), in slide order.
 const IMAGES = [
-  "/test-dummy-webs-1/assets/home/IMG_0286.webp",
   "/test-dummy-webs-1/assets/home/IMG_0336.webp",
   "/test-dummy-webs-1/assets/home/IMG_0348.webp",
+  "/test-dummy-webs-1/assets/home/IMG_0286.webp",
 ];
 
 // Matches HeroSlider's cadence so the artwork and the headline turn together.
