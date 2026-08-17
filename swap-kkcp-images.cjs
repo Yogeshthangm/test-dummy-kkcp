@@ -14,7 +14,7 @@ const CLONE = process.argv[2];
 if (!CLONE) { console.error('usage: node swap-kkcp-images.cjs <clone-name>'); process.exit(1); }
 const ROOT = process.cwd();
 const ASSETS = path.join(ROOT, 'public', CLONE, 'assets');
-const KKCP_DIR = path.join(ROOT, 'public', 'images ', 'kkcp');
+const KKCP_DIR = path.join(ROOT, 'public', 'images-src', 'kkcp');
 
 function loadChromium() {
   for (const m of ['playwright', 'playwright-core']) { try { return require(require.resolve(m, { paths: [ROOT, __dirname] })).chromium; } catch {} }
