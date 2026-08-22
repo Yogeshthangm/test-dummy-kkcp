@@ -480,7 +480,8 @@ export function KkcpFooter() {
                 "
               >
                 © 2026 KKCP. Designed By {" "}
-                <a href="https://classydigitalmarketing.com/" className="text-white! mb-0!">
+                <a href="https://classydigitalmarketing.com/" target="_blank"
+                    rel="noopener noreferrer"  className="text-white! mb-0!">
                     Classy Digital Marketing
                 </a>
               </p>

@@ -2190,8 +2190,8 @@
 /* Background image */
 .kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003:not(.elementor-motion-effects-element-type-background) {
   background-color: var(--e-global-color-primary);
-  background-image: url(/images/kkcp/kkcp_clg.jpeg);
-  background-position: center bottom -100px;
+  background-image: url(/images/kkcp/kkcp_clg1.jpeg);
+  background-position: center ;
   background-repeat: no-repeat;
   background-size: cover;
 }

@@ -3,10 +3,10 @@ import { useState } from "react";
 
 interface Card {
   name: string;
-  role: string;  // may contain <br /> tags
+  role: string; // may contain <br /> tags
   title: string;
-  body: string;  // may contain <br /> tags
-  photo?: string;  // portrait src from lib/faculty MANAGEMENT_PORTRAITS
+  body: string; // may contain <br /> tags
+  photo?: string; // portrait src from lib/faculty MANAGEMENT_PORTRAITS
 }
 
 // Management messages — full-width band: portrait + title/name on the LEFT, message body on the
@@ -15,8 +15,8 @@ interface Card {
 // dangerouslySetInnerHTML on those two fields only.
 export function MessageSlider({ cards }: { cards: Card[] }) {
   const [idx, setIdx] = useState(0);
-  const prev = () => setIdx(i => (i - 1 + cards.length) % cards.length);
-  const next = () => setIdx(i => (i + 1) % cards.length);
+  const prev = () => setIdx((i) => (i - 1 + cards.length) % cards.length);
+  const next = () => setIdx((i) => (i + 1) % cards.length);
   const card = cards[idx];
 
   return (
@@ -54,7 +54,7 @@ export function MessageSlider({ cards }: { cards: Card[] }) {
         .kkcp-msg-left .meta-role{font-size:15px; line-height:1.5; color:#7a8095; margin-top:5px;}
         /* RIGHT: message body */
         .kkcp-msg-right .body{
-          font-size:19px; line-height:1.95; color:#3d435a; font-style:italic; max-width:80%
+          font-size:19px; line-height:1.95; color:#3d435a; font-style:italic; 
         }
         .kkcp-msg-right .body p, .kkcp-msg-right .body{margin-top:0;}
         /* controls */
@@ -96,17 +96,52 @@ export function MessageSlider({ cards }: { cards: Card[] }) {
           {card.photo && (
             <img className="kkcp-msg-photo" src={card.photo} alt={card.name} />
           )}
-          <span className="quote-icon" aria-hidden="true">&#8221;</span>
-       
+          <span className="quote-icon" aria-hidden="true">
+            &#8221;
+          </span>
+
           <div className="meta-name">{card.name}</div>
-          <div className="meta-role" dangerouslySetInnerHTML={{ __html: card.role }} />
+          <div
+            className="meta-role"
+            dangerouslySetInnerHTML={{ __html: card.role }}
+          />
 
           <div className="kkcp-msg-controls">
-            <button className="kkcp-nav-btn prev" onClick={prev} aria-label="Previous message">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            <button
+              className="kkcp-nav-btn prev"
+              onClick={prev}
+              aria-label="Previous message"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
             </button>
-            <button className="kkcp-nav-btn next" onClick={next} aria-label="Next message">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <button
+              className="kkcp-nav-btn next"
+              onClick={next}
+              aria-label="Next message"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
             </button>
             <div className="kkcp-slider-dots">
               {cards.map((_, i) => (
@@ -120,9 +155,13 @@ export function MessageSlider({ cards }: { cards: Card[] }) {
           </div>
         </div>
 
-        <div className="kkcp-msg-right">
-             <h2 className="msg-title">{card.title}</h2>
-          <div className="body text-justify" dangerouslySetInnerHTML={{ __html: card.body }} />
+        <div className="kkcp-msg-right w-full lg:w-[80%]">
+          <h2 className="msg-title">{card.title}</h2>
+
+          <div
+            className="body text-justify w-full"
+            dangerouslySetInnerHTML={{ __html: card.body }}
+          />
         </div>
       </div>
     </div>

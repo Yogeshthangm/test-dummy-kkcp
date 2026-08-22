@@ -28,7 +28,7 @@ export default function ImageSlider() {
         return (
           <div
             key={image}
-            className={`absolute inset-0 h-full w-full transition-all duration-1800 ease-in-out ${
+            className={`absolute inset-0 h-full w-full transition-all duration-[1800ms] ease-in-out ${
               isActive
                 ? "translate-x-0 opacity-100"
                 : "translate-x-[-12%] opacity-0"
@@ -39,8 +39,12 @@ export default function ImageSlider() {
               alt={`Banner ${index + 1}`}
               fill
               priority={index === 0}
-              className="object-cover"
               sizes="100vw"
+              className="
+                object-cover
+                object-center
+                sm:object-center
+              "
             />
 
             {/* Black Overlay */}

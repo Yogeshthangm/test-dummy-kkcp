@@ -65,6 +65,8 @@ import { AdmissionsSection } from "./AdmissionsSection";
 // and its call site. Left in place so the original intent is not lost.
 import ImageSlider from "./ImageSlider";
 import CourseCard from "./CourseCard";
+import HeroSection from "./HeroSection";
+import CampusCarousel from "./CampusCarousel";
 
 /**
  * Home-page-only CSS — layer 3 of 3 (see the file header).
@@ -669,7 +671,9 @@ export function KkcpTree() {
                   shipped here, so the layer sizes are pinned; PAGE_STYLES > "MOBILE RESPONSIVE
                   FIXES" reproduces the rescale in CSS. Renders <ImageSlider /> and <HeroSlider />.
                   ============================================================================== */}
-              <div
+
+                  <HeroSection/>
+               {/* <div
                 data-aos-once={"true"}
                 className="elementor-element elementor-element-3bf6c45 e-con-full e-flex e-con e-parent e-lazyloaded"
                 data-id={"3bf6c45"}
@@ -689,17 +693,18 @@ export function KkcpTree() {
                       data-alias={"main-demo"}
                       data-id={"2"}
                       id="SR7_2_1"
-                      className="rs-ov-hidden"
+                      className="rs-ov-hidden h-125! sm:h-150! md:h-175! lg:h-200! xl:h-225! 2xl:h-240!"
                       data-version={"6.7.38"}
-                      style={{ height: "960px" }}
+                      
                       data-current={"4"}
                     >
-                      <sr7-adjuster style={{ height: "960px" }}></sr7-adjuster>
+                      <sr7-adjuster className="h-full"></sr7-adjuster>
                       <sr7-content
+                      className='relative h-full w-full'
                         style={{
-                          height: "960px",
+                         
                           left: "0px",
-                          width: "1440px",
+                        
                           top: "0px",
                         }}
                       >
@@ -719,7 +724,7 @@ export function KkcpTree() {
                               minHeight: "auto",
                               minWidth: "auto",
                               width: "100%",
-                              height: "960px",
+                              height: "100%",
                               zIndex: "0",
                               position: "absolute",
                               display: "block",
@@ -737,7 +742,7 @@ export function KkcpTree() {
                               style={{
                                 padding: "0px",
                                 width: "100%",
-                                height: "960px",
+                                height: "100%",
                                 display: "block",
                                 visibility: "visible",
                                 pointerEvents: "none",
@@ -745,11 +750,10 @@ export function KkcpTree() {
                               }}
                             >
                               <canvas
-                                width="2880"
-                                height="1920"
+                              
                                 style={{
-                                  width: "1440px",
-                                  height: "960px",
+                                  width: "100%",
+                                  height: "100%",
                                   visibility: "visible",
                                   background: "transparent",
                                   opacity: "1",
@@ -810,6 +814,7 @@ export function KkcpTree() {
                               KKCP
                             </sr7-txt>
                           </sr7-mask>
+                          
                           <ImageSlider />
                           <sr7-mask
                             className="kkcp-hero-copy"
@@ -920,33 +925,7 @@ export function KkcpTree() {
                               K.K. College of Pharmacy
                             </sr7-txt>
                           </sr7-mask>
-                          {/* <sr7-img
-                            id="SR7_2_1-4-2"
-                            className="sr7-layer"
-                            aria-hidden={"true"}
-                            data-need-color-bg={"false"}
-                            style={{
-                              overflow: "visible",
-                              padding: "0px",
-                              width: "33px",
-                              height: "33px",
-                              zIndex: "11",
-                              position: "absolute",
-                              transformOrigin: "50% 50%",
-                              display: "block",
-                              background:
-                                'url("/test-dummy-webs-1/assets/0115__cap.png") 50% 50% / cover no-repeat transparent',
-                              left: "122px",
-                              top: "550px",
-                              translate: "none",
-                              rotate: "none",
-                              scale: "none",
-                              visibility: "visible",
-                              opacity: "1",
-                              transform: "translate(0px, 0px)",
-                              pointerEvents: "auto",
-                            }}
-                          ></sr7-img> */}
+                          
                         </sr7-slide>
                         <sr7-slide
                           id="SR7_2_1-5"
@@ -963,7 +942,7 @@ export function KkcpTree() {
                     </sr7-module>
                   </div>
                 </div>
-              </div>
+              </div>  */}
               {/* Courses Offered — section 2, theme design language (rs-academic-cards) */}
               {/* ==============================================================================
                   SECTION 2 - COURSES OFFERED
@@ -3189,7 +3168,8 @@ export function KkcpTree() {
                       </div>
                     </div>
                   </div>
-                  <div
+                  <CampusCarousel/>
+                  {/* <div
                     data-aos-once={"true"}
                     className="elementor-element elementor-element-d9b6d0d e-con-full e-flex e-con e-child"
                     data-id={"d9b6d0d"}
@@ -3445,7 +3425,7 @@ export function KkcpTree() {
                         ></span>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               {/* ==============================================================================

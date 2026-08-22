@@ -172,7 +172,9 @@ function Criteria({ title, items }) {
       <ul className="criteria-checkboxes">
         {items.map((it) => (
           <li className="criteria-item" key={it.id}>
-            <a className="criteria-link" href={it.href}>{it.label}</a>
+            <a className="criteria-link" href={it.href}>
+              {it.label}
+            </a>
           </li>
         ))}
       </ul>
@@ -180,57 +182,196 @@ function Criteria({ title, items }) {
   );
 }
 
-const FILTERS = NAMES.map((n, i) => ({ id: `pub-${i + 1}`, label: n, href: `#pub-${i + 1}` }));
+const FILTERS = NAMES.map((n, i) => ({
+  id: `pub-${i + 1}`,
+  label: n,
+  href: `#pub-${i + 1}`,
+}));
 
 export function KkcpTree() {
   return (
-    <div className="wp-singular page-template-default page page-id-7888 wp-theme-KKCP gsap-enable elementor-default elementor-template-full-width elementor-kit-14 elementor-page elementor-page-7888 e--ua-blink e--ua-mac e--ua-webkit" data-elementor-device-mode={"desktop"}>
+    <div
+      className="wp-singular page-template-default page page-id-7888 wp-theme-KKCP gsap-enable elementor-default elementor-template-full-width elementor-kit-14 elementor-page elementor-page-7888 e--ua-blink e--ua-mac e--ua-webkit"
+      data-elementor-device-mode={"desktop"}
+    >
       <div id="kkcp-page" className="kkcp-page-wrapper">
         <KkcpHeader />
         <main id="kkcp-content" className="kkcp-content-wrapper">
-          <div data-elementor-type={"wp-page"} data-elementor-id={"7888"} className="elementor elementor-7888">
+          <div
+            data-elementor-type={"wp-page"}
+            data-elementor-id={"7888"}
+            className="elementor elementor-7888"
+          >
             {/* Hero banner (same design as Courses) */}
-            <div className="elementor-element elementor-element-146c4d0 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"146c4d0"} data-element_type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
+            <div
+              className="elementor-element elementor-element-146c4d0 e-flex e-con-boxed e-con e-parent e-lazyloaded"
+              data-id={"146c4d0"}
+              data-element_type={"container"}
+              data-settings={'{"background_background":"classic"}'}
+            >
               <div className="e-con-inner">
-                <div className="elementor-element elementor-element-da6b75b elementor-widget elementor-widget-rstb-breadcrumb" data-id={"da6b75b"} data-element_type={"widget"} data-widget_type={"rstb-breadcrumb.default"}>
-                  <div className="rstb-breadcrumb"><span property="itemListElement"><a property="item" title="Go to KKCP." href="/" className="home"><span property="name">Home</span></a><meta property="position" content="1" /></span><span className="item-separator"><svg className="e-font-icon-svg e-fas-angle-double-right" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z" /></svg></span><span property="itemListElement"><span property="name" className="post post-page current-item">Research</span><meta property="url" content="/research/" /><meta property="position" content="2" /></span></div>
+                <div
+                  className="elementor-element elementor-element-da6b75b elementor-widget elementor-widget-rstb-breadcrumb"
+                  data-id={"da6b75b"}
+                  data-element_type={"widget"}
+                  data-widget_type={"rstb-breadcrumb.default"}
+                >
+                  <div className="rstb-breadcrumb">
+                    <span property="itemListElement">
+                      <a
+                        property="item"
+                        title="Go to KKCP."
+                        href="/"
+                        className="home"
+                      >
+                        <span property="name">Home</span>
+                      </a>
+                      <meta property="position" content="1" />
+                    </span>
+                    <span className="item-separator">
+                      <svg
+                        className="e-font-icon-svg e-fas-angle-double-right"
+                        viewBox="0 0 448 512"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z" />
+                      </svg>
+                    </span>
+                    <span property="itemListElement">
+                      <span
+                        property="name"
+                        className="post post-page current-item"
+                      >
+                        Research
+                      </span>
+                      <meta property="url" content="/research/" />
+                      <meta property="position" content="2" />
+                    </span>
+                  </div>
                 </div>
-                <div className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Research</h1></div>
-                <div className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider" data-id={"4626c23"} data-element_type={"widget"} data-widget_type={"rs-divider.default"}><div className="rs-divider dot-enable"><span> </span></div></div>
-                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.webp" alt="bnr-arrow-1-1" /></div></div>
+                <div
+                  className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title"
+                  data-id={"3cae832"}
+                  data-element_type={"widget"}
+                  data-widget_type={"rstb-page-title.default"}
+                >
+                  <h1 className="rstb-page-title">Research</h1>
+                </div>
+                <div
+                  className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider"
+                  data-id={"4626c23"}
+                  data-element_type={"widget"}
+                  data-widget_type={"rs-divider.default"}
+                >
+                  <div className="rs-divider dot-enable">
+                    <span> </span>
+                  </div>
+                </div>
+                <div
+                  className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image"
+                  data-id={"d0b1073"}
+                  data-element_type={"widget"}
+                  data-settings={'{"_position":"absolute"}'}
+                  data-widget_type={"rs-image.default"}
+                  style={{ transform: "translate(0px, 0px)" }}
+                >
+                  <div className="rs-image">
+                    <img
+                      decoding="async"
+                      className="rs-multi-image  reverse- blend_unset"
+                      src="/all-programs/assets/0046__bnr-arrow-1-1.webp"
+                      alt="bnr-arrow-1-1"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Filter area: sidebar + publication cards */}
-            <div className="elementor-element elementor-element-f401be2 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"f401be2"} data-element_type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
+            <div
+              className="elementor-element elementor-element-f401be2 e-flex e-con-boxed e-con e-parent e-lazyloaded"
+              data-id={"f401be2"}
+              data-element_type={"container"}
+              data-settings={'{"background_background":"classic"}'}
+            >
               <div className="e-con-inner">
-                <div className="elementor-element elementor-element-57146e5 elementor-widget elementor-widget-rs-academic-filter" data-id={"57146e5"} data-element_type={"widget"} data-widget_type={"rs-academic-filter.default"}>
-                  <div className="rs-academic-filter-area" data-widget-id={"57146e5"}>
+                <div
+                  className="elementor-element elementor-element-57146e5 elementor-widget elementor-widget-rs-academic-filter"
+                  data-id={"57146e5"}
+                  data-element_type={"widget"}
+                  data-widget_type={"rs-academic-filter.default"}
+                >
+                  <div
+                    className="rs-academic-filter-area"
+                    data-widget-id={"57146e5"}
+                  >
                     <div className="filter-sidebar-overly"></div>
                     <div className="filter-sidebar">
-                      <h4 className="sidebar-title">Filter By<span className="filter-reset-btn" style={{display: "none"}}>Reset</span></h4>
+                      <h4 className="sidebar-title">
+                        Filter By
+                        <span
+                          className="filter-reset-btn"
+                          style={{ display: "none" }}
+                        >
+                          Reset
+                        </span>
+                      </h4>
                       <Criteria items={FILTERS} />
                     </div>
                     <div className="filter-content">
                       <div className="filter-top-bar">
-                        <button className="filter-toggle-btn"><i className="ri-menu-2-fill"></i></button>
-                        <span className="filter-result">Total <span className="result-count">{GROUPS.length}</span> results found</span>
+                        <button className="filter-toggle-btn">
+                          <i className="ri-menu-2-fill"></i>
+                        </button>
+                        <span className="filter-result">
+                          Total{" "}
+                          <span className="result-count">{GROUPS.length}</span>{" "}
+                          results found
+                        </span>
                         <span className="filter-search-wrap">
-                          <input className="filter-search-input" type="text" placeholder="Enter keyword" />
-                          <span className="search-icon"><svg className="e-font-icon-svg e-fas-search" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" /></svg></span>
+                          <input
+                            className="filter-search-input"
+                            type="text"
+                            placeholder="Enter keyword"
+                          />
+                          <span className="search-icon">
+                            <svg
+                              className="e-font-icon-svg e-fas-search"
+                              viewBox="0 0 512 512"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" />
+                            </svg>
+                          </span>
                         </span>
                       </div>
                       <div className="filter-items-wrapper">
                         {GROUPS.map((g, idx) => (
-                          <div className="filter-item dept-filter-item" id={`pub-${idx + 1}`} key={idx}>
+                          <div
+                            className="filter-item dept-filter-item"
+                            id={`pub-${idx + 1}`}
+                            key={idx}
+                          >
                             <div className="item-thumbnail">
-                              <img loading="lazy" decoding="async" width="770" height="660" src={THUMBS[idx % THUMBS.length]} className="attachment-large size-large wp-post-image" alt={NAMES[idx]} />
+                              <img
+                                loading="lazy"
+                                decoding="async"
+                                width="770"
+                                height="660"
+                                src={THUMBS[idx % THUMBS.length]}
+                                className="attachment-large size-large wp-post-image"
+                                alt={NAMES[idx]}
+                              />
                             </div>
                             <div className="item-content">
-                              <h4 className="item-title"><a href="#">{NAMES[idx]}</a></h4>
+                              <h4 className="item-title">
+                                <a href="#">{NAMES[idx]}</a>
+                              </h4>
                               <div className="item-desc dept-desc">
                                 {g.items.map((it, ii) => (
-                                  <p className="dept-text dept-pub" key={ii}>{it}</p>
+                                  <p className="dept-text dept-pub" key={ii}>
+                                    {it}
+                                  </p>
                                 ))}
                               </div>
                             </div>
