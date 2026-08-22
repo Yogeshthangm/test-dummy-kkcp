@@ -51,7 +51,7 @@ export default function SiteFooter() {
       <div className="container top">
         <div>
           <span className="footer-logo">
-            <Image src="/kkcp/footer-logo.png" alt="K.K. College of Pharmacy" width={300} height={84} />
+            <Image src="/kkcp/footer-logo.webp" alt="K.K. College of Pharmacy" width={300} height={84} />
           </span>
           <p>
             K.K. College of Pharmacy is affiliated with The Tamilnadu Dr. M.G.R.

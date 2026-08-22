@@ -1,0 +1,2352 @@
+// @ts-nocheck
+import { KkcpHeader } from "@/components/KkcpHeader";
+import { KkcpFooter } from "@/components/KkcpFooter";
+// @ts-nocheck
+// Auto-generated DOM→JSX emit of the mirrored page.
+// Real React tree (no iframe, no dangerouslySetInnerHTML). Source class names + inline styles
+// preserved; the source CSS lives scoped in diploma-in-pharmacy-inline.css. Asset paths absolute to /program-med/.
+/* eslint-disable */
+export function KkcpTree() {
+  return (
+    <div
+      className="wp-singular program-template-default single single-program postid-6965 wp-theme-kkcp gsap-enable elementor-default elementor-template-full-width elementor-kit-14 elementor-page elementor-page-6965 e--ua-blink e--ua-chrome e--ua-mac e--ua-webkit"
+      data-elementor-device-mode={"desktop"}
+      data-aos-easing={"ease"}
+      data-aos-duration={"800"}
+      data-aos-delay={"0"}
+      style={{}}
+    >
+      {" "}
+      <div
+        id="site-preloader"
+        className="kkcp-preloader"
+        style={{ display: "none" }}
+      >
+        {" "}
+        <div className="loader-container">
+          {" "}
+          <div className="loader-icon">
+            {" "}
+            <img
+              src="/program-med/assets/0029__Asset-2-11.webp"
+              alt="KKCP"
+            />{" "}
+          </div>{" "}
+        </div>
+      </div>{" "}
+      <div id="kkcp-page" className="kkcp-page-wrapper">
+        {" "}
+        <KkcpHeader />{" "}
+        <main id="kkcp-content" className="kkcp-content-wrapper">
+          {" "}
+          <div
+            data-elementor-type={"wp-post"}
+            data-elementor-id={"6965"}
+            className="elementor elementor-6965"
+          >
+            <div
+              data-aos-once={"true"}
+              className="elementor-element elementor-element-18b5a003 e-flex e-con-boxed e-con e-parent e-lazyloaded"
+              data-id={"18b5a003"}
+              data-element_type={"container"}
+              data-e-type={"container"}
+              data-settings={'{"background_background":"classic"}'}
+            >
+              <div className="e-con-inner">
+                <div
+                  data-aos-once={"true"}
+                  className="elementor-element elementor-element-615fda6e elementor-widget elementor-widget-rstb-breadcrumb"
+                  data-id={"615fda6e"}
+                  data-element_type={"widget"}
+                  data-e-type={"widget"}
+                  data-widget_type={"rstb-breadcrumb.default"}
+                >
+                  {" "}
+                  <div className="rstb-breadcrumb">
+                    <span property="itemListElement">
+                      <a
+                        property="item"
+                        title="Go to KKCP."
+                        href="/"
+                        className="home"
+                      >
+                        <span property="name">Home</span>
+                      </a>
+                      <meta property="position" content="1" />
+                    </span>
+                    <span className="item-separator"></span>
+                    <span property="itemListElement">
+                      <a
+                        property="item"
+                        title="Go to Programs."
+                        href="/programs/"
+                        className="archive post-program-archive"
+                      >
+                        <span property="name">Programs</span>
+                      </a>
+                      <meta property="position" content="2" />
+                    </span>
+                    <span className="item-separator"></span>
+                    <span property="itemListElement">
+                      <a
+                        property="item"
+                        title="Go to the Graduate Level archives."
+                        href="/level/graduate/"
+                        className="taxonomy program-level"
+                      >
+                        <span property="name">Graduate</span>
+                      </a>
+                      <meta property="position" content="3" />
+                    </span>
+                    <span className="item-separator"></span>
+                    <span property="itemListElement">
+                      <span
+                        property="name"
+                        className="post post-program current-item"
+                      >
+                        M.Pharm
+                      </span>
+                      <meta
+                        property="url"
+                        content="/programs/m-ed-in-educational-leadership/"
+                      />
+                      <meta property="position" content="4" />
+                    </span>{" "}
+                  </div>
+                </div>
+                <div
+                  data-aos-once={"true"}
+                  className="elementor-element elementor-element-22edb1cc elementor-widget elementor-widget-rstb-page-title"
+                  data-id={"22edb1cc"}
+                  data-element_type={"widget"}
+                  data-e-type={"widget"}
+                  data-widget_type={"rstb-page-title.default"}
+                >
+                  <h1 className="rstb-page-title">M.Pharm</h1>
+                </div>
+                <div
+                  data-aos-once={"true"}
+                  className="elementor-element elementor-element-e197ee7 elementor-widget elementor-widget-rs-divider"
+                  data-id={"e197ee7"}
+                  data-element_type={"widget"}
+                  data-e-type={"widget"}
+                  data-widget_type={"rs-divider.default"}
+                >
+                  {" "}
+                  <div className="rs-divider dot-enable">
+                    {" "}
+                    <span> </span>{" "}
+                  </div>
+                </div>
+                <div
+                  data-aos-once={"true"}
+                  className="elementor-element elementor-element-739a5904 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-mobile elementor-widget elementor-widget-rs-image"
+                  data-id={"739a5904"}
+                  data-element_type={"widget"}
+                  data-e-type={"widget"}
+                  data-settings={'{"_position":"absolute"}'}
+                  data-widget_type={"rs-image.default"}
+                  style={{ transform: "translate3d(0px, 83.944px, 0px)" }}
+                >
+                  {" "}
+                  <div className="rs-image">
+                    {" "}
+                    <img
+                      decoding="async"
+                      className="rs-multi-image  reverse- blend_unset"
+                      src="/program-med/assets/0046__bnr-arrow-1-1.webp"
+                      alt="bnr-arrow-1-1"
+                    />{" "}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-aos-once={"true"}
+              className="elementor-element elementor-element-364041e8 e-flex e-con-boxed e-con e-parent e-lazyloaded"
+              data-id={"364041e8"}
+              data-element_type={"container"}
+              data-e-type={"container"}
+              data-settings={'{"background_background":"classic"}'}
+            >
+              <div className="e-con-inner py-2!">
+                <div
+                  data-aos-once={"true"}
+                  className="elementor-element elementor-element-2ce238e2 e-con-full e-flex e-con e-child"
+                  data-id={"2ce238e2"}
+                  data-element_type={"container"}
+                  data-e-type={"container"}
+                >
+                  <div
+                    data-aos-once={"true"}
+                    className="elementor-element elementor-element-585bdf2c elementor-widget__width-inherit e-n-tabs-mobile elementor-widget elementor-widget-n-tabs"
+                    data-id={"585bdf2c"}
+                    data-element_type={"widget"}
+                    data-e-type={"widget"}
+                    data-settings={
+                      '{"tabs_justify_horizontal":"stretch","tabs_justify_horizontal_tablet_extra":"stretch","tabs_justify_horizontal_tablet":"stretch","tabs_justify_horizontal_mobile_extra":"stretch","horizontal_scroll":"disable"}'
+                    }
+                    data-widget_type={"nested-tabs.default"}
+                  >
+                    <div
+                      className="e-n-tabs e-activated"
+                      data-widget-number={"1482415916"}
+                      aria-label={
+                        "Tabs. Open items with Enter or Space, close with Escape and navigate using the Arrow keys."
+                      }
+                      data-touch-mode={"false"}
+                    >
+                      <div className="e-n-tabs-heading" role="tablist">
+                        <button
+                          id="e-n-tab-title-14824159161"
+                          data-tab-title-id={"e-n-tab-title-14824159161"}
+                          className="e-n-tab-title"
+                          aria-selected={"true"}
+                          data-tab-index={"1"}
+                          role="tab"
+                          tabIndex="0"
+                          aria-controls={"e-n-tab-content-14824159161"}
+                          style={{ "--n-tabs-title-order": "1" }}
+                        >
+                          <span className="e-n-tab-title-text">Overview </span>
+                        </button>
+                        <button
+                          id="e-n-tab-title-14824159162"
+                          data-tab-title-id={"e-n-tab-title-14824159162"}
+                          className="e-n-tab-title"
+                          aria-selected={"false"}
+                          data-tab-index={"2"}
+                          role="tab"
+                          tabIndex="-1"
+                          aria-controls={"e-n-tab-content-14824159162"}
+                          style={{ "--n-tabs-title-order": "2" }}
+                        >
+                          <span className="e-n-tab-title-text">Career </span>
+                        </button>
+                      </div>
+                      <div className="e-n-tabs-content">
+                        <div
+                          data-aos-once={"true"}
+                          id="e-n-tab-content-14824159161"
+                          role="tabpanel"
+                          aria-labelledby={"e-n-tab-title-14824159161"}
+                          data-tab-index={"1"}
+                          style={{ "--n-tabs-title-order": "1" }}
+                          className="e-active elementor-element elementor-element-1662297c e-con-full e-flex e-con e-child"
+                          data-id={"1662297c"}
+                          data-element_type={"container"}
+                          data-e-type={"container"}
+                        >
+                          <div className="e-con-inner">
+                            <div
+                              style={{
+                                maxWidth: "none",
+                                width: "100%",
+                                margin: "0",
+                                padding: "30px 0",
+                                fontFamily: '"Roboto", Sans-serif',
+                                color: "#4c4c4c",
+                                fontSize: "16px",
+                                lineHeight: "1.85",
+                              }}
+                            >
+                              <img
+                                src="/kkcp/web/courses/3-m-pharm.webp"
+                                alt="M.Pharm students studying instrument manuals with a faculty member in the laboratory at K.K. College of Pharmacy"
+                                style={{
+                                  width: "100%",
+                                  height: "auto",
+                                  display: "block",
+                                  borderRadius: "14px",
+                                  boxShadow: "0 18px 40px rgba(0,0,0,0.06)",
+                                  margin: "0 0 36px",
+                                }}
+                              />
+                              <div
+                                style={{
+                                  background: "#ffffff",
+                                  borderRadius: "14px",
+                                  boxShadow: "0 18px 40px rgba(0,0,0,0.06)",
+                                  overflow: "hidden",
+                                  margin: "0 0 36px",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    background: "#003a65",
+                                    padding: "26px 36px",
+                                  }}
+                                >
+                                  <h2
+                                    style={{
+                                      margin: "0",
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#ffffff",
+                                      fontSize: "30px",
+                                      fontWeight: "700",
+                                      lineHeight: "1.2",
+                                    }}
+                                  >
+                                    M.Pharm Course Details
+                                  </h2>
+                                </div>
+                                <div style={{ padding: "36px" }}>
+                                  <table
+                                    style={{
+                                      width: "100%",
+                                      borderCollapse: "collapse",
+                                      border: "0",
+                                      fontSize: "17px",
+                                    }}
+                                  >
+                                    <tbody>
+                                      <tr>
+                                        <td
+                                          style={{
+                                            width: "32%",
+                                            padding: "0 24px 26px 0",
+                                            verticalAlign: "top",
+                                            fontFamily: '"Bitter", Sans-serif',
+                                            color: "#0b2e4f",
+                                            fontSize: "20px",
+                                            fontWeight: "600",
+                                            lineHeight: "1.35",
+                                            border: "0",
+                                          }}
+                                        >
+                                          Eligibility
+                                        </td>
+                                        <td
+                                          style={{
+                                            padding: "0 0 26px",
+                                            verticalAlign: "top",
+                                            color: "#4c4c4c",
+                                            fontSize: "17px",
+                                            lineHeight: "1.6",
+                                            border: "0",
+                                          }}
+                                        >
+                                          A pass in B.Pharmacy from any
+                                          Recognized University
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td
+                                          style={{
+                                            width: "32%",
+                                            padding: "0 24px 26px 0",
+                                            verticalAlign: "top",
+                                            fontFamily: '"Bitter", Sans-serif',
+                                            color: "#0b2e4f",
+                                            fontSize: "20px",
+                                            fontWeight: "600",
+                                            lineHeight: "1.35",
+                                            border: "0",
+                                          }}
+                                        >
+                                          Course Duration
+                                        </td>
+                                        <td
+                                          style={{
+                                            padding: "0 0 26px",
+                                            verticalAlign: "top",
+                                            color: "#4c4c4c",
+                                            fontSize: "17px",
+                                            lineHeight: "1.6",
+                                            border: "0",
+                                          }}
+                                        >
+                                          2 Years
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td
+                                          style={{
+                                            width: "32%",
+                                            padding: "0 24px 26px 0",
+                                            verticalAlign: "top",
+                                            fontFamily: '"Bitter", Sans-serif',
+                                            color: "#0b2e4f",
+                                            fontSize: "20px",
+                                            fontWeight: "600",
+                                            lineHeight: "1.35",
+                                            border: "0",
+                                          }}
+                                        >
+                                          Number of Semesters
+                                        </td>
+                                        <td
+                                          style={{
+                                            padding: "0 0 26px",
+                                            verticalAlign: "top",
+                                            color: "#4c4c4c",
+                                            fontSize: "17px",
+                                            lineHeight: "1.6",
+                                            border: "0",
+                                          }}
+                                        >
+                                          4
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td
+                                          style={{
+                                            width: "32%",
+                                            padding: "0 24px 26px 0",
+                                            verticalAlign: "top",
+                                            fontFamily: '"Bitter", Sans-serif',
+                                            color: "#0b2e4f",
+                                            fontSize: "20px",
+                                            fontWeight: "600",
+                                            lineHeight: "1.35",
+                                            border: "0",
+                                          }}
+                                        >
+                                          Course available since
+                                        </td>
+                                        <td
+                                          style={{
+                                            padding: "0 0 26px",
+                                            verticalAlign: "top",
+                                            color: "#4c4c4c",
+                                            fontSize: "17px",
+                                            lineHeight: "1.6",
+                                            border: "0",
+                                          }}
+                                        >
+                                          2008
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td
+                                          style={{
+                                            width: "32%",
+                                            padding: "0 24px 0 0",
+                                            verticalAlign: "top",
+                                            fontFamily: '"Bitter", Sans-serif',
+                                            color: "#0b2e4f",
+                                            fontSize: "20px",
+                                            fontWeight: "600",
+                                            lineHeight: "1.35",
+                                            border: "0",
+                                          }}
+                                        >
+                                          (Syllabus)
+                                        </td>
+                                        <td
+                                          style={{
+                                            padding: "0",
+                                            verticalAlign: "top",
+                                            color: "#4c4c4c",
+                                            fontSize: "17px",
+                                            lineHeight: "1.6",
+                                            border: "0",
+                                          }}
+                                        >
+                                          <a
+                                            href="https://pci.gov.in/documents/1281/Syllabus_M_Pharm_MTZZgGl.pdf"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            style={{
+                                              color: "#034ea2",
+                                              fontWeight: "600",
+                                              textDecoration: "underline",
+                                              wordBreak: "break-word",
+                                            }}
+                                          >
+                                            https://pci.gov.in/documents/1281/Syllabus_M_Pharm_MTZZgGl.pdf
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+
+                              <h3
+                                style={{
+                                  fontFamily: '"Bitter", Sans-serif',
+                                  color: "#003a65",
+                                  fontSize: "22px",
+                                  fontWeight: "600",
+                                  margin: "28px 0 14px",
+                                }}
+                              >
+                                Overview
+                              </h3>
+                              <p style={{ margin: "0 0 20px" }}>
+                                The Master of Pharmacy (M.Pharm) is a two-year
+                                postgraduate programme that provides advanced
+                                knowledge and specialized training in
+                                pharmaceutical sciences. It is designed for
+                                graduates seeking careers in research, industry,
+                                academia, and healthcare.
+                              </p>
+                              <p style={{ margin: "0 0 20px" }}>
+                                The programme focuses on advanced concepts in
+                                drug discovery, formulation development, quality
+                                assurance, regulatory affairs, and clinical
+                                research, fostering innovation and scientific
+                                excellence.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          data-aos-once={"true"}
+                          id="e-n-tab-content-14824159162"
+                          role="tabpanel"
+                          aria-labelledby={"e-n-tab-title-14824159162"}
+                          data-tab-index={"2"}
+                          style={{ "--n-tabs-title-order": "2" }}
+                          className=" elementor-element elementor-element-f6e2ff0 e-con-full e-flex e-con e-child"
+                          data-id={"f6e2ff0"}
+                          data-element_type={"container"}
+                          data-e-type={"container"}
+                        >
+                          <div className="e-con-inner">
+                            <div
+                              style={{
+                                maxWidth: "none",
+                                width: "100%",
+                                margin: "0",
+                                padding: "40px 0",
+                                fontFamily: '"Roboto", Sans-serif',
+                                color: "#4c4c4c",
+                                fontSize: "16px",
+                                lineHeight: "1.85",
+                              }}
+                            >
+                              <h2
+                                style={{
+                                  fontFamily: '"Bitter", Sans-serif',
+                                  color: "#034ea2",
+                                  fontSize: "32px",
+                                  fontWeight: "600",
+                                  margin: "0 0 28px",
+                                }}
+                              >
+                                Why go for the M. Pharm?
+                              </h2>
+                              <p style={{ margin: "0 0 20px" }}>
+                                This course is highly focused on Career
+                                Advancement and serves as your gateway to
+                                success, particularly if you are passionate
+                                about R&amp;D (Research &amp; Development). Upon
+                                earning your Master's Degree, you are not merely
+                                seeking employment—you are aiming for a career
+                                with vast potential, such as:
+                              </p>
+                              <ul
+                                style={{
+                                  listStyle: "none",
+                                  padding: "0",
+                                  margin: "0 0 24px",
+                                }}
+                              >
+                                <li
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "flex-start",
+                                    gap: "14px",
+                                    margin: "0 0 18px",
+                                  }}
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 24 24"
+                                    fill="#034ea2"
+                                    style={{
+                                      flex: "0 0 auto",
+                                      marginTop: "2px",
+                                    }}
+                                  >
+                                    <path d="M19.8 18.4 14 10.67V6.5l1.35-1.69c.26-.33.03-.81-.39-.81H9.04c-.42 0-.65.48-.39.81L10 6.5v4.17L4.2 18.4c-.49.66-.02 1.6.8 1.6h14c.82 0 1.29-.94.8-1.6z" />
+                                  </svg>
+                                  <span>
+                                    Research: Take on roles like Research
+                                    Associate, Research Assistant or even
+                                    Scientist, where you can contribute to
+                                    groundbreaking medical discoveries.
+                                  </span>
+                                </li>
+                                <li
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "flex-start",
+                                    gap: "14px",
+                                    margin: "0 0 18px",
+                                  }}
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 24 24"
+                                    fill="#034ea2"
+                                    style={{
+                                      flex: "0 0 auto",
+                                      marginTop: "2px",
+                                    }}
+                                  >
+                                    <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+                                  </svg>
+                                  <span>
+                                    Pharma Entrepreneur: Are you ready to lead?
+                                    Launch your own specialized Pharma
+                                    Manufacturing Company.
+                                  </span>
+                                </li>
+                                <li
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "flex-start",
+                                    gap: "14px",
+                                    margin: "0 0 18px",
+                                  }}
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 24 24"
+                                    fill="#034ea2"
+                                    style={{
+                                      flex: "0 0 auto",
+                                      marginTop: "2px",
+                                    }}
+                                  >
+                                    <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z" />
+                                  </svg>
+                                  <span>
+                                    Marketing Executive: Be the driving force
+                                    behind the strategy to bring specialized
+                                    drugs to market.
+                                  </span>
+                                </li>
+                                <li
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "flex-start",
+                                    gap: "14px",
+                                    margin: "0 0 18px",
+                                  }}
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 24 24"
+                                    fill="#034ea2"
+                                    style={{
+                                      flex: "0 0 auto",
+                                      marginTop: "2px",
+                                    }}
+                                  >
+                                    <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z" />
+                                  </svg>
+                                  <span>
+                                    College Lecturer/Asst. Professor: Educate
+                                    the future Pharmacists of tomorrow!
+                                  </span>
+                                </li>
+                                <li
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "flex-start",
+                                    gap: "14px",
+                                    margin: "0 0 18px",
+                                  }}
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 24 24"
+                                    fill="#034ea2"
+                                    style={{
+                                      flex: "0 0 auto",
+                                      marginTop: "2px",
+                                    }}
+                                  >
+                                    <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" />
+                                  </svg>
+                                  <span>
+                                    Specialized Roles in Pharma Companies:
+                                    Secure advanced positions in Production,
+                                    Quality Control (QC) or R&amp;D within a
+                                    Pharmaceutical Company.
+                                  </span>
+                                </li>
+                                <li
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "flex-start",
+                                    gap: "14px",
+                                    margin: "0 0 18px",
+                                  }}
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 24 24"
+                                    fill="#034ea2"
+                                    style={{
+                                      flex: "0 0 auto",
+                                      marginTop: "2px",
+                                    }}
+                                  >
+                                    <path d="M7 2v2h1v14a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V4h1V2H7zm5 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm2-6h-4V8h4v4z" />
+                                  </svg>
+                                  <span>
+                                    Drug Testing Analyst: Join cutting-edge Drug
+                                    Testing Laboratories, ensuring that
+                                    medications are completely safe and of the
+                                    highest quality.
+                                  </span>
+                                </li>
+                                <li
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "flex-start",
+                                    gap: "14px",
+                                    margin: "0 0 18px",
+                                  }}
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 24 24"
+                                    fill="#034ea2"
+                                    style={{
+                                      flex: "0 0 auto",
+                                      marginTop: "2px",
+                                    }}
+                                  >
+                                    <path d="M12 7v3H9v2h3v3h2v-3h3v-2h-3V7h-2zM4 21V5c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2v16h2v2H2v-2h2zm4-4h2v-2H8v2zm6 0h2v-2h-2v2z" />
+                                  </svg>
+                                  <span>
+                                    Hospital Lead Pharmacist: Oversee intricate
+                                    Drug Regimens in hospitals (both Government
+                                    and Private).
+                                  </span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-aos-once={"true"}
+              className="elementor-element e-flex e-con-boxed e-con e-parent"
+              data-element_type={"container"}
+            >
+              <div className="e-con-inner">
+                <div
+                  style={{
+                    maxWidth: "none",
+                    width: "100%",
+                    margin: "0",
+                    padding: "10px 0",
+                    fontFamily: '"Roboto", Sans-serif',
+                    color: "#4c4c4c",
+                    fontSize: "16px",
+                    lineHeight: "1.85",
+                  }}
+                >
+                  <h2
+                    style={{
+                      fontFamily: '"Bitter", Sans-serif',
+                      color: "#034ea2",
+                      fontSize: "32px",
+                      fontWeight: "600",
+                      margin: "0 0 28px",
+                    }}
+                  >
+                    Course: M.Pharm
+                  </h2>
+                  <div
+                    data-aos-once={"true"}
+                    className="elementor-element elementor-element-585bdf2c elementor-widget__width-inherit e-n-tabs-mobile elementor-widget elementor-widget-n-tabs"
+                    data-element_type={"widget"}
+                    data-e-type={"widget"}
+                    data-widget_type={"nested-tabs.default"}
+                  >
+                    <div
+                      className="e-n-tabs e-activated"
+                      data-widget-number={"3057481123"}
+                      aria-label={
+                        "Tabs. Open items with Enter or Space, close with Escape and navigate using the Arrow keys."
+                      }
+                      data-touch-mode={"false"}
+                    >
+                      <div className="e-n-tabs-heading" role="tablist">
+                        <button
+                          id="e-n-tab-title-30574811231"
+                          data-tab-title-id={"e-n-tab-title-30574811231"}
+                          className="e-n-tab-title"
+                          aria-selected={"true"}
+                          data-tab-index={"1"}
+                          role="tab"
+                          tabIndex="0"
+                          aria-controls={"e-n-tab-content-30574811231"}
+                          style={{ "--n-tabs-title-order": "1" }}
+                        >
+                          <span className="e-n-tab-title-text">
+                            Pharmaceutics
+                          </span>
+                        </button>
+                        <button
+                          id="e-n-tab-title-30574811232"
+                          data-tab-title-id={"e-n-tab-title-30574811232"}
+                          className="e-n-tab-title"
+                          aria-selected={"false"}
+                          data-tab-index={"2"}
+                          role="tab"
+                          tabIndex="-1"
+                          aria-controls={"e-n-tab-content-30574811232"}
+                          style={{ "--n-tabs-title-order": "2" }}
+                        >
+                          <span className="e-n-tab-title-text">
+                            Pharmaceutical Analysis
+                          </span>
+                        </button>
+                        <button
+                          id="e-n-tab-title-30574811233"
+                          data-tab-title-id={"e-n-tab-title-30574811233"}
+                          className="e-n-tab-title"
+                          aria-selected={"false"}
+                          data-tab-index={"3"}
+                          role="tab"
+                          tabIndex="-1"
+                          aria-controls={"e-n-tab-content-30574811233"}
+                          style={{ "--n-tabs-title-order": "3" }}
+                        >
+                          <span className="e-n-tab-title-text">
+                            Pharmacology
+                          </span>
+                        </button>
+                        <button
+                          id="e-n-tab-title-30574811234"
+                          data-tab-title-id={"e-n-tab-title-30574811234"}
+                          className="e-n-tab-title"
+                          aria-selected={"false"}
+                          data-tab-index={"4"}
+                          role="tab"
+                          tabIndex="-1"
+                          aria-controls={"e-n-tab-content-30574811234"}
+                          style={{ "--n-tabs-title-order": "4" }}
+                        >
+                          <span className="e-n-tab-title-text">
+                            Pharmacy Practice
+                          </span>
+                        </button>
+                        <button
+                          id="e-n-tab-title-30574811235"
+                          data-tab-title-id={"e-n-tab-title-30574811235"}
+                          className="e-n-tab-title"
+                          aria-selected={"false"}
+                          data-tab-index={"5"}
+                          role="tab"
+                          tabIndex="-1"
+                          aria-controls={"e-n-tab-content-30574811235"}
+                          style={{ "--n-tabs-title-order": "5" }}
+                        >
+                          <span className="e-n-tab-title-text">
+                            Regulatory Affairs
+                          </span>
+                        </button>
+                      </div>
+                      <div className="e-n-tabs-content">
+                        <div
+                          data-aos-once={"true"}
+                          id="e-n-tab-content-30574811231"
+                          role="tabpanel"
+                          aria-labelledby={"e-n-tab-title-30574811231"}
+                          data-tab-index={"1"}
+                          style={{ "--n-tabs-title-order": "1" }}
+                          className="e-active elementor-element e-con-full e-flex e-con e-child"
+                          data-element_type={"container"}
+                          data-e-type={"container"}
+                        >
+                          <div className="e-con-inner">
+                            <div
+                              style={{
+                                width: "100%",
+                                margin: "0",
+                                padding: "36px 0 0",
+                              }}
+                            >
+                              <div
+                                style={{
+                                  background: "#ffffff",
+                                  borderRadius: "14px",
+                                  boxShadow: "0 18px 40px rgba(0,0,0,0.06)",
+                                  overflow: "hidden",
+                                  margin: "0 0 36px",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    background: "#003a65",
+                                    padding: "26px 36px",
+                                  }}
+                                >
+                                  <h2
+                                    style={{
+                                      margin: "0",
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#ffffff",
+                                      fontSize: "30px",
+                                      fontWeight: "700",
+                                      lineHeight: "1.2",
+                                    }}
+                                  >
+                                    Branch: Pharmaceutics
+                                  </h2>
+                                </div>
+                                <div style={{ padding: "36px" }}>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    Year of Establishment: 2008
+                                  </p>
+                                  <h3
+                                    style={{
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#003a65",
+                                      fontSize: "22px",
+                                      fontWeight: "600",
+                                      margin: "28px 0 14px",
+                                    }}
+                                  >
+                                    Scope of M.Pharm in Pharmaceutics
+                                  </h3>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    M.Pharm in Pharmaceutics provides advanced
+                                    training in pharmaceutical formulation, drug
+                                    delivery systems, manufacturing
+                                    technologies, and quality management. The
+                                    program equips students with the knowledge
+                                    and practical skills required for careers in
+                                    Formulation and Development (F&amp;D),
+                                    Production, Quality Assurance (QA),
+                                    Regulatory Affairs, and Pharmaceutical
+                                    Research. Graduates are well-prepared to
+                                    contribute to the development of innovative
+                                    medicines and pursue advanced research in
+                                    the rapidly evolving pharmaceutical
+                                    industry.
+                                  </p>
+                                  <h3
+                                    style={{
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#003a65",
+                                      fontSize: "22px",
+                                      fontWeight: "600",
+                                      margin: "28px 0 14px",
+                                    }}
+                                  >
+                                    Career Opportunities
+                                  </h3>
+                                  <ul
+                                    style={{
+                                      listStyle: "none",
+                                      padding: "0",
+                                      margin: "0 0 24px",
+                                    }}
+                                  >
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Formulation and Development (F&amp;D)
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Pharmaceutical Research and Development
+                                      (R&amp;D)
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Drug Delivery System Development
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Manufacturing and Production
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Quality Assurance (QA)
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Quality Control (QC)
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Validation and Process Optimization
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Regulatory Affairs
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Clinical Research
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Medical Devices and Combination Products
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Academic and Research Institutions
+                                    </li>
+                                  </ul>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    With the growing demand for novel drug
+                                    delivery systems, biologics,
+                                    nanotechnology-based formulations,
+                                    personalized medicine, and advanced
+                                    pharmaceutical manufacturing, M.Pharm in
+                                    Pharmaceutics graduates have excellent
+                                    career prospects in India and abroad. Their
+                                    expertise is highly valued in developing
+                                    innovative, safe, and effective
+                                    pharmaceutical products.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          data-aos-once={"true"}
+                          id="e-n-tab-content-30574811232"
+                          role="tabpanel"
+                          aria-labelledby={"e-n-tab-title-30574811232"}
+                          data-tab-index={"2"}
+                          style={{ "--n-tabs-title-order": "2" }}
+                          className="elementor-element e-con-full e-flex e-con e-child"
+                          data-element_type={"container"}
+                          data-e-type={"container"}
+                        >
+                          <div className="e-con-inner">
+                            <div
+                              style={{
+                                width: "100%",
+                                margin: "0",
+                                padding: "36px 0 0",
+                              }}
+                            >
+                              <div
+                                style={{
+                                  background: "#ffffff",
+                                  borderRadius: "14px",
+                                  boxShadow: "0 18px 40px rgba(0,0,0,0.06)",
+                                  overflow: "hidden",
+                                  margin: "0 0 36px",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    background: "#003a65",
+                                    padding: "26px 36px",
+                                  }}
+                                >
+                                  <h2
+                                    style={{
+                                      margin: "0",
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#ffffff",
+                                      fontSize: "30px",
+                                      fontWeight: "700",
+                                      lineHeight: "1.2",
+                                    }}
+                                  >
+                                    Branch: Pharmaceutical Analysis
+                                  </h2>
+                                </div>
+                                <div style={{ padding: "36px" }}>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    Year of Establishment: 2009
+                                  </p>
+                                  <h3
+                                    style={{
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#003a65",
+                                      fontSize: "22px",
+                                      fontWeight: "600",
+                                      margin: "28px 0 14px",
+                                    }}
+                                  >
+                                    Scope of M.Pharm in Pharmaceutical Analysis
+                                  </h3>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    M.Pharm in Pharmaceutical Analysis provides
+                                    advanced knowledge and practical expertise
+                                    in analytical method development,
+                                    validation, quality assurance, and modern
+                                    pharmaceutical instrumentation. The program
+                                    prepares graduates for rewarding careers in
+                                    Analytical Research and Development
+                                    (AR&amp;D), Quality Control (QC), Quality
+                                    Assurance (QA), Regulatory Affairs, and
+                                    Pharmaceutical Manufacturing. With a strong
+                                    focus on precision, compliance, and
+                                    innovation, graduates play a vital role in
+                                    ensuring the quality, safety, and efficacy
+                                    of pharmaceutical products while
+                                    contributing to advancements in the global
+                                    healthcare industry.
+                                  </p>
+                                  <h3
+                                    style={{
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#003a65",
+                                      fontSize: "22px",
+                                      fontWeight: "600",
+                                      margin: "28px 0 14px",
+                                    }}
+                                  >
+                                    Career Opportunities
+                                  </h3>
+                                  <ul
+                                    style={{
+                                      listStyle: "none",
+                                      padding: "0",
+                                      margin: "0 0 24px",
+                                    }}
+                                  >
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Analytical Research and Development
+                                      (AR&amp;D)
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Method Development and Validation
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Quality Assurance (QA)
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Quality Control (QC)
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Stability Testing and Impurity Profiling
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Bioanalytical Research
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Regulatory Affairs
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Pharmaceutical Manufacturing
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Clinical Research
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Academic and Research Institutions
+                                    </li>
+                                  </ul>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    The growing emphasis on quality assurance,
+                                    regulatory compliance, advanced analytical
+                                    technologies, biologics, and biosimilars has
+                                    significantly increased the demand for
+                                    pharmaceutical analysts. M.Pharm in
+                                    Pharmaceutical Analysis graduates are
+                                    well-positioned for careers in Analytical
+                                    Research and Development (AR&amp;D), Quality
+                                    Management, Regulatory Sciences, and
+                                    Pharmaceutical Innovation, with excellent
+                                    opportunities in India and abroad.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          data-aos-once={"true"}
+                          id="e-n-tab-content-30574811233"
+                          role="tabpanel"
+                          aria-labelledby={"e-n-tab-title-30574811233"}
+                          data-tab-index={"3"}
+                          style={{ "--n-tabs-title-order": "3" }}
+                          className="elementor-element e-con-full e-flex e-con e-child"
+                          data-element_type={"container"}
+                          data-e-type={"container"}
+                        >
+                          <div className="e-con-inner">
+                            <div
+                              style={{
+                                width: "100%",
+                                margin: "0",
+                                padding: "36px 0 0",
+                              }}
+                            >
+                              <div
+                                style={{
+                                  background: "#ffffff",
+                                  borderRadius: "14px",
+                                  boxShadow: "0 18px 40px rgba(0,0,0,0.06)",
+                                  overflow: "hidden",
+                                  margin: "0 0 36px",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    background: "#003a65",
+                                    padding: "26px 36px",
+                                  }}
+                                >
+                                  <h2
+                                    style={{
+                                      margin: "0",
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#ffffff",
+                                      fontSize: "30px",
+                                      fontWeight: "700",
+                                      lineHeight: "1.2",
+                                    }}
+                                  >
+                                    Branch: Pharmacology
+                                  </h2>
+                                </div>
+                                <div style={{ padding: "36px" }}>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    Year of Establishment: 2010
+                                  </p>
+                                  <h3
+                                    style={{
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#003a65",
+                                      fontSize: "22px",
+                                      fontWeight: "600",
+                                      margin: "28px 0 14px",
+                                    }}
+                                  >
+                                    Scope of M.Pharm in Pharmacology
+                                  </h3>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    M.Pharm in Pharmacology offers excellent
+                                    opportunities in the pharmaceutical,
+                                    biotechnology, healthcare, and academic
+                                    sectors. The program provides advanced
+                                    knowledge of drug action, toxicity,
+                                    preclinical and clinical research, and drug
+                                    safety, making graduates valuable
+                                    contributors in both industry and research.
+                                  </p>
+                                  <h3
+                                    style={{
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#003a65",
+                                      fontSize: "22px",
+                                      fontWeight: "600",
+                                      margin: "28px 0 14px",
+                                    }}
+                                  >
+                                    Career Opportunities
+                                  </h3>
+                                  <ul
+                                    style={{
+                                      listStyle: "none",
+                                      padding: "0",
+                                      margin: "0 0 24px",
+                                    }}
+                                  >
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Drug Discovery and Research and
+                                      Development (R&amp;D)
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Clinical Research Organizations (CROs)
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Pharmacovigilance and Drug Safety
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Medical Writing and Scientific
+                                      Communication
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Regulatory Affairs
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Toxicology and Preclinical Research
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Bioequivalence and Bioavailability
+                                      Studies
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Clinical Data Management
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Teaching and Academic Institutions
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Government Research Organizations and
+                                      Drug Regulatory Agencies
+                                    </li>
+                                  </ul>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    The increasing emphasis on drug development,
+                                    clinical trials, pharmacovigilance,
+                                    biologics, and personalized medicine
+                                    continues to expand the demand for
+                                    pharmacology professionals in India and
+                                    abroad. M.Pharm in Pharmacology graduates
+                                    with strong research skills and regulatory
+                                    knowledge have promising career growth
+                                    opportunities in both industry and academia.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          data-aos-once={"true"}
+                          id="e-n-tab-content-30574811234"
+                          role="tabpanel"
+                          aria-labelledby={"e-n-tab-title-30574811234"}
+                          data-tab-index={"4"}
+                          style={{ "--n-tabs-title-order": "4" }}
+                          className="elementor-element e-con-full e-flex e-con e-child"
+                          data-element_type={"container"}
+                          data-e-type={"container"}
+                        >
+                          <div className="e-con-inner">
+                            <div
+                              style={{
+                                width: "100%",
+                                margin: "0",
+                                padding: "36px 0 0",
+                              }}
+                            >
+                              <div
+                                style={{
+                                  background: "#ffffff",
+                                  borderRadius: "14px",
+                                  boxShadow: "0 18px 40px rgba(0,0,0,0.06)",
+                                  overflow: "hidden",
+                                  margin: "0 0 36px",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    background: "#003a65",
+                                    padding: "26px 36px",
+                                  }}
+                                >
+                                  <h2
+                                    style={{
+                                      margin: "0",
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#ffffff",
+                                      fontSize: "30px",
+                                      fontWeight: "700",
+                                      lineHeight: "1.2",
+                                    }}
+                                  >
+                                    Branch: Pharmacy Practice
+                                  </h2>
+                                </div>
+                                <div style={{ padding: "36px" }}>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    Year of Establishment: 2025
+                                  </p>
+                                  <h3
+                                    style={{
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#003a65",
+                                      fontSize: "22px",
+                                      fontWeight: "600",
+                                      margin: "28px 0 14px",
+                                    }}
+                                  >
+                                    Scope of M.Pharm in Pharmacy Practice
+                                  </h3>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    M.Pharm in Pharmacy Practice is a
+                                    specialized postgraduate program that
+                                    focuses on patient-centered pharmaceutical
+                                    care, clinical therapeutics, medication
+                                    management, and evidence-based healthcare.
+                                    The program equips graduates with advanced
+                                    knowledge and clinical skills to optimize
+                                    drug therapy, improve patient outcomes, and
+                                    collaborate effectively with
+                                    multidisciplinary healthcare teams.
+                                  </p>
+                                  <h3
+                                    style={{
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#003a65",
+                                      fontSize: "22px",
+                                      fontWeight: "600",
+                                      margin: "28px 0 14px",
+                                    }}
+                                  >
+                                    Career Opportunities
+                                  </h3>
+                                  <ul
+                                    style={{
+                                      listStyle: "none",
+                                      padding: "0",
+                                      margin: "0 0 24px",
+                                    }}
+                                  >
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Clinical Pharmacist
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Clinical Research Associate (CRA)
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Clinical Research Coordinator (CRC)
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Pharmacovigilance Associate/Drug Safety
+                                      Officer
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Medical Writer
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Medical Science Liaison (MSL)
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Regulatory Affairs Associate
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Drug Information Pharmacist
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Medication Safety Officer
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Clinical Data Manager
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Pharmacoeconomics and Health Outcomes
+                                      Research (HEOR) Specialist
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Clinical Trial Manager
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Academician
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Research Scientist
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Pharmaceutical Industry (Medical
+                                      Affairs, Clinical Operations)
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Public Health and Government Healthcare
+                                      Organizations
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      • Consultant in Medication Therapy
+                                      Management (MTM)
+                                    </li>
+                                  </ul>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    With the increasing focus on patient safety,
+                                    rational use of medicines, personalized
+                                    therapy, medication management, and
+                                    evidence-based healthcare, the demand for
+                                    qualified pharmacy practice professionals is
+                                    growing rapidly. Graduates have excellent
+                                    career opportunities in hospitals, clinical
+                                    research, pharmacovigilance, academia, and
+                                    the pharmaceutical industry, both in India
+                                    and internationally.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          data-aos-once={"true"}
+                          id="e-n-tab-content-30574811235"
+                          role="tabpanel"
+                          aria-labelledby={"e-n-tab-title-30574811235"}
+                          data-tab-index={"5"}
+                          style={{ "--n-tabs-title-order": "5" }}
+                          className="elementor-element e-con-full e-flex e-con e-child"
+                          data-element_type={"container"}
+                          data-e-type={"container"}
+                        >
+                          <div className="e-con-inner">
+                            <div
+                              style={{
+                                width: "100%",
+                                margin: "0",
+                                padding: "36px 0 0",
+                              }}
+                            >
+                              <div
+                                style={{
+                                  background: "#ffffff",
+                                  borderRadius: "14px",
+                                  boxShadow: "0 18px 40px rgba(0,0,0,0.06)",
+                                  overflow: "hidden",
+                                  margin: "0 0 36px",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    background: "#003a65",
+                                    padding: "26px 36px",
+                                  }}
+                                >
+                                  <h2
+                                    style={{
+                                      margin: "0",
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#ffffff",
+                                      fontSize: "30px",
+                                      fontWeight: "700",
+                                      lineHeight: "1.2",
+                                    }}
+                                  >
+                                    Branch: M.Pharm Regulatory Affairs
+                                  </h2>
+                                </div>
+                                <div style={{ padding: "36px" }}>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    Year of Establishment 2025
+                                  </p>
+                                  <h3
+                                    style={{
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#003a65",
+                                      fontSize: "22px",
+                                      fontWeight: "600",
+                                      margin: "28px 0 14px",
+                                    }}
+                                  >
+                                    Scope of M.Pharm Regulatory Affairs
+                                  </h3>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    M.Pharm in Regulatory Affairs trains you to
+                                    manage the legal, scientific, and
+                                    administrative process of getting drugs,
+                                    biologics, and medical devices approved for
+                                    market. Scope covers the full product
+                                    lifecycle - pre-clinical to post-marketing
+                                    compliance.
+                                  </p>
+                                  <h3
+                                    style={{
+                                      fontFamily: '"Bitter", Sans-serif',
+                                      color: "#003a65",
+                                      fontSize: "22px",
+                                      fontWeight: "600",
+                                      margin: "28px 0 14px",
+                                    }}
+                                  >
+                                    Career Opportunities
+                                  </h3>
+                                  <ul
+                                    style={{
+                                      listStyle: "none",
+                                      padding: "0",
+                                      margin: "0 0 24px",
+                                    }}
+                                  >
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      1. Drug approval &amp; licensing -
+                                      National &amp; global submissions to
+                                      CDSCO, USFDA, EMA, MHRA
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      2. Documentation - Dossier Preparation,
+                                      eCTD submissions, DMF/ASMF filing
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      3. Compliance - GMP, GLP, GCP, ICH
+                                      guidelines, labeling &amp; advertising
+                                      laws
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      4. Lifecycle management - Variations,
+                                      renewals, post-approval changes
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      5. Strategic role - Bridge between
+                                      R&amp;D, QA, manufacturing &amp;
+                                      regulatory agencies
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      6. Industry: Pharma/Biotech, Medical
+                                      devices, Nutraceuticals, Cosmetics
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      7. Service sector: CROs, CDMOs, Regulatory
+                                      consulting firms
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      8. Government: CDSCO, State FDAs, IPC,
+                                      Pharmexcil
+                                    </li>
+                                    <li
+                                      style={{
+                                        margin: "0 0 16px",
+                                        paddingLeft: "2px",
+                                      }}
+                                    >
+                                      9. Others: Hospitals, Clinical research,
+                                      Healthcare MNCs
+                                    </li>
+                                  </ul>
+                                  <p style={{ margin: "0 0 20px" }}>
+                                    High-growth, recession-proof career bridging
+                                    science and law. Every drug/device needs
+                                    regulatory approval globally, so demand
+                                    stays strong. Best fit if you're
+                                    detail-oriented, good with documentation,
+                                    and want to work in global pharma without
+                                    lab work.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>{" "}
+        </main>{" "}
+        <KkcpFooter />{" "}
+      </div>{" "}
+      <div
+        id="rs-scroll-to-top"
+        className="rs-page-scroll-progress"
+        data-max={"113.1"}
+        data-unit={"px"}
+        data-reverse={"true"}
+        style={{
+          "--rs-page-scroll-progress": "101.92384615384614px",
+          display: "block",
+        }}
+      >
+        {" "}
+      </div>{" "}
+      <span id="elementor-device-mode" className="elementor-screen-only"></span>
+      <div className="flatpickr-calendar animate" tabIndex="-1">
+        <div className="flatpickr-months">
+          <span className="flatpickr-prev-month"></span>
+          <div className="flatpickr-month">
+            <div className="flatpickr-current-month">
+              <select
+                className="flatpickr-monthDropdown-months"
+                aria-label={"Month"}
+                tabIndex="-1"
+              >
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="0"
+                  tabIndex="-1"
+                >
+                  January
+                </option>
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="1"
+                  tabIndex="-1"
+                >
+                  February
+                </option>
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="2"
+                  tabIndex="-1"
+                >
+                  March
+                </option>
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="3"
+                  tabIndex="-1"
+                >
+                  April
+                </option>
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="4"
+                  tabIndex="-1"
+                >
+                  May
+                </option>
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="5"
+                  tabIndex="-1"
+                >
+                  June
+                </option>
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="6"
+                  tabIndex="-1"
+                >
+                  July
+                </option>
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="7"
+                  tabIndex="-1"
+                >
+                  August
+                </option>
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="8"
+                  tabIndex="-1"
+                >
+                  September
+                </option>
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="9"
+                  tabIndex="-1"
+                >
+                  October
+                </option>
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="10"
+                  tabIndex="-1"
+                >
+                  November
+                </option>
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="11"
+                  tabIndex="-1"
+                >
+                  December
+                </option>
+              </select>
+              <div className="numInputWrapper">
+                <input
+                  className="numInput cur-year"
+                  type="number"
+                  tabIndex="-1"
+                  aria-label={"Year"}
+                />
+                <span className="arrowUp"></span>
+                <span className="arrowDown"></span>
+              </div>
+            </div>
+          </div>
+          <span className="flatpickr-next-month"></span>
+        </div>
+        <div className="flatpickr-innerContainer">
+          <div className="flatpickr-rContainer">
+            <div className="flatpickr-weekdays">
+              <div className="flatpickr-weekdaycontainer">
+                {" "}
+                <span className="flatpickr-weekday">Sun</span>
+                <span className="flatpickr-weekday">Mon</span>
+                <span className="flatpickr-weekday">Tue</span>
+                <span className="flatpickr-weekday">Wed</span>
+                <span className="flatpickr-weekday">Thu</span>
+                <span className="flatpickr-weekday">Fri</span>
+                <span className="flatpickr-weekday">Sat</span>{" "}
+              </div>
+            </div>
+            <div className="flatpickr-days" tabIndex="-1">
+              <div className="dayContainer">
+                <span
+                  className="flatpickr-day prevMonthDay"
+                  aria-label={"May 31, 2026"}
+                  tabIndex="-1"
+                >
+                  31
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 1, 2026"}
+                  tabIndex="-1"
+                >
+                  1
+                </span>
+                <span
+                  className="flatpickr-day today"
+                  aria-label={"June 2, 2026"}
+                  aria-current={"date"}
+                  tabIndex="-1"
+                >
+                  2
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 3, 2026"}
+                  tabIndex="-1"
+                >
+                  3
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 4, 2026"}
+                  tabIndex="-1"
+                >
+                  4
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 5, 2026"}
+                  tabIndex="-1"
+                >
+                  5
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 6, 2026"}
+                  tabIndex="-1"
+                >
+                  6
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 7, 2026"}
+                  tabIndex="-1"
+                >
+                  7
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 8, 2026"}
+                  tabIndex="-1"
+                >
+                  8
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 9, 2026"}
+                  tabIndex="-1"
+                >
+                  9
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 10, 2026"}
+                  tabIndex="-1"
+                >
+                  10
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 11, 2026"}
+                  tabIndex="-1"
+                >
+                  11
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 12, 2026"}
+                  tabIndex="-1"
+                >
+                  12
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 13, 2026"}
+                  tabIndex="-1"
+                >
+                  13
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 14, 2026"}
+                  tabIndex="-1"
+                >
+                  14
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 15, 2026"}
+                  tabIndex="-1"
+                >
+                  15
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 16, 2026"}
+                  tabIndex="-1"
+                >
+                  16
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 17, 2026"}
+                  tabIndex="-1"
+                >
+                  17
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 18, 2026"}
+                  tabIndex="-1"
+                >
+                  18
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 19, 2026"}
+                  tabIndex="-1"
+                >
+                  19
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 20, 2026"}
+                  tabIndex="-1"
+                >
+                  20
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 21, 2026"}
+                  tabIndex="-1"
+                >
+                  21
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 22, 2026"}
+                  tabIndex="-1"
+                >
+                  22
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 23, 2026"}
+                  tabIndex="-1"
+                >
+                  23
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 24, 2026"}
+                  tabIndex="-1"
+                >
+                  24
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 25, 2026"}
+                  tabIndex="-1"
+                >
+                  25
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 26, 2026"}
+                  tabIndex="-1"
+                >
+                  26
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 27, 2026"}
+                  tabIndex="-1"
+                >
+                  27
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 28, 2026"}
+                  tabIndex="-1"
+                >
+                  28
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 29, 2026"}
+                  tabIndex="-1"
+                >
+                  29
+                </span>
+                <span
+                  className="flatpickr-day"
+                  aria-label={"June 30, 2026"}
+                  tabIndex="-1"
+                >
+                  30
+                </span>
+                <span
+                  className="flatpickr-day nextMonthDay"
+                  aria-label={"July 1, 2026"}
+                  tabIndex="-1"
+                >
+                  1
+                </span>
+                <span
+                  className="flatpickr-day nextMonthDay"
+                  aria-label={"July 2, 2026"}
+                  tabIndex="-1"
+                >
+                  2
+                </span>
+                <span
+                  className="flatpickr-day nextMonthDay"
+                  aria-label={"July 3, 2026"}
+                  tabIndex="-1"
+                >
+                  3
+                </span>
+                <span
+                  className="flatpickr-day nextMonthDay"
+                  aria-label={"July 4, 2026"}
+                  tabIndex="-1"
+                >
+                  4
+                </span>
+                <span
+                  className="flatpickr-day nextMonthDay"
+                  aria-label={"July 5, 2026"}
+                  tabIndex="-1"
+                >
+                  5
+                </span>
+                <span
+                  className="flatpickr-day nextMonthDay"
+                  aria-label={"July 6, 2026"}
+                  tabIndex="-1"
+                >
+                  6
+                </span>
+                <span
+                  className="flatpickr-day nextMonthDay"
+                  aria-label={"July 7, 2026"}
+                  tabIndex="-1"
+                >
+                  7
+                </span>
+                <span
+                  className="flatpickr-day nextMonthDay"
+                  aria-label={"July 8, 2026"}
+                  tabIndex="-1"
+                >
+                  8
+                </span>
+                <span
+                  className="flatpickr-day nextMonthDay"
+                  aria-label={"July 9, 2026"}
+                  tabIndex="-1"
+                >
+                  9
+                </span>
+                <span
+                  className="flatpickr-day nextMonthDay"
+                  aria-label={"July 10, 2026"}
+                  tabIndex="-1"
+                >
+                  10
+                </span>
+                <span
+                  className="flatpickr-day nextMonthDay"
+                  aria-label={"July 11, 2026"}
+                  tabIndex="-1"
+                >
+                  11
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -99,7 +99,7 @@ export default function SiteHeader() {
       <div className="logo-band">
         <div className="container">
           <Link href="/" aria-label="K.K. College of Pharmacy — Home">
-            <Image src="/kkcp/logo.png" alt="K.K. College of Pharmacy" width={1400} height={195} priority />
+            <Image src="/kkcp/logo.webp" alt="K.K. College of Pharmacy" width={1400} height={195} priority />
           </Link>
         </div>
       </div>

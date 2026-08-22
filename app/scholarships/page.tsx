@@ -1,18 +1,15 @@
-export default function ScholarshipsPage() {
+import type { Metadata } from "next";
+import { KkcpTree } from "../scholarships-react/_components/KkcpTree";
+
+export const metadata: Metadata = { title: "Scholarship" };
+
+export default function Page() {
   return (
-    <iframe
-      src="/scholarships/index.html"
-      title="KKCP — Scholarships"
-      style={{
-        position: "fixed",
-        inset: 0,
-        width: "100vw",
-        height: "100vh",
-        border: "none",
-        margin: 0,
-        padding: 0,
-        zIndex: 2147483647,
-      }}
-    />
+    <>
+      <link rel="stylesheet" href="/campus-life/kkcp-theme.css" />
+      <link rel="stylesheet" href="/test-dummy-webs-1/kkcp-fixes.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600&family=Roboto:wght@400&display=swap" />
+      <div className="kkcp-root"><KkcpTree /></div>
+    </>
   );
 }

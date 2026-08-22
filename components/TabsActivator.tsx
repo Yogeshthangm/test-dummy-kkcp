@@ -3,7 +3,7 @@
 
 import { useEffect } from "react";
 
-// Re-enables Elementor nested-tabs (e-n-tabs) interactivity — the cloner strips the
+// Re-enables Elementor nested-tabs (e-n-tabs) interactivity — the generator strips the
 // original JS, so clicking a tab did nothing. CSS hides `.e-n-tabs-content > .e-con:not(.e-active)`,
 // so we just toggle `.e-active` on the clicked title + its aria-controls panel.
 export default function TabsActivator() {

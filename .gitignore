@@ -41,3 +41,12 @@ yarn-error.log*
 next-env.d.ts
 .DS_Store
 .gstack/
+
+# Client photo drop — camera originals (246MB). Kept on disk, not in git.
+# Web-ready derivatives in public/kkcp/web/ ARE committed and are what the site serves.
+# Regenerate them with: node optimize-images.cjs
+/public/kkcp/1. HOME PAGE PHOTOS/
+/public/kkcp/2. ABOUT PAGE PHOTOS/
+/public/kkcp/3. CAMPUS LIFE PHOTOS/
+/public/kkcp/4. COURSES REDIRECTION PHOTOS/
+/public/kkcp/5. DEPARTMENT FACULTIES PHOTOS/

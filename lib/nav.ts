@@ -26,6 +26,7 @@ export const NAV: NavLink[] = [
     label: "Department",
     href: "#",
     children: [
+      { label: "Pharmaceutical Chemistry", href: "/departments/pharmaceutical-chemistry/" },
       { label: "Pharmaceutics", href: "/departments/pharmaceutics/" },
       { label: "Pharmacology", href: "/departments/pharmacology/" },
       { label: "Pharmacognosy", href: "/departments/pharmacognosy/" },
